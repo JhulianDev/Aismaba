@@ -1,9 +1,9 @@
-function Home() {
+const Home = () => {
   return (
-    <>
-      <h1>AISMABA</h1>
-    </>
-  )
-}
+    <div>
+      <h1>AISMABA - HOME</h1>
+    </div>
+  );
+};
 
-export default Home
+export default Home;
