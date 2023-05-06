@@ -1,4 +1,97 @@
+/* Variables */
 :root {
     background-color: #242424;
-    color: white;
+    --color-acento:     #9F7253;
+    --color-principal:  #BF9B7A;
+    --color-secundario: #D9CDBF;
+    --color-terciario:  #E4D9C5;
+    --color-titulo:     #2B2B2B;
+    --color-texto:      #939393;
+    --color-fondo:      #ece8e3;
+}
+
+/* Fuentes */
+@font-face {
+    font-family: NewYork;
+    src: url(../fonts/NewYork.ttf);
+
+    font-family: OpenSans;
+    src: url(../fonts/OpenSans.ttf);
+
+    font-family: Roboto;
+    src: url(../fonts/Roboto.ttf);
+
+    font-family: TheSeasons;
+    src: url(../fonts/TheSeasons.otf);
+
+    font-family: Barney;
+    src: url(../fonts/BarneyScript.otf);
+
+    font-family: Cinzel;
+    src: url(../fonts/Cinzel.ttf);
+
+    font-family: Libre;
+    src: url(../fonts/LibreBaskerville-Italic.ttf);
+}
+
+/* Estilos Scroll Bar */
+
+body::-webkit-scrollbar{
+    width: .75rem;
+    background-color: var(--color-fondo);
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--color-acento);
+}
+
+
+/* Estilos Header */
+
+.header{
+    width: 100%;
+    height: 3.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header--color{
+    background-color: var(--color-principal);
+}
+
+.max-width{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.header__container-logo,
+.header__container-cart{
+    display: flex;
+}
+
+.header__logo{
+    width: 1.875rem;
+}
+
+.header__menu{
+}
+
+.header__lista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.header__item{
+    font-family: NewYork;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+}
+
+.header__cart{
+    width: 1.875rem;
 }
