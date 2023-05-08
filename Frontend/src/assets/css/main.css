@@ -1,13 +1,13 @@
 /* Variables */
 :root {
     background-color: #242424;
-    --color-acento:     #9F7253;
-    --color-principal:  #BF9B7A;
+    --color-acento: #9F7253;
+    --color-principal: #BF9B7A;
     --color-secundario: #D9CDBF;
-    --color-terciario:  #E4D9C5;
-    --color-titulo:     #2B2B2B;
-    --color-texto:      #939393;
-    --color-fondo:      #ece8e3;
+    --color-terciario: #E4D9C5;
+    --color-titulo: #2B2B2B;
+    --color-texto: #939393;
+    --color-fondo: #ece8e3;
 }
 
 /* Fuentes */
@@ -36,62 +36,204 @@
 
 /* Estilos Scroll Bar */
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     width: .75rem;
     background-color: var(--color-fondo);
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
     background-color: var(--color-acento);
 }
 
 
 /* Estilos Header */
 
-.header{
+.header {
     width: 100%;
     height: 3.75rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 10%;
 }
 
-.header--color{
+.header--color {
     background-color: var(--color-principal);
 }
 
-.max-width{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
+.header--color-activo{
+    background-color: var(--color-terciario);
 }
 
 .header__container-logo,
-.header__container-cart{
+.header__container-cart {
     display: flex;
 }
 
-.header__logo{
+.header__logo {
     width: 1.875rem;
 }
 
-.header__menu{
+.header__menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.header__lista{
+.header__lista {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
 }
 
-.header__item{
+.header__item {
     font-family: NewYork;
     font-size: 1.1rem;
     letter-spacing: 4px;
 }
 
-.header__cart{
+.header__cart {
     width: 1.875rem;
+}
+
+/* Estilos Menu Hamburguesa */
+
+.header__container-hamburger {
+    display: none;
+    height: 3.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger {
+    display: flex;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.hamburger-box {
+    width: 32px;
+    height: 20.5008px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 32px;
+    height: 2.5008px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -8px;
+}
+
+.hamburger-inner::after {
+    bottom: -8px;
+}
+
+/* Animacion Menu Hamburguesa */
+
+.hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* Respondive Header */
+@media screen and (max-width: 1024px){
+    .header{
+        padding: 0 8%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__logo,
+    .header__cart{
+        display: none;
+    }
+
+    .header__container-hamburger{
+        display: flex;
+        margin-right: 8%;
+    }
+
+    .header{
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .header__lista{
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .header__menu{
+        width: 100vw;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all .5s ease;
+        background-color: var(--color-principal);
+    }
+
+    .header__menu--activo{
+        height: calc(100vh - 3.75rem);
+        opacity: 1;
+    }
+    
 }
