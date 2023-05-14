@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom"
-import { ISOTIPO_BLANCO, CARRITO_ICONO } from "../../assets/img/imagenes";
 import { useEffect } from "react";
+import MainMenu from "../molecules/header/MainMenu";
+import LogoLink from "../molecules/header/LogoLink";
+import HamburguerMenu from "../molecules/header/HamburguerMenu";
+import CartLink from "../molecules/header/CartLink";
 
 const MainHeader = () => {
 
@@ -17,31 +19,10 @@ const MainHeader = () => {
 
   return (
     <div className="header header--color">
-      <Link to="/" className="header__container-logo">
-        <img src={ISOTIPO_BLANCO} alt="Logotipo de Aismaba" className="header__logo" />
-      </Link>
-
-      <div className="header__container-hamburger">
-        <button className="hamburger hamburger--spin">
-          <span className="hamburger-box">
-            <span className="hamburger-inner"></span>
-          </span>
-        </button>
-      </div>
-
-      <nav className="header__menu">
-        <ul className="header__lista">
-          <li className="header__item"><Link to="/">Inicio</Link></li>
-          <li className="header__item"><Link to="/">Servicios</Link></li>
-          <li className="header__item"><Link to="/">Tienda</Link></li>
-          <li className="header__item"><Link to="/">Contacto</Link></li>
-        </ul>
-      </nav>
-
-      <Link className="header__container-cart">
-        <img src={CARRITO_ICONO} alt="Icono de carrito de compras" className="header__cart" />
-      </Link>
-
+      <LogoLink />
+      <HamburguerMenu />
+      <MainMenu />
+      <CartLink />
     </div>
   );
 };

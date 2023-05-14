@@ -46,7 +46,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-/* Estilos Header */
+/* ---------------------------------------------------------- */
+/* ----------------------Estilos Header---------------------- */
+/* ---------------------------------------------------------- */
 
 .header {
     width: 100%;
@@ -55,6 +57,8 @@ body::-webkit-scrollbar-thumb {
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
+    position: absolute;
+    z-index: 10;
 }
 
 .header--color {
@@ -194,7 +198,7 @@ body::-webkit-scrollbar-thumb {
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-/* Respondive Header */
+/* Responsive Header */
 @media screen and (max-width: 1024px){
     .header{
         padding: 0 8%;
@@ -232,8 +236,138 @@ body::-webkit-scrollbar-thumb {
     }
 
     .header__menu--activo{
-        height: calc(100vh - 3.75rem);
+        height: 100vh;
         opacity: 1;
     }
-    
 }
+
+/* -------------------------------------------------------- */
+/* ----------------------Estilos Home---------------------- */
+/* -------------------------------------------------------- */
+
+/* ------------------------Portada------------------------- */
+.main-container-portada{
+    width: 100%;
+    height: 100vh;
+    background-image:url(../img/generales/1.jpg);
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.portada{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.portada__logo{
+    height: 12%;
+    z-index: 1;
+}
+
+.portada__aismaba,
+.portada__bienvenida,
+.portada__agencia,
+.portada__frase{
+    font-family: Cinzel;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: .25rem;
+    z-index: 1;
+}
+
+.portada__aismaba,
+.portada__bienvenida{
+    font-size: 0.9rem;
+}
+
+.portada__aismaba{
+    display: none;
+}
+
+.portada__agencia{
+    font-size: 1.9rem;
+}
+
+.portada__frase{
+    font-size: 0.9rem;
+    margin-bottom: 11%;
+}
+
+.portada__container-sombras{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.portada__sombras{
+    min-width: 100%;
+    min-height: 100vh;
+    opacity: 0.3;
+}
+
+/* Responsive Portada */
+
+@media screen and (max-width: 1300px) {
+    .main-container-portada{
+        background-position: bottom right;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .portada__logo{
+        height: 10%;
+    }
+    .portada__bienvenida{
+        font-size: 0.8rem;
+    }
+    .portada__agencia{
+        font-size: 1.8rem;
+    }
+    .portada__frase{
+        margin-bottom: 17%;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 520px){
+    .portada{
+        padding: 0 10px;
+    }
+    .portada__bienvenida{
+        font-size: 0.7rem;
+        margin-top: 10px;
+    }
+    .portada__agencia{
+        font-size: 1.7rem;
+        margin-bottom: 25%;
+    }
+    .portada__frase{
+        display: none;
+    }
+    .portada__textos{
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 351px) {
+    .portada__aismaba{
+        display: flex;
+    }
+    .portada__bienvenida{
+        display: none;
+    }
+    .portada__agencia{
+        margin-top: -0.3125rem;
+    }
+
+}
+
+/* ------------------------Portada------------------------- */
