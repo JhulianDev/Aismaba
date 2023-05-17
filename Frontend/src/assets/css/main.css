@@ -65,7 +65,7 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--color-principal);
 }
 
-.header--color-activo{
+.header--color-activo {
     background-color: var(--color-terciario);
 }
 
@@ -199,34 +199,35 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Responsive Header */
-@media screen and (max-width: 1024px){
-    .header{
+@media screen and (max-width: 1024px) {
+    .header {
         padding: 0 8%;
     }
 }
 
 @media screen and (max-width: 768px) {
+
     .header__logo,
-    .header__cart{
+    .header__cart {
         display: none;
     }
 
-    .header__container-hamburger{
+    .header__container-hamburger {
         display: flex;
         margin-right: 8%;
     }
 
-    .header{
+    .header {
         flex-wrap: wrap;
         padding: 0;
     }
 
-    .header__lista{
+    .header__lista {
         flex-direction: column;
         gap: 60px;
     }
 
-    .header__menu{
+    .header__menu {
         width: 100vw;
         height: 0;
         opacity: 0;
@@ -235,7 +236,7 @@ body::-webkit-scrollbar-thumb {
         background-color: var(--color-principal);
     }
 
-    .header__menu--activo{
+    .header__menu--activo {
         height: 100vh;
         opacity: 1;
     }
@@ -246,15 +247,15 @@ body::-webkit-scrollbar-thumb {
 /* -------------------------------------------------------- */
 
 /* ------------------------Portada------------------------- */
-.main-container-portada{
+.main-container-portada {
     width: 100%;
     height: 100vh;
-    background-image:url(../img/generales/1.jpg);
+    background-image: url(../img/generales/1.jpg);
     background-size: cover;
     background-position: bottom center;
 }
 
-.portada{
+.portada {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -264,7 +265,7 @@ body::-webkit-scrollbar-thumb {
     gap: 12px;
 }
 
-.portada__logo{
+.portada__logo {
     height: 12%;
     z-index: 1;
 }
@@ -272,7 +273,7 @@ body::-webkit-scrollbar-thumb {
 .portada__aismaba,
 .portada__bienvenida,
 .portada__agencia,
-.portada__frase{
+.portada__frase {
     font-family: Cinzel;
     text-align: center;
     font-weight: 400;
@@ -281,24 +282,24 @@ body::-webkit-scrollbar-thumb {
 }
 
 .portada__aismaba,
-.portada__bienvenida{
-    font-size: 0.9rem;
+.portada__bienvenida {
+    font-size: .9rem;
 }
 
-.portada__aismaba{
+.portada__aismaba {
     display: none;
 }
 
-.portada__agencia{
+.portada__agencia {
     font-size: 1.9rem;
 }
 
-.portada__frase{
-    font-size: 0.9rem;
+.portada__frase {
+    font-size: .9rem;
     margin-bottom: 11%;
 }
 
-.portada__container-sombras{
+.portada__container-sombras {
     position: absolute;
     top: 0;
     left: 0;
@@ -307,7 +308,7 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
 }
 
-.portada__sombras{
+.portada__sombras {
     min-width: 100%;
     min-height: 100vh;
     opacity: 0.3;
@@ -316,58 +317,288 @@ body::-webkit-scrollbar-thumb {
 /* Responsive Portada */
 
 @media screen and (max-width: 1300px) {
-    .main-container-portada{
+    .main-container-portada {
         background-position: bottom right;
     }
 }
 
-@media screen and (max-width: 768px){
-    .portada__logo{
+@media screen and (max-width: 768px) {
+    .portada__logo {
         height: 10%;
     }
-    .portada__bienvenida{
-        font-size: 0.8rem;
+
+    .portada__bienvenida {
+        font-size: .8rem;
     }
-    .portada__agencia{
+
+    .portada__agencia {
         font-size: 1.8rem;
     }
-    .portada__frase{
+
+    .portada__frase {
         margin-bottom: 17%;
-        font-size: 0.8rem;
+        font-size: .8rem;
     }
 }
 
-@media screen and (max-width: 520px){
-    .portada{
+@media screen and (max-width: 520px) {
+    .portada {
         padding: 0 10px;
     }
-    .portada__bienvenida{
-        font-size: 0.7rem;
+
+    .portada__bienvenida {
+        font-size: .7rem;
         margin-top: 10px;
     }
-    .portada__agencia{
+
+    .portada__agencia {
         font-size: 1.7rem;
         margin-bottom: 25%;
     }
-    .portada__frase{
+
+    .portada__frase {
         display: none;
     }
-    .portada__textos{
+
+    .portada__textos {
         font-weight: 700;
     }
 }
 
 @media screen and (max-width: 351px) {
-    .portada__aismaba{
+    .portada__aismaba {
         display: flex;
     }
-    .portada__bienvenida{
+
+    .portada__bienvenida {
         display: none;
     }
-    .portada__agencia{
+
+    .portada__agencia {
         margin-top: -0.3125rem;
     }
 
 }
 
-/* ------------------------Portada------------------------- */
+/* ------------------------Presentacion------------------------- */
+
+.main-container-presentacion {
+    background-color: var(--color-fondo);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px;
+}
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.presentacion__box-textos {}
+
+.presentacion__titulo {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--color-acento);
+}
+
+.presentacion__subtitulo {
+    font-family: Cinzel;
+    font-weight: bold;
+    font-size: 1.4rem;
+    letter-spacing: 6px;
+    margin-bottom: .8rem;
+    color: var(--color-acento);
+}
+
+.presentacion__parrafo {
+    max-width: 400px;
+    font-family: Roboto;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-align: justify;
+    margin-bottom: .8rem;
+    color: var(--color-acento);
+}
+
+.presentacion__frase {
+    font-family: Roboto;
+    text-align: end;
+    color: var(--color-acento);
+}
+
+.presentacion__box-imagenes {
+    display: flex;
+    gap: 50px;
+}
+
+.presentacion__img-1 {
+    width: 300px;
+    height: 400px;
+}
+
+.presentacion__img-2 {
+    width: 300px;
+    height: 500px;
+}
+
+.presentacion__img-1,
+.presentacion__img-2,
+.presentacion__img-3 {
+    border-radius: 10px;
+    border: solid 2px var(--color-principal);
+    box-shadow: 15px 15px 20px #00000021;
+}
+
+.presentacion__img-3 {
+    margin-bottom: -40px;
+}
+
+/* Interrogante */
+.presentacion__box-interrogante {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6.25rem;
+    /* background-color: steelblue; */
+}
+
+.presentacion__img-3 {
+    width: 18.75rem;
+}
+
+.presentacion__pregunta {
+    font-family: Cinzel;
+    letter-spacing: 6px;
+    font-weight: 800;
+    text-align: end;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.presentacion__respuesta {
+    max-width: 679px;
+    font-family: Roboto;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-align: justify;
+    color: var(--color-acento);
+}
+
+/* Responsive Presentacion */
+@media screen and (max-width: 1440px) {
+    .presentacion__img-1 {
+        width: 240px;
+        height: 330px;
+    }
+
+    .presentacion__img-2 {
+        width: 250px;
+        height: 430px;
+    }
+
+    .presentacion__img-3 {
+        width: 280px;
+    }
+
+    .presentacion__box-interrogante {
+        gap: 30px;
+    }
+
+    .presentacion__titulo,
+    .presentacion__subtitulo,
+    .presentacion__pregunta {
+        font-size: 1.2rem;
+    }
+
+    .presentacion__frase {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-container-presentacion {
+        padding: 50px 50px;
+    }
+
+    .presentacion,
+    .presentacion__box-imagenes {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 916px) {
+    .presentacion__img-2 {
+        display: none;
+    }
+
+    .presentacion__parrafo {
+        max-width: 520px;
+    }
+
+    .presentacion {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 807px) {
+    .presentacion__parrafo {
+        max-width: 400px;
+    }
+    .presentacion__box-interrogante {
+        flex-direction: column;
+    }
+
+    .presentacion__pregunta {
+        text-align: center;
+    }
+
+    .presentacion__img-3 {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .presentacion {
+        flex-direction: column;
+    }
+
+    .presentacion__titulo,
+    .presentacion__subtitulo,
+    .presentacion__frase {
+        text-align: center;
+    }
+
+    .presentacion__img-3 {
+        order: 2;
+    }
+
+    .presentacion__respuesta {
+        max-width: 400px;
+    }
+
+    .presentacion__img-1 {
+        width: 270px;
+        height: 360px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .presentacion__img-1 {
+        width: 12.5rem;
+        height: 18.125rem;
+    }
+
+    .presentacion__img-3 {
+        width: 12.5rem;
+    }
+}
