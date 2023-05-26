@@ -1,74 +1,81 @@
-import { ISOTIPO_BLANCO, FUNDADORA_1, FUNDADORA_2, ESCRITORIO_AISMABA } from "../../assets/img/imagenes";
-import { SOMBRAS_VIDEO } from "../../assets/vid/videos";
+import { Link } from "react-router-dom";
+import { NUESTROS_SERVICIOS, PRODUCTOS_DIGITALES, RECURSOS_GRATUITOS } from "../../assets/img/imagenes";
+import Pensamiento from "../organisms/home/Pensamiento";
+import Portada from "../organisms/home/Portada";
+import Presentacion from "../organisms/home/Presentacion";
 
 const Home = () => {
   return (
     <>
-      <div className="main-container-portada">
-        <div className="portada">
-          <img src={ISOTIPO_BLANCO} alt="Isotipo de Aismaba" className="portada__logo" />
-          <h1 className="portada__aismaba">AISMABA</h1>
-          <h1 className="portada__bienvenida">BIENVENIDOS A AISMABA</h1>
-          <h2 className="portada__agencia">AGENCIA CREATIVA</h2>
-          <h3 className="portada__frase">¡IMPULSAMOS TU MARCA AL SIGUIENTE NIVEL!</h3>
-        </div>
-      </div>
+      <Portada />
+      <Presentacion />
+      <Pensamiento />
 
-      <div className="portada__container-sombras">
-        <video src={SOMBRAS_VIDEO} className="portada__sombras" autoPlay loop muted></video>
-      </div>
+      <section className="main-container-servicios">
+        <h2 className="servicios__interrogante">
+          ¿POR DONDE QUIERES COMENZAR?
+        </h2>
 
-      <section className="main-container-presentacion">
-        <div className="presentacion">
-          <div className="presentacion__box-textos">
-            <h2 className="presentacion__titulo"><i>Creemos en ti...</i></h2>
-            <h3 className="presentacion__subtitulo">CREAMOS POR TI</h3>
-            <p className="presentacion__parrafo">
-              En Aismaba encontraras todos los servicios digitales
-              necesarios para <b>impulsar tu negocio al éxito.</b>
-              <br />
-              <br />
-              A través del Diseño Original, Contenido Creativo y
-              Estrategias de marketing personalizadas <b>daremos vida</b> a ese proyecto que tanto anhelas.
-              <br />
-              <br />
-              Lograremos transmitir en cada detalle <b>la verdadera escencia</b> y personalidad de tu marca.
-            </p>
+        <div className="servicios__box-tarjetas">
 
-            <h3 className="presentacion__frase">
-              <i>Deja de soñarlo...</i>
-              <br />
-              <i>¡estamos aqui para crearlo!</i>
-            </h3>
+          <div className="servicios__slider">
+
+            <div className="servicios__tarjeta">
+              <img src={PRODUCTOS_DIGITALES} alt="Mockup de productos digitales" className="tarjeta__img" />
+              <h1 className="tarjeta__titulo">Productos Digitales</h1>
+              <p className="tarjeta__descripcion">
+                Creamos para ti una serie de
+                Productos Editables que te facilitaran
+                gran parte del proceso creativo.
+                <br />
+                Gracias a su diseño original, cada
+                plantilla le proporcionara a tu marca una
+                personalidad unica. Otorgandote la
+                posibilidad de editar cada detalle para
+                que se adapte 100% al estilo de tu marca.
+              </p>
+              <Link to="/" className="tarjeta__boton">VER MÁS</Link>
+            </div>
+
+            <div className="servicios__tarjeta">
+              <img src={NUESTROS_SERVICIOS} alt="Mockup de productos digitales" className="tarjeta__img" />
+              <h1 className="tarjeta__titulo">Productos Digitales</h1>
+              <p className="tarjeta__descripcion">
+                Trabajaremos para ti en 3 Servicios
+                que harán que tu marca resalte
+                con una imagen única.
+                <br />
+                Gracias a nuestros conocimientos cada
+                servicio le proporcionara a tu proyecto una
+                estética original y un valor agregado, otorgándote la
+                posibilidad de mejorar la presentación
+                de tu marca ante el mundo.
+              </p>
+              <Link to="/" className="tarjeta__boton">VER MÁS</Link>
+            </div>
+
+            <div className="servicios__tarjeta">
+              <img src={RECURSOS_GRATUITOS} alt="Mockup de productos digitales" className="tarjeta__img" />
+              <h1 className="tarjeta__titulo">Productos Digitales</h1>
+              <p className="tarjeta__descripcion">
+                Presentamos para ti una serie de
+                Recursos gráficos gratuitos que serán
+                de gran ayuda en tu proceso creativo.
+                <br />
+                Estos recursos aportaran un granito de
+                arena a la imagen de tu marca,
+                otorgándote la posibilidad de ahorrar tiempo de
+                largas horas de edición o brindándote tips y
+                consejos que te serán de gran utilidad.
+              </p>
+              <Link to="/" className="tarjeta__boton">VER MÁS</Link>
+            </div>
+
           </div>
 
-          <div className="presentacion__box-imagenes">
-            <img src={FUNDADORA_1} alt="Foto de la creadora de Aismaba" className="presentacion__img-1" />
-            <img src={FUNDADORA_2} alt="Foto de la creadora de Aismaba" className="presentacion__img-2" />
-          </div>
         </div>
-
-        <div className="presentacion__box-interrogante">
-          <img src={ESCRITORIO_AISMABA} alt="Foto del escritorio de Aismaba" className="presentacion__img-3" />
-
-          <div className="presentacion__box-textos">
-            <h2 className="presentacion__pregunta">¿COMO LO HAREMOS?</h2>
-            <p className="presentacion__respuesta">
-              Te brindaremos las herramientas necesarias para que tu emprendimiento sea un éxito en internet.
-              <br />
-              <br />
-              Diseñaremos paso a paso el branding de tu marca logrando que tus clientes puedan identificar cuales son sus valores, su visión y las cualidades que la hacen diferente a las demás.
-              <br />
-              <br />
-              Daremos vida a tus redes sociales ofreciendo contenido innovador, creativo y de calidad que te garantizara los mejores resultados.
-              <br />
-              <br />
-              No dejaremos nada a la suerte! Cada paso sera planificado a traves de nuestras estrategias de marketing para asegurarnos de que se cumplan todos tus objetivos!
-            </p>
-          </div>
-        </div>
-
       </section>
+
     </>
   );
 };
