@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import MainHeader from '../organisms/MainHeader';
+import MainHeader from '../organisms/header/MainHeader';
+
 
 const MainHeaderTemplate = () => {
     return (

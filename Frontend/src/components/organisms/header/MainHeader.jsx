@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import MainMenu from "../molecules/header/MainMenu";
-import LogoLink from "../molecules/header/LogoLink";
-import HamburguerMenu from "../molecules/header/HamburguerMenu";
-import CartLink from "../molecules/header/CartLink";
+import LogoLink from "../../molecules/header/LogoLink";
+import MainMenu from "../../molecules/header/MainMenu";
+import HamburguerMenu from "../../molecules/header/HamburguerMenu";
+import CartLink from "../../molecules/header/CartLink";
 
 const MainHeader = () => {
 
