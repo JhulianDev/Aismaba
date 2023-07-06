@@ -837,7 +837,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: 15px;
 }
 
-.punto{
+.punto {
     background-color: rgb(255, 255, 255);
     width: 10px;
     height: 10px;
@@ -845,7 +845,7 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
 }
 
-.punto-activo{
+.punto-activo {
     background-color: var(--color-principal);
 }
 
@@ -878,7 +878,7 @@ body::-webkit-scrollbar-thumb {
         font-size: 0.96rem;
         line-height: 1.6rem;
         margin-bottom: 0px;
-        
+
     }
 }
 
@@ -907,10 +907,10 @@ body::-webkit-scrollbar-thumb {
     .tarjeta__descripcion {
         font-size: 0.73rem;
         line-height: 1.2rem;
-        
+
     }
 
-    .tarjeta__descripcion--height{
+    .tarjeta__descripcion--height {
         height: 160px;
     }
 
@@ -965,12 +965,12 @@ body::-webkit-scrollbar-thumb {
         margin: 30px 0 30px;
     }
 
-    .contenedor-puntos{
+    .contenedor-puntos {
         display: flex;
     }
 }
 
-@media screen and (max-width: 410px){
+@media screen and (max-width: 410px) {
     .contenedor-flecha {
         display: none;
     }
@@ -980,7 +980,7 @@ body::-webkit-scrollbar-thumb {
 
 /* ------------------------Testimonios------------------------- */
 
-.main-container-testimonios{
+.main-container-testimonios {
     background-color: var(--color-secundario);
     width: 100%;
     height: auto;
@@ -992,7 +992,7 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-.testimonios{
+.testimonios {
     width: 1120px;
     height: auto;
     display: flex;
@@ -1003,13 +1003,13 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-.testimonios__h2{
+.testimonios__h2 {
     font-family: Cinzel;
     font-size: 2rem;
     letter-spacing: 4px;
 }
 
-.testimonios__h3{
+.testimonios__h3 {
     font-family: Roboto;
     font-weight: 400;
     letter-spacing: 4px;
@@ -1017,35 +1017,35 @@ body::-webkit-scrollbar-thumb {
     margin-top: 10px;
 }
 
-.testimonios__box-tarjetas{
+.testimonios__box-tarjetas {
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.testimonios__tarjeta{
+.testimonios__tarjeta {
     background-color: #ece8e3;
     width: 500px;
     color: var(--color-acento);
     padding: 30px 40px;
     margin-top: 60px;
     border-radius: 10px;
-    box-shadow:  15px 15px 20px #0000001a;
+    box-shadow: 15px 15px 20px #0000001a;
 }
 
-.testimonio__comillas{
+.testimonio__comillas {
     width: 35px;
     margin-bottom: 8px;
     filter: invert(54%) sepia(16%) saturate(1104%) hue-rotate(341deg) brightness(85%) contrast(84%);
 }
 
-.testimonio__comillas--grandes{
+.testimonio__comillas--grandes {
     width: 80px;
     opacity: 0.2;
 }
 
-.testimonio__parrafo{
+.testimonio__parrafo {
     height: 170px;
     overflow: hidden;
     margin: 0;
@@ -1055,30 +1055,30 @@ body::-webkit-scrollbar-thumb {
     text-align: justify;
 }
 
-.testimonio__identificador{
+.testimonio__identificador {
     display: flex;
     align-items: center;
 }
 
-.testimonio__logo{
+.testimonio__logo {
     width: 70px;
     border-radius: 50%;
     border: solid 2px var(--color-acento);
     margin-right: 20px;
 }
 
-.testimonio__box_datos{
+.testimonio__box_datos {
     width: 80%;
 }
 
-.testimonio__marca{
+.testimonio__marca {
     font-family: Cinzel;
     font-size: 1rem;
     letter-spacing: 3px;
 }
 
-.testimonio__rubro{
-    font-family:Roboto;
+.testimonio__rubro {
+    font-family: Roboto;
     font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 2px;
@@ -1088,77 +1088,336 @@ body::-webkit-scrollbar-thumb {
 
 /* Responsive Testimonios */
 
-@media screen and (max-width: 1440px){
-    .testimonios{
+@media screen and (max-width: 1440px) {
+    .testimonios {
         width: 1024px;
     }
-    .testimonios__h2{
+
+    .testimonios__h2 {
         font-size: 1.6rem;
     }
-    .testimonios__h3{
+
+    .testimonios__h3 {
         font-size: 0.8rem;
     }
-    .testimonios__tarjeta{
+
+    .testimonios__tarjeta {
         width: 450px;
         padding: 30px 40px;
         margin-top: 60px;
     }
-    .testimonio__parrafo{
+
+    .testimonio__parrafo {
         height: 165px;
         font-size: 0.9rem;
         line-height: 1.3rem;
     }
 }
 
-@media screen and (max-width: 1024px){
-    .testimonios{
+@media screen and (max-width: 1024px) {
+    .testimonios {
         width: 768px;
     }
-    .testimonios__h2{
+
+    .testimonios__h2 {
         font-size: 1.5rem;
     }
-    .testimonios__h3{
+
+    .testimonios__h3 {
         font-size: 0.7rem;
     }
-    .testimonios__box-tarjetas{
+
+    .testimonios__box-tarjetas {
         padding: 0 40px;
     }
-    .testimonios__tarjeta{
+
+    .testimonios__tarjeta {
         width: 300px;
         margin-top: 40px;
     }
-    .testimonio__parrafo{
+
+    .testimonio__parrafo {
         height: 220px;
         font-size: 0.8rem;
         line-height: 1.2rem;
     }
-    .testimonio__logo{
+
+    .testimonio__logo {
         width: 50px;
     }
-    .testimonio__marca{
+
+    .testimonio__marca {
         font-size: 0.8rem;
     }
-    .testimonio__rubro{
+
+    .testimonio__rubro {
         font-size: 0.6rem;
     }
-    .testimonio__comillas--grandes{
+
+    .testimonio__comillas--grandes {
         width: 50px;
     }
-    
+
 }
 
-@media screen and (max-width: 768px){
-    .testimonios__box-tarjetas{
+@media screen and (max-width: 768px) {
+    .testimonios__box-tarjetas {
         flex-direction: column;
         align-items: center;
     }
-    .testimonios__box-tarjetas{
+
+    .testimonios__box-tarjetas {
         padding: 0;
     }
 }
 
-@media screen and (max-width: 425px){
-    .testimonio__comillas--grandes{
+@media screen and (max-width: 425px) {
+    .testimonio__comillas--grandes {
         width: 40px;
+    }
+}
+
+
+
+/* ------------------------Clientes------------------------- */
+
+
+.main-container-clientes {
+    height: 50vh;
+    background-image: url(../img/generales/sombras-arbol.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.clientes {
+    background-color: rgba(240, 236, 231, 0.904);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.clientes__h1 {
+    color: var(--color-texto);
+    font-family: Libre;
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.clientes__h2 {
+    color: var(--color-principal);
+    font-family: Cinzel;
+    font-size: 1.6rem;
+    letter-spacing: 0.6rem;
+    margin: 0 20px 20px;
+    text-align: center;
+}
+
+.clientes__box-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clientes__slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.clientes__logo {
+    width: 100px;
+}
+
+.clientes__h3 {
+    color: var(--color-texto);
+    font-family: Cinzel;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    margin: 20px 0;
+}
+
+.clientes__boton {
+    background-color: var(--color-principal);
+    box-shadow: 0px 0px 5px 2px #0000002a;
+    color: var(--color-blanco);
+    padding: 1.2rem 2rem;
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Cinzel;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+
+    transition: 0.3s;
+}
+
+.clientes__boton:hover {
+    background-color: var(--color-blanco);
+    color: var(--color-principal);
+}
+
+.clientes__boton:active {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+}
+
+/* Responsive Clientes */
+
+@media screen and (max-width: 1024px) {
+    .clientes__h1 {
+        font-size: 1rem;
+    }
+
+    .clientes__h2 {
+        font-size: 1.4rem;
+    }
+
+    .clientes__slider {
+        margin-bottom: 10px;
+        gap: 50px;
+    }
+
+    .clientes__h3 {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-container-clientes {
+        height: 60vh;
+    }
+
+    .clientes__h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0px;
+    }
+
+    .clientes__h3 {
+        margin-top: 0;
+    }
+
+    .clientes__box-slider {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .clientes__slider {
+        margin-left: 500%;
+        animation: sliderAutomatico 10s infinite;
+    }
+
+    .clientes__logo {
+        width: 200px;
+    }
+
+    @keyframes sliderAutomatico {
+        0% { margin-left: 500%; }
+        11% { margin-left: 500%; }
+
+        22% { margin-left: 250%; }
+        33% { margin-left: 250%; }
+
+        44% { margin-left: 0%; }
+        55% { margin-left: 0%; }
+
+        66% { margin-left: -250%; }
+        77% { margin-left: -250%; }
+
+        88% { margin-left: -500%; }
+        100% { margin-left: -500%; }
+    }
+}
+
+
+/* ------------------------ Footer ------------------------- */
+
+.main-container-footer{
+    height: 150px;
+    width: 100%;
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.footer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-blanco);
+}
+
+.footer__logo-instagram{
+    width: 25px;
+    height: max-content;
+    cursor: pointer;
+}
+
+.footer__copyright{
+    font-family: Cinzel;
+    font-size: 1rem;
+    margin: 15px 0 20px;
+}
+
+.footer__box-politicas-y-terminos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__politicas-y-terminos{
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 60px;
+    cursor: pointer;
+}
+
+/* Responsive Footer */
+
+@media screen and (max-width: 1024px){
+    .footer__copyright{
+        font-size: 0.9rem;
+    }
+    .footer__politicas-y-terminos{
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .main-container-footer{
+        height: 130px;
+    }
+    .footer__copyright{
+        font-size: 0.7rem;
+    }
+    .footer__politicas-y-terminos{
+        margin: 0 8px;
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .footer__copyright{
+        font-size: 0.6rem;
+        margin: 10px 0 15px;
+    }
+    .footer__politicas-y-terminos{
+        margin: 0 5px;
     }
 }

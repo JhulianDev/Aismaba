@@ -11,6 +11,17 @@ import mulatasCakeLogoTestimonio from "./generales/testimonio_mulatas_cake1.png"
 import missNanaLogoTestimonio from "./generales/testimonio_miss_nana.png";
 import habigailLogoTestimonio from "./generales/testimonio_habigail.png";
 import lumenLogoTestimonio from "./generales/testimonio_lumen.png";
+import mulatasCakeLogo from "./generales/logo-mulatas.png";
+import hiPartyLogo from "./generales/logo-hi-party.png";
+import kalmaLogo from "./generales/logo-kalma.png";
+import habigailLogo from "./generales/logo-hb.png";
+import lumenLogo from "./generales/logo-lumen.png";
+import instagramLogo from "./generales/logo-instagram.png";
+
+
+
+
+
 
 export const ISOTIPO_BLANCO = isotipo
 export const CARRITO_ICONO = carrito
@@ -25,3 +36,9 @@ export const MULATAS_CAKE_LOGO_TESTIMONIO = mulatasCakeLogoTestimonio
 export const MISSNANA_LOGO_TESTIMONIO = missNanaLogoTestimonio
 export const HABIGAIL_LOGO_TESTIMONIO = habigailLogoTestimonio
 export const LUMEN_LOGO_TESTIMONIO = lumenLogoTestimonio
+export const MULATAS_CAKE_LOGO = mulatasCakeLogo
+export const HI_PARTY_LOGO = hiPartyLogo
+export const KALMA_LOGO = kalmaLogo
+export const HABIGAIL_LOGO = habigailLogo
+export const LUMEN_LOGO = lumenLogo
+export const INSTAGRAM_LOGO = instagramLogo

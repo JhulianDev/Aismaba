@@ -3,6 +3,8 @@ import Portada from "../organisms/home/Portada";
 import Presentacion from "../organisms/home/Presentacion";
 import Servicios from "../organisms/home/Servicios";
 import Testimonios from "../organisms/home/Testimonios";
+import Clientes from "../organisms/home/Clientes";
+import MainFooter from "../organisms/footer/MainFooter";
 
 const Home = () => {
   return (
@@ -11,8 +13,9 @@ const Home = () => {
       <Presentacion />
       <Pensamiento />
       <Servicios />
-      <Testimonios/>
-
+      <Testimonios />
+      <Clientes />
+      <MainFooter color="var(--color-secundario)" />
     </>
   );
 };
