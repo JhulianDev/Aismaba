@@ -139,7 +139,7 @@ const Servicios = () => {
                 estética original y un valor agregado, otorgándote la
                 posibilidad de mejorar la presentación
                 de tu marca ante el mundo."
-                enlace="/"
+                enlace="/servicios"
               />
 
               <TarjetaSevicio

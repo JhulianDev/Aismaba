@@ -1,0 +1,46 @@
+.main-container-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider__ventana {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__movil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  transition: all .7s ease;
+  transform: translateX(0px);
+}
+
+/* Resposive Slider */
+
+@media screen and (max-width: 1440px) {
+  .slider__movil {
+    gap: 60px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .slider__movil {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider__ventana {
+    width: 300px;
+    overflow: hidden;
+  }
+
+  .slider__movil {
+    gap: 20px;
+    transform: translateX(320px);
+  }
+}

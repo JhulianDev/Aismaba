@@ -17,6 +17,9 @@ import kalmaLogo from "./generales/logo-kalma.png";
 import habigailLogo from "./generales/logo-hb.png";
 import lumenLogo from "./generales/logo-lumen.png";
 import instagramLogo from "./generales/logo-instagram.png";
+import mockupBranding from "./generales/mockup-nuestros-servicios.png";
+import mockupCreacionContenido from "./generales/mockup-productos-digitales.png";
+import mockupAsesorias from "./generales/mockup-asesorias-personalizadas.png";
 
 
 
@@ -42,3 +45,6 @@ export const KALMA_LOGO = kalmaLogo
 export const HABIGAIL_LOGO = habigailLogo
 export const LUMEN_LOGO = lumenLogo
 export const INSTAGRAM_LOGO = instagramLogo
+export const MOCKUP_BRANDING = mockupBranding
+export const MOCKUP_CREACION_CONTENIDO = mockupCreacionContenido
+export const MOCKUP_ASESORIAS = mockupAsesorias
