@@ -59,7 +59,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0 10%;
   position: absolute;
   z-index: 10;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .header--color {
@@ -1441,9 +1441,17 @@ body::-webkit-scrollbar-thumb {
 /* ------------------------Servicios Pag------------------------- */
 /* -------------------------------------------------------------- */
 
-.main-container-servicios {
+.main-container-slider-servicios {
+  background-color: #ece8e3;
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 75px 0;
+  gap: 60px;
+  overflow: hidden;
 }
 
 .servicios__h1 {
@@ -1537,6 +1545,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 768px) {
+  .main-container-slider-servicios{
+    gap: 20px;
+  }
   .servicio__link,
   .servicio__hover,
   .servicio__img {

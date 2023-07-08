@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { HABIGAIL_LOGO, HI_PARTY_LOGO, KALMA_LOGO, LUMEN_LOGO, MULATAS_CAKE_LOGO } from "../../../assets/img/imagenes";
+import ContactoButton from "../../molecules/boton/ContactoButton";
 
 const Clientes = () => {
   return (
@@ -19,7 +20,7 @@ const Clientes = () => {
         </div>
 
         <h3 className="clientes__h3">¡HAGAMOS EQUIPO!</h3>
-        <Link className="clientes__boton">¡CONTÁCTANOS!</Link>
+        <ContactoButton />
       </div>
     </section>
   );
