@@ -74,7 +74,7 @@ export const HeaderLi = styled.li`
 `;
 
 export const HeaderLink = styled(Link)`
-  color: var(--color-blanco);
+  color: ${colores.colorBlanco};
 `;
 
 export const CartContainer = styled(Link)`
