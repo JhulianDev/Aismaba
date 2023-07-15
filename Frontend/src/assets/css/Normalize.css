@@ -409,24 +409,12 @@ body::-webkit-scrollbar-thumb {
    ========================================================================== */
 
 @font-face {
-  font-family: NewYork;
-  src: url(../fonts/NewYork.ttf);
-
-  font-family: OpenSans;
-  src: url(../fonts/OpenSans.ttf);
-
-  font-family: Roboto;
-  src: url(../fonts/Roboto.ttf);
-
-  font-family: TheSeasons;
-  src: url(../fonts/TheSeasons.otf);
-
-  font-family: Barney;
-  src: url(../fonts/BarneyScript.otf);
-
   font-family: Cinzel;
   src: url(../fonts/Cinzel.ttf);
 
-  font-family: Libre;
-  src: url(../fonts/LibreBaskerville-Italic.ttf);
+  font-family: NewYork;
+  src: url(../fonts/NewYork.ttf);
+
+  font-family: Roboto;
+  src: url(../fonts/Roboto.ttf);
 }
