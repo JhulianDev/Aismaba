@@ -6,7 +6,7 @@ const textStyles = css`
   font-family: Cinzel;
   text-align: center;
   font-weight: 400;
-  letter-spacing: 4px;
+  letter-spacing: .25rem;
   z-index: 1;
 `;
 
@@ -48,7 +48,7 @@ export const PortadaLogo = styled.img`
 
 export const PortadaTituloMovil  = styled.h1`
   ${textStyles};
-  font-size: 14.4px;
+  font-size: .9rem;
   display: none;
 
   @media screen and (max-width: 351px){
@@ -58,14 +58,14 @@ export const PortadaTituloMovil  = styled.h1`
 
 export const PortadaTituloDesktop = styled.h1`
   ${textStyles};
-  font-size: 14.4px;
+  font-size: .9rem;
 
   @media screen and (max-width: 768px){
-    font-size: 12.8px;
+    font-size: .8rem;
   }
 
   @media screen and (max-width: 520px){
-    font-size: 11.2px;
+    font-size: .7rem;
     margin-top: 0.625rem;
   }
 
@@ -76,30 +76,30 @@ export const PortadaTituloDesktop = styled.h1`
 
 export const PortadaSubtitulo = styled.h2`
   ${textStyles};
-  font-size: 30.4px;
+  font-size: 1.9rem;
 
   @media screen and (max-width: 768px){
-    font-size: 28.8px;
+    font-size: 1.8rem;
   }
 
   @media screen and (max-width: 520px){
-    font-size: 27.2px;
+    font-size: 1.7rem;
     margin-bottom: 25%;
   }
 
   @media screen and (max-width: 351px){
-    margin-top: -5px;
+    margin-top: -0.3125rem;
   }
 `
 
 export const PortadaParrafo = styled.p`
   ${textStyles};
-  font-size: 14.4px;
+  font-size: .9rem;
   margin-bottom: 11%;
 
   @media screen and (max-width: 768px){
     margin-bottom: 17%;
-    font-size: 12.8px;
+    font-size: .8rem;
   }
 
   @media screen and (max-width: 520px){
