@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const PensamientoSection = styled.section `
   background-image: url(../../../src/assets/img/generales/5b.jpg);
