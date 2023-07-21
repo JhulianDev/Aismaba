@@ -35,6 +35,5 @@ export const SliderMovil = styled.div`
 
   @media screen and (max-width: 768px){
     gap: 20px; /*--------------------------- Convertir a prop */
-    transform: translateX(320px);
   }
 `

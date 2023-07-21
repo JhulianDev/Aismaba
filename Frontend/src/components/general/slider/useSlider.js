@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useSlider = () => {
-  const [tarjetaActual, setTarjetaActual] = useState(1);
+  const [tarjetaActual, setTarjetaActual] = useState(2);
 
   const desplazarDerecha = () => {
     setTarjetaActual((tarjetaActual) => (tarjetaActual === 3 ? 1 : tarjetaActual + 1));
