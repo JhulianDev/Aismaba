@@ -1,6 +1,6 @@
 import { FlechaContainer, FlechaSvg } from "./FlechaStyled";
 
-const FlechaAnterior = () => {
+const FlechaAnterior = ({ handleFlecha }) => {
   return (
     <FlechaContainer>
       <FlechaSvg 
@@ -8,7 +8,8 @@ const FlechaAnterior = () => {
       height="48" 
       width="48" 
       viewBox="0 0 48 48" 
-      fill="currentcolor">
+      fill="currentcolor"
+      onClick={handleFlecha}>
         <path d="M28.05 36 16 23.95 28.05 11.9l2.15 2.15-9.9 9.9 9.9 9.9Z"/>
       </FlechaSvg>
     </FlechaContainer>
