@@ -37,7 +37,7 @@ const Testimonios = () => {
           <TarjetaTestimonio
             logo={LUMEN_LOGO_TESTIMONIO}
             alt="Logo Mulatas Cake"
-            marca="LUMENE"
+            marca="LUMEN"
             rubro="Consultoria"
             parrafo="”Durante nuestra asociación con Aismaba al servicio de Manejo de Redes Sociales, se nos mostraron nuevas y prometedoras formas de comercializar nuestra empresa. Aprendimos que cada publicación tiene un propósito y esta planificada al detalle para que genere resultados.”"
           />
