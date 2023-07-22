@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Portada from './portada/Portada';
 import Presentacion from './presentacion/Presentacion';
 import Pensamiento from './pensamiento/Pensamiento';
@@ -7,6 +8,9 @@ import Clientes from './clientes/Clientes';
 import Footer from '../../general/footer/Footer';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Portada />
