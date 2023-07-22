@@ -1,4 +1,37 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const sliderAnimation = keyframes`
+  0% {
+    transform: translateX(320px);
+  }
+  11.1% {
+    transform: translateX(320px);
+  }
+  22.2% {
+    transform: translateX(0px);
+  }
+  33.3% {
+    transform: translateX(0px);
+  }
+  44.4% {
+    transform: translateX(-320px);
+  }
+  55.5% {
+    transform: translateX(-320px);
+  }
+  66.6% {
+    transform: translateX(0px);
+  }
+  77.7% {
+    transform: translateX(0px);
+  }
+  88.8% {
+    transform: translateX(320px);
+  }
+  100% {
+    transform: translateX(320px);
+  }
+`
 
 const flexCenter = css`
   display: flex;
@@ -35,5 +68,9 @@ export const SliderMovil = styled.div`
 
   @media screen and (max-width: 768px){
     gap: 20px; /*--------------------------- Convertir a prop */
+  }
+
+  @media screen and (max-width: 410px){
+    animation: ${sliderAnimation} 12s infinite;
   }
 `
