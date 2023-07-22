@@ -4,6 +4,7 @@ import Pensamiento from './pensamiento/Pensamiento';
 import Opciones from './opciones/Opciones';
 import Testimonios from './testimonios/Testimonios';
 import Clientes from './clientes/Clientes';
+import Footer from '../../general/footer/Footer';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Opciones />
       <Testimonios />
       <Clientes />
+      <Footer />
     </>
   );
 };
