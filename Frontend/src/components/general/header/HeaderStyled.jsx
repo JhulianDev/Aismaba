@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { colores } from '../../../assets/css/Colors';
 
 export const HeaderContainer = styled.header`
-  background-color: ${colores.colorPrincipal};
+  background-color: ${props => props.backgroundColor};
   width: 100%;
   height: 60px;
   display: flex;
