@@ -1,9 +1,9 @@
 import { MockupContainer, MockupHover, MockupImg, MockupLink, MockupTitulo } from "./MockupStyled";
 
-const Mockup = ({ imagen, alt, titulo }) => {
+const Mockup = ({ imagen, alt, titulo, enlace }) => {
   return (
     <MockupContainer>
-      <MockupLink>
+      <MockupLink to={ enlace }>
         <MockupHover>Ver Más</MockupHover>
         <MockupImg src={ imagen } alt={ alt }/>
       </MockupLink>
