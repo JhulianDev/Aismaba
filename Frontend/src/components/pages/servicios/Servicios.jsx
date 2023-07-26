@@ -18,18 +18,21 @@ const Servicios = () => {
           imagen={MOCKUP_BRANDING}
           alt="Mockup Branding"
           titulo="Diseño De Branding"
+          enlace="/branding"
         />
 
         <Mockup
           imagen={MOCKUP_CREACION_CONTENIDO}
           alt="Mockup Creación De Contenido"
           titulo="Creación De Contenido"
+          enlace="/creacion-de-contenido"
         />
 
         <Mockup
           imagen={MOCKUP_ASESORIAS}
           alt="Mockup Asesorías"
           titulo="Asesorías Personalizadas"
+          enlace="/asesorias"
         />
 
       </Slider>
