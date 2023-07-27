@@ -9,7 +9,7 @@ import { colores } from "../assets/css/Colors";
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <Header backgroundColor={colores.colorPrincipal} />,
+    element: <Header color={colores.colorPrincipal} />,
     errorElement: <Error404 />,
     children: [
       {
@@ -23,7 +23,7 @@ const Router = createBrowserRouter([
     ]
   },
   {
-    element: <Header backgroundColor={"transparent"} />,
+    element: <Header color={"transparent"} />,
     children: [
       {
         path: "/branding",
