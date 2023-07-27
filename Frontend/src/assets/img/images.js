@@ -24,3 +24,5 @@ export { default as TROFEO_ICONO } from "./generales/trofeo.png";
 export { default as IDEA_ICONO } from "./generales/idea.png";
 export { default as DISEÑO_ICONO } from "./generales/diseno.png";
 export { default as SONRISA_ICONO } from "./generales/sonrisa.png";
+export { default as BRANDING_A } from "./generales/branding-1.jpg";
+export { default as BRANDING_B } from "./generales/branding-2.jpg";
