@@ -20,3 +20,7 @@ export { default as INSTAGRAM_LOGO } from "./generales/logo-instagram.png";
 export { default as MOCKUP_BRANDING } from "./generales/mockup-nuestros-servicios.png";
 export { default as MOCKUP_CREACION_CONTENIDO } from "./generales/mockup-productos-digitales.png";
 export { default as MOCKUP_ASESORIAS } from "./generales/mockup-asesorias-personalizadas.png";
+export { default as TROFEO_ICONO } from "./generales/trofeo.png";
+export { default as IDEA_ICONO } from "./generales/idea.png";
+export { default as DISEÑO_ICONO } from "./generales/diseno.png";
+export { default as SONRISA_ICONO } from "./generales/sonrisa.png";
