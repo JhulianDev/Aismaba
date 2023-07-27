@@ -37,6 +37,7 @@ export const CabeceraTitulo = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   color: white;
   font-family: Cinzel;
