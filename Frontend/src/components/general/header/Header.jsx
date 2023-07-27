@@ -12,7 +12,7 @@ const Header = ({ color }) => {
 
   return (
     <>
-      <HeaderContainer style={{ backgroundColor: color }}>
+      <HeaderContainer $backgroundColor={color}>
 
         <LogoContainer>
           <LogoImage src={ISOTIPO_BLANCO} alt="Isotipo de Aismaba" />
