@@ -4,7 +4,7 @@ import { CARRITO_ICONO, ISOTIPO_BLANCO } from "../../../assets/img/images";
 import HamburgerButton from "../Buttons/hamburger/HamburgerButton";
 import { CartContainer, CartIcon, HeaderContainer, HeaderLi, HeaderLink, HeaderNav, HeaderUl, LogoContainer, LogoImage } from "./HeaderStyled";
 
-const Header = ({ backgroundColor }) => {
+const Header = ({ color }) => {
   const [open, setOpen] = useState(false);
   const handleNav = () => {
     setOpen(!open);
@@ -12,7 +12,7 @@ const Header = ({ backgroundColor }) => {
 
   return (
     <>
-      <HeaderContainer backgroundColor={backgroundColor}>
+      <HeaderContainer style={{ backgroundColor: color }}>
 
         <LogoContainer>
           <LogoImage src={ISOTIPO_BLANCO} alt="Isotipo de Aismaba" />
