@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { colores } from '../../../../assets/css/Colors';
+import { FONDO_PORTADA } from '../../../../assets/img/images';
 
 const textStyles = css`
   color: ${colores.colorBlanco};
@@ -13,7 +14,7 @@ const textStyles = css`
 export const PortadaSection = styled.section`
   width: 100%;
   height: 100vh;
-  background-image: url(../../../src/assets/img/generales/1.jpg);
+  background-image: url(${FONDO_PORTADA});
   background-size: cover;
   background-position: bottom center;
   overflow: hidden;

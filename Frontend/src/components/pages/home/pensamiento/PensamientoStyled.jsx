@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { FONDO_PENSAMIENTO } from '../../../../assets/img/images';
 
 export const PensamientoSection = styled.section `
-  background-image: url(../../../src/assets/img/generales/5b.jpg);
+  background-image: url(${FONDO_PENSAMIENTO});
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;

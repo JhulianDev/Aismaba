@@ -1,8 +1,10 @@
+export { default as FONDO_PORTADA } from "./generales/1.jpg";
 export { default as ISOTIPO_BLANCO } from "./generales/logo_white.png";
 export { default as CARRITO_ICONO } from "./generales/cart_white.png";
 export { default as FUNDADORA_1 } from "./generales/2.png";
 export { default as FUNDADORA_2 } from "./generales/3.jpg";
 export { default as ESCRITORIO_AISMABA } from "./generales/4.jpg";
+export { default as FONDO_PENSAMIENTO } from "./generales/5b.jpg";
 export { default as COMILLAS } from "./generales/comillas.png";
 export { default as PRODUCTOS_DIGITALES } from "./generales/mockup-productos-digitales.png";
 export { default as NUESTROS_SERVICIOS } from "./generales/mockup-nuestros-servicios.png";
@@ -26,3 +28,4 @@ export { default as DISEÑO_ICONO } from "./generales/diseno.png";
 export { default as SONRISA_ICONO } from "./generales/sonrisa.png";
 export { default as BRANDING_A } from "./generales/branding-1.jpg";
 export { default as BRANDING_B } from "./generales/branding-2.jpg";
+export { default as SOMBRAS_ARBOL } from "./generales/sombras-arbol.jpg";

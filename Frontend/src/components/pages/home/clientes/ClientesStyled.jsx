@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import { colores } from "../../../../assets/css/Colors"
+import { SOMBRAS_ARBOL } from "../../../../assets/img/images"
 
 const sliderAnimation = keyframes`
   0% {
@@ -36,7 +37,7 @@ const sliderAnimation = keyframes`
 
 export const ClientesSection = styled.section`
   height: 50vh;
-  background-image: url(../../../src/assets/img/generales/sombras-arbol.jpg);
+  background-image: url(${SOMBRAS_ARBOL});
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
