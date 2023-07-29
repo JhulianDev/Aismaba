@@ -417,4 +417,7 @@ body::-webkit-scrollbar-thumb {
 
   font-family: Roboto;
   src: url(../fonts/Roboto.ttf);
+
+  font-family: Nunito;
+  src: url(../fonts/Nunito.ttf);
 }
