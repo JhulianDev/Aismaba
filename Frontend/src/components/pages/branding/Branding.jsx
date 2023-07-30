@@ -88,7 +88,7 @@ const Branding = () => {
         parrafoF="Una vez estés conforme con el trabajo realizado y nos des tu aprobación, procederemos a enviarte vía mail la entrega final en todos los formatos correspondientes para su uso."
       />
 
-      <Paquetes>
+      <Paquetes servicio="Branding">
         <TarjetaPaquete
           precio="150"
           nombre="SIMPLE"

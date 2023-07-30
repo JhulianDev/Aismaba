@@ -1,12 +1,12 @@
 import Slider from "../../slider/Slider";
 import { PaquetesSection, PaquetesSubtitulo, PaquetesTitulo } from "./PaquetesStyled";
 
-const Paquetes = ({ children }) => {
+const Paquetes = ({ children, servicio }) => {
   return (
     <PaquetesSection>
 
       <PaquetesTitulo>Nuestros Paquetes</PaquetesTitulo>
-      <PaquetesSubtitulo>BRANDING</PaquetesSubtitulo>
+      <PaquetesSubtitulo>{servicio}</PaquetesSubtitulo>
 
       <Slider>
         {children}
