@@ -27,6 +27,7 @@ export const InfoPasoTitulo = styled.h2`
   font-family: Roboto;
   font-size: 1.6rem;
   font-weight: 500;
+  text-align: center;
   color: ${colores.colorPrincipal};
   margin: 10px 0;
 `

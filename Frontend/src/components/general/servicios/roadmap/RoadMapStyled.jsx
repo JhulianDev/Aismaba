@@ -66,7 +66,7 @@ export const RoadMapBoxPasos = styled.div`
 
 
   @media screen and (max-width: 768px){
-    padding: 80px 40px;
+    padding: 50px 40px;
     flex-direction: column;
   }
 

@@ -48,9 +48,22 @@ export const CabeceraTitulo = styled.h1`
 
   padding: 0 40px;
 
+  @media screen and (max-width: 1440px){
+    font-size: 3.5rem;
+  }
+
+  @media screen and (max-width: 1180px){
+    font-size: 3rem;
+  }
+
   @media screen and (max-width: 768px){
     height: 210px;
     font-size: 2.3rem;
+  }
+
+  @media screen and (max-width: 425px){
+    height: 210px;
+    font-size: 1.8rem;
   }
 
   @media screen and (max-width: 375px){
