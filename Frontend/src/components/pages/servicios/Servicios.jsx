@@ -18,6 +18,7 @@ const Servicios = () => {
           imagen={MOCKUP_BRANDING}
           alt="Mockup Branding"
           titulo="Diseño De Branding"
+          textHover="Ver Más"
           enlace="/branding"
         />
 
@@ -25,14 +26,16 @@ const Servicios = () => {
           imagen={MOCKUP_CREACION_CONTENIDO}
           alt="Mockup Creación De Contenido"
           titulo="Creación De Contenido"
-          enlace="/creacion-de-contenido"
+          textHover="Ver Más"
+          enlace="/creacion-contenido"
         />
 
         <Mockup
           imagen={MOCKUP_ASESORIAS}
           alt="Mockup Asesorías"
           titulo="Asesorías Personalizadas"
-          enlace="/asesorias"
+          textHover="Próximamente..."
+          enlace="/servicios"
         />
 
       </Slider>
