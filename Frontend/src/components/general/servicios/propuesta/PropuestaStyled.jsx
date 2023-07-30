@@ -77,17 +77,17 @@ export const PropuestaH2 = styled.h2`
 
 export const PropuestaH3 = styled.h3`
   font-family: Cinzel;
-  font-size: 2.4rem;
-  letter-spacing: 0.4rem;
+  font-size: 2.3rem;
+  letter-spacing: 0.3rem;
   margin: 10px 0;
   color: ${colores.colorPrincipal};
 
   @media screen and (max-width: 1440px){
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
   @media screen and (max-width: 1180px){
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   @media screen and (max-width: 980px){

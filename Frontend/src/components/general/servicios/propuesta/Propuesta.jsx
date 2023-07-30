@@ -1,4 +1,3 @@
-import { DISEÑO_ICONO, IDEA_ICONO, SONRISA_ICONO, TROFEO_ICONO } from "../../../../assets/img/images";
 import InfoIcono from "../../infoIconos/InfoIcono";
 import { PropuestaBoxInfoIconos, PropuestaBoxPresentacion, PropuestaDiv, PropuestaH2, PropuestaH3, PropuestaParrafo, PropuestaSection } from "./PropuestaStyled";
 
