@@ -5,6 +5,10 @@ export const CabeceraContainer = styled.div`
   height: 400px;
   overflow: hidden;
 
+  @media screen and (max-width: 1440px){
+    height: 300px;
+  }
+
   @media screen and (max-width: 768px){
     height: 210px;
   }
@@ -49,6 +53,7 @@ export const CabeceraTitulo = styled.h1`
   padding: 0 40px;
 
   @media screen and (max-width: 1440px){
+    height: 300px;
     font-size: 3.5rem;
   }
 

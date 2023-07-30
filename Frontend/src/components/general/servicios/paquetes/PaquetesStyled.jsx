@@ -5,7 +5,7 @@ export const PaquetesSection = styled.section`
   background-color: ${colores.colorFondo};
   color: ${colores.colorAcento};
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -15,10 +15,6 @@ export const PaquetesSection = styled.section`
 
   padding: 80px 0;
   overflow: hidden;
-
-  @media screen and (max-width: 1024px){
-    height: auto;
-  }
 `
 
 export const PaquetesTitulo = styled.h1`

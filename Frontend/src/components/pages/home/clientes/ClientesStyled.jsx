@@ -36,7 +36,7 @@ const sliderAnimation = keyframes`
 `
 
 export const ClientesSection = styled.section`
-  height: 50vh;
+  height: 480px;
   background-image: url(${SOMBRAS_ARBOL});
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -62,13 +62,17 @@ export const ClientesTitulo = styled.h1`
   color: ${colores.colorTexto};
   font-family: Libre;
   font-size: 22px;
-  font-weight: 100;
+  font-weight: 200;
   font-style: italic;
   margin-top: 10px;
   margin-bottom: 20px;
 
   @media screen and (max-width: 1024px){
     font-size: 20px;
+  }
+
+  @media screen and (max-width: 425px){
+    font-weight: 300;
   }
 `
 

@@ -17,7 +17,7 @@ export const TarjetaPaqueteBox = styled.div`
   border: solid 2px ${colores.colorAcento};
 
   @media screen and (max-width: 1440px){
-    width: 300px;
+    width: 290px;
     padding: 40px 0;
   }
 
