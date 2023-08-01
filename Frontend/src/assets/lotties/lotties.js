@@ -1,0 +1,1 @@
+export { default as LOTTIE_GRACIAS } from "./generales/animacion-gracias-contacto.json";
