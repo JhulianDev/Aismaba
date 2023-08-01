@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { TROFEO_ICONO, DISEÑO_ICONO, IDEA_ICONO, SONRISA_ICONO, BRANDING_A, BRANDING_B, BRIEF_ICONO, GUIA_ICONO, PROPUESTAS_ICONO, COMPLEMENTOS_ICONO, PAPELERIA_ICONO, REGALO_ICONO } from "../../../assets/img/images";
 import { BRANDING_VIDEO } from "../../../assets/vid/videos";
 import Cabecera from "../../general/cabecera/Cabecera";
@@ -9,6 +10,9 @@ import RoadMap from "../../general/servicios/roadmap/RoadMap";
 import TarjetaPaquete from "../../general/tarjetas/paquetes/TarjetaPaquete";
 
 const Branding = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Cabecera

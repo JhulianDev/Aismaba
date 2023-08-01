@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BRANDING_A, BRANDING_B, BRIEF_ICONO, COMPLEMENTOS_ICONO, CONTENIDO_ICONO, DIAMANTE_ICONO, GUIA_ICONO, MOODBOARD_ICONO, PANTALLA_DISENO_ICONO, PAPELERIA_ICONO, PROPUESTAS_ICONO, PROTOTIPO_ICONO, REDES_SOCIALES_ICONO, REGALO_ICONO } from "../../../assets/img/images";
 import { BRANDING_VIDEO } from "../../../assets/vid/videos";
 import Cabecera from "../../general/cabecera/Cabecera";
@@ -9,6 +10,9 @@ import RoadMap from "../../general/servicios/roadmap/RoadMap";
 import TarjetaPaquete from "../../general/tarjetas/paquetes/TarjetaPaquete";
 
 const CreacionContenido = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Cabecera
