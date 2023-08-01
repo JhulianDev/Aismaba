@@ -6,6 +6,7 @@ import Servicios from "../components/pages/servicios/Servicios";
 import Branding from "../components/pages/branding/Branding";
 import { colores } from "../assets/css/Colors";
 import CreacionContenido from "../components/pages/contenido/CreacionContenido";
+import Contacto from "../components/pages/contacto/Contacto";
 
 const Router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const Router = createBrowserRouter([
       {
         path: "/servicios",
         element: <Servicios />
+      },
+      {
+        path: "/contacto",
+        element: <Contacto />
       }
     ]
   },
