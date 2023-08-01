@@ -1,9 +1,10 @@
+import { colores } from "../../../assets/css/Colors";
 import { INSTAGRAM_LOGO } from "../../../assets/img/images";
 import { FooterBoxLegales, FooterContainer, FooterCopyRight, FooterDiv, FooterLinkInstagram, FooterLinkLegales, FooterLogoInstagram } from "./FooterStyled";
 
-const Footer = () => {
+const Footer = ({ color }) => {
   return (
-    <FooterContainer>
+    <FooterContainer $backgroundColor={color || colores.colorSecundario}>
       <FooterDiv>
         <FooterLinkInstagram to="https://www.instagram.com/aismaba/" target="_blank">
           <FooterLogoInstagram src={INSTAGRAM_LOGO} alt="Logo Instagram" />

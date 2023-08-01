@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { colores } from "../../../assets/css/Colors"
 
 export const FooterContainer = styled.footer`
-background-color: ${colores.colorSecundario};
+  background-color: ${props => props.$backgroundColor};
   height: 150px;
   width: 100%;
   padding: 0 15px;
