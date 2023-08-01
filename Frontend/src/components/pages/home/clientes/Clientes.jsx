@@ -1,5 +1,5 @@
 import { HABIGAIL_LOGO, HI_PARTY_LOGO, KALMA_LOGO, LUMEN_LOGO, MULATAS_CAKE_LOGO } from "../../../../assets/img/images";
-import ContactoButton from "../../../general/Buttons/contacto/ContactoButton";
+import ButtonLink from "../../../general/Buttons/contacto/ButtonLink";
 import { ClientesBoxSlider, ClientesDiv, ClientesLogo, ClientesSection, ClientesSliderMovil, ClientesSubtitulo, ClientesTitulo, Clientesh3 } from "./ClientesStyled";
 
 const Clientes = () => {
@@ -20,7 +20,7 @@ const Clientes = () => {
         </ClientesBoxSlider>
 
         <Clientesh3>¡HAGAMOS EQUIPO!</Clientesh3>
-        <ContactoButton />
+        <ButtonLink enlace="/contacto" texto="¡CONTÁCTANOS!" />
       </ClientesDiv>
     </ClientesSection>
   );
