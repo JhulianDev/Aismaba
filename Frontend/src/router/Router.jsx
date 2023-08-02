@@ -8,6 +8,7 @@ import { colores } from "../assets/css/Colors";
 import CreacionContenido from "../components/pages/contenido/CreacionContenido";
 import Contacto from "../components/pages/contacto/Contacto";
 import Gracias from "../components/pages/gracias/Gracias";
+import Tienda from "../components/pages/tienda/Tienda";
 
 const Router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const Router = createBrowserRouter([
       {
         path: "/servicios",
         element: <Servicios />
+      },
+      {
+        path: "/tienda",
+        element: <Tienda />
       },
       {
         path: "/contacto",
