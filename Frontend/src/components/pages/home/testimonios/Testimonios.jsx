@@ -28,7 +28,7 @@ const Testimonios = () => {
 
           <TarjetaTestimonio
             logo={HABIGAIL_LOGO_TESTIMONIO}
-            alt="Logo Mulatas Cake"
+            alt="Logo Habigail"
             marca="HABIGAIL"
             rubro="Indumentaria Femenina"
             parrafo="”Tenemos una excelente relacion comercial con Aismaba. En el pasado hemos trabajado con otras agencias de marketing y diseño que no nos dieron los resultados que esperábamos y estamos felices de que acá si lo están haciendo por nosotros. Nos ayudan a hacer realidad nuestra visión y a obtener mejores resultados”"
@@ -36,7 +36,7 @@ const Testimonios = () => {
 
           <TarjetaTestimonio
             logo={LUMEN_LOGO_TESTIMONIO}
-            alt="Logo Mulatas Cake"
+            alt="Logo Lumen"
             marca="LUMEN"
             rubro="Consultoria"
             parrafo="”Durante nuestra asociación con Aismaba al servicio de Manejo de Redes Sociales, se nos mostraron nuevas y prometedoras formas de comercializar nuestra empresa. Aprendimos que cada publicación tiene un propósito y esta planificada al detalle para que genere resultados.”"
