@@ -1,13 +1,23 @@
-import { CabeceraBoxVideo, CabeceraContainer, CabeceraTitulo, CabeceraVideo } from "./CabeceraStyled";
+import { CabeceraBoxTextos, CabeceraBoxVideo, CabeceraMainContainer, CabeceraParrafo, CabeceraTituloM, CabeceraTituloS, CabeceraVideo } from "./CabeceraStyled";
 
-const Cabecera = ({ video, titulo }) => {
+const Cabecera = ({ imagen, video, tituloS, tituloM, parrafo }) => {
   return (
-    <CabeceraContainer>
-      <CabeceraBoxVideo>
-        <CabeceraVideo src={ video } autoPlay loop muted/>
-      </CabeceraBoxVideo>
-      <CabeceraTitulo>{ titulo }</CabeceraTitulo>
-    </CabeceraContainer>
+    <>
+      <CabeceraMainContainer $imagen={imagen || null}>
+        {video ?
+          <CabeceraBoxVideo>
+            <CabeceraVideo src={video} autoPlay loop muted />
+          </CabeceraBoxVideo>
+          : null}
+
+        <CabeceraBoxTextos>
+          {tituloS ? <CabeceraTituloS>{tituloS}</CabeceraTituloS> : null}
+          {tituloM ? <CabeceraTituloM>{tituloM}</CabeceraTituloM> : null}
+        </CabeceraBoxTextos>
+      </CabeceraMainContainer>
+
+      {parrafo ? <CabeceraParrafo>{parrafo}</CabeceraParrafo> : null}
+    </>
   );
 };
 

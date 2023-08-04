@@ -16,7 +16,7 @@ const CreacionContenido = () => {
   return (
     <>
       <Cabecera
-        titulo="Creación de contenido"
+        tituloS="Creación de contenido"
         video={BRANDING_VIDEO}
       />
 

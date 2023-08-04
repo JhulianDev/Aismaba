@@ -16,7 +16,7 @@ const Branding = () => {
   return (
     <>
       <Cabecera
-        titulo="Branding"
+        tituloM="Branding"
         video={BRANDING_VIDEO}
       />
       <Propuesta
