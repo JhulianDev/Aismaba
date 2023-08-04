@@ -25,10 +25,6 @@ const Router = createBrowserRouter([
         element: <Servicios />
       },
       {
-        path: "/tienda",
-        element: <Tienda />
-      },
-      {
         path: "/contacto",
         element: <Contacto />
       },
@@ -48,6 +44,10 @@ const Router = createBrowserRouter([
       {
         path: "/creacion-contenido",
         element: <CreacionContenido />
+      },
+      {
+        path: "/tienda",
+        element: <Tienda />
       }
     ]
   }
