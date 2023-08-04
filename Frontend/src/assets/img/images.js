@@ -43,3 +43,4 @@ export { default as DIAMANTE_ICONO } from "./generales/diamante.png";
 export { default as MOODBOARD_ICONO } from "./generales/moodboard.png";
 export { default as CONTENIDO_ICONO } from "./generales/contenido-1.png";
 export { default as ILUSTRACION_CONTACTO } from "./generales/ilustracion-contactanos-1.png";
+export { default as PORTADA_TIENDA } from "./generales/portada-tienda.png";
