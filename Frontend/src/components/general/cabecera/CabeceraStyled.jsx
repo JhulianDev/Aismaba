@@ -135,6 +135,19 @@ export const CabeceraParrafo = styled.p`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px 40px;
+  padding: 20px 60px;
   margin-top: 20px;
+
+  @media screen and (max-width: 1440px){
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 1024px){
+    font-size: .9rem;
+  }
+
+  @media screen and (max-width: 768px){
+    padding: 20px 30px;
+    font-size: 1rem;
+  }
 `
