@@ -27,8 +27,6 @@ export const SeparadorBox = styled.div`
   @media screen and (max-width: 1440px){
     width: 934px;
   }
-
-  
 `
 
 export const SeparadorLinea = styled.span`
