@@ -1,34 +1,23 @@
-import { CATEGORIA_MARCAS, CATEGORIA_PLANTILLAS, CATEGORIA_PRESETS } from "../../../../assets/img/images";
 import Separador from "../../../general/separador/Separador";
 import TarjetaCartegoria from "../../../general/tarjetas/categorias/TarjetaCartegoria";
 import { CategoriasBoxTarjetas, CategoriasSection } from "./CategoriasStyled";
 
-const Categorias = () => {
+const Categorias = ({ data }) => {
   return (
     <CategoriasSection>
       <Separador titulo="NUESTRAS CATEGORIAS" />
+
       <CategoriasBoxTarjetas>
 
-        <TarjetaCartegoria
-          imagen={CATEGORIA_PLANTILLAS}
-          alt="Mockup Plantillas Instagram"
-          titulo="Plantillas"
-          subtitulo="INSTAGRAM"
-        />
-
-        <TarjetaCartegoria
-          imagen={CATEGORIA_MARCAS}
-          alt="Mockup Brandboard"
-          titulo="Marcas"
-          subtitulo="PERSONALES"
-        />
-
-        <TarjetaCartegoria
-          imagen={CATEGORIA_PRESETS}
-          alt="Mockup Plantillas Instagram"
-          titulo="Presets"
-          subtitulo="LIGHTROOM"
-        />
+        {data.map(categoria => (
+          <TarjetaCartegoria 
+            key={categoria.categoria}
+            categoria={categoria.categoria}
+            tipo={categoria.tipo}
+            imagen={categoria.imagen}
+            alt={categoria.alt}
+          />
+        ))}
 
       </CategoriasBoxTarjetas>
     </CategoriasSection>

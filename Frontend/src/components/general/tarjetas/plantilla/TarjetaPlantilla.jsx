@@ -1,6 +1,6 @@
 import { TarjetaPlantillaBox, TarjetaPlantillaBoxButton, TarjetaPlantillaBoxInfo, TarjetaPlantillaBoxPrecio, TarjetaPlantillaButton, TarjetaPlantillaImg, TarjetaPlantillaMoneda, TarjetaPlantillaPrecio, TarjetaPlantillaSubtitulo, TarjetaPlantillaTitulo, TarjetaPlantillasBoxTextos } from "./TarjetaPlantillaStyled"
 
-const TarjetaPlantilla = ({ titulo, subtitulo, precio, imagen }) => {
+const TarjetaPlantilla = ({ nombre, tipo, precio, imagen }) => {
   return (
     <TarjetaPlantillaBox>
 
@@ -9,8 +9,8 @@ const TarjetaPlantilla = ({ titulo, subtitulo, precio, imagen }) => {
       <TarjetaPlantillaBoxInfo>
 
         <TarjetaPlantillasBoxTextos>
-          <TarjetaPlantillaTitulo>{titulo}</TarjetaPlantillaTitulo>
-          <TarjetaPlantillaSubtitulo>{subtitulo}</TarjetaPlantillaSubtitulo>
+          <TarjetaPlantillaTitulo>{nombre}</TarjetaPlantillaTitulo>
+          <TarjetaPlantillaSubtitulo>{tipo}</TarjetaPlantillaSubtitulo>
         </TarjetaPlantillasBoxTextos>
 
         <TarjetaPlantillaBoxPrecio>

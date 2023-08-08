@@ -1,10 +1,9 @@
 import { colores } from "../../../../assets/css/Colors";
-import { AESTHETIC_BROWN_1, CURVE_PINK_1, ELEGANT_INSPO_1, GREEN_WORLD_1, MINIMAL_MOOD_1, OCEAN_BLUE_1 } from "../../../../assets/img/images";
 import Separador from "../../../general/separador/Separador";
 import TarjetaPlantilla from "../../../general/tarjetas/plantilla/TarjetaPlantilla";
 import { PlantillasBoxTarjetas, PlantillasSection } from "./PlantillasStyled";
 
-const Plantillas = () => {
+const Plantillas = ({ data }) => {
   return (
     <PlantillasSection>
 
@@ -14,21 +13,15 @@ const Plantillas = () => {
       />
 
       <PlantillasBoxTarjetas>
-
-        <TarjetaPlantilla
-          titulo="Minimal Mood"
-          subtitulo="Plantillas Editables"
-          precio="20"
-          imagen={GREEN_WORLD_1}
-        />
-
-        <TarjetaPlantilla
-          titulo="Minimal Mood"
-          subtitulo="Plantillas Editables"
-          precio="20"
-          imagen={OCEAN_BLUE_1}
-        />
-
+        {data.map(plantilla => (
+          <TarjetaPlantilla
+            key={plantilla.nombre}
+            nombre={plantilla.nombre}
+            tipo={plantilla.tipo}
+            precio={plantilla.precio}
+            imagen={plantilla.imagen}
+          />
+        ))}
       </PlantillasBoxTarjetas>
     </PlantillasSection>
   );
