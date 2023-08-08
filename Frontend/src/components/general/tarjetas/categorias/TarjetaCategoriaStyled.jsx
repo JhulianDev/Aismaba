@@ -72,6 +72,7 @@ export const TarjetaCategoriaTitulo = styled.h1`
 
 export const TarjetaCategoriaSubtitulo = styled.h2`
   font-size: 0.8rem;
+  text-transform: uppercase;
 
   @media screen and (max-width: 1440px){
     font-size: 0.7rem;
