@@ -4,12 +4,15 @@ import { colores } from "../../../../assets/css/Colors"
 export const CategoriasSection = styled.section`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 60px;
+  padding: 30px 60px 60px;
+  gap: 30px;
 
   @media screen and (max-width: 768px){
-    padding: 0 10px;
+    padding: 10px 10px 40px;
+    gap: 10px;
   }
 `
 
@@ -83,7 +86,11 @@ export const CategoriasTarjetaTitulo = styled.h1`
 
   @media screen and (max-width: 425px){
     margin-top: 0px;
-    
+  }
+
+  @media screen and (max-width: 375px){
+    font-size: .8rem;
+    letter-spacing: .05rem;
   }
 `
 

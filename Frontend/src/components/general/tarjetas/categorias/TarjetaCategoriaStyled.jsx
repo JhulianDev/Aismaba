@@ -57,9 +57,16 @@ export const TarjetaCategoriaTitulo = styled.h1`
     letter-spacing: .1rem;
   }
 
+  @media screen and (max-width: 460px){
+    font-size: 1rem;
+  }
+
   @media screen and (max-width: 425px){
     margin-top: 0px;
-    
+  }
+
+  @media screen and (max-width: 375px){
+    font-size: .7rem;
   }
 `
 
@@ -76,5 +83,9 @@ export const TarjetaCategoriaSubtitulo = styled.h2`
 
   @media screen and (max-width: 768px){
     letter-spacing: .1rem;
+  }
+
+  @media screen and (max-width: 375px){
+    font-size: .5rem;
   }
 `

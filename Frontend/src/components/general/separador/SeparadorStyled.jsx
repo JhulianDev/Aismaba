@@ -8,8 +8,7 @@ export const SeparadorMainContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
-  padding: 0 60px;
+  /* padding: 0 60px; */
   overflow: hidden;
 
   @media screen and (max-width: 768px){
