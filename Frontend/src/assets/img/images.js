@@ -53,3 +53,6 @@ export { default as ELEGANT_INSPO_1 } from "./plantillas/2 ELEGANT INSPO/1. ELEG
 export { default as GREEN_WORLD_1 } from "./plantillas/5 GREEN WORLD/1. GREEN WORLD.png";
 export { default as CURVE_PINK_1 } from "./plantillas/3 CURVE PINK/1. CURVE PINK.png";
 export { default as AESTHETIC_BROWN_1 } from "./plantillas/7 AESTHETIC BROWN/1. AESTHETIC BROWN.png";
+export { default as SOL_GREY_1 } from "./plantillas/6 SOL GREY/1. SOL GREY.png";
+export { default as ROSE_LOVE_1 } from "./plantillas/8 ROSE LOVE/1. ROSE LOVE.png";
+export { default as MIX_NUDE_1 } from "./plantillas/9 MIX NUDE/1. MIX NUDE.png";
