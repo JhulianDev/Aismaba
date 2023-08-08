@@ -2,6 +2,7 @@ import { CATEGORIA_MARCAS, CATEGORIA_PLANTILLAS, CATEGORIA_PRESETS, PORTADA_TIEN
 import Cabecera from "../../general/cabecera/Cabecera";
 import Separador from "../../general/separador/Separador";
 import Categorias from "./categorias/Categorias";
+import Plantillas from "./plantillas/Plantillas";
 
 const Tienda = () => {
   return (
@@ -12,11 +13,9 @@ const Tienda = () => {
         parrafo="Ahorre horas de edición con nuestros productos y dedique más tiempo a conectarse con su audiencia"
       />
 
-      <Separador titulo="NUESTRAS CATEGORIAS" />
-
       <Categorias />
 
-      <Separador titulo="PLANTILLAS INSTAGRAM" />
+      <Plantillas />
     </>
   );
 };
