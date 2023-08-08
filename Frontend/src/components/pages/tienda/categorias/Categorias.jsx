@@ -1,7 +1,7 @@
 import { CATEGORIA_MARCAS, CATEGORIA_PLANTILLAS, CATEGORIA_PRESETS } from "../../../../assets/img/images";
 import Separador from "../../../general/separador/Separador";
 import TarjetaCartegoria from "../../../general/tarjetas/categorias/TarjetaCartegoria";
-import { CategoriasBoxTarjetas, CategoriasBoxTextos, CategoriasImg, CategoriasSection, CategoriasTarjeta, CategoriasTarjetaSubtitulo, CategoriasTarjetaTitulo } from "./CategoriasStyled";
+import { CategoriasBoxTarjetas, CategoriasSection } from "./CategoriasStyled";
 
 const Categorias = () => {
   return (
