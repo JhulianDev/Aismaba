@@ -56,3 +56,4 @@ export { default as AESTHETIC_BROWN_1 } from "./plantillas/7 AESTHETIC BROWN/1. 
 export { default as SOL_GREY_1 } from "./plantillas/6 SOL GREY/1. SOL GREY.png";
 export { default as ROSE_LOVE_1 } from "./plantillas/8 ROSE LOVE/1. ROSE LOVE.png";
 export { default as MIX_NUDE_1 } from "./plantillas/9 MIX NUDE/1. MIX NUDE.png";
+export { default as PORTADA_ALMA_STUDIO } from "./marcas/alma/portada-alma.png";
