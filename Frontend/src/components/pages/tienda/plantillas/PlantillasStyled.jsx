@@ -4,17 +4,15 @@ import { colores } from "../../../../assets/css/Colors"
 export const PlantillasSection = styled.section`
   background-color: ${colores.colorFondo};
   width: 100%;
-  padding: 30px 60px 30px;
+  padding: 0px 60px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  gap: 30px;
 
   @media screen and (max-width: 768px){
-    padding: 20px 10px 10px;
-    gap: 20px;
+    padding: 0px 20px 10px;
   }
 `
 

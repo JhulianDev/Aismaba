@@ -4,15 +4,25 @@ import { colores } from "../../../assets/css/Colors"
 export const SeparadorMainContainer = styled.div`
   background-color: ${props => props.$bgColor || "white"};
   width: 100%;
-  height: 60px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 0 60px; */
+  padding: ${props => (props.$padding ? "0 60px" : "0")};
+  margin-top: ${props => props.$top || null};
   overflow: hidden;
 
+  @media screen and (max-width: 1440px){
+    height: 110px;
+  }
+
+  @media screen and (max-width: 1024px){
+    height: 100px;
+  }
+
   @media screen and (max-width: 768px){
-    padding: 0 10px;
+    padding: ${props => (props.$padding ? "0 20px" : "0")};
+    height: 80px;
   }
 `
 export const SeparadorBox = styled.div`

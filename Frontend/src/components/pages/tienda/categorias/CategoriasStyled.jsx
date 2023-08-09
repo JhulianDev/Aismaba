@@ -6,12 +6,10 @@ export const CategoriasSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 60px 60px;
-  gap: 30px;
+  padding: 0 60px 60px;
 
   @media screen and (max-width: 768px){
-    padding: 10px 10px 40px;
-    gap: 10px;
+    padding: 0 20px 40px;
   }
 `
 
