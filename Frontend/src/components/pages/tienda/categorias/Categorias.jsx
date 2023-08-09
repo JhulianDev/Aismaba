@@ -4,23 +4,27 @@ import { CategoriasBoxTarjetas, CategoriasSection } from "./CategoriasStyled";
 
 const Categorias = ({ data }) => {
   return (
-    <CategoriasSection>
-      <Separador titulo="NUESTRAS CATEGORIAS" />
+    <>
+      <Separador
+        titulo="NUESTRAS CATEGORIAS"
+        padding={true}
+      />
+      <CategoriasSection>
+        <CategoriasBoxTarjetas>
 
-      <CategoriasBoxTarjetas>
+          {data.map(categoria => (
+            <TarjetaCartegoria
+              key={categoria.categoria}
+              categoria={categoria.categoria}
+              tipo={categoria.tipo}
+              imagen={categoria.imagen}
+              alt={categoria.alt}
+            />
+          ))}
 
-        {data.map(categoria => (
-          <TarjetaCartegoria 
-            key={categoria.categoria}
-            categoria={categoria.categoria}
-            tipo={categoria.tipo}
-            imagen={categoria.imagen}
-            alt={categoria.alt}
-          />
-        ))}
-
-      </CategoriasBoxTarjetas>
-    </CategoriasSection>
+        </CategoriasBoxTarjetas>
+      </CategoriasSection>
+    </>
   );
 };
 

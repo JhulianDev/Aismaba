@@ -1,8 +1,8 @@
 import { SeparadorMainContainer, SeparadorBox, SeparadorLinea, SeparadorTitulo } from "./SeparadorStyled";
 
-const Separador = ({ titulo, color }) => {
+const Separador = ({ titulo, color, top, padding }) => {
   return (
-    <SeparadorMainContainer $bgColor={color}>
+    <SeparadorMainContainer $bgColor={color} $top={top} $padding={padding}>
       <SeparadorBox>
         <SeparadorLinea />
         <SeparadorTitulo $bgColor={color}>{titulo}</SeparadorTitulo>

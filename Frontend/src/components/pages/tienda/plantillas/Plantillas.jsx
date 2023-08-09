@@ -5,25 +5,26 @@ import { PlantillasBoxTarjetas, PlantillasSection } from "./PlantillasStyled";
 
 const Plantillas = ({ data }) => {
   return (
-    <PlantillasSection>
-
+    <>
+      <PlantillasSection>
       <Separador
         titulo="PLANTILLAS INSTAGRAM"
         color={colores.colorFondo}
       />
 
-      <PlantillasBoxTarjetas>
-        {data.map(plantilla => (
-          <TarjetaPlantilla
-            key={plantilla.nombre}
-            nombre={plantilla.nombre}
-            tipo={plantilla.tipo}
-            precio={plantilla.precio}
-            imagen={plantilla.imagen}
-          />
-        ))}
-      </PlantillasBoxTarjetas>
-    </PlantillasSection>
+        <PlantillasBoxTarjetas>
+          {data.map(plantilla => (
+            <TarjetaPlantilla
+              key={plantilla.nombre}
+              nombre={plantilla.nombre}
+              tipo={plantilla.tipo}
+              precio={plantilla.precio}
+              imagen={plantilla.imagen}
+            />
+          ))}
+        </PlantillasBoxTarjetas>
+      </PlantillasSection>
+    </>
   );
 };
 
