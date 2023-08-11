@@ -4,9 +4,12 @@ import Cabecera from "../../general/cabecera/Cabecera";
 import Categorias from "./categorias/Categorias";
 import Plantillas from "./plantillas/Plantillas";
 import { ShopContext } from "../../../context/ShopContext";
+import Marcas from "./marcas/Marcas";
+import Footer from "../../general/footer/Footer";
+import { colores } from "../../../assets/css/Colors";
 
 const Tienda = () => {
-  const { categorias, plantillas } = useContext(ShopContext)
+  const { categorias, plantillas, marcas } = useContext(ShopContext)
   return (
     <>
       <Cabecera
@@ -16,6 +19,9 @@ const Tienda = () => {
       />
       <Categorias data={categorias}/>
       <Plantillas data={plantillas} />
+      <Marcas     data={marcas}/>
+
+      <Footer color={colores.colorSecundario} />
     </>
   );
 };
