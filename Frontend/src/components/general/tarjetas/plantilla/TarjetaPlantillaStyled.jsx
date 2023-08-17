@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 import { colores } from "../../../../assets/css/Colors"
 
 export const TarjetaPlantillaBox = styled.div`
@@ -23,9 +24,13 @@ export const TarjetaPlantillaBox = styled.div`
   }
 `
 
+export const TarjetaPlantillaLink = styled(Link)`
+  display: flex;
+  cursor: pointer;
+`
+
 export const TarjetaPlantillaImg = styled.img`
   width: 100%;
-  cursor: pointer;
 `
 
 export const TarjetaPlantillaBoxInfo = styled.div`
