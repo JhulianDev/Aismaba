@@ -1,10 +1,12 @@
-import { TarjetaPlantillaBox, TarjetaPlantillaBoxButton, TarjetaPlantillaBoxInfo, TarjetaPlantillaBoxPrecio, TarjetaPlantillaButton, TarjetaPlantillaImg, TarjetaPlantillaMoneda, TarjetaPlantillaPrecio, TarjetaPlantillaSubtitulo, TarjetaPlantillaTitulo, TarjetaPlantillasBoxTextos } from "./TarjetaPlantillaStyled"
+import { TarjetaPlantillaBox, TarjetaPlantillaBoxButton, TarjetaPlantillaBoxInfo, TarjetaPlantillaBoxPrecio, TarjetaPlantillaButton, TarjetaPlantillaImg, TarjetaPlantillaLink, TarjetaPlantillaMoneda, TarjetaPlantillaPrecio, TarjetaPlantillaSubtitulo, TarjetaPlantillaTitulo, TarjetaPlantillasBoxTextos } from "./TarjetaPlantillaStyled"
 
-const TarjetaPlantilla = ({ nombre, tipo, precio, imagen }) => {
+const TarjetaPlantilla = ({ nombre, tipo, precio, imagen, enlace }) => {
   return (
     <TarjetaPlantillaBox>
 
-      <TarjetaPlantillaImg src={imagen} alt="Mockup Plantillas Instagram" />
+      <TarjetaPlantillaLink to={enlace}>
+        <TarjetaPlantillaImg src={imagen} alt="Mockup Plantillas Instagram" />
+      </TarjetaPlantillaLink>
 
       <TarjetaPlantillaBoxInfo>
 
