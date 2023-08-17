@@ -31,8 +31,9 @@ const TarjetaProducto = ({ producto }) => {
         </TarjetaProductoBoxPrecio>
         <TarjetaProductoNombre>{producto}</TarjetaProductoNombre>
         <TarjetaProductoDescripcion>
-          Encontraras 27 Plantillas Editables en Canva. Podrás modificarlas y personalizarlar para que se adapten al estilo de tu marca cambiándole los colores, imágenes, textos, elementos y lo mejor de todo es que ¡No necesitas una cuenta premium!
+          {dataProducto.descripcion || "Encontrarás 27 Plantillas Editables en Canva. Podrás modificarlas y personalizarlas para que se adapten al estilo de tu marca cambiando los colores, imágenes, textos, elementos. ¡Lo mejor de todo es que no necesitas una cuenta premium!"}
         </TarjetaProductoDescripcion>
+
 
         <AddToCartButton>Agregar al carrito</AddToCartButton>
       </TarjetaProductoInfoBox>
