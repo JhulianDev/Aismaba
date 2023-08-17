@@ -10,6 +10,7 @@ import Contacto from "../components/pages/contacto/Contacto";
 import Gracias from "../components/pages/gracias/Gracias";
 import Tienda from "../components/pages/tienda/Tienda";
 import Plantilla from "../components/pages/producto/plantilla/Plantilla";
+import Marca from "../components/pages/producto/marca/Marca";
 
 const Router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const Router = createBrowserRouter([
       {
         path: "/plantilla/:nombrePlantilla",
         element: <Plantilla />
+      },
+      {
+        path: "/marca/:nombreMarca",
+        element: <Marca />
       }
     ]
   },
