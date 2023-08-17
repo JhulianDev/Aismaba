@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Footer from "../../../general/footer/Footer";
 import TarjetaProducto from "../../../general/tarjetas/producto/TarjetaProducto";
 import { PlantillaBoxInfo, PlantillaInfoParrafo, PlantillaInfoTitulo, PlantillaSection, PlantillaTerminos } from "./PlantillaStyled";
@@ -6,6 +7,10 @@ import { useParams } from "react-router-dom";
 const Plantilla = () => {
   const { nombrePlantilla } = useParams();
   const nombreProducto = decodeURIComponent(nombrePlantilla);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
