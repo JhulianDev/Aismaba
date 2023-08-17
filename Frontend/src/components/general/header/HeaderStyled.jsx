@@ -60,6 +60,7 @@ export const HeaderUl = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 1.875rem;
+  list-style: none;
 
   @media screen and (max-width: 768px){
     flex-direction: column;
