@@ -20,6 +20,7 @@ const Plantillas = ({ data }) => {
               tipo={plantilla.tipo}
               precio={plantilla.precio}
               imagen={plantilla.imagen}
+              enlace={`/plantilla/${plantilla.nombre}`}
             />
           ))}
         </PlantillasBoxTarjetas>
