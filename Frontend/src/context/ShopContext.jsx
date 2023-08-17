@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { AESTHETIC_BROWN_1, CATEGORIA_MARCAS, CATEGORIA_PLANTILLAS, CATEGORIA_PRESETS, CURVE_PINK_1, ELEGANT_INSPO_1, GREEN_WORLD_1, MINIMAL_MOOD_1, MIX_NUDE_1, OCEAN_BLUE_1, PORTADA_ALMA_STUDIO, ROSE_LOVE_1, SOL_GREY_1, aestheticBrownImages, almaStudioImages, curvePinkImages, elegantInspoImages, greenWorldImages, minimalMoodImages, mixNudeImages, oceanBlueImages, roseLoveImages, solGreyImages } from "../assets/img/images";
+import { AESTHETIC_BROWN_1, CATEGORIA_MARCAS, CATEGORIA_PLANTILLAS, CATEGORIA_PRESETS, CURVE_PINK_1, ELEGANT_INSPO_1, GREEN_WORLD_1, MINIMAL_MOOD_1, MIX_NUDE_1, OCEAN_BLUE_1, PORTADA_ALMA_STUDIO, ROSE_LOVE_1, SOL_GREY_1, aestheticBrownImages, almaStudioContent, almaStudioImages, curvePinkImages, elegantInspoImages, greenWorldImages, minimalMoodImages, mixNudeImages, oceanBlueImages, roseLoveImages, solGreyImages } from "../assets/img/images";
 
 const shopData = {
   categorias: [
@@ -24,7 +24,8 @@ const shopData = {
       descripcion: "Esta identidad prediseñada es perfecta para aportar una imagen fresca y elegante a tu proyecto. Su diseño tipográfico estilizado le otorga a tu marca un hermoso toque moderno y minimalista.", 
       precio: "100", 
       imagen: PORTADA_ALMA_STUDIO,
-      imagenes: almaStudioImages
+      imagenes: almaStudioImages,
+      contenido: almaStudioContent
     }
   ]
 }

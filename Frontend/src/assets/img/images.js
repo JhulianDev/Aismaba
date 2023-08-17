@@ -257,8 +257,11 @@ import ALMA_TARJETA_PERSONAL from "./marcas/alma/tarjeta-personal-alma.png";
 import ALMA_VARIANTE_1 from "./marcas/alma/variante-1-alma.png";
 import ALMA_VARIANTE_2 from "./marcas/alma/variante-2-alma.png";
 
-export const almaStudioImages = {
-  portada: PORTADA_ALMA_STUDIO,
+export const almaStudioImages = [
+  PORTADA_ALMA_STUDIO
+];
+
+export const almaStudioContent = [{
   logoPrincipal: ALMA_LOGO_PRINCIPAL,
   logoSecundario: ALMA_LOGO_SECUNDARIO,
   paletaColores: ALMA_PALETA_COLORES,
@@ -266,4 +269,4 @@ export const almaStudioImages = {
   tarjetaPersonal: ALMA_TARJETA_PERSONAL,
   variante1: ALMA_VARIANTE_1,
   variante2: ALMA_VARIANTE_2
-};
+}];
