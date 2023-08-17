@@ -9,6 +9,7 @@ import CreacionContenido from "../components/pages/contenido/CreacionContenido";
 import Contacto from "../components/pages/contacto/Contacto";
 import Gracias from "../components/pages/gracias/Gracias";
 import Tienda from "../components/pages/tienda/Tienda";
+import Plantilla from "../components/pages/producto/plantilla/Plantilla";
 
 const Router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const Router = createBrowserRouter([
       {
         path: "/gracias",
         element: <Gracias />
+      },
+      {
+        path: "/plantilla/:nombrePlantilla",
+        element: <Plantilla />
       }
     ]
   },
