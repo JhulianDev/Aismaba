@@ -23,6 +23,7 @@ const Marcas = ({ data }) => {
               descripcion={marca.descripcion}
               precio={marca.precio}
               imagen={marca.imagen}
+              enlace={`/marca/${marca.nombre}`}
             />
           ))}
 

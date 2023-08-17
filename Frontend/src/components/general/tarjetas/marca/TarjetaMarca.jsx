@@ -1,6 +1,6 @@
 import { TarjetaMarcaBox, TarjetaMarcaBoxPrecio, TarjetaMarcaBoxTextos, TarjetaMarcaButton, TarjetaMarcaDescripcion, TarjetaMarcaImg, TarjetaMarcaMoneda, TarjetaMarcaNombre, TarjetaMarcaPrecio } from "./TarjetaMarcaStyled";
 
-const TarjetaMarca = ({ nombre, descripcion, precio, imagen }) => {
+const TarjetaMarca = ({ nombre, descripcion, precio, imagen, enlace }) => {
   return (
     <TarjetaMarcaBox>
       <TarjetaMarcaImg src={imagen} alt="Mockup Logo Marca" />
@@ -11,7 +11,7 @@ const TarjetaMarca = ({ nombre, descripcion, precio, imagen }) => {
         </TarjetaMarcaBoxPrecio>
         <TarjetaMarcaNombre>{nombre}</TarjetaMarcaNombre>
         <TarjetaMarcaDescripcion>{descripcion}</TarjetaMarcaDescripcion>
-        <TarjetaMarcaButton>¡VER MARCA!</TarjetaMarcaButton>
+        <TarjetaMarcaButton to={enlace}>¡VER MARCA!</TarjetaMarcaButton>
       </TarjetaMarcaBoxTextos>
     </TarjetaMarcaBox>
   );
