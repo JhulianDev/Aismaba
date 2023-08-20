@@ -126,6 +126,7 @@ export const TarjetaPaqueteLista = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  list-style: none;
 
   margin-top: 10px;
 `

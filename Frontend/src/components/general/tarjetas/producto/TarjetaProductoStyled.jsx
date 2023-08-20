@@ -116,9 +116,15 @@ export const TarjetaProductoBoxPrecio = styled.div`
   justify-content: center;
   text-align: center;
   padding: 1px 8px 2px;
+  margin-bottom: 10px;
 
   @media screen and (max-width: 1440px){
     padding: 1px 8px;
+    margin-bottom: 5px;
+  }
+
+  @media screen and (max-width: 768px){
+    padding: 4px 8px 2px;
   }
 `
 
@@ -134,6 +140,11 @@ export const TarjetaProductoMoneda = styled.span`
   @media screen and (max-width: 1024px){
     font-size: 1rem;
     margin-bottom: -2px;
+  }
+
+  @media screen and (max-width: 768px){
+    font-size: 1rem;
+    margin-bottom: 1px;
   }
 `
 
@@ -151,12 +162,16 @@ export const TarjetaProductoPrecio = styled.span`
 `
 
 export const TarjetaProductoNombre = styled.h1`
-  font-family: Cinzel;
+  font-family: Titulo;
   font-size: 1.6rem;
+  letter-spacing: .2rem;
   text-align: center;
+  text-transform: uppercase;
+  margin-bottom: -10px;
 
   @media screen and (max-width: 1440px){
     font-size: 1.4rem;
+    margin-bottom: -5px;
   }
 
   @media screen and (max-width: 1024px){
@@ -165,6 +180,7 @@ export const TarjetaProductoNombre = styled.h1`
 
   @media screen and (max-width: 768px){
     font-size: 1.4rem;
+    margin-bottom: 0px;
   }
 `
 

@@ -63,13 +63,18 @@ export const MarcaBoxElemento = styled.div`
 
 export const ElementoImg = styled.img`
   width: 100%;
+  transition: 0.3s ease;
+
+  &:hover{
+    transform: scale(1.1);
+  }
 `
 export const ElementoNombre = styled.span`
   font-family: Titulo;
   color: ${colores.colorAcento};
   font-size: .9rem;
   font-weight: 600;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
   text-align: center;
   position: absolute;
   top: 20px;

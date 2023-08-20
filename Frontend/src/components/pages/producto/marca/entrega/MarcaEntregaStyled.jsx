@@ -5,7 +5,7 @@ export const MarcasSectionEntrega = styled.section`
   background-color: ${colores.colorSecundario};
   color: ${colores.colorAcento};
   width: 100%;
-  padding: 60px;
+  padding: 70px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
