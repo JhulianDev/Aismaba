@@ -19,7 +19,7 @@ const Plantillas = ({ data }) => {
               nombre={plantilla.nombre}
               tipo={plantilla.tipo}
               precio={plantilla.precio}
-              imagen={plantilla.imagen}
+              imagen={plantilla.portada}
               enlace={`/plantilla/${plantilla.nombre}`}
             />
           ))}
