@@ -251,22 +251,22 @@ export { default as PORTADA_ALMA_STUDIO } from "./marcas/alma/portada-alma.png";
 import PORTADA_ALMA_STUDIO from "./marcas/alma/portada-alma.png";
 import ALMA_LOGO_PRINCIPAL from "./marcas/alma/logo-principal-alma.png";
 import ALMA_LOGO_SECUNDARIO from "./marcas/alma/logo-secundario-alma.png";
-import ALMA_PALETA_COLORES from "./marcas/alma/paleta-de-colores-alma.png";
-import ALMA_PORTADAS_HISTORIAS from "./marcas/alma/portadas-historias-alma.png";
-import ALMA_TARJETA_PERSONAL from "./marcas/alma/tarjeta-personal-alma.png";
 import ALMA_VARIANTE_1 from "./marcas/alma/variante-1-alma.png";
 import ALMA_VARIANTE_2 from "./marcas/alma/variante-2-alma.png";
+import ALMA_PALETA_COLORES from "./marcas/alma/paleta-de-colores-alma.png";
+import ALMA_TARJETA_PERSONAL from "./marcas/alma/tarjeta-personal-alma.png";
+import ALMA_PORTADAS_HISTORIAS from "./marcas/alma/portadas-historias-alma.png";
 
 export const almaStudioImages = [
   PORTADA_ALMA_STUDIO
 ];
 
-export const almaStudioContent = [{
-  logoPrincipal: ALMA_LOGO_PRINCIPAL,
-  logoSecundario: ALMA_LOGO_SECUNDARIO,
-  paletaColores: ALMA_PALETA_COLORES,
-  portadasHistorias: ALMA_PORTADAS_HISTORIAS,
-  tarjetaPersonal: ALMA_TARJETA_PERSONAL,
-  variante1: ALMA_VARIANTE_1,
-  variante2: ALMA_VARIANTE_2
-}];
+export const almaStudioContent = [
+  ALMA_LOGO_PRINCIPAL,
+  ALMA_LOGO_SECUNDARIO,
+  ALMA_VARIANTE_1,
+  ALMA_VARIANTE_2,
+  ALMA_PALETA_COLORES,
+  ALMA_TARJETA_PERSONAL,
+  ALMA_PORTADAS_HISTORIAS
+];
