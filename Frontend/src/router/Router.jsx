@@ -39,7 +39,7 @@ const Router = createBrowserRouter([
         element: <Plantilla />
       },
       {
-        path: "/marca/:nombreMarca",
+        path: "/marca/:id",
         element: <Marca />
       }
     ]
