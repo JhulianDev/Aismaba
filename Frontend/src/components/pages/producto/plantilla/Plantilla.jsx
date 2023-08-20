@@ -1,13 +1,15 @@
 import { useEffect } from "react";
-import Footer from "../../../general/footer/Footer";
-import TarjetaProducto from "../../../general/tarjetas/producto/TarjetaProducto";
-import { PlantillaBoxInfo, PlantillaInfoParrafo, PlantillaInfoTitulo, PlantillaSection, PlantillaTerminos } from "./PlantillaStyled";
 import { useParams } from "react-router-dom";
+import TarjetaProducto from "../../../general/tarjetas/producto/TarjetaProducto";
+import { PlantillaSection } from "./PlantillaStyled";
+import PlantillaInfo from "./info/PlantillaInfo";
+import Footer from "../../../general/footer/Footer";
+import Terminos from "../../../general/terminos/Terminos";
 
 const Plantilla = () => {
   const { nombrePlantilla } = useParams();
   const nombreProducto = decodeURIComponent(nombrePlantilla);
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,25 +20,17 @@ const Plantilla = () => {
 
         <TarjetaProducto producto={nombreProducto} />
 
-        <PlantillaBoxInfo>
-          <PlantillaInfoTitulo>¿Qué incluye este pack?</PlantillaInfoTitulo>
-          <PlantillaInfoParrafo>
-            Con la compra de este Pack recibiras: 9 Plantillas para Post de Instagram en formato: (1350x1080px) + 9 Plantillas para Portadas de Reels en formato: (1920x1080px) + 9 Plantillas para Historias de Instagram en formato: (1920x1080px)
-          </PlantillaInfoParrafo>
-        </PlantillaBoxInfo>
+        <PlantillaInfo
+          titulo="¿Qué incluye este pack?"
+          descripcion="Con la compra de este Pack recibiras: 9 Plantillas para Post de Instagram en formato: (1350x1080px) + 9 Plantillas para Portadas de Reels en formato: (1920x1080px) + 9 Plantillas para Historias de Instagram en formato: (1920x1080px)."
+        />
 
-        <PlantillaBoxInfo>
-          <PlantillaInfoTitulo>¿Cómo se entregan?</PlantillaInfoTitulo>
-          <PlantillaInfoParrafo>
-            Una vez realizada la compra, se iniciara la descarga de una guía de instrucciones en PDF que contendrá el Link que le dará acceso a las Plantillas editables en la plataforma de Canva.
-          </PlantillaInfoParrafo>
-        </PlantillaBoxInfo>
+        <PlantillaInfo
+          titulo="¿Cómo se entregan?"
+          descripcion="Una vez realizada la compra, se iniciara la descarga de una guía de instrucciones en PDF que contendrá el Link que le dará acceso a las Plantillas editables en la plataforma de Canva."
+        />
 
-
-        <PlantillaTerminos>
-          <b>Términos de uso:</b> estos archivos <b>no se pueden:</b> compartir, vender,
-          distribuir ni reproducir con ningún propósito. <br />Todos los productos de Aismaba <b>están protegidos por derechos de autor.</b>
-        </PlantillaTerminos>
+        <Terminos />
 
       </PlantillaSection>
 
