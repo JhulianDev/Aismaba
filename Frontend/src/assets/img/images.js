@@ -47,6 +47,14 @@ export { default as PORTADA_TIENDA } from "./generales/portada-tienda.png";
 export { default as CATEGORIA_PLANTILLAS } from "./generales/categoria-plantillas.jpg";
 export { default as CATEGORIA_MARCAS } from "./generales/categoria-marcas.jpg";
 export { default as CATEGORIA_PRESETS } from "./generales/categoria-presets.jpg";
+export { default as DELETE_ICON } from "./generales/eliminarIcon.png";
+export { default as ARS_ICON } from "./generales/BANDERA_ARG.png";
+export { default as EEUU_ICON } from "./generales/BANDERA_EEUU.png";
+export { default as TARJETA_ICON } from "./generales/tarjeta-de-debito.png";
+export { default as BOLSA_ICON } from "./generales/bolsa-compras.png";
+
+
+
 
 // Plantillas Minimal Moood
 export { default as MINIMAL_MOOD_1 } from "./plantillas/1 MINIMAL MOOD/1. MINIMAL MOOD.png";
