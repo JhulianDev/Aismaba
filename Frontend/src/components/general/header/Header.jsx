@@ -29,7 +29,7 @@ const Header = ({ color }) => {
           </HeaderUl>
         </HeaderNav>
 
-        <CartContainer>
+        <CartContainer to="/carrito">
           <CartIcon src={CARRITO_ICONO} alt="Icono de carrito de compras" />
         </CartContainer>
 
