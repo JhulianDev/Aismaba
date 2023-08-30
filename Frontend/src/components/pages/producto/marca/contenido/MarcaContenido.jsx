@@ -4,26 +4,39 @@ import TarjetaProducto from "../../../../general/tarjetas/producto/TarjetaProduc
 import { useContext } from "react";
 import { ShopContext } from "../../../../../context/ShopContext";
 import { MarcaBoxElementos, MarcaSectionContenido } from "./MarcaContenidoStyled";
+import { CartContext } from "../../../../../context/CartContext";
 
 const MarcaContenido = () => {
   const { id } = useParams();
   const { marcas } = useContext(ShopContext)
-  const marca = marcas.find(marca => marca.id === parseInt(id));
+  const producto = marcas.find(marca => marca.id === parseInt(id));
+
+  const { dispatch } = useContext(CartContext)
+
+  const addToCart = (producto) => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: producto
+    })
+  }
 
   return (
     <MarcaSectionContenido>
-      <TarjetaProducto producto={marca.nombre} />
+      <TarjetaProducto 
+        producto={producto.nombre}
+        handleClick={() => addToCart(producto)} 
+      />
 
       <MarcaBoxElementos>
-        <TarjetaElemento type="A" imagen={marca.contenido[0]} nombre="Logo Principal" />
-        <TarjetaElemento type="A" imagen={marca.contenido[1]} nombre="Logo Secundario" />
-        <TarjetaElemento type="A" imagen={marca.contenido[2]} nombre="Variante 1" />
-        <TarjetaElemento type="A" imagen={marca.contenido[3]} nombre="Variante 2" />
+        <TarjetaElemento type="A" imagen={producto.contenido[0]} nombre="Logo Principal" />
+        <TarjetaElemento type="A" imagen={producto.contenido[1]} nombre="Logo Secundario" />
+        <TarjetaElemento type="A" imagen={producto.contenido[2]} nombre="Variante 1" />
+        <TarjetaElemento type="A" imagen={producto.contenido[3]} nombre="Variante 2" />
 
-        <TarjetaElemento type="B" imagen={marca.contenido[4]} nombre="Paleta de Colores" />
-        <TarjetaElemento type="B" imagen={marca.contenido[5]} nombre="Tarjeta Personal" />
+        <TarjetaElemento type="B" imagen={producto.contenido[4]} nombre="Paleta de Colores" />
+        <TarjetaElemento type="B" imagen={producto.contenido[5]} nombre="Tarjeta Personal" />
 
-        <TarjetaElemento type="C" imagen={marca.contenido[6]} nombre="Historias Destacadas" />
+        <TarjetaElemento type="C" imagen={producto.contenido[6]} nombre="Historias Destacadas" />
       </MarcaBoxElementos>
     </MarcaSectionContenido>
   );
