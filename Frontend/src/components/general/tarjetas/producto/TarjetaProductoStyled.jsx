@@ -219,7 +219,7 @@ export const FlechaDerecha = styled.svg`
   right: 16px;
 `
 
-export const AddToCartButton = styled(Link)`
+export const AddToCartButton = styled.button`
   background-color: ${colores.colorAcento};
   color: white;
   padding: 12px 24px;
@@ -230,6 +230,7 @@ export const AddToCartButton = styled(Link)`
   font-size: 1rem;
   text-align: center;
   transition: 0.3s;
+  cursor: pointer;
 
   &:hover{
     background-color: white;

@@ -42,12 +42,13 @@ export const HeaderNav = styled.nav`
   justify-content: center;
 
   @media screen and (max-width: 768px){
+    background-color: ${colores.colorPrincipal};
     width: 100vw;
     height: 0;
     opacity: 0;
+    margin-top: -60px;
     overflow: hidden;
     transition: all 0.5s ease;
-    background-color: ${colores.colorPrincipal};
     ${props => props.open && css`
       height: 100vh;
       opacity: 1;
