@@ -26,6 +26,7 @@ const Header = ({ color }) => {
             <HeaderLi><HeaderLink to="/servicios" onClick={handleNav}>Servicios</HeaderLink></HeaderLi>
             <HeaderLi><HeaderLink to="/Tienda" onClick={handleNav}>Tienda</HeaderLink></HeaderLi>
             <HeaderLi><HeaderLink to="/Contacto" onClick={handleNav}>Contacto</HeaderLink></HeaderLi>
+            <HeaderLi><HeaderLink to="/Carrito" onClick={handleNav}>Carrito</HeaderLink></HeaderLi>
           </HeaderUl>
         </HeaderNav>
 
