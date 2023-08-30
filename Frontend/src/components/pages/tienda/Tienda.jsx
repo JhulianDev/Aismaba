@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { PORTADA_TIENDA } from "../../../assets/img/images";
 import Cabecera from "../../general/cabecera/Cabecera";
 import Categorias from "./categorias/Categorias";
@@ -10,6 +10,10 @@ import { colores } from "../../../assets/css/Colors";
 
 const Tienda = () => {
   const { categorias, plantillas, marcas } = useContext(ShopContext)
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Cabecera
