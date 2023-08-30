@@ -1,7 +1,7 @@
 import { AddToCartButton, FlechaDerecha, FlechaIzquierda, SliderContador, SliderContadorBox, SliderImg, SliderMovil, SliderVentana, TarjetaProductoBox, TarjetaProductoBoxPrecio, TarjetaProductoDescripcion, TarjetaProductoInfoBox, TarjetaProductoMoneda, TarjetaProductoNombre, TarjetaProductoPrecio } from "./TarjetaProductoStyled";
 import useImageSlider from "./useImageSlider";
 
-const TarjetaProducto = ({ producto }) => {
+const TarjetaProducto = ({ producto, handleClick }) => {
   const { dataProducto, currentImage, imagenesLength, handleArrow } = useImageSlider(producto);
 
   return (
@@ -35,7 +35,7 @@ const TarjetaProducto = ({ producto }) => {
         </TarjetaProductoDescripcion>
 
 
-        <AddToCartButton>Agregar al carrito</AddToCartButton>
+        <AddToCartButton onClick={handleClick}>Agregar al carrito</AddToCartButton>
       </TarjetaProductoInfoBox>
     </TarjetaProductoBox>
   );
