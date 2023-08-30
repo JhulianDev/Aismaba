@@ -22,7 +22,8 @@ const Opciones = () => {
           personalidad unica. Otorgandote la
           posibilidad de editar cada detalle para
           que se adapte 100% al estilo de tu marca."
-          enlace="/"
+          boton="VER MÁS"
+          enlace="/Tienda"
         />
 
         <TarjetaServicio
@@ -37,7 +38,8 @@ const Opciones = () => {
           estética original y un valor agregado, otorgándote la
           posibilidad de mejorar la presentación
           de tu marca ante el mundo."
-          enlace="/servicios"
+          boton="VER MÁS"
+          enlace="/Servicios"
         />
 
         <TarjetaServicio
@@ -52,6 +54,7 @@ const Opciones = () => {
           otorgándote la posibilidad de ahorrar tiempo 
           de largas horas de edición o brindándote tips 
           y consejos que te serán de gran utilidad."
+          boton="PRÓXIMAMENTE"
           enlace="/"
         />
 
