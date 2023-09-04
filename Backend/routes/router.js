@@ -1,19 +1,23 @@
 import express from 'express';
 const router = express.Router();
 
+// Controllers
+import { register, login, getUser } from '../controllers/authController.js';
+
+// Middlewares
+import { validateAuthorization } from '../middlewares/authMiddleware.js';
+
 // Main path
 router.get("/api/v1", (req, res) => {
   res.json("Welcome to Aismaba! This API is up and running.")
 })
 
-// Login and Register
-router.get("/api/v1/login", (req, res) => {
-  res.json("Welcome to Login!")
-})
+// Register and Login
+router.post("/api/v1/register", register);
+router.post("/api/v1/login", login);
 
-router.get("/api/v1/register", (req, res) => {
-  res.json("Welcome to Register!")
-})
+// Get User
+router.get("/api/v1/users", validateAuthorization, getUser);
 
 
 export default router;
