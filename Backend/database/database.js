@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import mysql2 from 'mysql2';
 dotenv.config();
 
-const database = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+export const database = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   dialect: "mysql",
