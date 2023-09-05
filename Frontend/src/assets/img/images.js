@@ -1,5 +1,7 @@
 export { default as FONDO_PORTADA } from "./generales/1.jpg";
 export { default as ISOTIPO_BLANCO } from "./generales/logo_white.png";
+export { default as ISOTIPO_PRINCIPAL } from "./generales/logo_inicio.png";
+export { default as ISOTIPO_ACENTO } from "./generales/logo_acento.png";
 export { default as CARRITO_ICONO } from "./generales/cart_white.png";
 export { default as FUNDADORA_1 } from "./generales/2.png";
 export { default as FUNDADORA_2 } from "./generales/3.jpg";
@@ -52,6 +54,10 @@ export { default as ARS_ICON } from "./generales/BANDERA_ARG.png";
 export { default as EEUU_ICON } from "./generales/BANDERA_EEUU.png";
 export { default as TARJETA_ICON } from "./generales/tarjeta-de-debito.png";
 export { default as BOLSA_ICON } from "./generales/bolsa-compras.png";
+export { default as USER_ICON } from "./generales/user-icon.png";
+export { default as EMAIL_ICON } from "./generales/email-icon.png";
+export { default as PASSWORD_ICON } from "./generales/password-icon.png";
+export { default as WORLD_ICON } from "./generales/world-icon.png";
 
 
 
