@@ -4,7 +4,7 @@ import { API_URL } from "../env/env";
 import { setToken } from "./token";
 
 // Funcion para manejar el envio de formulario del Login y el Sign Up:
-export const handleForm = (e, type, url, redirectLink, navigate) => {
+export const handleForm = (e, type, url, redirectLink, navigate, setUserData) => {
   e.preventDefault()
 
   // Si al usar la funcion NO se indica el argumanto type="SignUp" data será igual a:
@@ -28,6 +28,7 @@ export const handleForm = (e, type, url, redirectLink, navigate) => {
       // Si la respuesta contiene el token lo guardamos en el Local Storage:
       if (resp.data.token) {
         setToken(resp.data.token);
+        setUserData(resp.data.user);
       }
 
       // Mostramos una alerta con el mensaje de exito:

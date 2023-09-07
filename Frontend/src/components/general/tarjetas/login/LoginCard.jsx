@@ -4,13 +4,15 @@ import { EMAIL_ICON, ISOTIPO_ACENTO, PASSWORD_ICON, USER_ICON, WORLD_ICON } from
 import { BoxInput, Input, InputIcon, LoginForm, LoginLogo, Option, RedirectButton, Select, SubmitButton } from "./LoginCardStyled";
 import { ShopContext } from "../../../../context/ShopContext";
 import { handleForm } from "../../../../helpers/forms";
+import { UserContext } from "../../../../context/UserContext";
 
 const LoginCard = ({ submitText, redirectText, linkButton, type, apiUrl, redirectLink }) => {
   const { paises } = useContext(ShopContext)
+  const { setUserData } = useContext(UserContext);
   const navigate = useNavigate();
 
   return (
-    <LoginForm onSubmit={(e) => handleForm(e, type, apiUrl, redirectLink, navigate)}>
+    <LoginForm onSubmit={(e) => handleForm(e, type, apiUrl, redirectLink, navigate, setUserData)}>
       <LoginLogo src={ISOTIPO_ACENTO} alt="Isotipo Aismaba" />
 
       {type === "SignUp" && (
