@@ -28,7 +28,8 @@ const shopData = {
       imagenes: almaStudioImages,
       contenido: almaStudioContent
     }
-  ]
+  ],
+  paises: ["Argentina", "Chile", "España", "México", "Venezuela"]
 }
 
 const ShopContext = createContext()
