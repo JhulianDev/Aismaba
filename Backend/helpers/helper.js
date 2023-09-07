@@ -2,12 +2,12 @@ import bcrypt from "bcrypt"
 
 // Esta función valida que el nombre de usuario, correo electrónico y contraseña proporcionados tengan el formato correcto
 // Recibe como argumentos el modelo de usuario, el nombre de usuario, correo electrónico y contraseña
-export const validateRegisterInputs = async (UserModel, user_name, email, password) => {
+export const validateRegisterInputs = async (UserModel, user_name, email, password, country) => {
 
   const error = {};// Objeto para almacenar los errores de validación
 
   // Validar que se proporcionen todos los campos requeridos
-  if (!user_name || !email || !password) {
+  if (!user_name || !email || !password || !country) {
     error.message = "Todos los campos son obligatorios";
     return error;
   }

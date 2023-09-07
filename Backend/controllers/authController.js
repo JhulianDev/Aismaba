@@ -11,7 +11,7 @@ export const register = async (req, res) => {
     const { user_name, email, password, country } = req.body;
 
     // Validamos los datos ingresados por el usuario
-    const errors = await validateRegisterInputs(UserModel, user_name, email, password);
+    const errors = await validateRegisterInputs(UserModel, user_name, email, password, country);
 
     // Si hay errores:
     // Devolvemos un error 400 y los mensajes de error
@@ -32,7 +32,7 @@ export const register = async (req, res) => {
       email: req.body.email,
       password: hashedPassword,
       country: req.body.country,
-      is_admin: req.body.is_admin
+      is_admin: false
     });
 
     // Generamos el JWT para el usuario
@@ -42,7 +42,7 @@ export const register = async (req, res) => {
 
     // Devolvemos los datos del usuario y el token generado
     res.status(201).json({
-      message: "The user was created successfully!",
+      message: "¡Usuario creado con éxito!",
       user: {
         id: user.id,
         user_name: user.user_name,
@@ -50,8 +50,6 @@ export const register = async (req, res) => {
       },
       token: token,
     });
-
-    console.log("¡User registered!");
 
   } catch (error) {
     console.log(`Ha ocurrido un error al intentar crear el usuario: ${error}`)
