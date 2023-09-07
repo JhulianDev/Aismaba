@@ -111,6 +111,7 @@ export const getUser = async (req, res) => {
           id: user.id,
           user_name: user.user_name,
           email: user.email,
+          country: user.country,
           is_admin: user.is_admin
         }
       })
