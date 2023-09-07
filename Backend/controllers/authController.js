@@ -35,11 +35,6 @@ export const register = async (req, res) => {
       is_admin: false
     });
 
-    // Generamos el JWT para el usuario
-    let token = jwt.sign({ user: user }, process.env.JWT_SECRET, {
-      expiresIn: process.env.JWT_EXPIRATION
-    });
-
     // Devolvemos los datos del usuario y el token generado
     res.status(201).json({
       message: "¡Usuario creado con éxito!",
@@ -47,8 +42,7 @@ export const register = async (req, res) => {
         id: user.id,
         user_name: user.user_name,
         email: user.email
-      },
-      token: token,
+      }
     });
 
   } catch (error) {
@@ -116,10 +110,11 @@ export const getUser = async (req, res) => {
         user: {
           id: user.id,
           user_name: user.user_name,
-          email: user.email
+          email: user.email,
+          is_admin: user.is_admin
         }
       })
-    // Si el usuario no existe devolvemos el error:
+      // Si el usuario no existe devolvemos el error:
     } else {
       console.log("El id proporcionado no corresponde a ningun usuario")
       res.status(404).json({ message: `Error al intentar obtener el usuario` })
