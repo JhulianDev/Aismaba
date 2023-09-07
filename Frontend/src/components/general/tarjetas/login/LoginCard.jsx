@@ -1,36 +1,40 @@
+import { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import { EMAIL_ICON, ISOTIPO_ACENTO, PASSWORD_ICON, USER_ICON, WORLD_ICON } from "../../../../assets/img/images";
 import { BoxInput, Input, InputIcon, LoginForm, LoginLogo, Option, RedirectButton, Select, SubmitButton } from "./LoginCardStyled";
+import { ShopContext } from "../../../../context/ShopContext";
+import { handleForm } from "../../../../helpers/helpers";
 
-const LoginCard = ({ type, submitText, redirectText, link }) => {
+const LoginCard = ({ submitText, redirectText, linkButton, type, apiUrl, redirectLink }) => {
+  const { paises } = useContext(ShopContext)
+  const navigate = useNavigate();
+
   return (
-    <LoginForm>
+    <LoginForm onSubmit={(e) => handleForm(e, type, apiUrl, redirectLink, navigate)}>
       <LoginLogo src={ISOTIPO_ACENTO} alt="Isotipo Aismaba" />
 
+      {type === "SignUp" && (
+        <BoxInput>
+          <InputIcon src={USER_ICON} alt="Icono de usuario" />
+          <Input type="text" name="user_name" placeholder="Nombre" />
+        </BoxInput>
+      )}
+
       <BoxInput>
-        <InputIcon src={USER_ICON} alt="Icono de usuario" />
-        <Input type="text" name="user_name" placeholder="Nombre" />
+        <InputIcon src={EMAIL_ICON} alt="Icono de email" />
+        <Input type="text" name="email" placeholder="Correo electrónico" />
       </BoxInput>
 
-      {type === "registration" && (
-        <>
-          <BoxInput>
-            <InputIcon src={EMAIL_ICON} alt="Icono de email" />
-            <Input type="text" name="user_name" placeholder="Correo electrónico" />
-          </BoxInput>
-
-          <BoxInput>
-            <InputIcon src={WORLD_ICON} alt="Icono del mundo" />
-            <Select>
-              <Option disabled selected>Selecciona tu País</Option>
-              <Option>Argentina</Option>
-              <Option>Chile</Option>
-              <Option>España</Option>
-              <Option>México</Option>
-              <Option>Venezuela</Option>
-            </Select>
-          </BoxInput>
-
-        </>
+      {type === "SignUp" && (
+        <BoxInput>
+          <InputIcon src={WORLD_ICON} alt="Icono del mundo" />
+          <Select name="country">
+            <Option value="">Selecciona tu País</Option>
+            {paises.map((pais) => (
+              <Option key={pais} value={pais}>{pais}</Option>
+            ))}
+          </Select>
+        </BoxInput>
       )}
 
       <BoxInput>
@@ -39,7 +43,7 @@ const LoginCard = ({ type, submitText, redirectText, link }) => {
       </BoxInput>
 
       <SubmitButton>{submitText}</SubmitButton>
-      <RedirectButton to={link}>{redirectText}</RedirectButton>
+      <RedirectButton to={linkButton}>{redirectText}</RedirectButton>
     </LoginForm>
   );
 };
