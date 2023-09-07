@@ -13,7 +13,7 @@ router.get("/api/v1", (req, res) => {
 })
 
 // Register and Login
-router.post("/api/v1/register", register);
+router.post("/api/v1/sign-up", register);
 router.post("/api/v1/login", login);
 
 // Get User
