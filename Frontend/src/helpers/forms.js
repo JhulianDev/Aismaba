@@ -16,7 +16,7 @@ export const handleForm = (e, type, url, redirectLink, navigate, setUserData) =>
   // Si al usar la funcion SI se indica el argumanto type="SignUp" data será igual a:
   if (type === "SignUp") {
     data = {
-      ...data, // Conserva las propiedades anteriores
+      ...data, // Conserva las propiedades anteriores y se añaden las siguientes:
       user_name: e.target.user_name.value,
       country: e.target.country.value
     };
