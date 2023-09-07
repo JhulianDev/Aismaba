@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { EMAIL_ICON, ISOTIPO_ACENTO, PASSWORD_ICON, USER_ICON, WORLD_ICON } from "../../../../assets/img/images";
 import { BoxInput, Input, InputIcon, LoginForm, LoginLogo, Option, RedirectButton, Select, SubmitButton } from "./LoginCardStyled";
 import { ShopContext } from "../../../../context/ShopContext";
-import { handleForm } from "../../../../helpers/helpers";
+import { handleForm } from "../../../../helpers/forms";
 
 const LoginCard = ({ submitText, redirectText, linkButton, type, apiUrl, redirectLink }) => {
   const { paises } = useContext(ShopContext)
