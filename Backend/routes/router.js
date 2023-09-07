@@ -17,7 +17,7 @@ router.post("/api/v1/sign-up", register);
 router.post("/api/v1/login", login);
 
 // Get User
-router.get("/api/v1/users", validateAuthorization, getUser);
+router.get("/api/v1/user", validateAuthorization, getUser);
 
 
 export default router;
