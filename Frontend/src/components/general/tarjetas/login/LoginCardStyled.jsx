@@ -15,7 +15,8 @@ export const LoginForm = styled.form`
   border-radius: 20px;
   box-shadow: 1.2px 1.3px 0.7px rgba(0, 0, 0, 0.017),
     2.5px 2.8px 1.4px rgba(0, 0, 0, 0.025),
-    4.3px 4.7px 2.4px rgba(0, 0, 0, 0.031), 6.4px 7px 3.6px rgba(0, 0, 0, 0.035),
+    4.3px 4.7px 2.4px rgba(0, 0, 0, 0.031), 
+    6.4px 7px 3.6px rgba(0, 0, 0, 0.035),
     9.3px 10.1px 5.3px rgba(0, 0, 0, 0.04),
     13.1px 14.4px 7.4px rgba(0, 0, 0, 0.044),
     18.6px 20.4px 10.6px rgba(0, 0, 0, 0.049),
@@ -25,6 +26,14 @@ export const LoginForm = styled.form`
 
   gap: 12px;
   padding: 60px 40px;
+
+  @media screen and (max-width: 1440px){
+    transform: scale(0.8);
+  }
+
+  @media screen and (max-width: 768px){
+    transform: scale(.9);
+  }
 `
 
 export const LoginLogo = styled.img`
@@ -74,6 +83,7 @@ export const Select = styled.select`
   font-weight: 400;
   color: #8569568b;
   color: ${colores.colorAcento};
+  margin-left: -3px;
   outline: none;
 `
 
