@@ -160,6 +160,7 @@ export const CartIcon = styled.img`
 
 export const BoxCounter = styled.div`
   background-color: ${colores.colorPrincipal};
+  /* background-color: blue; */
   width: 16px;
   height: 16px;
   border-radius: 100px;
@@ -172,8 +173,14 @@ export const BoxCounter = styled.div`
 `
 
 export const ProductCounter = styled.span`
+  /* background-color: red; */
   display: flex;
   color: white;
+  font-family: Nunito, sans-serif;
   font-size: .9rem;
-  margin-top: 2px;
+  line-height: 12px;
+
+  @media screen and (max-width: 1440px){
+    margin-top: 3px;
+  }
 `
