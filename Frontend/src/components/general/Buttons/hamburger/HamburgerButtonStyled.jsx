@@ -43,10 +43,10 @@ export const HamburgerContainer = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 30;
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 850px){
     display: flex;
-    margin-right: 8%;
   }
 `;
 
