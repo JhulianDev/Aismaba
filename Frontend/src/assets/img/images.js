@@ -3,6 +3,7 @@ export { default as ISOTIPO_BLANCO } from "./generales/logo_white.png";
 export { default as ISOTIPO_PRINCIPAL } from "./generales/logo_inicio.png";
 export { default as ISOTIPO_ACENTO } from "./generales/logo_acento.png";
 export { default as LOGOTIPO_WHITE } from "./generales/logotipo-white.png";
+export { default as LOGOUT_ICON } from "./generales/logout-icon.png";
 export { default as CARRITO_ICONO } from "./generales/cart_white.png";
 export { default as FUNDADORA_1 } from "./generales/2.png";
 export { default as FUNDADORA_2 } from "./generales/3.jpg";
