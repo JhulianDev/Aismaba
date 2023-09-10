@@ -14,6 +14,7 @@ import Marca from "../components/pages/producto/marca/Marca";
 import Cart from "../components/pages/carrito/Cart";
 import Login from "../components/pages/login/Login";
 import SignUp from "../components/pages/SignUp/SignUp";
+import Checkout from "../components/pages/checkout/Checkout";
 
 const Router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const Router = createBrowserRouter([
       {
         path: "/carrito",
         element: <Cart />
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
       },
       {
         path: "/login",
