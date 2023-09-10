@@ -2,19 +2,31 @@ import styled, { css } from "styled-components"
 import { Link } from "react-router-dom"
 import { colores } from "../../../../assets/css/Colors"
 
-const buttonTypeA = css`
+const buttonStyleA = css`
   background-color: ${colores.colorAcento};
   color: white;
 `
 
-const buttonTypeB = css`
+const buttonStyleB = css`
   background-color: transparent;
   color: ${colores.colorAcento};
   border: solid 1px ${colores.colorAcento};
 `
 
+const buttonTypeStyle = css`
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  font-family: Cinzel;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+  padding-bottom: 1px;
+  padding: 12px 20px;
+  cursor: pointer;
+`
+
 export const BoxButton = styled.div`
-  ${({ $type }) => ($type === 'B' ? buttonTypeB : buttonTypeA)}
+  ${({ $style }) => ($style === 'B' ? buttonStyleB : buttonStyleA)}
   width: 100%;
   border-radius: 50px;
   display: flex;
@@ -22,7 +34,6 @@ export const BoxButton = styled.div`
   justify-content: center;
   text-align: center;
   position: relative;
-  cursor: pointer;
   overflow: hidden;
   margin-top: ${(props) => props.$top || 0};
 `
@@ -42,12 +53,11 @@ export const ButtonIcon = styled.img`
 `
 
 export const ButtonLink = styled(Link)`
-  width: 100%;
-  height: 100%;
-  color: inherit;
-  font-family: Cinzel;
-  font-size: 1.2rem;
-  letter-spacing: .1rem;
-  padding-bottom: 1px;
-  padding: 12px 20px;
+  ${buttonTypeStyle}
+`
+
+export const ButtonButton = styled.button`
+  ${buttonTypeStyle}
+  background-color: transparent;
+  border: none;
 `
