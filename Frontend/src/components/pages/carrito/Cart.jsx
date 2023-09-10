@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartBoxTable, CartMaxWidth, CartSection, TableBoxIcon, TableBoxProduct, TableDiv, TableHeader, TextPrecio, TextProducto } from './CartStyled';
 import { BOLSA_ICON, TARJETA_ICON } from '../../../assets/img/images';
 import Button from '../../general/Buttons/button/Button';
@@ -6,21 +7,17 @@ import CurrencySelector from '../../general/currency/CurrencySelector';
 import { CartContext } from '../../../context/CartContext';
 import ItemCart from '../../general/item/ItemCart';
 import { CurrencyContext } from '../../../context/CurrencyContext';
+import { UserContext } from '../../../context/UserContext';
+import { handleOrder } from '../../../helpers/order';
+import { calculateTotalValue, formatPrice } from '../../../helpers/prices';
 
 const Cart = () => {
-  const { state } = useContext(CartContext)
+  const { state, setRequireLogin, setOrder } = useContext(CartContext)
+  const { userData } = useContext(UserContext)
   const { selectedCurrency, dolarValue } = useContext(CurrencyContext);
+  const navigate = useNavigate();
 
-  const formatPrice = new Intl.NumberFormat("es-AR", {
-    currency: "ARS",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  })
-
-  let totalValue = 0
-  state.cart.forEach((c) => selectedCurrency === "ARS" ? (totalValue += (c.precio)* dolarValue) : (totalValue += (c.precio)));
-  let totalValueFormated = formatPrice.format(totalValue)
-
+  const totalValue = calculateTotalValue(state.cart, selectedCurrency, dolarValue)
 
   return (
     <CartSection>
@@ -50,7 +47,7 @@ const Cart = () => {
               <TableBoxProduct>
                 <TableDiv />
                 <TextProducto>Total:</TextProducto>
-                <TextPrecio>{totalValueFormated}$</TextPrecio>
+                <TextPrecio>{totalValue}$</TextPrecio>
                 <TableBoxIcon>
                 </TableBoxIcon>
               </TableBoxProduct>
@@ -58,17 +55,21 @@ const Cart = () => {
             </CartBoxTable>
 
             <Button
-              icono={TARJETA_ICON}
+              handleClick={() => {handleOrder(state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, navigate)}}
+              icono="true"
+              iconoEnlace={TARJETA_ICON}
               texto="Finalizar compra"
-              type="A"
+              style="A"
               top="15px"
             />
 
             <Button
-              icono={BOLSA_ICON}
-              texto="Seguir comprando"
+              icono="true"
+              iconoEnlace={BOLSA_ICON}
+              texto="Volver a la tienda"
               enlace="/tienda"
-              type="B"
+              style="B"
+              type="Link"
               top="15px"
             />
           </>
