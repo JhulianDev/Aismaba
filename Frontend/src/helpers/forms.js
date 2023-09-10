@@ -4,7 +4,7 @@ import { API_URL } from "../env/env";
 import { setToken } from "./token";
 
 // Funcion para manejar el envio de formulario del Login y el Sign Up:
-export const handleForm = (e, type, url, redirectLink, navigate, setUserData) => {
+export const handleForm = (e, type, url, redirectLink, requireLogin, navigate, setUserData) => {
   e.preventDefault()
 
   // Si al usar la funcion NO se indica el argumanto type="SignUp" data será igual a:
@@ -39,6 +39,12 @@ export const handleForm = (e, type, url, redirectLink, navigate, setUserData) =>
         showConfirmButton: false,
         timer: 1600
       })
+
+      // Si el usuario esta iniciando sesión porque intento realizar una orden se le redirige al carrito:
+      if (type === "Login" && requireLogin === true) {
+        navigate("/carrito")
+        return;
+      }
 
       // Redirigimos al usuario a la pagina indicada en el componente:
       navigate(redirectLink)
