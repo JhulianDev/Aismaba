@@ -5,14 +5,16 @@ import { BoxInput, Input, InputIcon, LoginForm, LoginLogo, Option, RedirectButto
 import { ShopContext } from "../../../../context/ShopContext";
 import { handleForm } from "../../../../helpers/forms";
 import { UserContext } from "../../../../context/UserContext";
+import { CartContext } from "../../../../context/CartContext";
 
 const LoginCard = ({ submitText, redirectText, linkButton, type, apiUrl, redirectLink }) => {
   const { paises } = useContext(ShopContext)
   const { setUserData } = useContext(UserContext);
+  const { requireLogin } = useContext(CartContext)
   const navigate = useNavigate();
 
   return (
-    <LoginForm onSubmit={(e) => handleForm(e, type, apiUrl, redirectLink, navigate, setUserData)}>
+    <LoginForm onSubmit={(e) => handleForm(e, type, apiUrl, redirectLink, requireLogin, navigate, setUserData)}>
       <LoginLogo src={ISOTIPO_ACENTO} alt="Isotipo Aismaba" />
 
       {type === "SignUp" && (
