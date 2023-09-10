@@ -1,10 +1,17 @@
-import { BoxButton, ButtonIcon, ButtonLink } from "./ButtonStyled";
+import { BoxButton, ButtonButton, ButtonIcon, ButtonLink } from "./ButtonStyled";
 
-const Button = ({ type, icono, texto, enlace, top }) => {
+const Button = ({ style, type, icono, iconoEnlace, texto, enlace, handleClick, top }) => {
   return (
-    <BoxButton $type={type} $top={top}>
-      <ButtonIcon src={icono} alt="Icon" />
-      <ButtonLink to={enlace}>{texto}</ButtonLink>
+    <BoxButton $style={style} $top={top}>
+      {icono === "true" && (
+        <ButtonIcon src={iconoEnlace} alt="Icon" />
+      )}
+
+      {type === "Link" ? (
+        <ButtonLink to={enlace}>{texto}</ButtonLink>
+      ) : (
+        <ButtonButton onClick={handleClick}>{texto}</ButtonButton>
+      )}
     </BoxButton>
   );
 };
