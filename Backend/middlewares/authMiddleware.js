@@ -18,8 +18,8 @@ export const validateAuthorization = (req, res, next) => {
     // Si es valido se llama a la función next() 
     jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
       if (error) {
-        console.log(`Unauthorized access: ${error.message}`);
-        res.status(403).json({ message: "Unauthorized access" });
+        console.log(`El token proporcionado no es valido: ${error.message}`);
+        res.status(403).json({ message: "El token proporcionado no es valido" });
         return;
       } else {
         // Agregamos los datos del usuario al objeto request (req)
