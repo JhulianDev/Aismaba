@@ -1,8 +1,10 @@
 import { validateRegisterInputs, validateLoginInputs } from "../helpers/helper.js";
 import UserModel from "../models/UserModel.js";
+import { v4 as uuidv4 } from 'uuid';
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 import dotenv from 'dotenv';
+import OrderModel from "../models/OrderModel.js";
 dotenv.config();
 
 // Register
@@ -124,5 +126,39 @@ export const getUser = async (req, res) => {
   } catch (error) {
     console.log(`Error al intentar obtener el usuario: ${error}`)
     res.status(500).json({ message: `Error al intentar obtener el usuario` })
+  }
+}
+
+// Purchase orders
+export const purchaseOrder = async (req, res) => {
+  try {
+    const { user_id, products, currency, total } = req.body;
+
+    // Verifica si el usuario y la orden está presente en la solicitud
+    if (!user_id || !products) {
+      return res.status(400).json({ error: 'La solicitud no incluye una orden válida.' });
+    }
+    
+    // Generamos un ID único para la orden usando la biblioteca uuid
+    const orderId = uuidv4();
+
+    // Convertimos el objeto 'products' en una cadena JSON
+    const productsJson = JSON.stringify(products);
+
+    // Creamos la orden en la base de datos
+    const order = await OrderModel.create({
+      id: orderId,
+      user_id: user_id,
+      products: productsJson,
+      currency: currency,
+      total: total
+    });
+
+    // Responde con una confirmación exitosa y la información de la orden
+    return res.status(201).json({ message: 'Orden de compra creada', order });
+  } catch (error) {
+    // Maneja cualquier error que pueda ocurrir durante el proceso
+    console.log('Error al crear la orden de compra:', error);
+    return res.status(500).json({ message: 'Se produjo un error al procesar la orden de compra.' });
   }
 }
