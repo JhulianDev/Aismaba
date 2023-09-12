@@ -47,7 +47,7 @@ const Cart = () => {
               <TableBoxProduct>
                 <TableDiv />
                 <TextProducto>Total:</TextProducto>
-                <TextPrecio>{totalValue}$</TextPrecio>
+                <TextPrecio>{(formatPrice.format(totalValue))}$</TextPrecio>
                 <TableBoxIcon>
                 </TableBoxIcon>
               </TableBoxProduct>
