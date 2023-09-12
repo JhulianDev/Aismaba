@@ -9,4 +9,8 @@ export const Section = styled.section`
   display: flex;
   align-items: top;
   justify-content: center;
+
+  @media screen and (max-width: 425px){
+    padding: 120px 20px 60px;
+  }
 `

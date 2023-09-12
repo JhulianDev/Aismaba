@@ -72,3 +72,7 @@ export const Total = styled.h2`
   ${textStyle};
   text-align: right;
 `
+
+export const BoxButtonPayment = styled.div`
+  margin-top: 20px;
+`
