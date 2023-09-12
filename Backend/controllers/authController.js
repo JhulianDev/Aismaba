@@ -129,16 +129,16 @@ export const getUser = async (req, res) => {
   }
 }
 
-// Purchase orders
+// Purchase order
 export const purchaseOrder = async (req, res) => {
   try {
-    const { user_id, products, currency, total } = req.body;
+    const { user_id, user_name, products, currency, total } = req.body;
 
     // Verifica si el usuario y la orden está presente en la solicitud
-    if (!user_id || !products) {
+    if (!user_id || !user_name || !products || !currency || !total) {
       return res.status(400).json({ error: 'La solicitud no incluye una orden válida.' });
     }
-    
+
     // Generamos un ID único para la orden usando la biblioteca uuid
     const orderId = uuidv4();
 
@@ -149,9 +149,11 @@ export const purchaseOrder = async (req, res) => {
     const order = await OrderModel.create({
       id: orderId,
       user_id: user_id,
+      user_name: user_name,
       products: productsJson,
       currency: currency,
-      total: total
+      total: total,
+      completed: false
     });
 
     // Responde con una confirmación exitosa y la información de la orden
@@ -160,5 +162,27 @@ export const purchaseOrder = async (req, res) => {
     // Maneja cualquier error que pueda ocurrir durante el proceso
     console.log('Error al crear la orden de compra:', error);
     return res.status(500).json({ message: 'Se produjo un error al procesar la orden de compra.' });
+  }
+}
+
+// Update order
+export const updateOrder = async (req, res) => {
+  try {
+    // Obtén el ID de la orden de los parámetros de la URL
+    const orderId = req.params.id;
+
+    // Actualiza la orden en la base de datos para establecer "completed" en true
+    await OrderModel.update(
+      { completed: true }, // Actualiza el campo "completed" a true
+      { where: { id: orderId }, returning: true } // Utiliza el ID de la orden para encontrar la orden a actualizar
+    );
+    // Responde con un mensaje de éxito
+    res.status(200).json({
+      message: "Orden actualizada exitosamente"
+    });
+  } catch (error) {
+    // Maneja cualquier error que pueda ocurrir durante el proceso
+    console.log('Error al actualizar la orden de compra:', error);
+    return res.status(500).json({ message: 'Se produjo un error al actualizar la orden de compra.' });
   }
 }
