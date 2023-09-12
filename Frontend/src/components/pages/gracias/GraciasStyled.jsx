@@ -28,7 +28,7 @@ export const GraciasBox = styled.div`
   }
 
   @media screen and (max-width: 768px){
-    margin: 60px 40px 0;
+    margin: 0px 40px 0;
   }
 `
 
@@ -90,14 +90,15 @@ export const GraciasSubtitulo = styled.h2`
   font-size: 1.3rem;
   color: ${colores.colorBlanco};
   text-align: center;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 18px;
 
   @media screen and (max-width: 1024px){
     font-size: 1.2rem;
   }
 
   @media screen and (max-width: 768px){
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   @media screen and (max-width: 375px){
@@ -108,7 +109,7 @@ export const GraciasSubtitulo = styled.h2`
 export const GraciasDetalles = styled.h3`
   color: ${colores.colorBlanco};
   font-family: Roboto;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   text-align: center;
   line-height: 1.2rem;
@@ -129,6 +130,7 @@ export const GraciasParrafo = styled.p`
   }
 
   @media screen and (max-width: 768px){
+    font-size: 1.1rem;
     line-height: 1.5rem;
     text-align: justify;
   }

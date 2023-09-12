@@ -19,14 +19,14 @@ const Gracias = () => {
           <GraciasTitulo>¡Felicidades!</GraciasTitulo>
 
           <GraciasSubtitulo>
-            Tu mensaje fue enviado con exito y sera respondido lo mas pronto posible.
+            Compra realizada con exito
           </GraciasSubtitulo>
 
           <GraciasDetalles>
-            Recibiras los detalles de tu pedido en tu correo electronico.
+            ¡Disfruta de tus productos!
           </GraciasDetalles>
 
-          <ButtonLink enlace="/tienda" texto="Tienda Online" />
+          <ButtonLink enlace="/compras" texto="Ver Productos" />
         </GraciasBox>
       </GraciasSection>
 
