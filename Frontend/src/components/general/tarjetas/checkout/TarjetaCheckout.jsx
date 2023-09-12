@@ -1,21 +1,15 @@
 import { useContext } from "react";
-import { BoxItem, CardContainer, Currency, Price, Product, ProductName, ProductPrice, Title } from "./TarjetaCheckOutStyled";
+import { BoxButtonPayment, BoxItem, CardContainer, Currency, Price, Product, ProductName, ProductPrice, Title } from "./TarjetaCheckOutStyled";
 import { CartContext } from "../../../../context/CartContext";
 import { CurrencyContext } from "../../../../context/CurrencyContext";
+import PaypalPayment from "../../paypal/PaypalPayment";
+import { calculateTotalValue, formatPrice } from "../../../../helpers/prices";
 
 const TarjetaCheckout = () => {
-  const { state } = useContext(CartContext)
+  const { state, order } = useContext(CartContext)
   const { selectedCurrency, dolarValue } = useContext(CurrencyContext);
 
-  const formatPrice = new Intl.NumberFormat("es-AR", {
-    currency: "ARS",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
-  })
-
-  let totalValue = 0
-  state.cart.forEach((c) => selectedCurrency === "ARS" ? (totalValue += (c.precio) * dolarValue) : (totalValue += (c.precio)));
-  let totalValueFormated = formatPrice.format(totalValue)
+  const totalValue = calculateTotalValue(state.cart, selectedCurrency, dolarValue)
 
   return (
     <CardContainer>
@@ -24,7 +18,6 @@ const TarjetaCheckout = () => {
         <Title>Tu pedido</Title>
         <Currency>${selectedCurrency}</Currency>
       </BoxItem>
-
 
       <BoxItem>
         <Product>Producto</Product>
@@ -40,8 +33,15 @@ const TarjetaCheckout = () => {
 
       <BoxItem>
         <Product>Monto Total:</Product>
-        <Price>${totalValueFormated}</Price>
+        <Price>${(formatPrice.format(totalValue))}</Price>
       </BoxItem>
+
+      {order && (
+        <BoxButtonPayment>
+          <PaypalPayment value={totalValue} createdOrder={order} />
+        </BoxButtonPayment>
+      )}
+
     </CardContainer>
   );
 };
