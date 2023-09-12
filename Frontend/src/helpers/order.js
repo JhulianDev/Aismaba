@@ -28,6 +28,7 @@ export const handleOrder = (state, userData, selectedCurrency, dolarValue, total
 
   const dataOrder = {
     user_id: userData.id,
+    user_name: userData.user_name,
     products: products,
     currency: selectedCurrency,
     total: totalValue

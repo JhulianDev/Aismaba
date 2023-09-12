@@ -5,12 +5,12 @@ export const formatPrice = new Intl.NumberFormat("es-AR", {
 });
 
 export const calculateTotalValue = (items, currency, dolarValue) => {
+
   let totalValue = 0;
+
   items.forEach((item) => {
     totalValue += currency === "ARS" ? item.precio * dolarValue : item.precio;
   });
 
-  const totalValueFormatted = formatPrice.format(totalValue);
-
-  return totalValueFormatted;
+  return totalValue;
 };
