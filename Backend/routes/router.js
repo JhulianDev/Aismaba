@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 // Controllers
-import { register, login, getUser, purchaseOrder } from '../controllers/authController.js';
+import { register, login, getUser, purchaseOrder, updateOrder } from '../controllers/authController.js';
 
 // Middlewares
 import { validateAuthorization } from '../middlewares/authMiddleware.js';
@@ -21,5 +21,8 @@ router.get("/api/v1/user", validateAuthorization, getUser);
 
 // Purchase orders
 router.post("/api/v1/purchase-orders", validateAuthorization, purchaseOrder);
+
+// Update order
+router.put("/api/v1/order/:id", validateAuthorization, updateOrder);
 
 export default router;
