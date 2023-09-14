@@ -15,6 +15,7 @@ import Cart from "../components/pages/carrito/Cart";
 import Login from "../components/pages/login/Login";
 import SignUp from "../components/pages/SignUp/SignUp";
 import Checkout from "../components/pages/checkout/Checkout";
+import MisCompras from "../components/pages/misCompras/MisCompras";
 
 const Router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const Router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />
+      },
+      {
+        path: "/mis-compras",
+        element: <MisCompras />
       },
       {
         path: "/login",
