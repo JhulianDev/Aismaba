@@ -26,7 +26,7 @@ const Gracias = () => {
             ¡Disfruta de tus productos!
           </GraciasDetalles>
 
-          <ButtonLink enlace="/compras" texto="Ver Productos" />
+          <ButtonLink enlace="/mis-compras" texto="Ver Productos" />
         </GraciasBox>
       </GraciasSection>
 
