@@ -1,0 +1,9 @@
+export { default as PRODUCT_MINIMAL_MOOD } from "./PLANTILLAS MINIMAL MOOD.pdf";
+export { default as PRODUCT_OCEAN_BLUE } from "./PLANTILLAS OCEAN BLUE.pdf";
+export { default as PRODUCT_ELEGANT_INSPO } from "./PLANTILLAS ELEGANT INSPO.pdf";
+export { default as PRODUCT_GREEN_WORLD } from "./PLANTILLAS GREEN WORLD.pdf";
+export { default as PRODUCT_CURVE_PINK } from "./PLANTILLAS CURVE PINK.pdf";
+export { default as PRODUCT_AESTHETIC_BROWN } from "./PLANTILLAS AESTHETIC BROWN.pdf";
+export { default as PRODUCT_SOL_GREY } from "./PLANTILLAS SOL GREY.pdf";
+export { default as PRODUCT_ROSE_LOVE } from "./PLANTILLAS ROSE LOVE.pdf";
+export { default as PRODUCT_MIX_NUDE } from "./PLANTILLAS MIX NUDE.pdf";
