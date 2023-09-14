@@ -75,7 +75,7 @@ const Header = ({ color }) => {
               </>
             ) :
               <>
-                <HeaderButton $type="A">{userData.user_name}</HeaderButton>
+                <HeaderButton $type="A" to="/mis-compras">{userData.user_name}</HeaderButton>
                 <HeaderButton $type="B" onClick={() => { handleSession() }}>Cerrar Sesión</HeaderButton>
               </>
             }
