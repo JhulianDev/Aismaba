@@ -60,6 +60,7 @@ export { default as USER_ICON } from "./generales/user-icon.png";
 export { default as EMAIL_ICON } from "./generales/email-icon.png";
 export { default as PASSWORD_ICON } from "./generales/password-icon.png";
 export { default as WORLD_ICON } from "./generales/world-icon.png";
+export { default as DOWNLOAD_ICON } from "./generales/download-icon.png";
 
 
 
