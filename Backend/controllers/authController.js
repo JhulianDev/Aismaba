@@ -186,3 +186,31 @@ export const updateOrder = async (req, res) => {
     return res.status(500).json({ message: 'Se produjo un error al actualizar la orden de compra.' });
   }
 }
+
+// getPurchases
+export const getPurchases = async (req, res) => {
+  try {
+    // Consulta las órdenes completadas del usuario
+    const purchases = await OrderModel.findAll({
+      where: {
+        user_id: req.user.id, // Filtra por el ID del usuario
+        completed: true, // Filtra las órdenes completadas
+      },
+    });
+
+    // Verifica si se existen órdenes completadas
+    if (purchases.length > 0) {
+      // Si existen responder con las órdenes encontradas
+      res.status(200).json({ message: "Ordenes completadas encontradas con éxito!", hasPurchases: true, purchases })
+    } else {
+      // Si no se encontraron órdenes completadas, responder sin resultados
+      console.log('No se encontraron órdenes completadas para este usuario.');
+      res.status(200).json({ message: "No se encontraron órdenes completadas para este usuario.", hasPurchases: false });
+    }
+  } catch (error) {
+    // Manejar cualquier error que ocurra durante la consulta
+    console.error('Error al buscar las órdenes del usuario:', error);
+    res.status(500).json({ message: 'Error al buscar las órdenes del usuario.' });
+  }
+}
+
