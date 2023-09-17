@@ -3,10 +3,11 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2"
 import { UserContext } from "../../../context/UserContext";
 import HamburgerButton from "../Buttons/hamburger/HamburgerButton";
-import { CARRITO_ICONO, ISOTIPO_BLANCO, LOGOUT_ICON } from "../../../assets/img/images";
-import { BoxContainer, BoxCounter, CartContainer, CartIcon, HeaderBox, HeaderButton, HeaderContainer, HeaderLi, HeaderLink, HeaderNav, HeaderUl, LogoContainer, LogoImage, ProductCounter, Span } from "./HeaderStyled";
+import { CARRITO_ICONO, ISOTIPO_BLANCO } from "../../../assets/img/images";
+import { BoxContainer, BoxCounter, BoxLinkMobile, CartContainer, CartIcon, HeaderBox, HeaderButton, HeaderContainer, HeaderLi, HeaderLink, HeaderLinkMobile, HeaderNav, HeaderUl, LogoContainer, LogoImage, ProductCounter, Span } from "./HeaderStyled";
 import { deleteToken } from "../../../helpers/token";
 import { CartContext } from "../../../context/CartContext";
+import { colores } from "../../../assets/css/Colors";
 
 const Header = ({ color }) => {
   const { userData, setUserData } = useContext(UserContext)
@@ -30,6 +31,7 @@ const Header = ({ color }) => {
 
     deleteToken()
     setUserData(null)
+    setOpen(!open)
     navigate("/")
   }
 
@@ -64,7 +66,21 @@ const Header = ({ color }) => {
                 <HeaderLi><HeaderLink onClick={handleNav} to="/">Inicio</HeaderLink></HeaderLi>
                 <HeaderLi><HeaderLink onClick={handleNav} to="/servicios">Servicios</HeaderLink></HeaderLi>
                 <HeaderLi><HeaderLink onClick={handleNav} to="/Tienda">Tienda</HeaderLink></HeaderLi>
-                <HeaderLi><HeaderLink onClick={handleNav} to="/Contacto">Contacto</HeaderLink></HeaderLi>
+                <HeaderLi><HeaderLink onClick={handleNav} to="/Contacto" $border="none">Contacto</HeaderLink></HeaderLi>
+
+                <BoxLinkMobile>
+                  {!userData ? (
+                    <>
+                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/login" $bgColor="white" $colorText={colores.colorAcento}>Iniciar Sesión</HeaderLinkMobile></HeaderLi>
+                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/sign-up" $bgColor={colores.colorAcento}>Registrarse</HeaderLinkMobile></HeaderLi>
+                    </>
+                  ) :
+                    <>
+                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/mis-compras" $bgColor="white" $colorText={colores.colorAcento}>Mis compras</HeaderLinkMobile></HeaderLi>
+                      <HeaderLi><HeaderLinkMobile onClick={() => { handleSession() }} $bgColor={colores.colorAcento}>Cerrar Sesión</HeaderLinkMobile></HeaderLi>
+                    </>
+                  }
+                </BoxLinkMobile>
               </HeaderUl>
             </HeaderNav>
 
@@ -75,7 +91,7 @@ const Header = ({ color }) => {
               </>
             ) :
               <>
-                <HeaderButton $type="A" to="/mis-compras">{userData.user_name}</HeaderButton>
+                <HeaderButton $type="A" to="/mis-compras">Mis compras</HeaderButton>
                 <HeaderButton $type="B" onClick={() => { handleSession() }}>Cerrar Sesión</HeaderButton>
               </>
             }
