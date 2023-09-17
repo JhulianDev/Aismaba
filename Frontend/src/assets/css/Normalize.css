@@ -405,6 +405,40 @@ body::-webkit-scrollbar-thumb {
   background-color: #9f7253;
 }
 
+/* ----------------------- SweetAlert Colors ----------------------- */
+
+/* Success icon */
+.swal2-icon.swal2-success,
+.swal2-icon.swal2-success .swal2-success-ring,
+.swal2-icon.swal2-success .swal2-success-ring::before{
+  border-color: #9f715365;
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip],
+.swal2-icon.swal2-success [class^=swal2-success-line]{
+  background-color: #9f7253;
+}
+
+/* Error icon */
+.swal2-icon.swal2-error{
+  border-color: #9f7253;
+}
+.swal2-icon.swal2-error [class^=swal2-x-mark-line]{
+  background-color: #9f7253;
+}
+
+/* Info icon - Warning icon */
+.swal2-icon.swal2-info,
+.swal2-icon.swal2-warning{
+  color: #9f7253;
+  border-color: #9f7253;
+}
+/* Button confirm - Button Deny */
+.swal2-styled.swal2-confirm,
+.swal2-styled.swal2-deny{
+  background-color: #9f7253;
+}
+
 /* Fuentes
    ========================================================================== */
 
