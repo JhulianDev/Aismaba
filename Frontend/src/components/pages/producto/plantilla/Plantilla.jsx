@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import TarjetaProducto from "../../../general/tarjetas/producto/TarjetaProducto";
 import { PlantillaSection } from "./PlantillaStyled";
 import PlantillaInfo from "./info/PlantillaInfo";
@@ -13,6 +13,7 @@ const Plantilla = () => {
   const nombreProducto = decodeURIComponent(nombrePlantilla);
   const { plantillas } = useContext(ShopContext)
   const producto = plantillas.find(marca => marca.nombre === nombreProducto);
+  const navigate = useNavigate();
 
   const { dispatch } = useContext(CartContext)
 
@@ -21,6 +22,7 @@ const Plantilla = () => {
       type: "ADD_TO_CART",
       payload: producto
     })
+    navigate("/carrito")
   }
 
   useEffect(() => {

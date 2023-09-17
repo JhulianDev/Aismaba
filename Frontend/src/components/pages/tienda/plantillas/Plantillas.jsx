@@ -4,15 +4,18 @@ import Separador from "../../../general/separador/Separador";
 import TarjetaPlantilla from "../../../general/tarjetas/plantilla/TarjetaPlantilla";
 import { PlantillasBoxTarjetas, PlantillasSection } from "./PlantillasStyled";
 import { CartContext } from "../../../../context/CartContext";
+import { useNavigate } from "react-router";
 
 const Plantillas = ({ data }) => {
   const { dispatch } = useContext(CartContext)
+  const navigate = useNavigate();
 
   const addToCart = (producto) => {
     dispatch({
       type: "ADD_TO_CART",
       payload: producto
     })
+    navigate("/carrito")
   }
   return (
     <>

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import TarjetaElemento from "../../../../general/tarjetas/elementos/elementoMarca/TarjetaElemento";
 import TarjetaProducto from "../../../../general/tarjetas/producto/TarjetaProducto";
 import { useContext } from "react";
@@ -10,6 +10,7 @@ const MarcaContenido = () => {
   const { id } = useParams();
   const { marcas } = useContext(ShopContext)
   const producto = marcas.find(marca => marca.id === parseInt(id));
+  const navigate = useNavigate();
 
   const { dispatch } = useContext(CartContext)
 
@@ -18,6 +19,7 @@ const MarcaContenido = () => {
       type: "ADD_TO_CART",
       payload: producto
     })
+    navigate("/carrito")
   }
 
   return (
