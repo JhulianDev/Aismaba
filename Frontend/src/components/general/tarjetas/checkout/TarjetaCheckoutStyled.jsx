@@ -74,5 +74,5 @@ export const Total = styled.h2`
 `
 
 export const BoxButtonPayment = styled.div`
-  margin-top: 20px;
+  margin-top: ${props => props.$marginTop || '0'};
 `
