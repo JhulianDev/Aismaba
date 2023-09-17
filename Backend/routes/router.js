@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 // Controllers
-import { register, login, getUser, purchaseOrder, updateOrder, getPurchases } from '../controllers/authController.js';
+import { register, login, getUser, purchaseOrder, updateOrder, getPurchases, createPreference, verifyPaymentMP } from '../controllers/authController.js';
 
 // Middlewares
 import { validateAuthorization } from '../middlewares/authMiddleware.js';
@@ -27,5 +27,11 @@ router.put("/api/v1/order/:id", validateAuthorization, updateOrder);
 
 // Get Purchases
 router.get("/api/v1/purchases-user", validateAuthorization, getPurchases);
+
+// Create Preference Mercado Pago
+router.post("/api/v1/mercado_pago/create_preference", validateAuthorization, createPreference);
+
+// Verify Payment Mercado Pago
+router.post("/api/v1/mercado_pago/verify_payment", validateAuthorization, verifyPaymentMP);
 
 export default router;
