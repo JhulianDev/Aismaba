@@ -1,13 +1,16 @@
 import { useContext } from "react";
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 import { BoxButtonPayment, BoxItem, CardContainer, Currency, Price, Product, ProductName, ProductPrice, Title } from "./TarjetaCheckOutStyled";
 import { CartContext } from "../../../../context/CartContext";
 import { CurrencyContext } from "../../../../context/CurrencyContext";
 import PaypalPayment from "../../paypal/PaypalPayment";
 import { calculateTotalValue, formatPrice } from "../../../../helpers/prices";
+import { MERCADOPAGO_KEY } from "../../../../env/env";
 
 const TarjetaCheckout = () => {
-  const { state, order } = useContext(CartContext)
+  const { state, order, preferenceId } = useContext(CartContext);
   const { selectedCurrency, dolarValue } = useContext(CurrencyContext);
+  initMercadoPago(MERCADOPAGO_KEY);
 
   const totalValue = calculateTotalValue(state.cart, selectedCurrency, dolarValue)
 
@@ -36,9 +39,15 @@ const TarjetaCheckout = () => {
         <Price>${(formatPrice.format(totalValue))}</Price>
       </BoxItem>
 
-      {order && (
-        <BoxButtonPayment>
+      {order && selectedCurrency === "USD" && (
+        <BoxButtonPayment $marginTop="15px">
           <PaypalPayment value={totalValue} createdOrder={order} />
+        </BoxButtonPayment>
+      )}
+
+      {order && selectedCurrency === "ARS" && (
+        <BoxButtonPayment>
+          <Wallet initialization={{ preferenceId }} />
         </BoxButtonPayment>
       )}
 
