@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartBoxTable, CartMaxWidth, CartSection, TableBoxIcon, TableBoxProduct, TableDiv, TableHeader, TextPrecio, TextProducto } from './CartStyled';
 import { BOLSA_ICON, TARJETA_ICON } from '../../../assets/img/images';
@@ -12,12 +12,16 @@ import { handleOrder } from '../../../helpers/order';
 import { calculateTotalValue, formatPrice } from '../../../helpers/prices';
 
 const Cart = () => {
-  const { state, setRequireLogin, setOrder } = useContext(CartContext)
+  const { state, setRequireLogin, setOrder, setPreferenceId } = useContext(CartContext)
   const { userData } = useContext(UserContext)
   const { selectedCurrency, dolarValue } = useContext(CurrencyContext);
   const navigate = useNavigate();
 
   const totalValue = calculateTotalValue(state.cart, selectedCurrency, dolarValue)
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <CartSection>
@@ -55,7 +59,7 @@ const Cart = () => {
             </CartBoxTable>
 
             <Button
-              handleClick={() => {handleOrder(state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, navigate)}}
+              handleClick={() => {handleOrder(state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, setPreferenceId, navigate)}}
               icono="true"
               iconoEnlace={TARJETA_ICON}
               texto="Finalizar compra"
