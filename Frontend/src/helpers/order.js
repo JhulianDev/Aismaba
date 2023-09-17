@@ -4,9 +4,10 @@ import { getToken } from "./token";
 import { API_URL } from "../env/env";
 import { formatPrice } from "./prices";
 
-export const handleOrder = (state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, navigate) => {
 
-  if(!userData) {
+export const handleOrder = async (state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, setPreferenceId, navigate) => {
+
+  if (!userData) {
     Swal.fire({
       icon: "info",
       title: "Atención",
@@ -34,16 +35,37 @@ export const handleOrder = (state, userData, selectedCurrency, dolarValue, total
     total: totalValue
   }
 
-  axios.post(`${API_URL}/purchase-orders`, dataOrder, {
-    headers: {
-      Authorization: `Bearer ${getToken()}`
+  try {
+    const orderResponse = await axios.post(`${API_URL}/purchase-orders`, dataOrder, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`
+      }
+    });
+    setOrder(orderResponse.data.order);
+
+    if (selectedCurrency === "ARS") {
+
+      const dataPreference = {
+        order_id: orderResponse.data.order.id,
+        title: "Tienda Aismaba",
+        price: totalValue,
+        quantity: 1
+      }
+
+      try {
+        const preferenceResponse = await axios.post(`${API_URL}/mercado_pago/create_preference`, dataPreference, {
+          headers: {
+            Authorization: `Bearer ${getToken()}`
+          }
+        });
+        setPreferenceId(preferenceResponse.data.id);
+        navigate("/checkout");
+      } catch (preferenceError) {
+        console.log(preferenceError);
+      }
     }
-  })
-    .then((resp) => {
-      setOrder(resp.data.order)
-      navigate("/checkout")
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+    navigate("/checkout");
+  } catch (orderError) {
+    console.log(orderError);
+  }
 }
