@@ -15,5 +15,5 @@ app.use("/api/v1", router)
 dataBaseConnection();
 
 app.listen(PORT, HOST, () => {
-  console.log(`Server active in http://localhost:${PORT}/api/v1`)
+  console.log(`Server active on port: ${PORT}`)
 })
