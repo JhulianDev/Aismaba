@@ -20,32 +20,41 @@ const MisCompras = () => {
         }
       })
         .then((resp) => {
-          // Constante para almacenar todas las compras
-          const purchases = resp.data.purchases;
+          if (resp.data.purchases) {
+            // Constante para almacenar todas las compras
+            const purchases = resp.data.purchases;
+            // Constante para almacenar todos los productos de todas las compras
+            const allProducts = [];
+            // Iterar a través de las compras y extraer los productos
+            purchases.forEach((purchase) => {
+              // Removemos caracteres al principio y al final de la cadena
+              const jsonString = purchase.products.slice(2, -2);
+              // Reemplazamos las comillas escapadas para obtener un JSON válido
+              const cleanedString = jsonString.replace(/\\"/g, '"');
+            
+              try {
+                // Analizamos la cadena como JSON
+                const productJson = JSON.parse(cleanedString);
+                allProducts.push(productJson);
+              } catch (error) {
+                console.error('Error al analizar JSON:', error);
+              }
+            });
 
-          // Constante para almacenar todos los productos de todas las compras
-          const allProducts = [];
+            // Guardamos los productos en el estado "compras"
+            setproductos(allProducts)
 
-          // Iterar a través de las compras y extraer los productos
-          purchases.forEach((purchase) => {
-            const productsJson = JSON.parse(purchase.products);
-            allProducts.push(...productsJson);
-          });
+            // Almacenamos los descargables correspondientes a cada producto en una constante:
+            const descargablesDeProductos = allProducts.map((producto) => {
+              // Buscamos el producto correspondiente en el estado "products" usando el nombre del producto.
+              const productoEncontrado = products.find((p) => p.nombre === producto.nombre);
+              // Si se encuentra el producto en "products", tomamos su propiedad "descargable", de lo contrario, establecemos una cadena vacía.
+              return productoEncontrado ? productoEncontrado.descargable : "";
+            });
 
-          // Guardamos los productos en el estado "compras"
-          setproductos(allProducts)
-
-          // Almacenamos los descargables correspondientes a cada producto en una constante:
-          const descargablesDeProductos = allProducts.map((producto) => {
-            // Buscamos el producto correspondiente en el estado "products" usando el nombre del producto.
-            const productoEncontrado = products.find((p) => p.nombre === producto.nombre);
-            // Si se encuentra el producto en "products", tomamos su propiedad "descargable", de lo contrario, establecemos una cadena vacía.
-            return productoEncontrado ? productoEncontrado.descargable : "";
-          });
-
-          // Establecemos el estado "descargables" con la lista de descargables correspondientes a los productos.
-          setDescargables(descargablesDeProductos);
-
+            // Establecemos el estado "descargables" con la lista de descargables correspondientes a los productos.
+            setDescargables(descargablesDeProductos);
+          }
 
         })
         .catch((error) => {
@@ -80,7 +89,7 @@ const MisCompras = () => {
             </BoxItem>
           ))
         )}
-        
+
       </BoxCompras>
     </Section>
   );
