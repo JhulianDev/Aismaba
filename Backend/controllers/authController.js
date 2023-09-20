@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 import dotenv from 'dotenv';
 import OrderModel from "../models/OrderModel.js";
+import DolarModel from "../models/DolarModel.js";
 dotenv.config();
 
 mercadopago.configure({
@@ -125,12 +126,36 @@ export const getUser = async (req, res) => {
       // Si el usuario no existe devolvemos el error:
     } else {
       console.log("El id proporcionado no corresponde a ningun usuario")
-      res.status(404).json({ message: `Error al intentar obtener el usuario` })
+      res.status(404).json({ message: `El id proporcionado no corresponde a ningun usuario` })
     }
 
   } catch (error) {
     console.log(`Error al intentar obtener el usuario: ${error}`)
     res.status(500).json({ message: `Error al intentar obtener el usuario` })
+  }
+}
+
+// Get Dolar Value 
+export const getDolarValue = async (req, res) => {
+  try {
+    // Consultar la única fila de la tabla "dolar" para obtener el valor del dolar
+    const dolar = await DolarModel.findOne();
+
+    // Si el dolar existe devolvemos su informacion:
+    if (dolar) {
+      res.status(200).json({
+        message: "Valor del dolar obtenido con éxito",
+        dolar_value: dolar.dolar_value
+      });
+      // Si el dolar no existe devolvemos el error:
+    } else {
+      console.log("No se encontró el valor del dolar")
+      res.status(404).json({ message: `No se encontró el valor del dolar` })
+    }
+
+  } catch (error) {
+    console.log(`Error al intentar obtener el valor del dolar: ${error}`)
+    res.status(500).json({ message: "Error al intentar obtener el valor del dolar" })
   }
 }
 
@@ -261,7 +286,6 @@ export const createPreference = (req, res) => {
     res.status(500).json({ message: 'Error al crear las preferencias de mercado pago' });
   }
 }
-
 
 // Verify Payment Mercado Pago
 export const verifyPaymentMP = async (req, res) => {
