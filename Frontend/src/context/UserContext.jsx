@@ -20,7 +20,7 @@ const UserProvider = ({ children }) => {
           setUserData(resp.data.user)
         })
         .catch((error) => {
-          console.log(`Error al obtener el usuario: ${error}`);
+          console.error(`Error al obtener el usuario: ${error.response.data.message}`);
         });
     }
   }, [])
