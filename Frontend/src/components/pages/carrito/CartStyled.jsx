@@ -120,3 +120,19 @@ export const DeleteIcon = styled.img`
     width: 100%;
   }
 `
+
+export const BoxCartEmpty = styled.div`
+  background-color: ${colores.colorPrincipal};
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const TextCartEmpty = styled.span`
+  ${textStyles};
+  color: white;
+  text-align: center;
+  padding: 5px 20px; 
+`
