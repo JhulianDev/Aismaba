@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CartBoxTable, CartMaxWidth, CartSection, TableBoxIcon, TableBoxProduct, TableDiv, TableHeader, TextPrecio, TextProducto } from './CartStyled';
+import { BoxCartEmpty, CartBoxTable, CartMaxWidth, CartSection, TableBoxIcon, TableBoxProduct, TableDiv, TableHeader, TextCartEmpty, TextPrecio, TextProducto } from './CartStyled';
 import { BOLSA_ICON, TARJETA_ICON } from '../../../assets/img/images';
 import Button from '../../general/Buttons/button/Button';
 import CurrencySelector from '../../general/currency/CurrencySelector';
@@ -59,7 +59,7 @@ const Cart = () => {
             </CartBoxTable>
 
             <Button
-              handleClick={() => {handleOrder(state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, setPreferenceId, navigate)}}
+              handleClick={() => { handleOrder(state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, setPreferenceId, navigate) }}
               icono="true"
               iconoEnlace={TARJETA_ICON}
               texto="Finalizar compra"
@@ -78,7 +78,9 @@ const Cart = () => {
             />
           </>
         ) : (
-          <TextProducto>Tu carrito está vacío</TextProducto>
+          <BoxCartEmpty>
+            <TextCartEmpty>Tu carrito está vacío. Visita nuestra tienda!</TextCartEmpty>
+          </BoxCartEmpty>
         )}
 
 
