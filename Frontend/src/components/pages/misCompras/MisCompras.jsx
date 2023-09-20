@@ -31,7 +31,7 @@ const MisCompras = () => {
               const jsonString = purchase.products.slice(2, -2);
               // Reemplazamos las comillas escapadas para obtener un JSON válido
               const cleanedString = jsonString.replace(/\\"/g, '"');
-            
+
               try {
                 // Analizamos la cadena como JSON
                 const productJson = JSON.parse(cleanedString);
@@ -71,23 +71,26 @@ const MisCompras = () => {
           <Title>Mis compras</Title>
         </BoxItem>
 
-        <BoxItem>
-          <ColumnProduct>Productos</ColumnProduct>
-
-          <ColumnDownload>Descargar</ColumnDownload>
-        </BoxItem>
-
-        {productos && (
-          productos.map((producto, index) => (
-
-            <BoxItem key={index}>
-              <Product>{producto.nombre}</Product>
-
-              <DownloadBox href={descargables[index]} download>
-                <DownloadIcon src={DOWNLOAD_ICON} />
-              </DownloadBox>
+        {productos && productos.length > 0 ? (
+          <>
+            <BoxItem>
+              <ColumnProduct>Productos</ColumnProduct>
+              <ColumnDownload>Descargar</ColumnDownload>
             </BoxItem>
-          ))
+
+            {productos.map((producto, index) => (
+              <BoxItem key={index}>
+                <Product>{producto.nombre}</Product>
+                <DownloadBox href={descargables[index]} download>
+                  <DownloadIcon src={DOWNLOAD_ICON} />
+                </DownloadBox>
+              </BoxItem>
+            ))}
+          </>
+        ) : (
+          <BoxItem>
+            <ColumnProduct>Aqui podras descargar los productos que adquieras en nuestra tienda.</ColumnProduct>
+          </BoxItem>
         )}
 
       </BoxCompras>
