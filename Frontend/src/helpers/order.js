@@ -5,7 +5,9 @@ import { API_URL } from "../env/env";
 import { formatPrice } from "./prices";
 
 
-export const handleOrder = async (state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, setPreferenceId, navigate) => {
+export const handleOrder = async (state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, setPreferenceId, loading, setLoading, navigate) => {
+
+  setLoading(true);
 
   if (!userData) {
     Swal.fire({
@@ -67,5 +69,7 @@ export const handleOrder = async (state, userData, selectedCurrency, dolarValue,
     navigate("/checkout");
   } catch (orderError) {
     console.log(orderError);
+  } finally {
+    setLoading(false); // Set loading to false in any case (success or error)
   }
 }
