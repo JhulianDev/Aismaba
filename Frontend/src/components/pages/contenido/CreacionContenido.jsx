@@ -90,6 +90,7 @@ const CreacionContenido = () => {
           nombre="SIMPLE"
           items={["✦ 12 POSTS ✦"]}
           parrafo="Ideal para dar ese primer paso e iniciarse en el mundo de las Redes Sociales."
+          enlace="https://bit.ly/Aismaba-Contenido-Simple"
         />
 
         <TarjetaPaquete
@@ -97,6 +98,7 @@ const CreacionContenido = () => {
           nombre="PREMIUM"
           items={["★ 30 Posts ★"]}
           parrafo="Ideal para mantener a tu audiencia en contacto constante con tus posts con el objetivo de crear un vínculo mas cercano que beneficie a tu marca."
+          enlace="https://bit.ly/Aismaba-Contenido-Premium"
         />
 
         <TarjetaPaquete
@@ -104,6 +106,7 @@ const CreacionContenido = () => {
           nombre="SOCIAL"
           items={["✤ 21 Posts ✤"]}
           parrafo="Ideal para mantener tus redes sociales activas de forma equilibrada."
+          enlace="https://bit.ly/Aismaba-Contenido-Social"
         />
 
       </Paquetes>
