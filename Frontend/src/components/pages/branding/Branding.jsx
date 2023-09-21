@@ -106,6 +106,7 @@ const Branding = () => {
             "✦ Recursos gráficos ✦",
             "✦ Guia de marca ✦"
           ]}
+          enlace="https://bit.ly/Aismaba-Branding-Simple"
         />
 
         <TarjetaPaquete
@@ -127,6 +128,7 @@ const Branding = () => {
             "★ Tarjeta de presentación ★",
             "★ Sticker y Tissue paper ★"
           ]}
+          enlace="https://bit.ly/Aismaba-Branding-Premium"
         />
 
         <TarjetaPaquete
@@ -146,6 +148,7 @@ const Branding = () => {
             "✤ 3 Historias para Instagram ✤",
             "✤ 6 Portadas historias Instagram ✤"
           ]}
+          enlace="https://bit.ly/Aismaba-Branding-Social"
         />
       </Paquetes>
 

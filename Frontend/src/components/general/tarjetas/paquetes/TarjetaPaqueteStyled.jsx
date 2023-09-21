@@ -170,7 +170,7 @@ export const TarjetaPaqueteParrafo = styled.p`
   }
 `
 
-export const TarjetaPaqueteButton = styled(Link)`
+export const TarjetaPaqueteButton = styled.a`
   background-color: ${colores.colorPrincipal};
   color: ${colores.colorBlanco};
   box-shadow: 0rem 0rem .3125rem .125rem #0000002a;
@@ -178,6 +178,7 @@ export const TarjetaPaqueteButton = styled(Link)`
   padding: 16px 30px;
   border-radius: 50px;
   margin-top: 10px;
+  cursor: pointer;
 
   display: flex;
   align-items: center;

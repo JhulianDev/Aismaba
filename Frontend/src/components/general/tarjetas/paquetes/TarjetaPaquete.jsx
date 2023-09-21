@@ -1,6 +1,6 @@
 import { TarjetaPaqueteBox, TarjetaPaqueteBoxPrecios, TarjetaPaqueteButton, TarjetaPaqueteDivisa, TarjetaPaqueteItem, TarjetaPaqueteLista, TarjetaPaqueteMonto, TarjetaPaqueteParrafo, TarjetaPaqueteSimbolo, TarjetaPaqueteTitulo } from "./TarjetaPaqueteStyled";
 
-const TarjetaPaquete = ({ items, precio, nombre, parrafo }) => {
+const TarjetaPaquete = ({ items, precio, nombre, parrafo, enlace }) => {
   return (
     <TarjetaPaqueteBox>
 
@@ -20,7 +20,7 @@ const TarjetaPaquete = ({ items, precio, nombre, parrafo }) => {
 
       {parrafo ? <TarjetaPaqueteParrafo>{parrafo}</TarjetaPaqueteParrafo> : null}
 
-      <TarjetaPaqueteButton>¡LO QUIERO!</TarjetaPaqueteButton>
+      <TarjetaPaqueteButton href={enlace} target="_blank">¡LO QUIERO!</TarjetaPaqueteButton>
 
     </TarjetaPaqueteBox>
   );

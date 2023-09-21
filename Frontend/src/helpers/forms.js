@@ -4,8 +4,9 @@ import { API_URL } from "../env/env";
 import { setToken } from "./token";
 
 // Funcion para manejar el envio de formulario del Login y el Sign Up:
-export const handleForm = (e, type, url, redirectLink, requireLogin, navigate, setUserData) => {
+export const handleForm = (e, type, url, redirectLink, requireLogin, navigate, setUserData, loading, setLoading) => {
   e.preventDefault()
+  setLoading(true);
 
   // Si al usar la funcion NO se indica el argumanto type="SignUp" data será igual a:
   let data = {
@@ -58,4 +59,7 @@ export const handleForm = (e, type, url, redirectLink, requireLogin, navigate, s
       })
       console.log(error.response.data.message)
     })
+    .finally(() => {
+      setLoading(false);
+    });
 };
