@@ -5,11 +5,13 @@ import { BoxCompras, BoxItem, ColumnDownload, ColumnProduct, DownloadBox, Downlo
 import { getToken } from "../../../helpers/token";
 import { API_URL } from "../../../env/env";
 import { ShopContext } from "../../../context/ShopContext";
+import Loader from "../../general/Loader/Loader";
 
 const MisCompras = () => {
   const [productos, setproductos] = useState()
   const [descargables, setDescargables] = useState([]);
   const { products } = useContext(ShopContext)
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
@@ -59,9 +61,20 @@ const MisCompras = () => {
         })
         .catch((error) => {
           console.log(`Error al obtener las compras: ${error}`);
+        })
+        .finally(() => {
+          setLoading(false);
         });
     }
   }, [])
+
+  if (loading)
+    return (
+      <Loader
+        height={"100vh"}
+        bgColor={true}
+      />
+    )
 
   return (
     <Section>

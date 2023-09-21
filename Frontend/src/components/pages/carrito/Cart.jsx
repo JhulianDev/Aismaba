@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BoxCartEmpty, CartBoxTable, CartMaxWidth, CartSection, TableBoxIcon, TableBoxProduct, TableDiv, TableHeader, TextCartEmpty, TextPrecio, TextProducto } from './CartStyled';
 import { BOLSA_ICON, TARJETA_ICON } from '../../../assets/img/images';
@@ -10,11 +10,13 @@ import { CurrencyContext } from '../../../context/CurrencyContext';
 import { UserContext } from '../../../context/UserContext';
 import { handleOrder } from '../../../helpers/order';
 import { calculateTotalValue, formatPrice } from '../../../helpers/prices';
+import Loader from '../../general/Loader/Loader';
 
 const Cart = () => {
   const { state, setRequireLogin, setOrder, setPreferenceId } = useContext(CartContext)
   const { userData } = useContext(UserContext)
   const { selectedCurrency, dolarValue } = useContext(CurrencyContext);
+  const [loading, setLoading] = useState();
   const navigate = useNavigate();
 
   const totalValue = calculateTotalValue(state.cart, selectedCurrency, dolarValue)
@@ -22,6 +24,14 @@ const Cart = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  if (loading)
+    return (
+      <Loader
+        height={"100vh"}
+        bgColor={true}
+      />
+    )
 
   return (
     <CartSection>
@@ -59,7 +69,7 @@ const Cart = () => {
             </CartBoxTable>
 
             <Button
-              handleClick={() => { handleOrder(state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, setPreferenceId, navigate) }}
+              handleClick={() => { handleOrder(state, userData, selectedCurrency, dolarValue, totalValue, setRequireLogin, setOrder, setPreferenceId, loading, setLoading, navigate) }}
               icono="true"
               iconoEnlace={TARJETA_ICON}
               texto="Finalizar compra"
