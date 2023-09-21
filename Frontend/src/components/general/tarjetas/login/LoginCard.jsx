@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { EMAIL_ICON, ISOTIPO_ACENTO, PASSWORD_ICON, USER_ICON, WORLD_ICON } from "../../../../assets/img/images";
 import { BoxInput, Input, InputIcon, LoginForm, LoginLogo, Option, RedirectButton, Select, SubmitButton } from "./LoginCardStyled";
@@ -6,15 +6,19 @@ import { ShopContext } from "../../../../context/ShopContext";
 import { handleForm } from "../../../../helpers/forms";
 import { UserContext } from "../../../../context/UserContext";
 import { CartContext } from "../../../../context/CartContext";
+import Loader from "../../Loader/Loader";
 
 const LoginCard = ({ submitText, redirectText, linkButton, type, apiUrl, redirectLink }) => {
   const { paises } = useContext(ShopContext)
   const { setUserData } = useContext(UserContext);
   const { requireLogin } = useContext(CartContext)
+  const [loading, setLoading] = useState();
   const navigate = useNavigate();
 
+  if (loading) return <Loader height={"100vh"}/>
+
   return (
-    <LoginForm onSubmit={(e) => handleForm(e, type, apiUrl, redirectLink, requireLogin, navigate, setUserData)}>
+    <LoginForm onSubmit={(e) => handleForm(e, type, apiUrl, redirectLink, requireLogin, navigate, setUserData, loading, setLoading)}>
       <LoginLogo src={ISOTIPO_ACENTO} alt="Isotipo Aismaba" />
 
       {type === "SignUp" && (

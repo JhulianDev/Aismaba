@@ -3,13 +3,17 @@ import { API_URL, PAYPAL_ID } from "../../../env/env";
 import { CartContext } from "../../../context/CartContext";
 import { getToken } from "../../../helpers/token";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Swal from "sweetalert2"
 import axios from "axios"
 
-const PaypalPayment = ({ value, createdOrder }) => {
+const PaypalPayment = ({ value, createdOrder, setLoading }) => {
   const { dispatch, setOrder } = useContext(CartContext)
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setLoading(false)
+  }, []);
 
   return (
     <PayPalScriptProvider options={{ clientId: PAYPAL_ID }}>
