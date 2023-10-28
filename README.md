@@ -2,7 +2,7 @@
 <h2 align="center">✍ Autor: JhulianDev</h2>
 <h3 align="center">💎 Aismaba es una página web que ofrece servicios de branding y venta de productos digitales como plantillas para redes sociales, presets para Lightroom y marcas pre-diseñadas. 🙇🏻</h3>
 
-<p align="center">💼 La página web ha sido desarrollada utilizando React.js para el front-end, Node.js para el back-end y MySQL para la base de datos. </p>
+<p align="center">💼 La página web ha sido desarrollada utilizando React.js para el front-end, Node.js para el back-end y MySQL para la base de datos. Ademas maneja integraciones con las APIs de diferentes procesadores de pago.</p>
 
 <p align="center">Los usuarios pueden comprar productos digitales y contratar servicios de branding a través de la página web y en el futuro incluirá características como personalización de marcas y plantillas, y la gestión de cuentas de usuario.</p>
 
