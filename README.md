@@ -11,7 +11,7 @@
 
 <h2 align="center">✍ Autor: JhulianDev</h2>
 
-<h2 align="center">🌐 Sigueme en:</h2>
+<h2 align="center">🌐 Sigueme en: https://linkedin.com/in/jhuliandev</h2>
 
 <h3 align="center">https://linkedin.com/in/jhuliandev</h3>
 
