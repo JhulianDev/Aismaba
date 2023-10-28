@@ -12,4 +12,6 @@
 
 <h2 align="center">🌐 Sigueme en: https://linkedin.com/in/jhuliandev</h2>
 
+<h3 align="center">🛑 Prohibido su uso comercial 🛑</h3>
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/jhuliandev) 
