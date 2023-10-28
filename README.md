@@ -12,7 +12,7 @@
 
 <h2 align="center">👁‍🗨 Ver este proyecto en vivo: www.aismaba.com</h2>
 
-<h2 align="center">💎 Mi sitio web: www.jhulian.dev</h2>
+<h2 align="center">💎 Mi sitio web: https://jhuliandev.com/</h2>
 
 <h2 align="center">✉ Contáctame en: jhulian.dev@gmail.com</h2>
 
