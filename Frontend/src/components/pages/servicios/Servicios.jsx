@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-import { MOCKUP_ASESORIAS, MOCKUP_BRANDING, MOCKUP_CREACION_CONTENIDO } from "../../../assets/img/images";
+import MOCKUP_INSTAKIT from "../../../assets/img/generales/mockup_instakit.png"
+import MOCKUP_CONTENIDO from "../../../assets/img/generales/mockup_contenido.png"
+import MOCKUP_DISEÑO_WEB from "../../../assets/img/generales/mockup_diseno-web.png"
 import Footer from "../../general/footer/Footer";
 import Slider from "../../general/slider/Slider";
 import Mockup from "../../general/tarjetas/mockup/Mockup";
@@ -15,15 +17,15 @@ const Servicios = () => {
       <Slider>
 
         <Mockup
-          imagen={MOCKUP_BRANDING}
-          alt="Mockup Branding"
-          titulo="Diseño De Branding"
+          imagen={MOCKUP_INSTAKIT}
+          alt="Mockup Instakit"
+          titulo="Instakit"
           textHover="Ver Más"
-          enlace="/branding"
+          enlace="/instakit"
         />
 
         <Mockup
-          imagen={MOCKUP_CREACION_CONTENIDO}
+          imagen={MOCKUP_CONTENIDO}
           alt="Mockup Creación De Contenido"
           titulo="Creación De Contenido"
           textHover="Ver Más"
@@ -31,11 +33,11 @@ const Servicios = () => {
         />
 
         <Mockup
-          imagen={MOCKUP_ASESORIAS}
-          alt="Mockup Asesorías"
-          titulo="Asesorías Personalizadas"
+          imagen={MOCKUP_DISEÑO_WEB}
+          alt="Mockup Diseño Web"
+          titulo="Diseño Web"
           textHover="Próximamente..."
-          enlace="/servicios"
+          enlace="/diseño-web"
         />
 
       </Slider>
