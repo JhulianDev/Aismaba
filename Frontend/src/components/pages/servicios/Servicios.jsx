@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import MOCKUP_INSTAKIT from "../../../assets/img/generales/mockup_instakit.png";
 import MOCKUP_CONTENIDO from "../../../assets/img/generales/mockup_contenido.png";
-import MOCKUP_DISENO_WEB from "../../../assets/img/generales/mockup_diseño-web.png";
+import MOCKUP_DISENO_WEB from "../../../assets/img/generales/mockup_diseno-web.png";
 import Footer from "../../general/footer/Footer";
 import Slider from "../../general/slider/Slider";
 import Mockup from "../../general/tarjetas/mockup/Mockup";
