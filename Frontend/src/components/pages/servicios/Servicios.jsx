@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { MOCKUP_ASESORIAS, MOCKUP_BRANDING, MOCKUP_CREACION_CONTENIDO } from "../../../assets/img/images";
 import MOCKUP_INSTAKIT from "../../../assets/img/generales/mockup_instakit.png";
 import MOCKUP_CONTENIDO from "../../../assets/img/generales/mockup_contenido.png";
 import MOCKUP_DISENO_WEB from "../../../assets/img/generales/mockup_diseño-web.png";
