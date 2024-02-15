@@ -8,3 +8,9 @@ export const colores = {
   colorFondo:       "#ece8e3",
   colorBlanco:      "#ffffff",
 };
+
+export const coloresV2 = {
+  colorPrincipal:   "#eae1dc",
+  colorSecundario:  "#f9f5f4",
+  colorTextos:      "#303030",
+}
