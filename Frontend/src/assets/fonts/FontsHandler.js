@@ -1,4 +1,4 @@
 export const fonts = {
-  MainTypography:      "nunito regular",
-  SecondaryTypography: "nunito secondary"
+  MainTypography:      "TheSeasons",
+  SecondaryTypography: "HKGrotesk"
 };

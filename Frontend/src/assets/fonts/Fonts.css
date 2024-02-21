@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'TheSeasons', serif;
+  font-family: 'TheSeasons';
   src: url('./TheSeasons.otf') format('opentype');
 }
 
 @font-face {
-  font-family: 'HKGrotesk', sans-serif;
+  font-family: 'HKGrotesk';
   src: url('./HKGrotesk-Regular.otf') format('opentype');
 }
