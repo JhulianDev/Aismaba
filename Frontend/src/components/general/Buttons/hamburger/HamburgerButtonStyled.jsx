@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { coloresV2 } from '../../../../assets/css/Colors';
 
 // Definiendo animaciones:
 
@@ -45,7 +46,7 @@ export const HamburgerContainer = styled.div`
   overflow: hidden;
   z-index: 30;
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1024px){
     display: flex;
   }
 `;
@@ -81,7 +82,7 @@ export const HamburgerInner = styled.span`
   &::after {
     width: 2rem;
     height: 0.1563rem;
-    background-color: rgb(255, 255, 255);
+    background-color: ${coloresV2.colorTextos};
     border-radius: 0.25rem;
     position: absolute;
     transition-property: transform;
