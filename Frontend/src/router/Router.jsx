@@ -21,7 +21,7 @@ import Instakit from "../components/pages/instakit/Instakit";
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <Header color={colores.colorPrincipal} />,
+    element: <Header color={coloresV2.colorPrincipal} />,
     errorElement: <Error404 />,
     children: [
       {
@@ -67,12 +67,7 @@ const Router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <SignUp />
-      }
-    ]
-  },
-  {
-    element: <Header color={coloresV2.colorPrincipal} />,
-    children: [
+      },
       {
         path: "/branding",
         element: <Branding />
