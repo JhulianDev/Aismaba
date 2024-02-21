@@ -64,7 +64,7 @@ export const Titulo = styled.h1`
   @media screen and (max-width: 768px){
     font-size: 2.4rem;
     display: ${(props) => props.$mobile ? "flex" : "none"};
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
 `
 
@@ -187,6 +187,6 @@ export const Imagen = styled.img`
   @media screen and (max-width: 768px){
     width: 100%;
     order: 1;
-    margin: 0 0 20px;
+    margin: 0;
   }
 `

@@ -18,7 +18,7 @@ const linkStyle = css`
 `
 
 export const HeaderContainer = styled.header`
-  background-color: ${props => props.$scrolling ? colores.colorPrincipal : props.$backgroundColor};
+  background-color: ${props => props.$scrolling ? "#e2d5ce" : props.$backgroundColor};
   border-bottom: 1px solid ${coloresV2.colorTextos};
   width: 100%;
   height: 60px;

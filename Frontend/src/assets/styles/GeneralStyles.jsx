@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { coloresV2 } from "../css/Colors";
 
 export const Section = styled.section`
   display: flex;
@@ -10,6 +11,9 @@ export const Section = styled.section`
   padding: 60px;
 
   background-color: ${(props) => props.$bgColor};
+  border: ${(props) => props.$border && `1px solid ${coloresV2.colorTextos}`};
+  border-left: none;
+  border-right: none;
   overflow: hidden;
 
   @media screen and (max-width: 768px){
@@ -47,6 +51,7 @@ export const MaxWidth = styled.div`
   @media screen and (max-width: 768px){
     max-width: 536px;
     flex-direction: column;
+    gap: 30px;
   }
 
   @media screen and (max-width: 596px){
