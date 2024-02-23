@@ -12,6 +12,7 @@ export const Section = styled.section`
 
   background-color: ${(props) => props.$bgColor};
   border: ${(props) => props.$border && `1px solid ${coloresV2.colorTextos}`};
+  border-bottom: ${(props) => props.$borderBottom && `1px solid ${coloresV2.colorTextos}`};
   border-left: none;
   border-right: none;
   overflow: hidden;
