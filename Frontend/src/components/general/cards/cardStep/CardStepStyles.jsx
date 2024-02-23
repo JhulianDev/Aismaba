@@ -55,8 +55,8 @@ export const Number = styled.span`
   justify-content: center;
   text-align: center;
   border-radius: ${(props) => 
-    props.$position === "left" ? "12px 0 0 12px" : 
-    props.$position === "right" ? "0 12px 12px 0" : ""
+    props.$position === "left" ? "7px 0 0 7px" : 
+    props.$position === "right" ? "0 7px 7px 0" : ""
   };
 
   order: ${(props) => 
@@ -106,7 +106,7 @@ export const Number = styled.span`
 export const Image = styled.img`
   height: 200px;
   border: ${(props) => props.$border && `1px solid ${coloresV2.colorTextos}`};
-  border-radius: 12px;
+  border-radius: 7px;
   order: ${(props) => 
     props.$position === "left" ? "2" : 
     props.$position === "right" ? "1" : ""
