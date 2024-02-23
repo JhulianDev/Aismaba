@@ -9,7 +9,7 @@ import SliderAuto from "../../sliders/sliderAuto/SliderAuto";
 
 const DescripcionServicio = () => {
   return (
-    <Section $align="top" $height="500px" $bgColor={coloresV2.colorSecundario}>
+    <Section $borderBottom $align="top" $height="500px" $bgColor={coloresV2.colorSecundario}>
       <MaxWidth $flexDirection="column">
         <Title>Dale una imagen atractiva y armoniosa a tu perfil de Instagram.</Title>
         <Description>
