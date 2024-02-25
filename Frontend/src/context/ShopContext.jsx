@@ -42,7 +42,21 @@ const shopData = {
     { nombre : "Sol Grey",  descargable: PRODUCT_SOL_GREY },
     { nombre : "Rose Love",  descargable: PRODUCT_ROSE_LOVE },
     { nombre : "Mix Nude",  descargable: PRODUCT_MIX_NUDE }
-  ]
+  ],
+  instakit: {
+    precio: { ARS: "99.999", USD: "99.99", EUR: "92.99" },
+    items: [
+      "6 PLANTILLAS POST SIMPLES",
+      "3 PLANTILLAS PORTADAS REELS",
+      "3 CARROUSELES (5 PAG. C/U",
+      "3 PLANTILLAS DE HISTORIAS",
+      "7 PORTADAS HISTORIAS DESTACADAS",
+      "MANUAL DE ESTILO",
+      "DISEÑO DE FEED",
+      "PALETA DE COLORES",
+      "TIPOGRAFIAS"
+    ]
+  }
 }
 
 const ShopContext = createContext()
