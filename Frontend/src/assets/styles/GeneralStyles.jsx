@@ -30,7 +30,7 @@ export const MaxWidth = styled.div`
   display: flex;
   flex-direction: ${(props) => props.$flexDirection || "row"};
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${(props) => props.$justifyContent || "space-between"};
   position: relative;
 
   max-width: 1416px;
