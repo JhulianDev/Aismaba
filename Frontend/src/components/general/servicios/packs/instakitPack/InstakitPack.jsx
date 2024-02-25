@@ -12,7 +12,7 @@ const InstakitPack = () => {
   const { instakit } = useContext(ShopContext)
   
   return (
-    <Section $bgColor={coloresV2.colorPrincipal}>
+    <Section $bgColor={coloresV2.colorPrincipal} $borderBottom>
       <MaxWidth $flexDirection="column">
         <Title>Adquiere tu INSTAKIT</Title>
         <Subtitle>Selecciona tu moneda local</Subtitle>
