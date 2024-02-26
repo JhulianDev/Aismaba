@@ -5,6 +5,7 @@ import DescripcionServicio from "../../general/servicios/descripcion/Descripcion
 import InstakitPack from "../../general/servicios/packs/instakitPack/InstakitPack";
 import PasosServicio from "../../general/servicios/pasos/PasosServicio";
 import PortadaServicio from "../../general/servicios/portada/PortadaServicio";
+import PreguntasFrecuentes from "../../general/servicios/preguntas/PreguntasFrecuentes";
 
 const Instakit = () => {
   return (
@@ -14,6 +15,7 @@ const Instakit = () => {
       <DescripcionServicio />
       <PasosServicio />
       <InstakitPack />
+      <PreguntasFrecuentes />
       <ContactoServicio />
       <FooterV2 />
     </>
