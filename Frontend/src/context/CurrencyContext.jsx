@@ -6,20 +6,20 @@ const CurrencyContext = createContext();
 
 const CurrencyProvider = ({ children }) => {
   const [selectedCurrency, setSelectedCurrency] = useState("ARS");
-  const [dolarValue, setDolarValue] = useState();
+  const [dolarValue, setDolarValue] = useState(300);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const resp = await axios.get(`${API_URL}/private`);
-        setDolarValue(resp.data.dolar_value);
-      } catch (error) {
-        console.error(`Error al obtener el valor del dólar: ${error.response.data.message}`);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const resp = await axios.get(`${API_URL}/private`);
+  //       setDolarValue(resp.data.dolar_value);
+  //     } catch (error) {
+  //       console.error(`Error al obtener el valor del dólar: ${error.response.data.message}`);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <CurrencyContext.Provider value={{ selectedCurrency, setSelectedCurrency, dolarValue }}>
