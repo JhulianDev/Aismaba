@@ -4,28 +4,28 @@ const sliderAnimation = keyframes`
   0% {
     transform: translateX(0);
   }
-  11.1% {
+  6% {
     transform: translateX(0);
   }
-  22.2% {
+  18.5% {
     transform: translateX(calc(-100% - 20px));
   }
-  33.3% {
+  31% {
     transform: translateX(calc(-100% - 20px));
   }
-  44.4% {
+  43.5% {
     transform: translateX(calc(-200% - 40px));
   }
-  55.5% {
+  56% {
     transform: translateX(calc(-200% - 40px));
   }
-  66.6% {
+  68.5% {
     transform: translateX(calc(-300% - 60px));
   }
-  77.7% {
+  81% {
     transform: translateX(calc(-300% - 60px));
   }
-  88.8% {
+  93.5% {
     transform: translateX(calc(-400% - 80px));
   }
   100% {
@@ -53,6 +53,6 @@ export const Slider = styled.div`
 
   @media screen and (max-width: 768px){
     flex-wrap: nowrap;
-    animation: ${sliderAnimation} 15s infinite alternate ease-in-out;
+    animation: ${sliderAnimation} 9s infinite alternate ease-in-out;
   }
 `
