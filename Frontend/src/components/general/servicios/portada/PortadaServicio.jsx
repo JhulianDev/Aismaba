@@ -12,7 +12,7 @@ const PortadaServicio = ({ titulo, subtitulo, descripcion, imagen }) => {
           <Descripcion>{descripcion}</Descripcion>
           <Button>Lo Quiero</Button>
         </BoxTextos>
-        <Titulo $mobile>titulo</Titulo>
+        <Titulo $mobile>{titulo}</Titulo>
         <Imagen src={imagen} alt="Mockup"/>
       </MaxWidth>
     </Section>

@@ -1,13 +1,11 @@
-import { ShopContext } from "../../../../context/ShopContext";
+import { useState } from "react";
 import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
 import { Answer, ArrowIcon, BoxHeader, BoxItem, MainContainer, MinimizeIcon, Question, Title } from "./PreguntasFrecuentesStyles";
+import { coloresV2 } from "../../../../assets/css/Colors";
 import ARROW_ICON from "../../../../assets/img/generales/arrow_icon.svg"
 import MINIMIZE_ICON from "../../../../assets/img/generales/minimize_icon.svg"
-import { coloresV2 } from "../../../../assets/css/Colors";
-import { useContext, useState } from "react";
 
-const PreguntasFrecuentes = () => {
-  const { instakit } = useContext(ShopContext)
+const PreguntasFrecuentes = ({ faqs }) => {
   const [itemOpen, setItemOpen] = useState(null); // Estado inicial null para no tener ningún elemento abierto por defecto
 
   const handleAcordion = (id) => { // La función recibe el índice del elemento que se quiere abrir/cerrar
@@ -24,16 +22,16 @@ const PreguntasFrecuentes = () => {
         <MainContainer>
           <Title>Preguntas Frecuentes:</Title>
 
-          {instakit.faqs.map((faq) => (
+          {faqs.map((faq) => (
             <BoxItem key={faq.id}>
 
               <BoxHeader $open={itemOpen === faq.id} onClick={() => handleAcordion(faq.id)}>
-                <Question>{faq.pregunta}</Question>
+                <Question>{faq.question}</Question>
                 <ArrowIcon $open={itemOpen === faq.id} src={ARROW_ICON} alt="Arrow Icon" />
                 <MinimizeIcon $open={itemOpen === faq.id} src={MINIMIZE_ICON} alt="Minimize Icon" />
               </BoxHeader>
 
-              <Answer $open={itemOpen === faq.id}>{faq.respuesta}</Answer>
+              <Answer $open={itemOpen === faq.id}>{faq.answer}</Answer>
 
             </BoxItem>
           ))}
