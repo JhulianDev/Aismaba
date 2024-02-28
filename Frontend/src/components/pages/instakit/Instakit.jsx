@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ShopContext } from "../../../context/ShopContext";
 import FooterV2 from "../../general/footerV2/FooterV2";
 import BeneficiosServicios from "../../general/servicios/beneficios/BeneficiosServicios";
 import ContactoServicio from "../../general/servicios/contacto/ContactoServicio";
@@ -8,10 +6,9 @@ import InstakitPack from "../../general/servicios/packs/instakitPack/InstakitPac
 import PasosServicio from "../../general/servicios/pasos/PasosServicio";
 import PortadaServicio from "../../general/servicios/portada/PortadaServicio";
 import PreguntasFrecuentes from "../../general/servicios/preguntas/PreguntasFrecuentes";
+import { instakit } from "../../../content/instakitContent";
 
 const Instakit = () => {
-  const { instakit } = useContext(ShopContext)
-
   return (
     <>
       <PortadaServicio
@@ -55,7 +52,7 @@ const Instakit = () => {
         cta={instakit.contact.cta}
         link={instakit.contact.link}
       />
-      
+
       <FooterV2 />
     </>
   );
