@@ -12,35 +12,35 @@ import STEP_02 from "../assets/img/generales/Step-02.webp";
 import STEP_03 from "../assets/img/generales/Step-03.webp";
 
 export const instakit = {
-  portada: {
-    titulo: "Instakit",
-    subtitulo: "Plantillas Editables",
-    descripcion: "Diseñadas 100% con la identidad de tu marca",
-    imagen: PORTADA_INSTAKIT
+  frontpage: {
+    title: "Instakit",
+    subtitle: "Plantillas Editables",
+    description: "Diseñadas 100% con la identidad de tu marca",
+    image: PORTADA_INSTAKIT
   },
-  beneficios: [
+  benefits: [
     { id: uuidv4(), icon: ICONO_DOMINIO, title: "Dominio Gratis", description: "De regalo por un año" },
     { id: uuidv4(), icon: ICONO_HOSTING, title: "Hosting Gratis", description: "De regalo por un año" },
     { id: uuidv4(), icon: ICONO_RESPONSIVE, title: "Diseño Adaptable", description: "A todos los dispositivos" }
   ],
-  informacion: {
-    titulo: "Dale una imagen atractiva y armoniosa a tu perfil de Instagram.",
-    descripcion: (
+  information: {
+    title: "Dale una imagen atractiva y armoniosa a tu perfil de Instagram.",
+    description: (
       <>
         Un servicio <b>rápido y práctico</b> para darle una <b>estética de impacto</b> a tu perfil de Instagram.
         Ofrecemos plantillas <b>100% editables en Canva</b>, diseñadas para <b>reflejar la identidad de tu marca</b>,
         desde la paleta de colores hasta las tipografías y el estilo de fotografía.
       </>
     ),
-    imagenes: [
-      { id: uuidv4(), imagen: PORTFOLIO_INSTAKIT_A, mobile: false },
-      { id: uuidv4(), imagen: PORTFOLIO_INSTAKIT_B, mobile: false },
-      { id: uuidv4(), imagen: PORTFOLIO_INSTAKIT_C, mobile: false },
-      { id: uuidv4(), imagen: PORTFOLIO_INSTAKIT_D, mobile: false },
-      { id: uuidv4(), imagen: PORTFOLIO_INSTAKIT_A, mobile: true }
+    images: [
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_A, mobile: false },
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_B, mobile: false },
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_C, mobile: false },
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_D, mobile: false },
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_A, mobile: true }
     ]
   },
-  proceso: {
+  process: {
     title: "¿Como lo haremos?",
     subtitle: "¡En 3 simples pasos!",
     steps: [

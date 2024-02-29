@@ -12,26 +12,26 @@ const Instakit = () => {
   return (
     <>
       <PortadaServicio
-        titulo={instakit.portada.titulo}
-        subtitulo={instakit.portada.subtitulo}
-        descripcion={instakit.portada.descripcion}
-        imagen={instakit.portada.imagen}
+        title={instakit.frontpage.title}
+        subtitle={instakit.frontpage.subtitle}
+        description={instakit.frontpage.description}
+        image={instakit.frontpage.image}
       />
 
       <BeneficiosServicios
-        benefits={instakit.beneficios}
+        benefits={instakit.benefits}
       />
 
       <DescripcionServicio
-        title={instakit.informacion.titulo}
-        description={instakit.informacion.descripcion}
-        images={instakit.informacion.imagenes}
+        title={instakit.information.title}
+        description={instakit.information.description}
+        images={instakit.information.images}
       />
 
       <PasosServicio 
-        title={instakit.proceso.title}
-        subtitle={instakit.proceso.subtitle}
-        steps={instakit.proceso.steps}
+        title={instakit.process.title}
+        subtitle={instakit.process.subtitle}
+        steps={instakit.process.steps}
       />
 
       <InstakitPack

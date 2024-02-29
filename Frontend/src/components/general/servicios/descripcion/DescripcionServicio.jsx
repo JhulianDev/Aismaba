@@ -13,7 +13,7 @@ const DescripcionServicio = ({ title, description, images }) => {
 
         <SliderAuto>
           {images.map((image) => (
-            <Image key={image.id} src={image.imagen} alt="Instakit Portafolio" $mobile={image.mobile} />
+            <Image key={image.id} src={image.image} alt="Instakit Portafolio" $mobile={image.mobile} />
           ))}
         </SliderAuto>
 
