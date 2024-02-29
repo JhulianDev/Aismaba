@@ -5,7 +5,7 @@ import Home from "../components/pages/home/Home";
 import Servicios from "../components/pages/servicios/Servicios";
 import Branding from "../components/pages/branding/Branding";
 import { colores, coloresV2 } from "../assets/css/Colors";
-import CreacionContenido from "../components/pages/contenido/CreacionContenido";
+import CreacionDeContenido from "../components/pages/contenido/CreacionDeContenido";
 import Contacto from "../components/pages/contacto/Contacto";
 import Gracias from "../components/pages/gracias/Gracias";
 import Tienda from "../components/pages/tienda/Tienda";
@@ -77,8 +77,8 @@ const Router = createBrowserRouter([
         element: <Instakit />
       },
       {
-        path: "/creacion-contenido",
-        element: <CreacionContenido />
+        path: "/creacion-de-contenido",
+        element: <CreacionDeContenido />
       },
       {
         path: "/tienda",
