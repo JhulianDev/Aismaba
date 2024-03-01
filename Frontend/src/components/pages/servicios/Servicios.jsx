@@ -29,7 +29,7 @@ const Servicios = () => {
           alt="Mockup Creación De Contenido"
           titulo="Creación De Contenido"
           textHover="Ver Más"
-          enlace="/creacion-contenido"
+          enlace="/creacion-de-contenido"
         />
 
         <Mockup
