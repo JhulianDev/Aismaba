@@ -1,3 +1,4 @@
+import { data } from "../../../content/InstakitData";
 import FooterV2 from "../../general/footerV2/FooterV2";
 import BeneficiosServicios from "../../general/servicios/beneficios/BeneficiosServicios";
 import ContactoServicio from "../../general/servicios/contacto/ContactoServicio";
@@ -6,51 +7,50 @@ import InstakitPack from "../../general/servicios/packs/instakitPack/InstakitPac
 import PasosServicio from "../../general/servicios/pasos/PasosServicio";
 import PortadaServicio from "../../general/servicios/portada/PortadaServicio";
 import PreguntasFrecuentes from "../../general/servicios/preguntas/PreguntasFrecuentes";
-import { instakit } from "../../../content/instakitContent";
 
 const Instakit = () => {
   return (
     <>
       <PortadaServicio
-        title={instakit.frontpage.title}
-        subtitle={instakit.frontpage.subtitle}
-        description={instakit.frontpage.description}
-        image={instakit.frontpage.image}
+        title={data.frontpage.title}
+        subtitle={data.frontpage.subtitle}
+        description={data.frontpage.description}
+        image={data.frontpage.image}
       />
 
       <BeneficiosServicios
-        benefits={instakit.benefits}
+        benefits={data.benefits}
       />
 
       <DescripcionServicio
-        title={instakit.information.title}
-        description={instakit.information.description}
-        images={instakit.information.images}
+        title={data.information.title}
+        description={data.information.description}
+        images={data.information.images}
       />
 
       <PasosServicio 
-        title={instakit.process.title}
-        subtitle={instakit.process.subtitle}
-        steps={instakit.process.steps}
+        title={data.process.title}
+        subtitle={data.process.subtitle}
+        steps={data.process.steps}
       />
 
       <InstakitPack
-        title={instakit.pack.title}
-        subtitle={instakit.pack.subtitle}
-        price={instakit.pack.price}
-        items={instakit.pack.items}
-        delivery={instakit.pack.delivery}
-        bonus={instakit.pack.bonus}
-        link={instakit.pack.link}
+        title={data.pack.title}
+        subtitle={data.pack.subtitle}
+        price={data.pack.price}
+        items={data.pack.items}
+        delivery={data.pack.delivery}
+        bonus={data.pack.bonus}
+        link={data.pack.link}
       />
 
       <PreguntasFrecuentes 
-        faqs={instakit.faqs}
+        faqs={data.faqs}
       />
 
       <ContactoServicio 
-        cta={instakit.contact.cta}
-        link={instakit.contact.link}
+        cta={data.contact.cta}
+        link={data.contact.link}
       />
 
       <FooterV2 />
