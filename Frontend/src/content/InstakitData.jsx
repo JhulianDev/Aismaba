@@ -11,7 +11,7 @@ import STEP_01 from "../assets/img/generales/Step-01.webp";
 import STEP_02 from "../assets/img/generales/Step-02.webp";
 import STEP_03 from "../assets/img/generales/Step-03.webp";
 
-export const instakit = {
+export const data = {
   frontpage: {
     title: "Instakit",
     subtitle: "Plantillas Editables",
