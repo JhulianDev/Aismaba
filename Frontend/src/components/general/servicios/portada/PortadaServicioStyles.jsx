@@ -47,6 +47,7 @@ export const Titulo = styled.h1`
   border: 1px solid ${coloresV2.colorTextos};
   font-family: ${fonts.MainTypography};
   font-size: 2.2rem;
+  text-align: center;
   display: ${(props) => props.$mobile ? "none" : "flex"};
   box-shadow:
   0px 0px 0.4px rgba(0, 0, 0, 0.081),
@@ -65,6 +66,10 @@ export const Titulo = styled.h1`
     font-size: 2.4rem;
     display: ${(props) => props.$mobile ? "flex" : "none"};
     /* margin-bottom: 30px; */
+  }
+
+  @media screen and (max-width: 425px){
+    font-size: 2.1rem;
   }
 `
 
