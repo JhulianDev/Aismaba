@@ -2,9 +2,9 @@ import { coloresV2 } from "../../../../assets/css/Colors";
 import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
 import CardBeneficio from "../../cards/cardBeneficio/CardBeneficio";
 
-const BeneficiosServicios = ({ benefits }) => {
+const BeneficiosServicios = ({ bgColor, color, benefits }) => {
   return (
-    <Section $border $height="100px" $bgColor={coloresV2.colorPrincipal}>
+    <Section $border $height="100px" $bgColor={bgColor || coloresV2.colorPrincipal}>
       <MaxWidth>
 
         {benefits.map((benefit) => (
@@ -13,6 +13,7 @@ const BeneficiosServicios = ({ benefits }) => {
             icon={benefit.icon}
             title={benefit.title}
             description={benefit.description}
+            color={color}
           />
         ))}
 
