@@ -7,6 +7,7 @@ export const BoxCard = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid ${coloresV2.colorTextos};
+  border-color: ${(props) => props.$color};
   border-radius: 8px;
   padding: 30px 40px;
   gap: 20px;
@@ -80,7 +81,7 @@ export const BoxTexts = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  color: ${coloresV2.colorTextos};
+  color: ${(props) => props.$color || `${coloresV2.colorTextos}`};
   gap: 2px;
 `
 
