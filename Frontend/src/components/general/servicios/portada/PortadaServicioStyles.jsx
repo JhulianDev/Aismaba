@@ -149,6 +149,7 @@ export const Button = styled.button`
   color: white;
   padding: 9px 30px 7px;
   border-radius: 100px;
+  margin-top: 5px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -169,10 +170,12 @@ export const Button = styled.button`
 
   @media screen and (max-width: 1535px){
     font-size: 1.5rem;
+    margin-top: 3px;
   }
 
   @media screen and (max-width: 1232px){
     font-size: 1.4rem;
+    margin-top: 0px;
   }
 
   @media screen and (max-width: 768px){
