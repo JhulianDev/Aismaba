@@ -1,7 +1,7 @@
 import { data } from '../../../content/CreacionContenidoData';
+import { coloresV2 } from '../../../assets/css/Colors';
 import PortadaServicio from '../../general/servicios/portada/PortadaServicio';
 import BeneficiosServicios from '../../general/servicios/beneficios/BeneficiosServicios';
-import { coloresV2 } from '../../../assets/css/Colors';
 import PilaresServicio from '../../general/servicios/pilares/PilaresServicio';
 
 const CreacionDeContenido = () => {
@@ -15,13 +15,13 @@ const CreacionDeContenido = () => {
       />
 
       <BeneficiosServicios
-        bgColor={coloresV2.colorTextos}
-        color={coloresV2.colorSecundario}
         benefits={data.benefits}
       />
 
-      <PilaresServicio 
-        
+      <PilaresServicio
+        presentation={ data.pillars.presentation}
+        title={data.pillars.title}
+        items={data.pillars.items}
       />
 
     </>
