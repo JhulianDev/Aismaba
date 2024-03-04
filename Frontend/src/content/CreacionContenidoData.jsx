@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import PORTADA_INSTAKIT from "../assets/img/generales/portada_instakit.png"
-import ICONO_DOMINIO from "../assets/img/generales/Icono-Dominio-white.svg"
-import ICONO_HOSTING from "../assets/img/generales/Icono-Hosting-white.svg"
-import ICONO_RESPONSIVE from "../assets/img/generales/Icono-Responsive-white.svg"
+import ICONO_DOMINIO from "../assets/img/generales/Icono-Dominio.svg"
+import ICONO_HOSTING from "../assets/img/generales/Icono-Hosting.svg"
+import ICONO_RESPONSIVE from "../assets/img/generales/Icono-Responsive.svg"
 import PORTFOLIO_INSTAKIT_A from "../assets/img/generales/portfolio_instakit_1.jpg"
 import PORTFOLIO_INSTAKIT_B from "../assets/img/generales/portfolio_instakit_2.jpg"
 import PORTFOLIO_INSTAKIT_C from "../assets/img/generales/portfolio_instakit_3.jpg"
