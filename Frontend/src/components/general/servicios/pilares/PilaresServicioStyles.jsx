@@ -26,12 +26,12 @@ const titleStyles = css`
 export const MainContainer = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
   gap: 20px;
 
   @media screen and (max-width: 1024px){
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media screen and (max-width: 768px){
@@ -56,10 +56,6 @@ export const Box = styled.div`
 
   @media screen and (max-width: 1535px){
     padding: ${(props) => props.$description ? "35px" : "30px"};
-  }
-
-  @media screen and (max-width: 1024px){
-    max-width: 320px;
   }
 
   @media screen and (max-width: 768px){
