@@ -16,6 +16,7 @@ const Instakit = () => {
         subtitle={data.frontpage.subtitle}
         description={data.frontpage.description}
         image={data.frontpage.image}
+        link={data.pack.link}
       />
 
       <BeneficiosServicios
