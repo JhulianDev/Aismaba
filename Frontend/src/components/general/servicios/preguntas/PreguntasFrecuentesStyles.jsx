@@ -85,6 +85,7 @@ export const MinimizeIcon = styled.img`
 export const Answer = styled.p`
   font-family: ${fonts.SecondaryTypography};
   text-align: justify;
+  font-size: 1.2rem;
   color: ${coloresV2.colorTextos};
   width: 96%;
   padding: ${(props) => props.$open ? "15px 30px": "0 30px"};

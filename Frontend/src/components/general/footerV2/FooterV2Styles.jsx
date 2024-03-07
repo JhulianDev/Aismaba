@@ -3,7 +3,7 @@ import { fonts } from "../../../assets/fonts/FontsHandler";
 import { coloresV2 } from "../../../assets/css/Colors";
 
 export const FooterContainer = styled.footer`
-  background-color: ${coloresV2.colorSecundario};
+  background-color: ${coloresV2.colorPrincipal};
   border-top: 1px solid ${coloresV2.colorTextos};
   width: 100%;
   height: 50px;
