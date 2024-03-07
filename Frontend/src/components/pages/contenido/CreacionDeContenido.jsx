@@ -5,6 +5,9 @@ import PilaresServicio from '../../general/servicios/pilares/PilaresServicio';
 import Proceso from '../../general/servicios/proceso/Proceso';
 import ContenidoPack from '../../general/servicios/packs/contenidoPack/ContenidoPack';
 import { coloresV2 } from '../../../assets/css/Colors';
+import PreguntasFrecuentes from '../../general/servicios/preguntas/PreguntasFrecuentes';
+import ContactoServicio from '../../general/servicios/contacto/ContactoServicio';
+import FooterV2 from '../../general/footerV2/FooterV2';
 
 const CreacionDeContenido = () => {
   return (
@@ -60,6 +63,17 @@ const CreacionDeContenido = () => {
         link={data.packMesPorMes.link}
         type="B"
       />
+
+      <PreguntasFrecuentes
+        faqs={data.faqs}
+      />
+
+      <ContactoServicio
+        cta={data.contact.cta}
+        link={data.contact.link}
+      />
+
+      <FooterV2 />
 
     </>
   );
