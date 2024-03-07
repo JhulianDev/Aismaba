@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { fonts } from "../../../../assets/fonts/FontsHandler";
 import { coloresV2 } from "../../../../assets/css/Colors";
+import { Link } from "react-router-dom";
 
 export const BoxTextos = styled.div`
   display: flex;
@@ -142,7 +143,7 @@ export const Descripcion = styled.p`
   }
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   background-color: ${coloresV2.colorTextos};
   font-family: ${fonts.MainTypography};
   font-size: 1.6rem;
