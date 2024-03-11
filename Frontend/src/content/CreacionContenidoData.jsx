@@ -4,13 +4,6 @@ import ICONO_DOMINIO from "../assets/img/generales/Icono-Dominio.svg"
 import ICONO_HOSTING from "../assets/img/generales/Icono-Hosting.svg"
 import ICONO_RESPONSIVE from "../assets/img/generales/Icono-Responsive.svg"
 import IMAGE_PROCESS from "../assets/img/generales/portada-tienda.png"
-import PORTFOLIO_INSTAKIT_A from "../assets/img/generales/portfolio_instakit_1.jpg"
-import PORTFOLIO_INSTAKIT_B from "../assets/img/generales/portfolio_instakit_2.jpg"
-import PORTFOLIO_INSTAKIT_C from "../assets/img/generales/portfolio_instakit_3.jpg"
-import PORTFOLIO_INSTAKIT_D from "../assets/img/generales/portfolio_instakit_4.jpg"
-import STEP_01 from "../assets/img/generales/Step-01.webp";
-import STEP_02 from "../assets/img/generales/Step-02.webp";
-import STEP_03 from "../assets/img/generales/Step-03.webp";
 
 export const data = {
   portada: {
