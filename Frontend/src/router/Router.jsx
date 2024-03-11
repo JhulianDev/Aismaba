@@ -17,6 +17,7 @@ import SignUp from "../components/pages/SignUp/SignUp";
 import Checkout from "../components/pages/checkout/Checkout";
 import MisCompras from "../components/pages/misCompras/MisCompras";
 import Instakit from "../components/pages/instakit/Instakit";
+import WebDesign from "../components/pages/WebDesign/WebDesign";
 
 const Router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const Router = createBrowserRouter([
       {
         path: "/creacion-de-contenido",
         element: <CreacionDeContenido />
+      },
+      {
+        path: "/diseño-web",
+        element: <WebDesign />
       },
       {
         path: "/tienda",
