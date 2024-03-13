@@ -1,10 +1,13 @@
 import { data } from '../../../content/WebDesignData';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
+import TeamV1 from '../../general/Teams/TeamV1/TeamV1';
+import BeneficiosServicios from '../../general/servicios/beneficios/BeneficiosServicios';
+import PasosServicio from '../../general/servicios/pasos/PasosServicio';
 
 const WebDesign = () => {
   return (
     <>
-      <HeroV1 
+      <HeroV1
         tag={data.hero.tag}
         icon={data.hero.icon}
         title={data.hero.title}
@@ -14,6 +17,24 @@ const WebDesign = () => {
         image={data.hero.image}
         alt={data.hero.alt}
       />
+
+      <BeneficiosServicios
+        benefits={data.benefits}
+      />
+
+      <PasosServicio
+        title={data.process.title}
+        subtitle={data.process.subtitle}
+        steps={data.process.steps}
+      />
+
+      <TeamV1 
+        title={data.team.title}
+        subtitle={data.team.subtitle}
+        image={data.team.image}
+        description={data.team.description}
+      />
+
     </>
   );
 };
