@@ -84,5 +84,64 @@ export const data = {
         <br />
         Además te ofrecemos el servicio de mantenimiento web, para gestionar todos los cambios y ajustes que desees realizarle a tu web en el futuro.
       </>
+  },
+  pricing: {
+    title: "Elige tu pack ideal",
+    subtitle: "Selecciona tu moneda local",
+    packs: [
+      {
+        id: uuidv4(),
+        tag: "LANDINGPAGE",
+        title: "Pack Premium",
+        price: { ARS: "250.000", USD: "250", EUR: "230" },
+        description: "Con una Landing Page, podras promocionar tu producto o servicio estrella, destacando sus beneficios, ventajas y captando el contacto de tus posibles clientes.",
+        items: [
+          "· 1 Landing Page",
+          "· Redacción de textos",
+          "· Selección de imagenes",
+          "· Entrega de 7 a 15 Días",
+          "· Adaptable a todos los dispositivos",
+          "· Dominio gratuito el primer año",
+          "· Hosting gratuito el primer año",
+          "· Optimizada para Google"
+        ],
+        link: "https://wa.link/4p299u"
+      },
+      {
+        id: uuidv4(),
+        tag: "PAGINA WEB",
+        title: "Pack Business",
+        price: { ARS: "350.000", USD: "350  ", EUR: "320" },
+        description: "Ideal para mostrar tú negocio de forma integral a través de secciones personalizadas, destacando cada aspecto y servicio de una forma mas detallada.",
+        items: [
+          "· 1 Página web de 5 pestañas",
+          "· Redacción de textos",
+          "· Selección de imagenes",
+          "· Entrega de 7 a 15 Días",
+          "· Adaptable a todos los dispositivos",
+          "· Dominio gratuito el primer año",
+          "· Hosting gratuito el primer año",
+          "· Optimizada para Google"
+        ],
+        link: "https://wa.link/akb9z1"
+      },
+      {
+        id: uuidv4(),
+        tag: "MANTENIMIENTO",
+        title: "Mantenimiento",
+        price: { ARS: "50.000", USD: "50", EUR: "45" },
+        description: "Mantener tu sitio web actualizado y funcional es escencial para el éxito en línea. Nuestro Pack de Mantenimiento Web garantiza la continuidad operativa de tu sitio web.",
+        items: [
+          "· Actualización de productos",
+          "· Actualización de servicios",
+          "· Actualización de imagenes",
+          "· Actualización de textos",
+          "· Actualizaciones de seguirdad",
+          "· Optimización de velocidad",
+          "· Copia de seguridad del sitio web"
+        ],
+        link: "https://wa.link/09doew"
+      }
+    ]
   }
 }
