@@ -1,5 +1,6 @@
 import { data } from '../../../content/WebDesignData';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
+import PricingV1 from '../../general/Pricing/PricingV1/PricingV1';
 import TeamV1 from '../../general/Teams/TeamV1/TeamV1';
 import BeneficiosServicios from '../../general/servicios/beneficios/BeneficiosServicios';
 import PasosServicio from '../../general/servicios/pasos/PasosServicio';
@@ -28,11 +29,17 @@ const WebDesign = () => {
         steps={data.process.steps}
       />
 
-      <TeamV1 
+      <TeamV1
         title={data.team.title}
         subtitle={data.team.subtitle}
         image={data.team.image}
         description={data.team.description}
+      />
+
+      <PricingV1
+        title={data.pricing.title}
+        subtitle={data.pricing.subtitle}
+        packs={data.pricing.packs}
       />
 
     </>
