@@ -12,6 +12,11 @@ import STEP_02 from "../assets/img/generales/Step-02.webp";
 import STEP_03 from "../assets/img/generales/Step-03.webp";
 // Section Team
 import TEAM from "../assets/img/generales/Team.webp";
+// Section Portfolio
+import PORTFOLIO_01 from "../assets/img/generales/portfolio_web_01.webp"
+import PORTFOLIO_02 from "../assets/img/generales/portfolio_web_02.webp"
+import PORTFOLIO_03 from "../assets/img/generales/portfolio_web_03.webp"
+import PORTFOLIO_04 from "../assets/img/generales/portfolio_web_04.webp"
 
 export const data = {
   hero: {
@@ -20,7 +25,7 @@ export const data = {
     title: "Creamos tu Página Web 100% Personalizada.",
     description: "Tener un sitio web responsive y original es fundamental para el desarrollo de tu marca.",
     callToAction: "¡Lo Quiero!",
-    link: "www.youtube.com",
+    link: "https://wa.link/njjz31",
     image: HERO_WEB_DESIGN,
     alt: "MockUp Servicios"
   },
@@ -143,5 +148,6 @@ export const data = {
         link: "https://wa.link/09doew"
       }
     ]
-  }
+  },
+  portfolio: [ PORTFOLIO_01, PORTFOLIO_02, PORTFOLIO_03, PORTFOLIO_04 ]
 }
