@@ -1,10 +1,14 @@
+import { coloresV2 } from '../../../assets/css/Colors';
 import { data } from '../../../content/WebDesignData';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
 import PortfolioV1 from '../../general/Portfolios/PortfolioV1';
 import PricingV1 from '../../general/Pricing/PricingV1/PricingV1';
 import TeamV1 from '../../general/Teams/TeamV1/TeamV1';
+import FooterV2 from '../../general/footerV2/FooterV2';
 import BeneficiosServicios from '../../general/servicios/beneficios/BeneficiosServicios';
+import ContactoServicio from '../../general/servicios/contacto/ContactoServicio';
 import PasosServicio from '../../general/servicios/pasos/PasosServicio';
+import PreguntasFrecuentes from '../../general/servicios/preguntas/PreguntasFrecuentes';
 
 const WebDesign = () => {
   return (
@@ -43,9 +47,20 @@ const WebDesign = () => {
         packs={data.pricing.packs}
       />
 
-      <PortfolioV1 
+      <PortfolioV1
         porfolio={data.portfolio}
       />
+
+      <PreguntasFrecuentes
+        faqs={data.faqs}
+      />
+
+      <ContactoServicio
+        cta={data.contact.cta}
+        link={data.contact.link}
+      />
+
+      <FooterV2 />
 
     </>
   );
