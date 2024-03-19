@@ -1,5 +1,6 @@
 import { data } from '../../../content/WebDesignData';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
+import PortfolioV1 from '../../general/Portfolios/PortfolioV1';
 import PricingV1 from '../../general/Pricing/PricingV1/PricingV1';
 import TeamV1 from '../../general/Teams/TeamV1/TeamV1';
 import BeneficiosServicios from '../../general/servicios/beneficios/BeneficiosServicios';
@@ -40,6 +41,10 @@ const WebDesign = () => {
         title={data.pricing.title}
         subtitle={data.pricing.subtitle}
         packs={data.pricing.packs}
+      />
+
+      <PortfolioV1 
+        porfolio={data.portfolio}
       />
 
     </>
