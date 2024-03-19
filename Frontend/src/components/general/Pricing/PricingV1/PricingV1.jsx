@@ -7,7 +7,7 @@ import { Subtitle, Title } from "./PricingV1Styles";
 
 const PricingV1 = ({ title, subtitle, packs }) => {
   return (
-    <Section $bgColor={coloresV2.colorSecundario}>
+    <Section $bgColor={coloresV2.colorSecundario} $borderBottom>
       <MaxWidth $flexDirection="column">
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>

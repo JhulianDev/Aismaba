@@ -4,7 +4,7 @@ import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
 
 const PortfolioV1 = ({ porfolio }) => {
   return (
-    <Section $height="100px">
+    <Section $height="100px" $borderBottom>
       <MaxWidth $flexDirection="column">
         <Title>Nuestro portafolio</Title>
         <Subtitle>Webs esteticas y funcionales</Subtitle>

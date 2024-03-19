@@ -4,7 +4,7 @@ import { BoxDescription, CardBox, Description, Image, Subtitle, Title } from "./
 
 const TeamV1 = ({ title, subtitle, image, description }) => {
   return (
-    <Section  $bgColor={coloresV2.colorPrincipal}>
+    <Section  $bgColor={coloresV2.colorPrincipal} $borderBottom>
       <MaxWidth $flexDirection="column">
 
         <Title>{title}</Title>
