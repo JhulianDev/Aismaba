@@ -19,7 +19,7 @@ const HeroV1 = ({ tag, icon, title, description, callToAction, link, image, alt 
 
             <Subtitle>{title}</Subtitle>
             <Description>{description}</Description>
-            <Button to={link}>{callToAction}</Button>
+            <Button to={link} target="_blank">{callToAction}</Button>
           </BoxTexts>
 
           <BoxImage>
