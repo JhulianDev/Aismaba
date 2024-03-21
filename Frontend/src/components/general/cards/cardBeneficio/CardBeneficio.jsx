@@ -7,7 +7,9 @@ const CardBeneficio = ({ color, icon, title, description }) => {
       <Icon src={icon} alt='Icono Beneficio' />
       <BoxTexts $color={color}>
         <Title>{title}</Title>
-        <Paragraph>{description}</Paragraph>
+        {description && (
+          <Paragraph>{description}</Paragraph>
+        )}
       </BoxTexts>
     </BoxCard>
   );
