@@ -3,7 +3,7 @@ import PORTADA_INSTAKIT from "../assets/img/generales/portada_instakit.png"
 import ICONO_DOMINIO from "../assets/img/generales/Icono-Dominio.svg"
 import ICONO_HOSTING from "../assets/img/generales/Icono-Hosting.svg"
 import ICONO_RESPONSIVE from "../assets/img/generales/Icono-Responsive.svg"
-import IMAGE_PROCESS from "../assets/img/generales/portada-tienda.png"
+import IMAGE_PROCESS from "../assets/img/generales/portada-tienda.webp"
 
 export const data = {
   portada: {
