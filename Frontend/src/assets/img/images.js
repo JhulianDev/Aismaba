@@ -44,7 +44,7 @@ export { default as DIAMANTE_ICONO } from "./generales/diamante.png";
 export { default as MOODBOARD_ICONO } from "./generales/moodboard.png";
 export { default as CONTENIDO_ICONO } from "./generales/contenido-1.png";
 export { default as ILUSTRACION_CONTACTO } from "./generales/ilustracion-contactanos-1.png";
-export { default as PORTADA_TIENDA } from "./generales/portada-tienda.png";
+export { default as PORTADA_TIENDA } from "./generales/portada-tienda.webp";
 export { default as CATEGORIA_PLANTILLAS } from "./generales/categoria-plantillas.jpg";
 export { default as CATEGORIA_MARCAS } from "./generales/categoria-marcas.jpg";
 export { default as CATEGORIA_PRESETS } from "./generales/categoria-presets.jpg";
