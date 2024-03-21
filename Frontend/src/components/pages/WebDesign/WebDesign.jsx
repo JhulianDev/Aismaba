@@ -53,11 +53,13 @@ const WebDesign = () => {
 
       <PreguntasFrecuentes
         faqs={data.faqs}
+        bgColor={coloresV2.colorPrincipal}
       />
 
       <ContactoServicio
         cta={data.contact.cta}
         link={data.contact.link}
+        bgColor={coloresV2.colorSecundario}
       />
 
       <FooterV2 />

@@ -45,7 +45,13 @@ export const Subtitle = styled.h2`
 `
 
 export const ContainerPack = styled.div`
-  background-color: ${coloresV2.colorSecundario};
+  background-color: ${(props) =>
+    props.$bgColor === `${coloresV2.colorPrincipal}` ?
+    coloresV2.colorSecundario :
+    props.$bgColor === `${coloresV2.colorSecundario}` ?
+    coloresV2.colorPrincipal :
+    "none"};
+  border: 1px solid ${coloresV2.colorTextos};
   display: flex;
   flex-direction: column;
   align-items: center;

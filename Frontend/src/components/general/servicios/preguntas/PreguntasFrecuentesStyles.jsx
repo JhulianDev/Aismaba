@@ -48,8 +48,11 @@ export const ArrowIcon = styled.img`
 `
 
 export const BoxHeader = styled.div`
-  /* background-color: ${(props) => props.$open && `${coloresV2.colorTextos}`}; */
-  background-color: ${(props) => props.$open ? `${coloresV2.colorTextos}` : `${coloresV2.colorPrincipal}`};
+  background-color: ${(props) =>
+    props.$open ? `${coloresV2.colorTextos}` :
+    props.$bgColor === `${coloresV2.colorPrincipal}` ? coloresV2.colorSecundario :
+    props.$bgColor === `${coloresV2.colorSecundario}` ? coloresV2.colorPrincipal :
+    "none"};
   color: ${(props) => props.$open && "white"};
   display: flex;
   align-items: center;

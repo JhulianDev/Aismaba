@@ -6,11 +6,11 @@ import { BoxBonus, BoxItem, BoxPrice, Button, ContainerItems, ContainerPack, Cur
 import { coloresV2 } from "../../../../../assets/css/Colors";
 import CurrencySelectorV2 from "../../../currencySelector/CurrencySelectorV2";
 
-const InstakitPack = ({ title, subtitle, price, items, delivery, bonus, link}) => {
+const InstakitPack = ({ title, subtitle, price, items, delivery, bonus, link, bgColor}) => {
   const { currencySelected } = useContext(CurrencyContextV2);
   
   return (
-    <Section $bgColor={coloresV2.colorPrincipal} $borderBottom>
+    <Section $bgColor={bgColor} $borderBottom>
       <MaxWidth $flexDirection="column">
 
         <Title>{title}</Title>
@@ -18,7 +18,7 @@ const InstakitPack = ({ title, subtitle, price, items, delivery, bonus, link}) =
 
         <CurrencySelectorV2 />
 
-        <ContainerPack>
+        <ContainerPack $bgColor={bgColor}>
 
           <BoxPrice>
             <Sign>$</Sign>

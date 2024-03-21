@@ -5,7 +5,7 @@ import { coloresV2 } from "../../../../assets/css/Colors";
 import ARROW_ICON from "../../../../assets/img/generales/arrow_icon.svg"
 import MINIMIZE_ICON from "../../../../assets/img/generales/minimize_icon.svg"
 
-const PreguntasFrecuentes = ({ faqs }) => {
+const PreguntasFrecuentes = ({ faqs, bgColor }) => {
   const [itemOpen, setItemOpen] = useState(null); // Estado inicial null para no tener ningún elemento abierto por defecto
 
   const handleAcordion = (id) => { // La función recibe el índice del elemento que se quiere abrir/cerrar
@@ -17,13 +17,13 @@ const PreguntasFrecuentes = ({ faqs }) => {
   }
 
   return (
-    <Section $borderBottom $height="100px" $bgColor={coloresV2.colorSecundario}>
+    <Section $borderBottom $height="100px" $bgColor={bgColor}>
       <MaxWidth>
         <MainContainer>
           <Title>Preguntas Frecuentes:</Title>
 
           {faqs.map((faq) => (
-            <BoxItem key={faq.id}>
+            <BoxItem key={faq.id} $bgColor={bgColor}>
 
               <BoxHeader $open={itemOpen === faq.id} onClick={() => handleAcordion(faq.id)}>
                 <Question>{faq.question}</Question>

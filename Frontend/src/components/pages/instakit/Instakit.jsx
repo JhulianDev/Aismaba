@@ -1,22 +1,26 @@
 import { data } from "../../../content/InstakitData";
+import HeroV1 from "../../general/Heros/HeroV1/HeroV1";
 import FooterV2 from "../../general/footerV2/FooterV2";
 import BeneficiosServicios from "../../general/servicios/beneficios/BeneficiosServicios";
 import ContactoServicio from "../../general/servicios/contacto/ContactoServicio";
 import DescripcionServicio from "../../general/servicios/descripcion/DescripcionServicio";
 import InstakitPack from "../../general/servicios/packs/instakitPack/InstakitPack";
-import PasosServicio from "../../general/servicios/pasos/PasosServicio";
-import PortadaServicio from "../../general/servicios/portada/PortadaServicio";
 import PreguntasFrecuentes from "../../general/servicios/preguntas/PreguntasFrecuentes";
+import { coloresV2 } from "../../../assets/css/Colors";
+import Proceso from "../../general/servicios/proceso/Proceso";
 
 const Instakit = () => {
   return (
     <>
-      <PortadaServicio
-        title={data.frontpage.title}
-        subtitle={data.frontpage.subtitle}
-        description={data.frontpage.description}
-        image={data.frontpage.image}
-        link={data.pack.link}
+      <HeroV1
+        tag={data.hero.tag}
+        icon={data.hero.icon}
+        title={data.hero.title}
+        description={data.hero.description}
+        callToAction={data.hero.callToAction}
+        link={data.hero.link}
+        image={data.hero.image}
+        alt={data.hero.alt}
       />
 
       <BeneficiosServicios
@@ -29,10 +33,11 @@ const Instakit = () => {
         images={data.information.images}
       />
 
-      <PasosServicio 
+      <Proceso
         title={data.process.title}
-        subtitle={data.process.subtitle}
         steps={data.process.steps}
+        image={data.process.image}
+        bgColor={coloresV2.colorPrincipal}
       />
 
       <InstakitPack
@@ -43,15 +48,18 @@ const Instakit = () => {
         delivery={data.pack.delivery}
         bonus={data.pack.bonus}
         link={data.pack.link}
+        bgColor={coloresV2.colorSecundario}
       />
 
-      <PreguntasFrecuentes 
+      <PreguntasFrecuentes
         faqs={data.faqs}
+        bgColor={coloresV2.colorPrincipal}
       />
 
-      <ContactoServicio 
+      <ContactoServicio
         cta={data.contact.cta}
         link={data.contact.link}
+        bgColor={coloresV2.colorSecundario}
       />
 
       <FooterV2 />
