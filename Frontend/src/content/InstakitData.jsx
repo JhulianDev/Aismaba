@@ -1,27 +1,35 @@
 import { v4 as uuidv4 } from 'uuid';
-import PORTADA_INSTAKIT from "../assets/img/generales/portada_instakit.png"
-import ICONO_DOMINIO from "../assets/img/generales/Icono-Dominio.svg"
-import ICONO_HOSTING from "../assets/img/generales/Icono-Hosting.svg"
-import ICONO_RESPONSIVE from "../assets/img/generales/Icono-Responsive.svg"
-import PORTFOLIO_INSTAKIT_A from "../assets/img/generales/portfolio_instakit_1.jpg"
-import PORTFOLIO_INSTAKIT_B from "../assets/img/generales/portfolio_instakit_2.jpg"
-import PORTFOLIO_INSTAKIT_C from "../assets/img/generales/portfolio_instakit_3.jpg"
-import PORTFOLIO_INSTAKIT_D from "../assets/img/generales/portfolio_instakit_4.jpg"
-import STEP_01 from "../assets/img/generales/Step-01.webp";
-import STEP_02 from "../assets/img/generales/Step-02.webp";
-import STEP_03 from "../assets/img/generales/Step-03.webp";
+// Section Hero
+import LIGHT_ICON from "../assets/img/generales/light_icon.svg";
+import HERO_INSTAKIT from "../assets/img/generales/instakit/hero_instakit.webp";
+// Section Benefits
+import EDIT_ICON from "../assets/img/generales/instakit/edit_icon_instakit.svg"
+import MINIMALIST_ICON from "../assets/img/generales/instakit/minimalist_icon_instakit.svg"
+import PERSONALIZED_ICON from "../assets/img/generales/instakit/personalized_icon_instakit.svg"
+// Section Portfolio
+import PORTFOLIO_INSTAKIT_01 from "../assets/img/generales/instakit/portfolio_instakit_01.webp"
+import PORTFOLIO_INSTAKIT_03 from "../assets/img/generales/instakit/portfolio_instakit_03.webp"
+import PORTFOLIO_INSTAKIT_04 from "../assets/img/generales/instakit/portfolio_instakit_04.webp"
+import PORTFOLIO_INSTAKIT_05 from "../assets/img/generales/instakit/portfolio_instakit_05.webp"
+import PORTFOLIO_INSTAKIT_06 from "../assets/img/generales/instakit/portfolio_instakit_06.webp"
+// Section Process
+import IMAGE_PROCESS from "../assets/img/generales/portada-tienda.webp"
 
 export const data = {
-  frontpage: {
-    title: "Instakit",
-    subtitle: "Plantillas Editables",
-    description: "Diseñadas 100% con la identidad de tu marca",
-    image: PORTADA_INSTAKIT
+  hero: {
+    tag: "INSTAKIT PARA EMPRENDEDORAS",
+    icon: LIGHT_ICON,
+    title: "Plantillas minimalistas 100% Personalizadas.",
+    description: "Diseñadas exclusivamente para tu marca, para brindarle una personalidad única y profesional.",
+    callToAction: "¡Lo Quiero!",
+    link: "https://wa.link/sn2ako",
+    image: HERO_INSTAKIT,
+    alt: "MockUp Servicios"
   },
   benefits: [
-    { id: uuidv4(), icon: ICONO_DOMINIO, title: "Dominio Gratis", description: "De regalo por un año" },
-    { id: uuidv4(), icon: ICONO_HOSTING, title: "Hosting Gratis", description: "De regalo por un año" },
-    { id: uuidv4(), icon: ICONO_RESPONSIVE, title: "Diseño Adaptable", description: "A todos los dispositivos" }
+    { id: uuidv4(), icon: EDIT_ICON, title: "Plantillas Editables", description: "En Canva Gratuito." },
+    { id: uuidv4(), icon: MINIMALIST_ICON, title: "Feed Minimalista", description: "Aesthetic y funcional." },
+    { id: uuidv4(), icon: PERSONALIZED_ICON, title: "Diseño Personalizado", description: "Exclusivo para tu marca" }
   ],
   information: {
     title: "Dale una imagen atractiva y armoniosa a tu perfil de Instagram.",
@@ -33,56 +41,65 @@ export const data = {
       </>
     ),
     images: [
-      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_A, mobile: false },
-      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_B, mobile: false },
-      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_C, mobile: false },
-      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_D, mobile: false },
-      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_A, mobile: true }
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_01, mobile: false },
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_03, mobile: false },
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_04, mobile: false },
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_05, mobile: false },
+      { id: uuidv4(), image: PORTFOLIO_INSTAKIT_06, mobile: true }
     ]
   },
   process: {
-    title: "¿Como lo haremos?",
-    subtitle: "¡En 3 simples pasos!",
+    title: "Proceso de desarrollo",
+    image: IMAGE_PROCESS,
     steps: [
       {
         id: uuidv4(),
-        position: "left",
         number: "01",
-        image: STEP_01,
-        alt: "Joven en reunion de trabajo",
-        title: "Reunion Inicial",
-        description: "Programaremos una reunion en la que resolveremos todas tus dudas y planearemos juntos el contenido y la estructura que tendra tu sitio web",
-        bgColor: "#d9cdbf",
-        border: "true"
+        subtitle: "LLAMADA INICIAL",
+        description: "Agendaremos una videollamada para conocernos y hablar sobre las necesidades específicas de tu marca y asi captar y transmitir con precisión su esencia y su personalidad."
       },
       {
         id: uuidv4(),
-        position: "right",
         number: "02",
-        image: STEP_02,
-        alt: "Mockup Propuestas Web",
-        title: "Presentacion de propuesta",
-        description: "Presentaremos una propuesta del sitio web donde plasmaremos todas las solicitudes y requerimientos acordados en la reunión inicial",
-        bgColor: "#b69f89",
-        border: "true"
+        subtitle: "BRIEF",
+        description: "Te enviaré un formulario con preguntas que me ayudaran a obtener la máxima información de tu marca y conocer a fondo tu proyecto."
       },
       {
         id: uuidv4(),
-        position: "left",
         number: "03",
-        image: STEP_03,
-        alt: "Mockup Entrega Web",
-        title: "Entrega Final",
-        description: "Una vez realizadas las correcciones correspondientes y estes conforme con el resultado, te haremos entrega del sitio web desplegado y en funcionamiento.",
-        bgColor: "#b49483",
-        border: "true"
+        subtitle: "INVESTIGACIÓN",
+        description: "Pautaremos una reunión vía chat de WhatsApp, para aclarar dudas del Brief, y concretar como llevaremos a cabo la imagen para tu perfil."
+      },
+      {
+        id: uuidv4(),
+        number: "04",
+        subtitle: "PLANIFICACIÓN",
+        description: "Levaremos a cabo un concepto visual de la imagen donde definiremos: paleta de colores, tipografías y estilo de fotografías que vayan acorde con la personalidad de tu marca."
+      },
+      {
+        id: uuidv4(),
+        number: "05",
+        subtitle: "DISEÑO CREATIVO",
+        description: "¡Daremos inicio a la parte más divertida! Comenzaremos a trabajar en la propuesta de las plantillas y el diseño del Feed."
+      },
+      {
+        id: uuidv4(),
+        number: "06",
+        subtitle: "PROPUESTA",
+        description: "Te presentaremos la propuesta diseñada y realizaremos las correcciones necesarias hasta que estés conforme con el resultado."
+      },
+      {
+        id: uuidv4(),
+        number: "07",
+        subtitle: "ENTREGA",
+        description: "Una vez estés conforme con el trabajo realizado y nos des tu aprobación, procederemos a enviarte vía mail la entrega final en todos los formatos correspondientes para su uso."
       }
     ]
   },
   pack: {
     title: "Adquiere tu INSTAKIT",
     subtitle: "Selecciona tu moneda local",
-    price: { ARS: "89.999", USD: "99.99", EUR: "92.99" },
+    price: { ARS: "99.999", USD: "99.99", EUR: "92.99" },
     items: [
       "6 PLANTILLAS POST SIMPLES",
       "3 PLANTILLAS PORTADAS REELS",
@@ -109,23 +126,28 @@ export const data = {
   faqs: [
     {
       id: uuidv4(),
-      question: "Pueden vosotros encargaros de las fotos y textos de mi web?",
-      answer: "Si has empezado con los textos de tu web y se te han atragantado. No te preocupes, para eso estamos nosotros."
+      question: "¿Haces el contenido de acuerdo a la marca o es genérico?",
+      answer: "El servicio es totalmente personalizado, tendremos una reunión previa para hablar sobre las necesidades específicas de tu marca y asi captar y transmitir con precisión su esencia y su personalidad."
     },
     {
       id: uuidv4(),
-      question: "Ya tengo una web, pero quiero cambiarla. ¿Puedes ayudarme?",
-      answer: "¡Claro que sí! Haremos un rediseño integral de la web, para que tu negocio pueda seguir creciendo."
+      question: "¿Las plantillas las puedo reutilizar como yo quiera?",
+      answer: "¡Claro que sí! Las plantillas que recibirás son 100% editables en Canva versión gratuita."
     },
     {
       id: uuidv4(),
-      question: "Me crearás las cuentas de correo y de redes sociales?",
-      answer: "Sí, daremos de alta una cuenta de correo electrónico corporativo con el nombre de tu web."
+      question: "Tengo una imagen que quiero conservar. ¿Se puede adaptar al servicio que estás ofreciendo?",
+      answer: "Claro. Podemos respetar los lineamientos de tu imagen existente, y lograr que todo quede perfectamente armónico sin perder su esencia original."
     },
     {
       id: uuidv4(),
-      question: "Por qué no me entra el dominio en el paquete web?",
-      answer: "El nombre de la empresa es tuyo, por eso el dominio es algo que debe ser de tu propiedad."
+      question: "¿Ustedes manejarán la cuenta? ¿Crearán el contenido y lo publicarán?",
+      answer: `Este servicio esta tiene como objetivo mejorar la estetica de tu feed con un diseño profesional. Si lo que buscas es el manejo de la cuenta y la ejecución de las ideas de contenido para las publicaciones dirijete a nuestro servicio "Creación de contenido".`
+    },
+    {
+      id: uuidv4(),
+      question: "¿Cual es el tiempo de entrega?",
+      answer: "El servicio dura 15 días hábiles. Al finalizar esos 15 días vas a recibir todos los archivos realizados para que puedas hacer uso de ellos como tú lo desees."
     }
   ],
   contact: {
