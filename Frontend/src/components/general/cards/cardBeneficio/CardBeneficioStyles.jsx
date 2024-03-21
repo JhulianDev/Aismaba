@@ -34,6 +34,7 @@ export const BoxCard = styled.div`
   }
 
   @media screen and (max-width: 596px){
+    justify-content: flex-start;
     padding: 20px 18px;
     width: 100%;
     gap: 15px;
