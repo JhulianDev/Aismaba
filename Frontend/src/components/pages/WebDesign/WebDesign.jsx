@@ -32,6 +32,7 @@ const WebDesign = () => {
         title={data.process.title}
         subtitle={data.process.subtitle}
         steps={data.process.steps}
+        bgColor={coloresV2.colorSecundario}
       />
 
       <TeamV1

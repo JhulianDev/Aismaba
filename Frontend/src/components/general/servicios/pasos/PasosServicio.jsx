@@ -2,9 +2,9 @@ import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
 import { BoxSteps, Subtitle, Title } from "./PasosServicioStyles";
 import CardStep from "../../cards/cardStep/CardStep";
 
-const PasosServicio = ({ title, subtitle, steps }) => {
+const PasosServicio = ({ title, subtitle, steps, bgColor }) => {
   return (
-    <Section $borderBottom>
+    <Section $borderBottom $bgColor={bgColor}>
       <MaxWidth $flexDirection="column">
 
         <Title>{title}</Title>
