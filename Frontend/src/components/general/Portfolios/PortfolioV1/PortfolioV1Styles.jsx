@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { fonts } from "../../../assets/fonts/FontsHandler";
-import { coloresV2 } from "../../../assets/css/Colors";
+import { fonts } from "../../../../assets/fonts/FontsHandler";
+import { coloresV2 } from "../../../../assets/css/Colors";
 
 export const Title = styled.h1`
   font-family: ${fonts.MainTypography};

@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { ContainerImages, Image, Subtitle, Title } from "./PortfolioV1Styles";
-import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
+import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
 
 const PortfolioV1 = ({ porfolio }) => {
   return (
