@@ -1,10 +1,11 @@
 import { data } from '../../../content/CreacionContenidoData';
-import PortadaServicio from '../../general/servicios/portada/PortadaServicio';
+import { coloresV2 } from '../../../assets/css/Colors';
+import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
 import BeneficiosServicios from '../../general/servicios/beneficios/BeneficiosServicios';
 import PilaresServicio from '../../general/servicios/pilares/PilaresServicio';
 import Proceso from '../../general/servicios/proceso/Proceso';
 import ContenidoPack from '../../general/servicios/packs/contenidoPack/ContenidoPack';
-import { coloresV2 } from '../../../assets/css/Colors';
+import PortfolioV2 from '../../general/Portfolios/PortfolioV2/PortfolioV2';
 import PreguntasFrecuentes from '../../general/servicios/preguntas/PreguntasFrecuentes';
 import ContactoServicio from '../../general/servicios/contacto/ContactoServicio';
 import FooterV2 from '../../general/footerV2/FooterV2';
@@ -12,12 +13,15 @@ import FooterV2 from '../../general/footerV2/FooterV2';
 const CreacionDeContenido = () => {
   return (
     <>
-      <PortadaServicio
-        title={data.portada.title}
-        subtitle={data.portada.subtitle}
-        description={data.portada.description}
-        image={data.portada.image}
-        link={data.packPrimerMes.link}
+      <HeroV1
+        tag={data.hero.tag}
+        icon={data.hero.icon}
+        title={data.hero.title}
+        description={data.hero.description}
+        callToAction={data.hero.callToAction}
+        link={data.hero.link}
+        image={data.hero.image}
+        alt={data.hero.alt}
       />
 
       <BeneficiosServicios
@@ -34,6 +38,7 @@ const CreacionDeContenido = () => {
         title={data.process.title}
         steps={data.process.steps}
         image={data.process.image}
+        bgColor={coloresV2.colorPrincipal}
       />
 
       <ContenidoPack
@@ -64,13 +69,22 @@ const CreacionDeContenido = () => {
         type="B"
       />
 
+      <PortfolioV2
+        title={data.portfolio.title}
+        subtitle={data.portfolio.subtitle}
+        images={data.portfolio.images}
+        bgColor={coloresV2.colorSecundario}
+      />
+
       <PreguntasFrecuentes
         faqs={data.faqs}
+        bgColor={coloresV2.colorPrincipal}
       />
 
       <ContactoServicio
         cta={data.contact.cta}
         link={data.contact.link}
+        bgColor={coloresV2.colorSecundario}
       />
 
       <FooterV2 />
