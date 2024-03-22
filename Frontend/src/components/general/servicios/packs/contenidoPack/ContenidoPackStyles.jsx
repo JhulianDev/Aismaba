@@ -82,13 +82,13 @@ export const MainBoxPack = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border: 1px solid ${coloresV2.colorTextos};
-  border-radius: 7px;
+  border-radius: 7px 7px 0 0;
   margin-top: 40px;
   position: relative;
 
   @media screen and (max-width: 768px){
     grid-template-columns: repeat(1, 1fr);
-    border-radius: 0 0 7px 7px;
+    border-radius: 0;
     margin-top: 60px;
   }
 `
@@ -157,7 +157,7 @@ export const BoxAdditionals = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 768px){
-    border-radius: 0 0 7px 7px;
+    border-radius: 0;
     padding: 40px 20px;
     gap: 17px;
   }
@@ -242,7 +242,7 @@ export const Button = styled(Link)`
   width: 100%;
   padding: 10px;
   border: 1px solid ${coloresV2.colorTextos};
-  border-radius: 7px;
+  border-radius: 0 0 7px 7px;
   margin-top: 12px;
   cursor: pointer;
   transition: all .2s ease-in-out;
@@ -257,5 +257,10 @@ export const Button = styled(Link)`
 
   &:active{
     background-color: ${coloresV2.colorSecundario};
+  }
+
+  @media screen and (max-width: 768px){
+    padding: 15px;
+    margin-top: -20px;
   }
 `
