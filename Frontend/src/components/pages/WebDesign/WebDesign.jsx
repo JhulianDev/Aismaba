@@ -1,7 +1,7 @@
 import { coloresV2 } from '../../../assets/css/Colors';
 import { data } from '../../../content/WebDesignData';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
-import PortfolioV1 from '../../general/Portfolios/PortfolioV1';
+import PortfolioV1 from '../../general/Portfolios/PortfolioV1/PortfolioV1';
 import PricingV1 from '../../general/Pricing/PricingV1/PricingV1';
 import TeamV1 from '../../general/Teams/TeamV1/TeamV1';
 import FooterV2 from '../../general/footerV2/FooterV2';
