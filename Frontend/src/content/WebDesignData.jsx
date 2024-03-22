@@ -1,38 +1,38 @@
 import { v4 as uuidv4 } from 'uuid';
 // Section Hero
-import HERO_WEB_DESIGN from "../assets/img/generales/hero_web_design.png";
+import HERO_WEB_DESIGN from "../assets/img/generales/web_design/hero_web_design.webp";
 import LIGHT_ICON from "../assets/img/generales/light_icon.svg";
 // Section Benefits
-import ICONO_DOMINIO from "../assets/img/generales/Icono-Dominio.svg"
-import ICONO_HOSTING from "../assets/img/generales/Icono-Hosting.svg"
-import ICONO_RESPONSIVE from "../assets/img/generales/Icono-Responsive.svg"
+import DOMINIO_ICON from "../assets/img/generales/web_design/Icono-Dominio.svg"
+import HOSTING_ICON from "../assets/img/generales/web_design/Icono-Hosting.svg"
+import RESPONSIVE_ICON from "../assets/img/generales/web_design/Icono-Responsive.svg"
 // Section Process
-import STEP_01 from "../assets/img/generales/Step-01.webp";
-import STEP_02 from "../assets/img/generales/Step-02.webp";
-import STEP_03 from "../assets/img/generales/Step-03.webp";
+import STEP_01 from "../assets/img/generales/web_design/Step-01.webp";
+import STEP_02 from "../assets/img/generales/web_design/Step-02.webp";
+import STEP_03 from "../assets/img/generales/web_design/Step-03.webp";
 // Section Team
-import TEAM from "../assets/img/generales/Team.webp";
+import TEAM from "../assets/img/generales/web_design/Team.webp";
 // Section Portfolio
-import PORTFOLIO_01 from "../assets/img/generales/portfolio_web_01.webp"
-import PORTFOLIO_02 from "../assets/img/generales/portfolio_web_02.webp"
-import PORTFOLIO_03 from "../assets/img/generales/portfolio_web_03.webp"
-import PORTFOLIO_04 from "../assets/img/generales/portfolio_web_04.webp"
+import PORTFOLIO_01 from "../assets/img/generales/web_design/portfolio_web_01.webp"
+import PORTFOLIO_02 from "../assets/img/generales/web_design/portfolio_web_02.webp"
+import PORTFOLIO_03 from "../assets/img/generales/web_design/portfolio_web_03.webp"
+import PORTFOLIO_04 from "../assets/img/generales/web_design/portfolio_web_04.webp"
 
 export const data = {
   hero: {
     tag: "DISEÑO WEB PARA EMPRENDEDORAS",
     icon: LIGHT_ICON,
     title: "Creamos tu Página Web 100% Personalizada.",
-    description: "Tener un sitio web responsive y original es fundamental para el desarrollo de tu marca.",
+    description: "Diseñamos webs increibles, para impulsar tu negocio al éxito y que triunfes en el mundo digital.",
     callToAction: "¡Lo Quiero!",
-    link: "https://wa.link/njjz31",
+    link: "https://wa.link/2fp3lt",
     image: HERO_WEB_DESIGN,
     alt: "MockUp Servicios"
   },
   benefits: [
-    { id: uuidv4(), icon: ICONO_DOMINIO, title: "Dominio Gratis", description: "De regalo por un año" },
-    { id: uuidv4(), icon: ICONO_HOSTING, title: "Hosting Gratis", description: "De regalo por un año" },
-    { id: uuidv4(), icon: ICONO_RESPONSIVE, title: "Diseño Adaptable", description: "A todos los dispositivos" }
+    { id: uuidv4(), icon: DOMINIO_ICON, title: "Dominio Gratis", description: "De regalo por un año" },
+    { id: uuidv4(), icon: HOSTING_ICON, title: "Hosting Gratis", description: "De regalo por un año" },
+    { id: uuidv4(), icon: RESPONSIVE_ICON, title: "Diseño Adaptable", description: "A todos los dispositivos" }
   ],
   process: {
     title: "¿Como lo haremos?",
@@ -110,7 +110,7 @@ export const data = {
           "· Hosting gratuito el primer año",
           "· Optimizada para Google"
         ],
-        link: "https://wa.link/4p299u"
+        link: "https://wa.link/0k1x1q"
       },
       {
         id: uuidv4(),
@@ -128,7 +128,7 @@ export const data = {
           "· Hosting gratuito el primer año",
           "· Optimizada para Google"
         ],
-        link: "https://wa.link/akb9z1"
+        link: "https://wa.link/b2nelf"
       },
       {
         id: uuidv4(),
@@ -145,7 +145,7 @@ export const data = {
           "· Optimización de velocidad",
           "· Copia de seguridad del sitio web"
         ],
-        link: "https://wa.link/09doew"
+        link: "https://wa.link/bo8miq"
       }
     ]
   },
@@ -212,6 +212,6 @@ export const data = {
   ],
   contact: {
     cta: "¿Tienes dudas sobre como comenzar? Contáctanos y te asesoraremos.",
-    link: "https://wa.link/njjz31"
+    link: "https://wa.link/2fp3lt"
   }
 }
