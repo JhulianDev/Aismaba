@@ -13,7 +13,7 @@ const HeroV1 = ({ tag, icon, title, description, callToAction, link, image, alt,
 
           <BoxTexts>
             <BoxTag>
-              <Icon src={icon} />
+              <Icon src={icon} alt="Icon"/>
               <Tag>{tag}</Tag>
             </BoxTag>
 
