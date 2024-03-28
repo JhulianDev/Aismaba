@@ -8,5 +8,6 @@ export const data = {
     linkButtonA: "/creacion-de-contenido",
     textButtonB: "Plantillas Instagram",
     linkButtonB: "/Tienda",
-  }
+  },
+  separator: "INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES"
 }
