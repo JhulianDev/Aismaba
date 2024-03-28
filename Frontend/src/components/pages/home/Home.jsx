@@ -8,6 +8,7 @@ import Testimonios from './testimonios/Testimonios';
 import Clientes from './clientes/Clientes';
 import Footer from '../../general/footer/Footer';
 import HeroV2 from '../../general/Heros/HeroV2/HeroV2';
+import SeparatorV1 from '../../general/Separators/SeparatorV1/SeparatorV1';
 
 const Home = () => {
   useEffect(() => {
@@ -15,9 +16,16 @@ const Home = () => {
   }, []);
   return (
     <>
-      <HeroV2 
+      <HeroV2
         data={data.hero}
       />
+
+      <SeparatorV1
+        data={data.separator}
+      />
+
+
+
       {/* <Portada /> */}
       <Presentacion />
       <Pensamiento />
