@@ -7,7 +7,16 @@ const scroll = keyframes`
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
+  }
+`;
+
+const scrollMobile = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-700%);
   }
 `;
 
@@ -18,6 +27,7 @@ export const MainContainer = styled.div`
   align-items: center;
   border-top: 1px solid ${coloresV2.colorTextos};
   border-bottom: 1px solid ${coloresV2.colorTextos};
+  overflow: hidden;
 `
 
 export const Separator = styled.span`
@@ -27,4 +37,16 @@ export const Separator = styled.span`
   text-align: center;
   white-space: nowrap;
   animation: ${scroll} 40s linear infinite;
+
+  @media screen and (max-width: 1024px){
+    animation: ${scrollMobile} 100s linear infinite;
+  }
+
+  @media screen and (max-width: 768px){
+    animation: ${scrollMobile} 60s linear infinite;
+  }
+
+  @media screen and (max-width: 425px){
+    animation: ${scrollMobile} 40s linear infinite;
+  }
 `
