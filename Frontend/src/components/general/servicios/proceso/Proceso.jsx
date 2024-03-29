@@ -1,4 +1,3 @@
-import { coloresV2 } from "../../../../assets/css/Colors";
 import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
 import { Box, Description, Image, MainContainer, Step, Subtitle, Title } from "./ProcesoStyles";
 
