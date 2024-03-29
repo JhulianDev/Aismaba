@@ -82,7 +82,7 @@ const Router = createBrowserRouter([
         element: <CreacionDeContenido />
       },
       {
-        path: "/diseño-web",
+        path: "/diseno-web",
         element: <WebDesign />
       },
       {
