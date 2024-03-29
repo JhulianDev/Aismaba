@@ -6,6 +6,7 @@ import { fonts } from "../../../../assets/fonts/FontsHandler";
 export const CardContainer = styled.div`
   background-color: ${coloresV2.colorPrincipal};
   width: 100%;
+  max-height: 270px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,6 +16,7 @@ export const CardContainer = styled.div`
 
   @media screen and (max-width: 768px){
     flex-direction: column;
+    max-height: fit-content;
     border-radius: 12px;
   }
 `
@@ -37,7 +39,7 @@ export const BoxTexts = styled.div`
 
   @media screen and (max-width: 768px){
     width: 100%;
-    padding: 15px 25px;
+    padding: 15px 20px 20px;
     order: 2;
   }
 `
@@ -47,6 +49,7 @@ export const Title = styled.h1`
   font-size: 3.7rem;
   font-weight: 100;
   white-space: nowrap;
+  margin-top: -7px;
 
   @media screen and (max-width: 1535px){
     font-size: 3rem;
@@ -58,6 +61,7 @@ export const Title = styled.h1`
 
   @media screen and (max-width: 1024px){
     font-size: 1.8rem;
+    margin-top: 0;
   }
 
   @media screen and (max-width: 768px){
@@ -120,12 +124,13 @@ export const BoxButton = styled(Link)`
   border: 1px solid ${coloresV2.colorTextos};
   border-radius: 100px;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 12px;
   transition: all .2s ease;
 
   &:hover{
-    background-color: ${coloresV2.colorSecundario};
+    background-color: ${coloresV2.colorPrincipal};
     color: ${coloresV2.colorTextos};
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   }
 
   &:hover ${Icon} {
@@ -145,6 +150,7 @@ export const BoxButton = styled(Link)`
   @media screen and (max-width: 768px){
     padding: 10px 10px 10px 20px;
     margin-top: 10px;
+    /* display: none; */
   }
 
   @media screen and (max-width: 596px){
