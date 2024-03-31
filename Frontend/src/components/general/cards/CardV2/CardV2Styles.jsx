@@ -4,8 +4,8 @@ import { coloresV2 } from "../../../../assets/css/Colors";
 import { fonts } from "../../../../assets/fonts/FontsHandler";
 
 export const Hover = styled.span`
-  background-color: #eae1dce1;
-  color: ${coloresV2.colorTextos};
+  background-color: #30303068;
+  color: white;
   width: 100%;
   height: 100%;
   display: flex;

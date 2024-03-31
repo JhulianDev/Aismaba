@@ -7,9 +7,7 @@ export const Title = styled.h1`
   color: ${coloresV2.colorTextos};
   font-size: 2.5rem;
   text-align: center;
-  font-weight: 100;
   margin-bottom: 10px;
-  margin-top: -10px;
 
   @media screen and (max-width: 1535px){
     font-size: 2.2rem;
@@ -28,7 +26,7 @@ export const Title = styled.h1`
 
   @media screen and (max-width: 768px){
     font-size: 1.8rem;
-    margin: -25px 0;
+    margin: 0 0 -25px 0;
   }
 `
 
@@ -66,10 +64,10 @@ export const BoxCards = styled.div`
   justify-content: space-between;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 20px;
+  margin: 20px 0;
 
   @media screen and (max-width: 768px){
     grid-template-columns: repeat(1, 1fr);
-    margin-top: -10px;
+    margin: -10px 0 10px 0;
   }
 `
