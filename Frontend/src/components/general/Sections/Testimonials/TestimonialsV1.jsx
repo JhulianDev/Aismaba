@@ -15,6 +15,7 @@ const TestimonialsV1 = ({ data, bgColor }) => {
           {data.map((brand) => (
             <Card key={brand.id}>
               <Quotes src={QUOTES_ICON} alt='Quotes icon' />
+              <Quotes src={QUOTES_ICON} alt='Quotes icon' $bottom/>
               <Paragraph>{brand.testimony}</Paragraph>
 
               <ContainerIdentifier>

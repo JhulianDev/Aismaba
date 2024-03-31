@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { coloresV2 } from "../../../../assets/css/Colors";
 import { fonts } from "../../../../assets/fonts/FontsHandler";
 
@@ -8,7 +8,6 @@ export const Title = styled.h1`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 10px;
-  margin-top: -10px;
 
   @media screen and (max-width: 1535px){
     font-size: 2.2rem;
@@ -27,7 +26,7 @@ export const Title = styled.h1`
 
   @media screen and (max-width: 768px){
     font-size: 1.8rem;
-    margin: -25px 0;
+    margin: 0 0 -25px 0;
   }
 `
 
@@ -62,6 +61,7 @@ export const ContainerCards = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  padding-bottom: 20px;
 
   @media screen and (max-width: 1535px){
     grid-template-columns: repeat(2, 1fr);
@@ -69,6 +69,7 @@ export const ContainerCards = styled.div`
 
   @media screen and (max-width: 768px){
     grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 10px;
   }
 `
 
@@ -81,11 +82,21 @@ export const Card = styled.div`
   border-radius: 10px;
   gap: 15px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+  position: relative;
   `
 
 export const Quotes = styled.img`
   width: 40px;
-  `
+  opacity: 0.7;
+  ${(props) => props.$bottom && css`
+    transform: rotate(180deg);
+    width: 45px;
+    opacity: 0.15;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+  `}
+`;
 
 export const Paragraph = styled.p`
   font-family: ${fonts.SecondaryTypography};
@@ -103,12 +114,14 @@ export const ContainerIdentifier = styled.div`
 `
 
 export const BrandLogo = styled.img`
-  width: 100px;
+  background-color: ${coloresV2.colorSecundario};
+  width: 70px;
   display: flex;
   aspect-ratio: 1/1;
-  width: 70px;
   border: 1px solid ${coloresV2.colorTextos};
   border-radius: 100px;
+  padding: 4px;
+  opacity: .8;
 `
 
 export const BoxTexts = styled.div`
@@ -116,6 +129,7 @@ export const BoxTexts = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  gap: 2px;
 `
 
 export const BrandName = styled.span`
