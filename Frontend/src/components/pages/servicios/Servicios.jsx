@@ -1,50 +1,36 @@
 import { useEffect } from "react";
-import MOCKUP_INSTAKIT from "../../../assets/img/generales/mockup_instakit.png";
-import MOCKUP_CONTENIDO from "../../../assets/img/generales/mockup_contenido.png";
-import MOCKUP_DISENO_WEB from "../../../assets/img/generales/mockup_diseno-web.png";
-import Footer from "../../general/footer/Footer";
-import Slider from "../../general/slider/Slider";
-import Mockup from "../../general/tarjetas/mockup/Mockup";
-import { ServiciosContainer, ServiciosTitulo } from "./ServiciosStyled";
+import { v4 as uuidv4 } from 'uuid';
+import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
+import { BoxCards } from "../../general/Sections/Hubs/HubV1/HubV1Styles";
+import CardV2 from "../../general/cards/CardV2/CardV2";
+import CREACION_CONTENIDO_HOME from "../../../assets/img/generales/home/creacion_de_contenido_home.webp"
+import INSTAKIT_HOME from "../../../assets/img/generales/home/instakit_home.webp"
+import DISENO_WEB_HOME from "../../../assets/img/generales/home/diseno_web_home.webp"
+import { coloresV2 } from "../../../assets/css/Colors";
+import { Subtitle, Title } from "./ServiciosStyled";
 
 const Servicios = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  return (<>
-    <ServiciosContainer>
-      <ServiciosTitulo>Elige el servicio de tu interés</ServiciosTitulo>
-      <Slider>
 
-        <Mockup
-          imagen={MOCKUP_INSTAKIT}
-          alt="Mockup Instakit"
-          titulo="Instakit"
-          textHover="Ver Más"
-          enlace="/instakit"
-        />
-
-        <Mockup
-          imagen={MOCKUP_CONTENIDO}
-          alt="Mockup Creación De Contenido"
-          titulo="Creación De Contenido"
-          textHover="Ver Más"
-          enlace="/creacion-de-contenido"
-        />
-
-        <Mockup
-          imagen={MOCKUP_DISENO_WEB}
-          alt="Mockup Diseño Web"
-          titulo="Diseño Web"
-          textHover="Ver Más"
-          enlace="/diseño-web"
-        />
-
-      </Slider>
-    </ServiciosContainer>
-
-    <Footer />
-  </>
+  const services = [
+    { title: "Creación de contenido", image: CREACION_CONTENIDO_HOME, alt: "MockUp Creación de contenido", link: "/creacion-de-contenido" },
+    { title: "Instakit", image: INSTAKIT_HOME, alt: "MockUp Instakit", link: "/instakit" },
+    { title: "Diseño web", image: DISENO_WEB_HOME, alt: "MockUp Diseño Web", link: "/diseno-web" }
+  ]
+  return (
+    <Section $bgColor={coloresV2.colorSecundario}>
+      <MaxWidth $flexDirection="column">
+        <Title>CONOCE NUESTROS</Title>
+        <Subtitle>SERVICIOS</Subtitle>
+        <BoxCards>
+          {services.map((service) => (
+            <CardV2 key={uuidv4()} data={service} />
+          ))}
+        </BoxCards>
+      </MaxWidth>
+    </Section>
   );
 };
 

@@ -1,38 +1,51 @@
 import styled from "styled-components"
-import { colores } from "../../../assets/css/Colors"
+import { fonts } from "../../../assets/fonts/FontsHandler"
+import { coloresV2 } from "../../../assets/css/Colors"
 
-export const ServiciosContainer = styled.div`
-  background-color: ${colores.colorFondo};
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 75px 0;
-  gap: 60px;
-  overflow: hidden;
+export const Title = styled.h1`
+  font-family: ${fonts.MainTypography};
+  color: ${coloresV2.colorTextos};
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 1535px){
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+
+  @media screen and (max-width: 1232px){
+    font-size: 2rem;
+    margin-bottom: 6px;
+  }
+
+  @media screen and (max-width: 1024px){
+    font-size: 1.9rem;
+    margin-bottom: 5px;
+  }
 
   @media screen and (max-width: 768px){
-    gap: 20px;
+    font-size: 1.8rem;
+    margin: 40px 0 -25px 0;
   }
 `
 
-export const ServiciosTitulo = styled.h1`
-  font-family: Cinzel;
-  font-size: 28.8px;
-  letter-spacing: 4.8px;
-  font-weight: 300;
+export const Subtitle = styled.h2`
+  font-family: ${fonts.SecondaryTypography};
+  color: ${coloresV2.colorTextos};
   text-align: center;
-  color: ${colores.colorPrincipal};
-  padding: 0 40px;
+  font-size: 1.4rem;
+  font-weight: 400;
 
-  @media screen and (max-width: 768px){
-    margin-bottom: 50px;
+  @media screen and (max-width: 1535px){
+    font-size: 1.3rem;
   }
 
-  @media screen and (max-width: 425px){
-    font-size: 25.6px;
-    padding: 0 60px;
+  @media screen and (max-width: 1232px){
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 1024px){
+    font-size: 1.1rem;
   }
 `
