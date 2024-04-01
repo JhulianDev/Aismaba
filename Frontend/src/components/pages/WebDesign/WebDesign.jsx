@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { coloresV2 } from '../../../assets/css/Colors';
 import { data } from '../../../content/WebDesignData';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
@@ -11,6 +12,9 @@ import PasosServicio from '../../general/servicios/pasos/PasosServicio';
 import PreguntasFrecuentes from '../../general/servicios/preguntas/PreguntasFrecuentes';
 
 const WebDesign = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeroV1

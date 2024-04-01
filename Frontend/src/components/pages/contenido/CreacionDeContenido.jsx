@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { data } from '../../../content/CreacionContenidoData';
 import { coloresV2 } from '../../../assets/css/Colors';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
@@ -11,6 +12,9 @@ import ContactoServicio from '../../general/servicios/contacto/ContactoServicio'
 import FooterV2 from '../../general/footerV2/FooterV2';
 
 const CreacionDeContenido = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeroV1

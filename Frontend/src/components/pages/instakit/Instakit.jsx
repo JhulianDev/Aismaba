@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { data } from "../../../content/InstakitData";
+import { coloresV2 } from "../../../assets/css/Colors";
 import HeroV1 from "../../general/Heros/HeroV1/HeroV1";
 import FooterV2 from "../../general/footerV2/FooterV2";
 import BeneficiosServicios from "../../general/servicios/beneficios/BeneficiosServicios";
@@ -6,10 +8,12 @@ import ContactoServicio from "../../general/servicios/contacto/ContactoServicio"
 import DescripcionServicio from "../../general/servicios/descripcion/DescripcionServicio";
 import InstakitPack from "../../general/servicios/packs/instakitPack/InstakitPack";
 import PreguntasFrecuentes from "../../general/servicios/preguntas/PreguntasFrecuentes";
-import { coloresV2 } from "../../../assets/css/Colors";
 import Proceso from "../../general/servicios/proceso/Proceso";
 
 const Instakit = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeroV1
