@@ -1,23 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
+import { coloresV2 } from "../assets/css/Colors";
 import Header from "../components/general/header/Header";
 import Error404 from "../components/pages/Error404/Error404";
 import Home from "../components/pages/home/Home";
 import Servicios from "../components/pages/servicios/Servicios";
-import Branding from "../components/pages/branding/Branding";
-import { colores, coloresV2 } from "../assets/css/Colors";
 import CreacionDeContenido from "../components/pages/contenido/CreacionDeContenido";
-import Contacto from "../components/pages/contacto/Contacto";
-import Gracias from "../components/pages/gracias/Gracias";
+import Instakit from "../components/pages/instakit/Instakit";
+import WebDesign from "../components/pages/WebDesign/WebDesign";
 import Tienda from "../components/pages/tienda/Tienda";
 import Plantilla from "../components/pages/producto/plantilla/Plantilla";
 import Marca from "../components/pages/producto/marca/Marca";
 import Cart from "../components/pages/carrito/Cart";
+import Checkout from "../components/pages/checkout/Checkout";
+import Gracias from "../components/pages/gracias/Gracias";
+import MisCompras from "../components/pages/misCompras/MisCompras";
 import Login from "../components/pages/login/Login";
 import SignUp from "../components/pages/SignUp/SignUp";
-import Checkout from "../components/pages/checkout/Checkout";
-import MisCompras from "../components/pages/misCompras/MisCompras";
-import Instakit from "../components/pages/instakit/Instakit";
-import WebDesign from "../components/pages/WebDesign/WebDesign";
 
 const Router = createBrowserRouter([
   {
@@ -34,12 +32,20 @@ const Router = createBrowserRouter([
         element: <Servicios />
       },
       {
-        path: "/contacto",
-        element: <Contacto />
+        path: "/creacion-de-contenido",
+        element: <CreacionDeContenido />
       },
       {
-        path: "/gracias-compra",
-        element: <Gracias />
+        path: "/instakit",
+        element: <Instakit />
+      },
+      {
+        path: "/diseno-web",
+        element: <WebDesign />
+      },
+      {
+        path: "/tienda",
+        element: <Tienda />
       },
       {
         path: "/plantilla/:nombrePlantilla",
@@ -58,6 +64,10 @@ const Router = createBrowserRouter([
         element: <Checkout />
       },
       {
+        path: "/gracias-compra",
+        element: <Gracias />
+      },
+      {
         path: "/mis-compras",
         element: <MisCompras />
       },
@@ -68,26 +78,6 @@ const Router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <SignUp />
-      },
-      {
-        path: "/branding",
-        element: <Branding />
-      },
-      {
-        path: "/instakit",
-        element: <Instakit />
-      },
-      {
-        path: "/creacion-de-contenido",
-        element: <CreacionDeContenido />
-      },
-      {
-        path: "/diseno-web",
-        element: <WebDesign />
-      },
-      {
-        path: "/tienda",
-        element: <Tienda />
       }
     ]
   }
