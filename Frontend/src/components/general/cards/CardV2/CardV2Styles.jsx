@@ -57,6 +57,10 @@ export const BoxText = styled.div`
   padding: 5px 10px 5px 20px;
 
   @media screen and (max-width: 1232px){
+    padding: 5px 10px 5px 10px;
+  }
+
+  @media screen and (max-width: 768px){
     padding: 5px 10px 5px 15px;
   }
 `
@@ -66,6 +70,7 @@ export const Title = styled.h1`
   font-size: 2rem;
   font-weight: 100;
   color: ${coloresV2.colorTextos};
+  white-space: nowrap;
 
   @media screen and (max-width: 1535px){
     font-size: 1.7rem;
@@ -73,6 +78,10 @@ export const Title = styled.h1`
 
   @media screen and (max-width: 1232px){
     font-size: 1.35rem;
+  }
+
+  @media screen and (max-width: 1024px){
+    font-size: 1rem;
   }
 
   @media screen and (max-width: 768px){
@@ -87,7 +96,23 @@ export const Title = styled.h1`
 export const Icon = styled.img`
   width: 30px;
 
-  @media screen and (max-width: 596px){
+  @media screen and (max-width: 1535px){
+    width: 25px;
+  }
+
+  @media screen and (max-width: 1232px){
+    width: 20px;
+  }
+
+  @media screen and (max-width: 1024px){
+    width: 15px;
+  }
+
+  @media screen and (max-width: 1024px){
+    width: 15px;
+  }
+
+  @media screen and (max-width: 768px){
     width: 27px;
   }
 `
