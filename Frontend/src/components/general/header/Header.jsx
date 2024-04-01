@@ -67,7 +67,7 @@ const Header = ({ color }) => {
                 <HeaderLi><HeaderLink onClick={handleNav} to="/">Inicio</HeaderLink></HeaderLi>
                 <HeaderLi><HeaderLink onClick={handleNav} to="/servicios">Servicios</HeaderLink></HeaderLi>
                 <HeaderLi><HeaderLink onClick={handleNav} to="/Tienda">Tienda</HeaderLink></HeaderLi>
-                <HeaderLi><HeaderLink onClick={handleNav} to="/Contacto" $border="none">Contacto</HeaderLink></HeaderLi>
+                <HeaderLi><HeaderLink onClick={handleNav} to="https://wa.link/cdi3nc" target="_blank" $border="none">Contacto</HeaderLink></HeaderLi>
 
                 <BoxLinkMobile>
                   {!userData ? (
