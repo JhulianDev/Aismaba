@@ -8,6 +8,7 @@ import INSTAKIT_HOME from "../../../assets/img/generales/home/instakit_home.webp
 import DISENO_WEB_HOME from "../../../assets/img/generales/home/diseno_web_home.webp"
 import { coloresV2 } from "../../../assets/css/Colors";
 import { Subtitle, Title } from "./ServiciosStyled";
+import FooterV2 from "../../general/footerV2/FooterV2";
 
 const Servicios = () => {
   useEffect(() => {
@@ -20,17 +21,21 @@ const Servicios = () => {
     { title: "Diseño web", image: DISENO_WEB_HOME, alt: "MockUp Diseño Web", link: "/diseno-web" }
   ]
   return (
-    <Section $bgColor={coloresV2.colorSecundario}>
-      <MaxWidth $flexDirection="column">
-        <Title>CONOCE NUESTROS</Title>
-        <Subtitle>SERVICIOS</Subtitle>
-        <BoxCards>
-          {services.map((service) => (
-            <CardV2 key={uuidv4()} data={service} />
-          ))}
-        </BoxCards>
-      </MaxWidth>
-    </Section>
+    <>
+      <Section $bgColor={coloresV2.colorSecundario}>
+        <MaxWidth $flexDirection="column">
+          <Title>CONOCE NUESTROS</Title>
+          <Subtitle>SERVICIOS</Subtitle>
+          <BoxCards>
+            {services.map((service) => (
+              <CardV2 key={uuidv4()} data={service} />
+            ))}
+          </BoxCards>
+        </MaxWidth>
+      </Section>
+
+      <FooterV2 />
+    </>
   );
 };
 
