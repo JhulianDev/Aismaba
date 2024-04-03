@@ -16,6 +16,7 @@ import Gracias from "../components/pages/gracias/Gracias";
 import MisCompras from "../components/pages/misCompras/MisCompras";
 import Login from "../components/pages/login/Login";
 import SignUp from "../components/pages/SignUp/SignUp";
+import Shop from "../components/pages/Shop/Shop";
 
 const Router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "/tienda",
-        element: <Tienda />
+        element: <Shop />
       },
       {
         path: "/plantilla/:nombrePlantilla",
