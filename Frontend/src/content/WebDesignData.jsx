@@ -99,7 +99,7 @@ export const data = {
         tag: "LANDINGPAGE",
         title: "Pack Premium",
         price: { ARS: "250.000", USD: "250", EUR: "230" },
-        description: "Con una Landing Page, podras promocionar tu producto o servicio estrella, destacando sus beneficios, ventajas y captando el contacto de tus posibles clientes.",
+        description: "Con una Landing Page, podrás promocionar tu producto o servicio estrella, destacando sus beneficios, ventajas y captando el contacto de tus posibles clientes.",
         items: [
           "· 1 Landing Page",
           "· Redacción de textos",
@@ -141,7 +141,7 @@ export const data = {
           "· Actualización de servicios",
           "· Actualización de imagenes",
           "· Actualización de textos",
-          "· Actualizaciones de seguirdad",
+          "· Actualizaciones de seguridad",
           "· Optimización de velocidad",
           "· Copia de seguridad del sitio web"
         ],
