@@ -17,6 +17,7 @@ import MisCompras from "../components/pages/misCompras/MisCompras";
 import Login from "../components/pages/login/Login";
 import SignUp from "../components/pages/SignUp/SignUp";
 import Shop from "../components/pages/Shop/Shop";
+import ProductV1 from "../components/pages/Product/ProductV1/ProductV1";
 
 const Router = createBrowserRouter([
   {
@@ -47,6 +48,14 @@ const Router = createBrowserRouter([
       {
         path: "/tienda",
         element: <Shop />
+      },
+      {
+        path: "/tienda/plantilla/:id",
+        element: <ProductV1 />
+      },
+      {
+        path: "/tienda2",
+        element: <Tienda />
       },
       {
         path: "/plantilla/:nombrePlantilla",
