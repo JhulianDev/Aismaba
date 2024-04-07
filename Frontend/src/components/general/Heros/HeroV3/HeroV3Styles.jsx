@@ -15,7 +15,7 @@ export const ContainerHero = styled.div`
 
 export const Shadow = styled.img`
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   opacity: .3;
 `
