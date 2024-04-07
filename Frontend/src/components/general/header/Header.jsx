@@ -57,7 +57,7 @@ const Header = ({ color }) => {
 
           <HamburgerButton open={open} handleNav={handleNav} />
 
-          <LogoContainer>
+          <LogoContainer to="/">
             <LogoImage src={ISOTIPO_GRIS} alt="Isotipo de Aismaba" />
           </LogoContainer>
 
