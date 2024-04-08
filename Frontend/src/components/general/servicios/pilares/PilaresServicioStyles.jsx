@@ -122,6 +122,7 @@ export const Subtitle = styled.h2`
   font-family: ${fonts.MainTypography};
   font-size: 1.2rem;
   text-align: center;
+  text-transform: uppercase;
 
   @media screen and (max-width: 1535px){
     font-size: 1rem;

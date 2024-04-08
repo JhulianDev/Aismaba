@@ -78,6 +78,7 @@ export const Card = styled.div`
   border: 1px solid ${coloresV2.colorTextos};
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 25px;
   border-radius: 10px;
   gap: 15px;
