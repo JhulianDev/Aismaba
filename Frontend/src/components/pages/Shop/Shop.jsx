@@ -3,10 +3,10 @@ import { data } from "../../../content/ShopData"
 import { coloresV2 } from "../../../assets/css/Colors";
 import ProductsV1 from "../../general/Sections/Products/ProductsV1/ProductsV1";
 import SeparatorV1 from "../../general/Separators/SeparatorV1/SeparatorV1";
-import shopStore from "../../../stores/shopStore"
+import useShopStore from "../../../stores/useShopStore"
 
 const Shop = () => {
-  const { TemplatesData } = shopStore();
+  const { TemplatesData } = useShopStore();
   return (
     <>
       <HeroV3
