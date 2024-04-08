@@ -1,9 +1,8 @@
 import { create } from 'zustand'
 import { products } from "../content/ShopData"
 
-const useStore = create(set => ({
-  // Acciones y estados
+const useShopStore = create(set => ({
   TemplatesData: products.templates
 }))
 
-export default useStore;
+export default useShopStore;
