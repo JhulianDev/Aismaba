@@ -119,6 +119,7 @@ export const Subtitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 100;
   margin-bottom: 8px;
+  text-transform: uppercase;
 `
 
 export const Description = styled.p`

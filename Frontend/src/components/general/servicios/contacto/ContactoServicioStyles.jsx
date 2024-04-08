@@ -11,18 +11,6 @@ export const Parrafo = styled.p`
   @media screen and (max-width: 1232px){
     font-size: 1.6rem;
   }
-
-  @media screen and (max-width: 1024px){
-    
-  }
-
-  @media screen and (max-width: 768px){
-    
-  }
-
-  @media screen and (max-width: 596px){
-    
-  }
 `
 
 export const Button = styled(Link)`
@@ -31,7 +19,7 @@ export const Button = styled(Link)`
   font-family: ${fonts.MainTypography};
   font-size: 1.4rem;
   text-align: center;
-  padding: 12px 20px 10px;
+  padding: 12px 20px;
   margin-top: 20px;
   border-radius: 100px;
   border: 1px solid ${coloresV2.colorTextos};

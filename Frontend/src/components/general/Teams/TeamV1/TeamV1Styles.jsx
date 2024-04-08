@@ -43,8 +43,8 @@ export const Subtitle = styled.h2`
 `
 
 export const CardBox = styled.div`
+  background-color: ${coloresV2.colorSecundario};
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  background-color: white;
   width: 100%;
   display: flex;
   align-items: center;
