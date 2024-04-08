@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import shopStore from "../../../../stores/shopStore"
+import useShopStore from "../../../../stores/useShopStore"
 import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
 import SliderV2 from "../../../general/sliders/SliderV2/SliderV2";
 import { coloresV2 } from "../../../../assets/css/Colors";
 
 const ProductV1 = () => {
-  const { TemplatesData } = shopStore();
+  const { TemplatesData } = useShopStore();
   const { id } = useParams();
   const template = TemplatesData.find(template => template.id === id);
 
