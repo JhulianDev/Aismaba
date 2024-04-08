@@ -20,7 +20,7 @@ const Home = () => {
       />
 
       <SeparatorV1
-        data={data.separator}
+        data={data.separator.text}
       />
 
       <HubV1

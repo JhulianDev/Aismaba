@@ -28,7 +28,9 @@ export const data = {
     image: HERO_HOME,
     imageMobile: HERO_HOME_MOBILE
   },
-  separator: "INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES",
+  separator: {
+    text: "INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES · INSTAKIT · CREACIÓN DE CONTENIDO · DISEÑO WEB · PLANTILLAS EDITABLES"
+  },
   hub: {
     cardShop: {
       title: "Plantillas Editables",
@@ -49,7 +51,7 @@ export const data = {
       id: uuidv4(),
       name: "MULATAS CAKE",
       category: "Pasteleria",
-      testimony: "Fue la mejor decisión el haber contratado sus servicios de Branding. Al principio estaba nerviosa porque no tenia una idea clara de que imagen.",
+      testimony: "¡Cada día me enamora más, estoy encantada con el resultado! Superó mis expectativas, realmente muy profesionales y lo que más me gustó es que cumplieron con los tiempos tal cual lo indican al inicio. Muchas gracias quedé muy feliz.",
       logo: LOGO_MULATAS_CAKE,
       alt: "Logo Mulatas Cake"
     },
@@ -57,7 +59,7 @@ export const data = {
       id: uuidv4(),
       name: "HI PARTY",
       category: "Accesorios",
-      testimony: "Fue la mejor decisión el haber contratado sus servicios de Branding. Al principio estaba nerviosa porque no tenia una idea clara de que imagen.",
+      testimony: "Gratitud inmensa a Aismaba y sobre todo a Patricia que tiene un don especial para descubrir la imagen, personalidad y la identidad de la marca e interpretarlos brillantemente a través de sis diseños.",
       logo: LOGO_HI_PARTY,
       alt: "Logo Hi Party"
     },
@@ -65,7 +67,7 @@ export const data = {
       id: uuidv4(),
       name: "HABIGAIL",
       category: "Indumentaria",
-      testimony: "Fue la mejor decisión el haber contratado sus servicios de Branding. Al principio estaba nerviosa porque no tenia una idea clara de que imagen.",
+      testimony: "Muchisimas gracias por tu excelente trabajo y la calidad de tu servicio. Fuiste súper amable y supiste entender el estilo de mi marca de un principio, plasmaste en tus diseños tal cual me lo había imaginado. Fue un placer trabajar con vos.",
       logo: LOGO_HABIGAIL,
       alt: "Logo Habigail"
     },
@@ -73,7 +75,7 @@ export const data = {
       id: uuidv4(),
       name: "LUMEN",
       category: "Consultoria",
-      testimony: "Fue la mejor decisión el haber contratado sus servicios de Branding. Al principio estaba nerviosa porque no tenia una idea clara de que imagen.",
+      testimony: "Estoy enamorada de mi nueva imagen, honestamente es todo lo que quería, los colores, tipografías, los elementos gráficos son de verdad soñados. Gracias por ese excelente trabajo, no dudaría en volver a contratar sus servicios.",
       logo: LOGO_LUMEN,
       alt: "Logo Lumen"
     },
