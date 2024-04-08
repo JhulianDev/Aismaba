@@ -8,8 +8,9 @@ import TeamV1 from '../../general/Teams/TeamV1/TeamV1';
 import FooterV2 from '../../general/footerV2/FooterV2';
 import BeneficiosServicios from '../../general/servicios/beneficios/BeneficiosServicios';
 import ContactoServicio from '../../general/servicios/contacto/ContactoServicio';
-import PasosServicio from '../../general/servicios/pasos/PasosServicio';
 import PreguntasFrecuentes from '../../general/servicios/preguntas/PreguntasFrecuentes';
+import PilaresServicio from '../../general/servicios/pilares/PilaresServicio';
+import Proceso from '../../general/servicios/proceso/Proceso';
 
 const WebDesign = () => {
   useEffect(() => {
@@ -26,17 +27,30 @@ const WebDesign = () => {
         link={data.hero.link}
         image={data.hero.image}
         alt={data.hero.alt}
+        bgColor={coloresV2.colorSecundario}
       />
 
       <BeneficiosServicios
         benefits={data.benefits}
       />
 
-      <PasosServicio
+      <PilaresServicio
+        presentation={data.pillars.presentation}
+        title={data.pillars.title}
+        items={data.pillars.items}
+      />
+
+      <Proceso
         title={data.process.title}
-        subtitle={data.process.subtitle}
         steps={data.process.steps}
-        bgColor={coloresV2.colorSecundario}
+        image={data.process.image}
+        bgColor={coloresV2.colorPrincipal}
+      />
+
+      <PricingV1
+        title={data.pricing.title}
+        subtitle={data.pricing.subtitle}
+        packs={data.pricing.packs}
       />
 
       <TeamV1
@@ -46,14 +60,9 @@ const WebDesign = () => {
         description={data.team.description}
       />
 
-      <PricingV1
-        title={data.pricing.title}
-        subtitle={data.pricing.subtitle}
-        packs={data.pricing.packs}
-      />
-
       <PortfolioV1
         porfolio={data.portfolio}
+        bgColor={coloresV2.colorSecundario}
       />
 
       <PreguntasFrecuentes
