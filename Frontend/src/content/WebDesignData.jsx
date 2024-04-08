@@ -7,16 +7,14 @@ import DOMINIO_ICON from "../assets/img/generales/web_design/Icono-Dominio.svg"
 import HOSTING_ICON from "../assets/img/generales/web_design/Icono-Hosting.svg"
 import RESPONSIVE_ICON from "../assets/img/generales/web_design/Icono-Responsive.svg"
 // Section Process
-import STEP_01 from "../assets/img/generales/web_design/Step-01.webp";
-import STEP_02 from "../assets/img/generales/web_design/Step-02.webp";
-import STEP_03 from "../assets/img/generales/web_design/Step-03.webp";
+import IMAGE_PROCESS from "../assets/img/generales/web_design/image_process.webp"
 // Section Team
 import TEAM from "../assets/img/generales/web_design/Team.webp";
 // Section Portfolio
 import PORTFOLIO_01 from "../assets/img/generales/web_design/portfolio_web_01.webp"
 import PORTFOLIO_02 from "../assets/img/generales/web_design/portfolio_web_02.webp"
-import PORTFOLIO_03 from "../assets/img/generales/web_design/portfolio_web_03.webp"
-import PORTFOLIO_04 from "../assets/img/generales/web_design/portfolio_web_04.webp"
+import PORTFOLIO_03 from "../assets/img/generales/web_design/portfolio_web_05.webp"
+import PORTFOLIO_04 from "../assets/img/generales/web_design/portfolio_web_06.webp"
 
 export const data = {
   hero: {
@@ -34,42 +32,77 @@ export const data = {
     { id: uuidv4(), icon: HOSTING_ICON, title: "Hosting Gratis", description: "De regalo por un año" },
     { id: uuidv4(), icon: RESPONSIVE_ICON, title: "Diseño Adaptable", description: "A todos los dispositivos" }
   ],
+  pillars: {
+    presentation: "En AISMABA, ofrecemos un servicio completo para mejorar tu presencia en la web.",
+    title: "Trabajaremos juntos en:",
+    items: [
+      {
+        id: uuidv4(),
+        subtitle: "Estructura web",
+        description: "Planificaremos la estructura de tu web, adaptándola a las necesidades específicas de tu marca y ayudándote a alcanzar tus objetivos de manera efectiva."
+      },
+      {
+        id: uuidv4(),
+        subtitle: "Diseño Personalizado",
+        description: "Crearemos un diseño único y atractivo para tu web, que resalte la identidad de tu marca, para destacar entre la competencia y generar una impresión duradera en tus visitantes."
+      },
+      {
+        id: uuidv4(),
+        subtitle: "Redacción de textos",
+        description: "Nos encargaremos de crear contenido único y relevante para tu web, enfocado en transmitir tu mensaje de manera clara y persuasiva, captando así la atención de tu audiencia"
+      },
+      {
+        id: uuidv4(),
+        subtitle: "Selección de imágenes",
+        description: "Seleccionaremos imágenes que complementen y realcen la estética de tu web, transmitiendo la identidad visual de tu marca de forma impactante y profesional."
+      }
+    ]
+  },
   process: {
-    title: "¿Como lo haremos?",
-    subtitle: "¡En 3 simples pasos!",
+    title: "Proceso de desarrollo",
+    image: IMAGE_PROCESS,
     steps: [
       {
         id: uuidv4(),
-        position: "left",
         number: "01",
-        image: STEP_01,
-        alt: "Joven en reunion de trabajo",
-        title: "Reunion Inicial",
-        description: "Programaremos una reunion en la que resolveremos todas tus dudas y planearemos juntos el contenido y la estructura que tendra tu sitio web",
-        bgColor: "#d9cdbf",
-        border: "true"
+        subtitle: "Contacto Inicial",
+        description: "Agendaremos una llamada para conocernos mejor. En ella determinaremos cuales son las necesidades específicas de tu marca y estableceremos el proceso de trabajo que seguiremos para desarrollar tu sitio web."
       },
       {
         id: uuidv4(),
-        position: "right",
         number: "02",
-        image: STEP_02,
-        alt: "Mockup Propuestas Web",
-        title: "Presentacion de propuesta",
-        description: "Presentaremos una propuesta del sitio web donde plasmaremos todas las solicitudes y requerimientos acordados en la reunión inicial",
-        bgColor: "#b69f89",
-        border: "true"
+        subtitle: "BRIEF",
+        description: "Te enviaremos un formulario con preguntas simples que me ayudaran a obtener la máxima información de tu marca y conocer a fondo tu proyecto."
       },
       {
         id: uuidv4(),
-        position: "left",
         number: "03",
-        image: STEP_03,
-        alt: "Mockup Entrega Web",
-        title: "Entrega Final",
-        description: "Una vez realizadas las correcciones correspondientes y estes conforme con el resultado, te haremos entrega del sitio web desplegado y en funcionamiento.",
-        bgColor: "#b49483",
-        border: "true"
+        subtitle: "Propuesta escrita",
+        description: "Recibirás una primera propuesta donde plasmaremos por escrito la estrategia que utilizaremos para el desarrollo de tu sitio web basándonos en la información obtenida en los 2 primeros pasos."
+      },
+      {
+        id: uuidv4(),
+        number: "04",
+        subtitle: "Proceso de diseño",
+        description: "Una vez aprobada la propuesta escrita, daremos inicio al proceso de diseño de tu página web. En este paso nos enfocaremos en diseñar una web atractiva y funcional siguiendo la estructura acordada anteriormente."
+      },
+      {
+        id: uuidv4(),
+        number: "05",
+        subtitle: "Revisión y ajustes",
+        description: "En esta etapa, podrás revisar detenidamente la propuesta realizada y sugerir cualquier corrección o ajuste que consideres necesarios, para asegurarnos de que el resultado final sea exactamente como lo deseas."
+      },
+      {
+        id: uuidv4(),
+        number: "06",
+        subtitle: "Entrega final",
+        description: "Una vez aplicadas todas las correcciones y sugerencias acordadas en la etapa de revisión, procederemos a hacer entrega de la propuesta final para su aprobación, garantizando así tu completa satisfacción con nuestro servicio de diseño web."
+      },
+      {
+        id: uuidv4(),
+        number: "07",
+        subtitle: "Puesta en marcha",
+        description: "Una vez hayamos recibido tu aprobación final, procederemos a vincular tu dominio con tu página web, haciéndote la entrega final de tu web lista y en funcionamiento."
       }
     ]
   },
