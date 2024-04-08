@@ -42,9 +42,11 @@ export const Div = styled.div`
   position: relative;
 `
 
-export const ButtonAddToCart = styled(Link)`
+export const ButtonAddToCart = styled.button`
   display: flex;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 `
 
 export const CartIcon = styled.img`
