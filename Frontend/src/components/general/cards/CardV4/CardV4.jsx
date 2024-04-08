@@ -1,10 +1,19 @@
 import { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import { CurrencyContextV2 } from "../../../../context/CurrencyContextV2";
 import { BoxImage, BoxPrice, ButtonAddToCart, ButtonViewProduct, CardContainer, CartIcon, Description, Div, FooterCard, Image, Price, Title, ToolTip } from "./CardV4Styles";
 import ADD_TO_CART_ICON from "../../../../assets/img/generales/add_to_cart_icon.svg";
+import useCartStore from "../../../../stores/useCartStore";
 
 const CardV4 = ({ product }) => {
   const { currencySelected } = useContext(CurrencyContextV2);
+  const { addToCart } = useCartStore();
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    navigate("/carritoV1");
+  };
   return (
     <CardContainer>
       <BoxImage>
@@ -17,7 +26,7 @@ const CardV4 = ({ product }) => {
             <Price>$ {product.price[currencySelected]} {currencySelected} </Price>
           </BoxPrice>
 
-          <ButtonAddToCart to="/">
+          <ButtonAddToCart onClick={handleAddToCart}>
             <CartIcon src={ADD_TO_CART_ICON} alt="Add to cart icon" />
             <ToolTip>Añadir al carrito</ToolTip>
           </ButtonAddToCart>
