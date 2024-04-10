@@ -1,12 +1,12 @@
-import { colores } from "../../../assets/css/Colors";
-import Footer from "../../general/footer/Footer";
+import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
+import { coloresV2 } from "../../../assets/css/Colors";
 import LoginCard from "../../general/tarjetas/login/LoginCard";
-import { Section } from "./LoginStyled";
 
 const Login = () => {
   return (
-    <>
-      <Section>
+    <Section $bgColor={coloresV2.colorSecundario}>
+      <MaxWidth $justifyContent="center">
+
         <LoginCard
           type="Login"
           submitText="Iniciar Sesión"
@@ -15,10 +15,9 @@ const Login = () => {
           apiUrl="/login"
           redirectLink="/"
         />
-      </Section>
 
-      <Footer color={colores.colorSecundario} />
-    </>
+      </MaxWidth>
+    </Section>
   );
 };
 
