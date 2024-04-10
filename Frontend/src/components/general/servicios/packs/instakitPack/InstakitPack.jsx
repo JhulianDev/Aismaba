@@ -1,13 +1,11 @@
-import { useContext } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { MaxWidth, Section } from "../../../../../assets/styles/GeneralStyles";
-import { CurrencyContextV2 } from "../../../../../context/CurrencyContextV2";
 import { BoxBonus, BoxItem, BoxPrice, Button, ContainerItems, ContainerPack, Currency, ItemPack, Price, Sign, Subtitle, SubtitlePack, Title } from "./InstakitPackStyles";
-import { coloresV2 } from "../../../../../assets/css/Colors";
 import CurrencySelectorV2 from "../../../currencySelector/CurrencySelectorV2";
+import useCurrencyStore from "../../../../../stores/useCurrencyStore";
 
 const InstakitPack = ({ title, subtitle, price, items, delivery, bonus, link, bgColor}) => {
-  const { currencySelected } = useContext(CurrencyContextV2);
+  const { currencySelected } = useCurrencyStore();
   
   return (
     <Section $bgColor={bgColor} $borderBottom>

@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
 import { BoxCurrency, Currency, Icon, MainContainer } from './CurrencySelectorV2Styles';
 import BANDERA_ARGENTINA from '../../../assets/img/generales/Flag-Argentina.svg';
 import BANDERA_EEUU from '../../../assets/img/generales/Flag-EEUU.svg';
 import BANDERA_ESPAÑA from '../../../assets/img/generales/Flag-Espana.svg';
-import { CurrencyContextV2 } from '../../../context/CurrencyContextV2';
+import useCurrencyStore from '../../../stores/useCurrencyStore';
 
 const CurrencySelectorV2 = () => {
-  const { currencySelected, handleCurrency } = useContext(CurrencyContextV2);
+  const { currencySelected, handleCurrency } = useCurrencyStore();
   return (
     <MainContainer>
       <BoxCurrency $selected={currencySelected === "ARS"} onClick={() => {handleCurrency("ARS")}}>

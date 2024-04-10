@@ -1,12 +1,10 @@
-import { useContext } from "react";
-import { coloresV2 } from "../../../../../assets/css/Colors";
 import { MaxWidth, Section } from "../../../../../assets/styles/GeneralStyles";
 import CurrencySelectorV2 from "../../../currencySelector/CurrencySelectorV2";
 import { BoxItems, BoxTexts, Item, MainBoxPack, Note, Number, Description, Subtitle, Title, BoxAdditionals, AdditionalsTitle, BoxItemsAditionals, ItemAditional, BoxPrice, Sign, Price, Currency, ItemTitle, AdditionalDescription, Button } from "./ContenidoPackStyles";
-import { CurrencyContextV2 } from "../../../../../context/CurrencyContextV2";
+import useCurrencyStore from "../../../../../stores/useCurrencyStore";
 
 const ContenidoPack = ({ type, bgColor, namePack, note, subtitle, items, additionalsTitle, additionalsItems, price, link }) => {
-  const { currencySelected } = useContext(CurrencyContextV2);
+  const { currencySelected } = useCurrencyStore();
 
   return (
     <Section $bgColor={bgColor} $borderBottom>

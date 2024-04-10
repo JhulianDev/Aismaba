@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import { useNavigate } from 'react-router-dom';
-import { CurrencyContextV2 } from "../../../../context/CurrencyContextV2";
 import { BoxImage, BoxPrice, ButtonAddToCart, ButtonViewProduct, CardContainer, CartIcon, Description, Div, FooterCard, Image, Price, Title, ToolTip } from "./CardV4Styles";
 import ADD_TO_CART_ICON from "../../../../assets/img/generales/add_to_cart_icon.svg";
 import useCartStore from "../../../../stores/useCartStore";
+import useCurrencyStore from '../../../../stores/useCurrencyStore';
 
 const CardV4 = ({ product }) => {
-  const { currencySelected } = useContext(CurrencyContextV2);
+  const { currencySelected } = useCurrencyStore();
   const { addToCart } = useCartStore();
   const navigate = useNavigate();
 

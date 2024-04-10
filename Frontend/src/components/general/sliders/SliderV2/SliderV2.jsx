@@ -1,15 +1,14 @@
-import { useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router";
 import { Arrow, BoxCounter, BoxPrice, BoxTexts, Button, Counter, Description, Image, MainContainer, MovilSlider, Price, Title, WindowSlider } from "./SliderV2Styles";
 import ARROW_ICON from "../../../../assets/img/generales/arrow_icon.svg"
 import useSliderV2 from "./useSliderV2";
-import { CurrencyContextV2 } from "../../../../context/CurrencyContextV2";
 import useCartStore from "../../../../stores/useCartStore";
+import useCurrencyStore from "../../../../stores/useCurrencyStore";
 
 const SliderV2 = ({ product }) => {
   const { currentImage, imagesLength, handleClickSlider } = useSliderV2(product)
-  const { currencySelected } = useContext(CurrencyContextV2);
+  const { currencySelected } = useCurrencyStore();
   const { addToCart } = useCartStore();
   const navigate = useNavigate();
 
