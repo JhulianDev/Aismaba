@@ -4,9 +4,14 @@ import { coloresV2 } from "../../../assets/css/Colors";
 import ProductsV1 from "../../general/Sections/Products/ProductsV1/ProductsV1";
 import SeparatorV1 from "../../general/Separators/SeparatorV1/SeparatorV1";
 import useShopStore from "../../../stores/useShopStore"
+import { useEffect } from "react";
 
 const Shop = () => {
   const { TemplatesData } = useShopStore();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HeroV3
