@@ -80,7 +80,7 @@ export const handleOrder = async (navigateFunction, setLoading) => {
         // Si la preferencia es creada con exito:
         // Guardamos el id de la preferencia en el estado global
         setOrderPreferenceId(preferenceResponse.data.preferenceId)
-        console.log(preferenceResponse.data)
+        console.log(preferenceResponse.data.message)
         // Redireccionamos al checkout
         navigateFunction("/checkout");
         // Manejo de errores:
