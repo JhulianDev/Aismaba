@@ -7,7 +7,7 @@ import { useContext, useEffect } from "react";
 import Swal from "sweetalert2"
 import axios from "axios"
 
-const PaypalPayment = ({ value, createdOrder, setLoading }) => {
+const PaypalPayment = ({ value, orderId, setLoading }) => {
   const { dispatch, setOrder } = useContext(CartContext)
   const navigate = useNavigate();
 
@@ -26,7 +26,7 @@ const PaypalPayment = ({ value, createdOrder, setLoading }) => {
                 amount: {
                   value: value, // El valor total de la orden
                 },
-                custom_id: createdOrder.id // Identificador personalizado de la orden
+                custom_id: orderId // Identificador personalizado de la orden
               },
             ],
           })
@@ -38,7 +38,7 @@ const PaypalPayment = ({ value, createdOrder, setLoading }) => {
               // Paso 3: Si el pago se completa con éxito
 
               // Paso 3.1: Actualizar la orden en tu servidor
-              axios.put(`${API_URL}/order/${createdOrder.id}`, null, {
+              axios.put(`${API_URL}/order/${orderId}`, null, {
                 headers: {
                   Authorization: `Bearer ${getToken()}` // Autenticación con token
                 }
