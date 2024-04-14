@@ -1,24 +1,22 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 import { BoxButtonPayment, BoxItem, CardContainer, Currency, Price, Product, ProductName, ProductPrice, Title } from "./TarjetaCheckOutStyled";
-import { CartContext } from "../../../../context/CartContext";
 import PaypalPayment from "../../paypal/PaypalPayment";
 import { MERCADOPAGO_KEY } from "../../../../env/env";
 import Loader from "../../Loader/Loader";
 import useCurrencyStore from "../../../../stores/useCurrencyStore";
 import useCartStore from "../../../../stores/useCartStore";
+import useOrderStore from "../../../../stores/useOrderStore";
 
 const TarjetaCheckout = () => {
-  const { order, preferenceId } = useContext(CartContext);
   const [loading, setLoading] = useState(true);
-
-  const { cartItems, totalPrice } = useCartStore();
+  const { orderId, orderPreferenceId } = useOrderStore();
+  const { cartItems, totalAmount } = useCartStore();
   const { currencySelected } = useCurrencyStore();
-  initMercadoPago(MERCADOPAGO_KEY);
+  initMercadoPago(MERCADOPAGO_KEY, { locale: "es-AR"});
 
   return (
     <CardContainer>
-
       <BoxItem>
         <Title>Tu pedido</Title>
         <Currency>${currencySelected}</Currency>
@@ -38,22 +36,22 @@ const TarjetaCheckout = () => {
 
       <BoxItem>
         <Product>Monto Total:</Product>
-        <Price>{totalPrice(currencySelected)} {currencySelected}</Price>
+        <Price>{totalAmount(currencySelected)} {currencySelected}</Price>
       </BoxItem>
 
-      {order && loading ? (
+      {orderId && loading ? (
         <Loader height="100px" />
       ) : null}
 
-      {order && currencySelected === "USD" && (
+      {orderId && currencySelected === "USD" && (
         <BoxButtonPayment $marginTop="15px">
-          <PaypalPayment value={totalPrice(currencySelected)} createdOrder={order} setLoading={setLoading} />
+          <PaypalPayment value={totalAmount(currencySelected)} createdOrder={orderId} setLoading={setLoading} />
         </BoxButtonPayment>
       )}
 
-      {order && currencySelected === "ARS" && (
+      {orderId && currencySelected === "ARS" && (
         <BoxButtonPayment>
-          <Wallet initialization={{ preferenceId }} onReady={() => {setLoading(false)}} />
+          <Wallet initialization={{preferenceId: orderPreferenceId, redirectMode: "self"}} onReady={() => { setLoading(false) }}/>
         </BoxButtonPayment>
       )}
 
