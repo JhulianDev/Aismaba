@@ -26,6 +26,10 @@ const useCartStore = create(
         }, 0);
         return total;
       },
+      totalItems: () => {
+        const state = get();
+        return state.cartItems.length;
+      },
     }),
     {
       name: 'cart-storage'

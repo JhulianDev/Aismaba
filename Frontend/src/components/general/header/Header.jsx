@@ -10,9 +10,11 @@ import { CartContext } from "../../../context/CartContext";
 import { coloresV2 } from "../../../assets/css/Colors";
 import ISOTIPO_GRIS from "../../../assets/img/generales/isotipo_gris.svg"
 import useUserStore from "../../../stores/useUserStore";
+import useCartStore from "../../../stores/useCartStore";
 
 const Header = ({ color }) => {
   const { userData, deleteUserData, deleteUserToken } = useUserStore();
+  const { totalItems } = useCartStore();
   const { state } = useContext(CartContext)
   const [scrolling, setScrolling] = useState(false);
   const [open, setOpen] = useState(false);
@@ -103,7 +105,7 @@ const Header = ({ color }) => {
             <CartContainer to="/carrito">
               <CartIcon src={CARRITO_ICONO} alt="Icono de carrito de compras" />
               <BoxCounter>
-                <ProductCounter>{state.cart.length}</ProductCounter>
+                <ProductCounter>{totalItems()}</ProductCounter>
               </BoxCounter>
             </CartContainer>
 
