@@ -5,13 +5,6 @@ const useCartStore = create(
   persist(
     (set, get) => ({
       cartItems: [],
-      totalPrice: (currencySelected) => {
-        const state = get();
-        const total = state.cartItems.reduce((acc, item) => {
-          return acc + parseFloat(item.price[currencySelected]);
-        }, 0);
-        return total;
-      },
       addToCart: (product) => {
         const state = get();
         const isProductInCart = state.cartItems.some((item) => item.id === product.id);
@@ -25,7 +18,14 @@ const useCartStore = create(
       },
       clearCart: () => {
         set({ cartItems: [] });
-      }
+      },
+      totalAmount: (currencySelected) => {
+        const state = get();
+        const total = state.cartItems.reduce((acc, item) => {
+          return acc + parseFloat(item.price[currencySelected]);
+        }, 0);
+        return total;
+      },
     }),
     {
       name: 'cart-storage'
