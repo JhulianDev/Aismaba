@@ -10,7 +10,7 @@ import { API_URL } from "../../../env/env";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
-  const { setUserData, setUserToken, requireLogin } = useUserStore();
+  const { setUserData, setUserToken, redirectToCart } = useUserStore();
   const navigate = useNavigate();
   const redirectLink = "/";
   const apiUrl = (`${API_URL}/login`);
@@ -25,7 +25,7 @@ const Login = () => {
           <LoginCard
             type="Login"
             link="/sign-up"
-            handleSubmit={(e) => handleSignIn(e, setLoading, apiUrl, setUserData, setUserToken, navigate, requireLogin, redirectLink)}
+            handleSubmit={(e) => handleSignIn(e, setLoading, apiUrl, setUserData, setUserToken, navigate, redirectToCart, redirectLink)}
           />
         )}
 
