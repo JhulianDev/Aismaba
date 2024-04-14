@@ -1,17 +1,12 @@
+import { v4 as uuidv4 } from 'uuid';
 import { validateRegisterInputs, validateLoginInputs } from "../helpers/helper.js";
 import UserModel from "../models/UserModel.js";
-import mercadopago from 'mercadopago';
-import { v4 as uuidv4 } from 'uuid';
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
-import dotenv from 'dotenv';
 import OrderModel from "../models/OrderModel.js";
 import DolarModel from "../models/DolarModel.js";
+import dotenv from 'dotenv';
 dotenv.config();
-
-mercadopago.configure({
-  access_token: process.env.MP_ACCESS_TOKEN,
-});
 
 // Register
 export const register = async (req, res) => {
@@ -242,91 +237,5 @@ export const getPurchases = async (req, res) => {
     // Manejar cualquier error que ocurra durante la consulta
     console.error('Error al buscar las órdenes del usuario:', error);
     res.status(500).json({ message: 'Error al buscar las órdenes del usuario.' });
-  }
-}
-
-// Preferences Mercado Pago
-export const createPreference = (req, res) => {
-
-  try {
-
-    // Crea una preferencia de pago
-    let preference = {
-      metadata: { order_id: req.body.order_id },
-      items: [
-        {
-          title: req.body.title,    // Título del artículo o producto
-          unit_price: Number(req.body.price),   // Precio unitario del artículo
-          quantity: Number(req.body.quantity), // Cantidad de unidades del artículo
-        }
-      ],
-      back_urls: {
-        "success": "http://192.168.0.188:5173/gracias-compra",  // URL de retorno en caso de pago exitoso
-        "failure": "",  // URL de retorno en caso de pago fallido
-        "pending": ""   // URL de retorno en caso de pago pendiente
-      },
-      auto_return: "approved" // Configuración de retorno automático después de la aprobación del pago
-    };
-
-    // Crea la preferencia de pago en MercadoPago
-    mercadopago.preferences.create(preference)
-      .then(function (response) {
-        // Responde con el ID de la preferencia de pago generada por MercadoPago
-        res.json({
-          id: response.body.id
-        });
-      })
-      .catch(function (error) {
-        // Maneja cualquier error que ocurra durante la creación de la preferencia de pago
-        console.log(error);
-      });
-
-  } catch (error) {
-    console.log('Error al crear las preferencias de mercado pago:', error);
-    res.status(500).json({ message: 'Error al crear las preferencias de mercado pago' });
-  }
-}
-
-// Verify Payment Mercado Pago
-export const verifyPaymentMP = async (req, res) => {
-  try {
-    // Obtenemos el payment_id desde los parametros de la URL
-    const { payment_id } = req.body;
-
-    // Comprobar si payment_id está presente y no es nulo
-    if (!payment_id) {
-      return res.status(400).json({ error: 'El ID de pago es requerido.' });
-    }
-
-    // Consultamos Mercado Pago para obtener información sobre el pago usando el payment_id
-    const payment = await mercadopago.payment.findById(payment_id);
-
-    // Si el pago no existe devolvemos el error
-    if (!payment) {
-      return res.status(404).json({ error: 'El ID proporcionado no corresponde a ningun pago.' });
-    }
-
-    // Si el pago esta aprobado y acreditado:
-    if (payment.response.status === "approved" && payment.response.status_detail === "accredited") {
-      // Obtenemos el id de la orden desde la metadata:
-      const order_id = payment.response.metadata.order_id;
-      // Actualizamos la orden en la base de datos para establecer "completed" en true
-      await OrderModel.update(
-        { completed: true },
-        { where: { id: order_id }, returning: true }
-      )
-        .then(() => {
-          res.status(200).json({ message: '¡Orden completada!' });
-        })
-        .catch((error) => {
-          console.error('No se puedo completar la orden', error);
-        });
-    } else {
-      return res.status(400).json({ message: 'El pago no está aprobado o acreditado.' });
-    }
-    // Maneja cualquier error que ocurra durante la cerificacion del pago
-  } catch (error) {
-    console.log('Error al verificar el pago en Mercado Pago:', error);
-    return res.status(500).json({ error: 'Se produjo un error al verificar el pago en Mercado Pago.' });
   }
 }
