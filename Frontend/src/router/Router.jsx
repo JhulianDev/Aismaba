@@ -67,11 +67,11 @@ const Router = createBrowserRouter([
         element: <Marca />
       },
       {
-        path: "/carritoV1",
+        path: "/carrito",
         element: <CartV1 />
       },
       {
-        path: "/carrito",
+        path: "/carritoV1",
         element: <Cart />
       },
       {
