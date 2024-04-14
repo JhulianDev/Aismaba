@@ -1,49 +1,48 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware';
+import { API_URL } from '../env/env';
+import axios from "axios"
 
 const useUserStore = create(
   persist(
     (set, get) => ({
-      userData: {},
+      userData: null,
       setUserData: (data) => {
         set({ userData: data })
       },
+      deleteUserData: () => {
+        set({ userData: null })
+      },
 
-      userToken: "",
+      userToken: null,
       setUserToken: (token) => {
         set({ userToken: token })
       },
+      deleteUserToken: () => {
+        set({ userToken: null })
+      },
 
-      loadUserData: () => {
+      loadUserData: (setUserData) => {
         const userToken = get().userToken;
         if (userToken) {
-          console.log(userToken)
-        } else {
-          console.log("No user token")
+          axios.get(`${API_URL}/user`, {
+            headers: {
+              Authorization: `Bearer ${userToken}`
+            }
+          })
+            .then((resp) => {
+              setUserData(resp.data.user)
+            })
+            .catch((error) => {
+              console.error(`Error al obtener el usuario: ${error}`);
+            });
         }
       },
-      //   const userToken = get().userToken;
-      //   if (userToken) {
-      //     axios.get(`${API_URL}/user`, {
-      //       headers: {
-      //         Authorization: `Bearer ${userToken}`
-      //       }
-      //     })
-      //       .then((resp) => {
-      //         setUserData(resp.data.user)
-      //       })
-      //       .catch((error) => {
-      //         console.error(`Error al obtener el usuario: ${error.response.data.message}`);
-      //       });
-      //   }
-      // },
 
-      requiresLogin: false,
-      setRequiresLogin: (isLoginRequired) => {
-        set({ requiresLogin: isLoginRequired })
+      redirectToCart: false,
+      setRedirectToCart: (boolean) => {
+        set({ redirectToCart: boolean })
       },
-
-      setConsole: (console.log("Hola"))
     }),
     {
       name: 'user-storage'
@@ -51,6 +50,6 @@ const useUserStore = create(
   )
 );
 
-useUserStore.getState().loadUserData();
+useUserStore.getState().loadUserData(useUserStore.getState().setUserData);
 
 export default useUserStore;
