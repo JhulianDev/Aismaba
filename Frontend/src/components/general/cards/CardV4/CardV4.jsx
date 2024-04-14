@@ -11,7 +11,7 @@ const CardV4 = ({ product }) => {
 
   const handleAddToCart = () => {
     addToCart(product);
-    navigate("/carritoV1");
+    navigate("/carrito");
   };
   return (
     <CardContainer>
@@ -33,7 +33,7 @@ const CardV4 = ({ product }) => {
         </Div>
 
         <Title>{product.name}</Title>
-        <Description>{product.description}</Description>
+        <Description>{product.type}</Description>
 
         <ButtonViewProduct to={`/tienda/plantilla/${product.id}`}>Ver Plantilla</ButtonViewProduct>
       </FooterCard>
