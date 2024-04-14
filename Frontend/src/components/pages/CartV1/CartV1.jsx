@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { coloresV2 } from "../../../assets/css/Colors";
 import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
 import CurrencySelectorV2 from "../../general/currencySelector/CurrencySelectorV2";
@@ -7,13 +8,28 @@ import { BoxIcon, ButtonIcon, ContainerProduct, ContainerTable, DeleteIcon, Link
 import DELETE_ICON from "../../../assets/img/generales/delete_icon.svg"
 import CARD_ICON from "../../../assets/img/generales/credit_card_icon.svg"
 import BASKET_ICON from "../../../assets/img/generales/basket_icon.svg"
+import { handleOrder } from "../../../helpers/handleOrder";
+import Loader from '../../general/Loader/Loader';
+import { useState } from 'react';
 
 const CartV1 = () => {
-  const { cartItems, removeFromCart, totalPrice } = useCartStore();
+  const [loading, setLoading] = useState();
+  const { cartItems, removeFromCart, totalAmount } = useCartStore();
   const { currencySelected } = useCurrencyStore();
+  const navigate = useNavigate();
+
+  if (loading)
+    return (
+      <Loader
+        height={"100vh"}
+        bgColor={true}
+      />
+    )
+
   return (
     <Section $align={cartItems.length > 0 ? "top" : "center"} $bgColor={coloresV2.colorSecundario}>
       <MaxWidth $alignItems="top" $flexDirection="column" >
+
         {cartItems.length > 0 ? (
           <>
             <Title>Selecciona tu moneda de pago:</Title>
@@ -38,11 +54,11 @@ const CartV1 = () => {
 
               <TableFooter>
                 <Total>Total</Total>
-                <TotalPrice>{totalPrice(currencySelected)} {currencySelected}</TotalPrice>
+                <TotalPrice>{totalAmount(currencySelected)} {currencySelected}</TotalPrice>
               </TableFooter>
             </ContainerTable>
 
-            <PurchaseButton>
+            <PurchaseButton onClick={() => { handleOrder(navigate, setLoading) }}>
               Finalizar Compra
               <ButtonIcon $typeA src={CARD_ICON} alt="Card Icon" />
             </PurchaseButton>
