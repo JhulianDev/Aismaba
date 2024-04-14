@@ -1,7 +1,7 @@
 import axios from "axios"
 import Swal from "sweetalert2"
 
-export const handleSignIn = (e, setLoading, apiUrl, setUserFunction, setTokenFunction, navigateFunction, requireLogin, redirectLink) => {
+export const handleSignIn = (e, setLoading, apiUrl, setUserFunction, setTokenFunction, navigateFunction, redirectToCart, redirectLink) => {
   e.preventDefault()
   setLoading(true);
   // Creamos una variable "data" con los datos obtenidos en el fomulario de registro
@@ -29,15 +29,15 @@ export const handleSignIn = (e, setLoading, apiUrl, setUserFunction, setTokenFun
       })
 
       // Si el usuario esta iniciando sesión porque intento realizar una orden se le redirige al carrito:
-      if (requireLogin === true) {
-        navigate("/carrito")
+      if (redirectToCart === true) {
+        navigateFunction("/carrito")
         return;
       }
 
       // Redirigimos al usuario a la pagina indicada en el componente:
       navigateFunction(redirectLink)
     })
-    // Si el registro da error:
+    // Si el login da error:
     .catch(error => {
 
       // Mostramos una alerta con el mensaje de error:
@@ -49,7 +49,7 @@ export const handleSignIn = (e, setLoading, apiUrl, setUserFunction, setTokenFun
       })
 
       // Mostramos el error en la consola
-      console.log(error)
+      console.error(`Error al iniciar sesión: ${error.response.data.message}`)
     })
     .finally(() => {
       setLoading(false);

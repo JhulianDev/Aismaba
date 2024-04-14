@@ -41,7 +41,7 @@ export const handleSignUp = (e, setLoading, apiUrl, navigateFunction, redirectLi
       })
 
       // Mostramos el error en la consola
-      console.log(error)
+      console.error(`Error al iniciar sesión: ${error.response.data.message}`)
     })
     .finally(() => {
       setLoading(false);
