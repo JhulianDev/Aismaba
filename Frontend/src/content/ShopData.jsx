@@ -20,7 +20,7 @@ export const data = {
 
 export const products = {
   templates: [
-    { id: "1", name: "Aesthetic Brown", description: "Plantillas Instagram", price: { ARS: "6000", USD: "30", EUR: "28" }, coverImage: (AESTHETIC_BROWN_IMAGES.coverImage), galleryImages: (AESTHETIC_BROWN_IMAGES.galleryImages) },
-    { id: "2", name: "Neutral Minimalist", description: "Plantillas Instagram", price: { ARS: "6000", USD: "30", EUR: "28" }, coverImage: (NEUTRAL_MINIMALIST_IMAGES.coverImage), galleryImages: (NEUTRAL_MINIMALIST_IMAGES.galleryImages) }
+    { id: "1", name: "Aesthetic Brown", type: "Plantillas Instagram", price: { ARS: "6000", USD: "30", EUR: "28" }, coverImage: (AESTHETIC_BROWN_IMAGES.coverImage), galleryImages: (AESTHETIC_BROWN_IMAGES.galleryImages) },
+    { id: "2", name: "Neutral Minimalist", type: "Plantillas Instagram", price: { ARS: "6000", USD: "30", EUR: "28" }, coverImage: (NEUTRAL_MINIMALIST_IMAGES.coverImage), galleryImages: (NEUTRAL_MINIMALIST_IMAGES.galleryImages) }
   ]
 }
