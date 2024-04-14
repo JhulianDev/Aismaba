@@ -14,7 +14,7 @@ const SliderV2 = ({ product }) => {
 
   const handleAddToCart = () => {
     addToCart(product);
-    navigate("/carritoV1");
+    navigate("/carrito");
   };
 
   return (
