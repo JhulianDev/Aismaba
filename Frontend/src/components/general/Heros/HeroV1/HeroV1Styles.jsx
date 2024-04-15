@@ -75,7 +75,7 @@ export const Icon = styled.img`
   width: 10px;
 `
 
-export const Subtitle = styled.h2`
+export const Title = styled.h2`
   font-family: ${fonts.MainTypography};
   font-size: 4rem;
   color: ${coloresV2.colorTextos};
