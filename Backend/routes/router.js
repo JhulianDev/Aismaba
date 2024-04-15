@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 // Controllers
-import { register, login, getUser, purchaseOrder, updateOrder, getPurchases, getDolarValue } from '../controllers/authController.js';
+import { register, login, getUser, purchaseOrder, updateOrder, getPurchases } from '../controllers/authController.js';
 import { createPreference } from '../controllers/mercadoPagoController.js';
 
 // Middlewares
@@ -19,9 +19,6 @@ router.post("/login", login);
 
 // Get User
 router.get("/user", validateAuthorization, getUser);
-
-// Get Dolar value
-router.get("/private", getDolarValue);
 
 // Purchase orders
 router.post("/purchase-orders", validateAuthorization, purchaseOrder);
