@@ -1,9 +1,9 @@
 import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
 import { BoxImage, BoxTag, BoxTexts, Button, ContainerHero, Description, Icon, Image, Tag, Title } from "./HeroV1Styles";
 
-const HeroV1 = ({ tag, icon, title, description, callToAction, link, image, alt, bgColor }) => {
+const HeroV1 = ({ tag, icon, title, description, callToAction, link, image, alt, bgColor, borderBottom }) => {
   return (
-    <Section $bgColor={bgColor}>
+    <Section $bgColor={bgColor} $borderBottom={borderBottom}>
       <MaxWidth>
         <ContainerHero>
 
