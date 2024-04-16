@@ -4,6 +4,7 @@ const router = express.Router();
 // Controllers
 import { register, login, getUser, purchaseOrder, updateOrder, getPurchases } from '../controllers/authController.js';
 import { createPreference } from '../controllers/mercadoPagoController.js';
+import { newsletter_suscription } from '../controllers/suscriptionController.js';
 
 // Middlewares
 import { validateAuthorization } from '../middlewares/authMiddleware.js';
@@ -34,5 +35,8 @@ router.post("/mercado_pago/create_preference", validateAuthorization, createPref
 
 // Verify Payment Mercado Pago
 // router.post("/mercado_pago/verify_payment", validateAuthorization, verifyPaymentMP);
+
+// Newsletter Suscription
+router.post("/newsletter_suscription", newsletter_suscription)
 
 export default router;
