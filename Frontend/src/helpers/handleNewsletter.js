@@ -1,7 +1,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import { API_URL } from "../env/env";
-import PLANTILLAS_GRATUITAS from "../assets/img/generales/plantillas_gratuitas/image_form.jpg"
+import PLANTILLAS_GRATUITAS from "../assets/img/generales/plantillas_gratuitas/image_form.webp"
 
 export const handleSuscription = (e, setLoading, setFormData) => {
   e.preventDefault();
