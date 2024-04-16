@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 // Section Hero
 import LIGHT_ICON from "../assets/img/generales/light_icon.svg";
 import HERO_INSTAKIT from "../assets/img/generales/plantillas_gratuitas/hero_plantillas_gratuitas.webp";
