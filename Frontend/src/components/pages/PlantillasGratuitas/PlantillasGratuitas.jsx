@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
 import { data } from '../../../content/PlantillasGratuitasData';
 import { coloresV2 } from '../../../assets/css/Colors';
@@ -7,6 +7,8 @@ import SeparatorV1 from '../../general/Separators/SeparatorV1/SeparatorV1';
 import FooterV2 from '../../general/footerV2/FooterV2';
 
 const PlantillasGratuitas = () => {
+  const formRef = useRef(null);
+
   return (
     <>
       <HeroV1
@@ -14,18 +16,22 @@ const PlantillasGratuitas = () => {
         icon={data.hero.iconTag}
         title={data.hero.title}
         description={data.hero.description}
+        buttonType={data.hero.buttonType}
+        scrollRef={formRef}
         callToAction={data.hero.callToAction}
-        // link={data.hero.link}
         image={data.hero.image}
         alt={data.hero.alt}
         bgColor={coloresV2.colorSecundario}
       />
 
-      <SeparatorV1 
+      <SeparatorV1
         data={data.separator.text}
       />
 
-      <FormV1 />
+      <FormV1
+        data={data.form}
+        formRef={formRef}
+      />
 
       <FooterV2 />
     </>
