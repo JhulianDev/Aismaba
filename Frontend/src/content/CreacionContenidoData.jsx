@@ -26,6 +26,7 @@ export const data = {
     icon: LIGHT_ICON,
     title: "Creación de Contenido para emprendedoras.",
     description: "Diseñamos la estrategia perfecta para impulsar tu negocio en las redes sociales.",
+    buttonType: "Link",
     callToAction: "¡Lo Quiero!",
     link: "https://wa.link/5x3oun",
     image: HERO_CREACION_CONTENIDO,

@@ -1,7 +1,47 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom"
 import { fonts } from "../../../../assets/fonts/FontsHandler";
 import { coloresV2 } from "../../../../assets/css/Colors";
+
+const stylesButton = css`
+  width: fit-content;
+  background-color: ${coloresV2.colorTextos};
+  color: white;
+  font-family: ${fonts.MainTypography};
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 30px;
+  border: 1px solid ${coloresV2.colorTextos};
+  border-radius: 7px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  
+  &:hover{
+    background-color: ${coloresV2.colorPrincipal};
+    color: ${coloresV2.colorTextos};
+  }
+
+  @media screen and (max-width: 1535px){
+    font-size: 1.4rem;
+  }
+
+  @media screen and (max-width: 1232px){
+    font-size: 1.3rem;
+    margin-top: 5px;
+  }
+
+  @media screen and (max-width: 1024px){
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 768px){
+    font-size: 1.4rem;
+    margin-top: 10px;
+    border-radius: 100px;
+  }
+`
 
 export const ContainerHero = styled.div`
   width: 100%;
@@ -119,43 +159,12 @@ export const Description = styled.p`
   }
 `
 
-export const Button = styled(Link)`
-  width: fit-content;
-  background-color: ${coloresV2.colorTextos};
-  color: white;
-  font-family: ${fonts.MainTypography};
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px 30px;
-  border: 1px solid ${coloresV2.colorTextos};
-  border-radius: 7px;
-  margin-top: 10px;
-  transition: all .2s ease-in-out;
-  
-  &:hover{
-    background-color: ${coloresV2.colorPrincipal};
-    color: ${coloresV2.colorTextos};
-  }
+export const ButtonLink = styled(Link)`
+  ${stylesButton};
+`
 
-  @media screen and (max-width: 1535px){
-    font-size: 1.4rem;
-  }
-
-  @media screen and (max-width: 1232px){
-    font-size: 1.3rem;
-    margin-top: 5px;
-  }
-
-  @media screen and (max-width: 1024px){
-    font-size: 1.1rem;
-  }
-
-  @media screen and (max-width: 768px){
-    font-size: 1.4rem;
-    margin-top: 10px;
-    border-radius: 100px;
-  }
+export const Button = styled.button`
+  ${stylesButton};
 `
 
 export const BoxImage = styled.div`

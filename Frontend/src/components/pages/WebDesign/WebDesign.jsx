@@ -23,6 +23,7 @@ const WebDesign = () => {
         icon={data.hero.icon}
         title={data.hero.title}
         description={data.hero.description}
+        buttonType={data.hero.buttonType}
         callToAction={data.hero.callToAction}
         link={data.hero.link}
         image={data.hero.image}

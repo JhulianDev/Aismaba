@@ -21,6 +21,7 @@ export const data = {
     icon: LIGHT_ICON,
     title: "Plantillas minimalistas 100% Personalizadas.",
     description: "Diseñadas exclusivamente para tu marca, para brindarle una personalidad única y profesional.",
+    buttonType: "Link",
     callToAction: "¡Lo Quiero!",
     link: "https://wa.link/sn2ako",
     image: HERO_INSTAKIT,

@@ -22,6 +22,7 @@ export const data = {
     icon: LIGHT_ICON,
     title: "Creamos tu Página Web 100% Personalizada.",
     description: "Diseñamos webs increibles, para impulsar tu negocio al éxito y que triunfes en el mundo digital.",
+    buttonType: "Link",
     callToAction: "¡Lo Quiero!",
     link: "https://wa.link/2fp3lt",
     image: HERO_WEB_DESIGN,

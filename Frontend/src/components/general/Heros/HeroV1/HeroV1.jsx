@@ -1,7 +1,12 @@
 import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
-import { BoxImage, BoxTag, BoxTexts, Button, ContainerHero, Description, Icon, Image, Tag, Title } from "./HeroV1Styles";
+import { BoxImage, BoxTag, BoxTexts, Button, ButtonLink, ContainerHero, Description, Icon, Image, Tag, Title } from "./HeroV1Styles";
 
-const HeroV1 = ({ tag, icon, title, description, callToAction, link, image, alt, bgColor, borderBottom }) => {
+const HeroV1 = ({ tag, icon, title, description, buttonType, scrollRef, callToAction, link, image, alt, bgColor, borderBottom }) => {
+
+  const handleScroll = () => {
+    scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Section $bgColor={bgColor} $borderBottom={borderBottom}>
       <MaxWidth>
@@ -13,13 +18,18 @@ const HeroV1 = ({ tag, icon, title, description, callToAction, link, image, alt,
 
           <BoxTexts>
             <BoxTag>
-              <Icon src={icon} alt="Icon"/>
+              <Icon src={icon} alt="Icon" />
               <Tag>{tag}</Tag>
             </BoxTag>
 
             <Title>{title}</Title>
             <Description>{description}</Description>
-            <Button to={link} target="_blank">{callToAction}</Button>
+            {buttonType === "Link" && (
+              <ButtonLink to={link} target="_blank">{callToAction}</ButtonLink>
+            )}
+            {buttonType === "Scroll" && (
+              <Button onClick={handleScroll}>{callToAction}</Button>
+            )}
           </BoxTexts>
 
           <BoxImage>
