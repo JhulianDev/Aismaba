@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import HeroV1 from '../../general/Heros/HeroV1/HeroV1';
 import { data } from '../../../content/PlantillasGratuitasData';
 import { coloresV2 } from '../../../assets/css/Colors';
@@ -8,6 +8,10 @@ import FooterV2 from '../../general/footerV2/FooterV2';
 
 const PlantillasGratuitas = () => {
   const formRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
