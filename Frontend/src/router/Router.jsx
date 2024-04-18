@@ -80,7 +80,7 @@ const Router = createBrowserRouter([
         element: <Checkout />
       },
       {
-        path: "/gracias-compra",
+        path: "/compra-realizada",
         element: <Gracias />
       },
       {
