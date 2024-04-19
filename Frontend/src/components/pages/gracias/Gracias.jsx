@@ -1,44 +1,62 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_URL } from "../../../env/env";
-import useUserStore from "../../../stores/useUserStore";
 import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
-import { coloresV2 } from "../../../assets/css/Colors";
 import { BoxButtons, ButtonLink, Description, Title } from "./GraciasStyles";
+import { coloresV2 } from "../../../assets/css/Colors";
+import useUserStore from "../../../stores/useUserStore";
+import useCartStore from "../../../stores/useCartStore";
 import Loader from "../../general/Loader/Loader";
 
 const Gracias = () => {
   const [orderStatus, setOrderStatus] = useState(null);
   const [loading, setLoading] = useState(true);
   const { userToken } = useUserStore.getState();
+  const { clearCart } = useCartStore()
+
+  // Funcion para procesar el pago en el backend
+  const processPayment = async (url, id, token) => {
+    try {
+      // Realizamos la solicitud a la ruta indicada para procesar el pago
+      const response = await axios.post(url, id, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      // Si la petición es exitosa:
+      // Mostramos la respuesta del backend
+      console.log('Respuesta de la petición:', response);
+      // Actualizamos el orderStatus con el estado de la orden recibido en la respuesta
+      setOrderStatus(response.data.order_status);
+      // Eliminamos el contenido del carrito:
+      clearCart();
+      // Detenemos el loading
+      setLoading(false);
+      // Si la petición da error:
+    } catch (error) {
+      // Mostramos el error de la petición
+      console.error('Error en la petición:', error);
+      // Actualizamos el orderStatus con el estado de la orden recibido en la respuesta
+      setOrderStatus(error.response.data.order_status);
+      // Detenemos el loading
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
-    // Extraer el payment_id de los parámetros de la URL
+    // Extraemos el payment_id o el order_id de los parámetros de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const payment_id = urlParams.get('payment_id');
+    const order_id = urlParams.get('order_id');
 
-    // Verificar si hay payment_id antes de hacer la solicitud
+    // Si el pago fue realizado con MercadoPago hacemos la petición a la ruta correspondiente
     if (payment_id) {
-      // Realizar la solicitud al backend para verificar el pago
-      axios.post(`${API_URL}/mercado_pago/verify_payment`, { payment_id }, {
-        headers: {
-          Authorization: `Bearer ${userToken}`
-        }
-      })
-        .then((response) => {
-          // Mostramos la respuesta del backend
-          console.log('Respuesta de la petición:', response);
-          // Actualizar el estado de orderStatus con el estado de la orden recibido en la respuesta
-          setOrderStatus(response.data.order_status)
-          setLoading(false);
-        })
-        .catch((error) => {
-          // Mostramos el error de la petición
-          console.error('Error en la petición:', error);
-          // Actualizar el estado de orderStatus con el estado de la orden recibido en la respuesta
-          setOrderStatus(error.response.data.order_status)
-          setLoading(false);
-        });
+      processPayment(`${API_URL}/mercado_pago/process_payment`, { payment_id }, userToken);
+    }
+
+    // Si el pago fue realizado con Paypal hacemos la petición a la ruta correspondiente
+    if (order_id) {
+      processPayment(`${API_URL}/paypal/process_payment`, { order_id }, userToken);
     }
   }, []);
 
