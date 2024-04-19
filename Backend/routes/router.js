@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Controllers
 import { register, login, getUser, purchaseOrder, updateOrder, getPurchases } from '../controllers/authController.js';
-import { createPreference, verifyPayment } from '../controllers/mercadoPagoController.js';
+import { createPreference, processPaymentMercadoPago, processPaymentPaypal } from '../controllers/paymentsController.js';
 import { newsletter_suscription } from '../controllers/suscriptionController.js';
 
 // Middlewares
@@ -24,9 +24,6 @@ router.get("/user", validateAuthorization, getUser);
 // Purchase orders
 router.post("/purchase-orders", validateAuthorization, purchaseOrder);
 
-// Update order
-router.put("/order/:id", validateAuthorization, updateOrder);
-
 // Get Purchases
 router.get("/purchases-user", validateAuthorization, getPurchases);
 
@@ -34,7 +31,10 @@ router.get("/purchases-user", validateAuthorization, getPurchases);
 router.post("/mercado_pago/create_preference", validateAuthorization, createPreference);
 
 // Verify Payment Mercado Pago
-router.post("/mercado_pago/verify_payment", verifyPayment);
+router.post("/mercado_pago/process_payment", validateAuthorization, processPaymentMercadoPago);
+
+// Verify Payment Paypal
+router.post("/paypal/process_payment", validateAuthorization, processPaymentPaypal);
 
 // Newsletter Suscription
 router.post("/newsletter_suscription", newsletter_suscription)
