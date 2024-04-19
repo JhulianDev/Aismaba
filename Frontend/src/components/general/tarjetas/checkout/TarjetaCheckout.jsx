@@ -45,7 +45,7 @@ const TarjetaCheckout = () => {
 
       {orderId && currencySelected === "USD" && (
         <BoxButtonPayment $marginTop="15px">
-          <PaypalPayment value={totalAmount(currencySelected)} createdOrder={orderId} setLoading={setLoading} />
+          <PaypalPayment value={totalAmount(currencySelected)} orderId={orderId} setLoading={setLoading} />
         </BoxButtonPayment>
       )}
 
