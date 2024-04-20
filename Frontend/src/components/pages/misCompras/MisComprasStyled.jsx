@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { colores } from "../../../assets/css/Colors"
+import { colores, coloresV2 } from "../../../assets/css/Colors"
+import { fonts } from "../../../assets/fonts/FontsHandler"
 
 export const Section = styled.section`
   background-color: ${colores.colorFondo};
@@ -17,13 +18,15 @@ export const Section = styled.section`
   }
 `
 
-export const BoxCompras = styled.div`
-  background-color: #ffffff;
-  height: fit-content;
-  max-width: 1200px;
+export const CardContainer = styled.div`
+  background-color: ${coloresV2.colorPrincipal};
+  height: fit -content;
   width: 100%;
   padding: 15px 40px 45px;
   border-radius: 8px;
+  margin-top: 60px;
+  border: 1px solid ${coloresV2.colorTextos};
+  font-family: ${fonts.SecondaryTypography};
   overflow: hidden;
 
   box-shadow:
@@ -37,10 +40,25 @@ export const BoxCompras = styled.div`
 
 export const Title = styled.h1`
   width: 100%;
+  font-family: ${fonts.MainTypography};
+  font-size: 1.8rem;
+  font-weight: bold;
   text-align: center;
-  font-family: Nunito;
-  font-size: 30px;
-  font-weight: 700;
+`
+
+export const Subtitle = styled.h2`
+  font-size: 1.4rem;
+  font-weight: bold;
+
+  @media screen and (max-width: 375px){
+    display: ${(props) => props.$download && "none"};
+  }
+`
+
+export const Paragraph = styled.p` 
+  width: 100%;
+  font-size: 1.4rem;
+  text-align: center;
 `
 
 export const BoxItem = styled.div`
@@ -53,28 +71,11 @@ export const BoxItem = styled.div`
 `
 
 export const Product = styled.h1`
-  font-family: Nunito;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 100;
 `
 
-export const ColumnProduct = styled.h1`
-  font-family: Nunito;
-  font-size: 23px;
-  font-weight: 700;
-`
-
-export const ColumnDownload = styled.h1`
-  font-family: Nunito;
-  font-size: 23px;
-  font-weight: 700;
-
-  @media screen and (max-width: 375px){
-    display: none;
-  }
-`
-
-export const DownloadBox = styled.a`
+export const DownloadButton = styled.a`
   display: flex;
   margin-right: 30px;
   cursor: pointer;
@@ -87,5 +88,5 @@ export const DownloadBox = styled.a`
 
 export const DownloadIcon = styled.img`
   width: 50px;
-  filter: invert(51%) sepia(17%) saturate(1123%) hue-rotate(341deg) brightness(88%) contrast(79%);
+  filter: invert(100%);
 `
