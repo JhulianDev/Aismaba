@@ -5,7 +5,7 @@ import { coloresV2 } from '../../../../../assets/css/Colors';
 import { handleSuscription } from '../../../../../helpers/handleNewsletter';
 import Loader from '../../../Loader/Loader';
 
-const FormV1 = ({ data, formRef }) => {
+const FormV1 = ({ data, formRef, file }) => {
   const [formData, setFormData] = useState({ user_name: "", email: "", country: "" });
   const [loading, setLoading] = useState(false);
   return (
@@ -16,7 +16,7 @@ const FormV1 = ({ data, formRef }) => {
             <Image src={data.image} alt={data.alt} />
           </BoxImage>
 
-          <Form onSubmit={(e) => handleSuscription(e, setLoading, setFormData)} noValidate>
+          <Form onSubmit={(e) => handleSuscription(e, setLoading, setFormData, file)} noValidate>
             {loading ? (
               <Loader
                 height={"100px"}

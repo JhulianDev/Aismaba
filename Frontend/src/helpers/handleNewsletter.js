@@ -1,9 +1,8 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import { API_URL } from "../env/env";
-import PLANTILLAS_GRATUITAS from "../assets/img/generales/plantillas_gratuitas/image_form.webp"
 
-export const handleSuscription = (e, setLoading, setFormData) => {
+export const handleSuscription = (e, setLoading, setFormData, file) => {
   e.preventDefault();
   setLoading(true)
 
@@ -22,15 +21,15 @@ export const handleSuscription = (e, setLoading, setFormData) => {
       Swal.fire({
         icon: "success",
         title: "Felicidades",
-        text: "Disfruta de tus plantillas!",
+        text: "Las plantillas se descargaran automaticamente!",
         showConfirmButton: false,
-        timer: 1600
+        timer: 3000
       });
       // Limpiamos los inputs
       setFormData({ user_name: "", email: "", country: "" });
       // Activamos la descarga del archivo
       const downloadLink = document.createElement("a");
-      downloadLink.href = PLANTILLAS_GRATUITAS;
+      downloadLink.href = file;
       downloadLink.download = "Aismaba_Plantillas-gratuitas";
       downloadLink.click();
 
