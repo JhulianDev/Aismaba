@@ -7,9 +7,6 @@ import Servicios from "../components/pages/servicios/Servicios";
 import CreacionDeContenido from "../components/pages/contenido/CreacionDeContenido";
 import Instakit from "../components/pages/instakit/Instakit";
 import WebDesign from "../components/pages/WebDesign/WebDesign";
-import Tienda from "../components/pages/tienda/Tienda";
-import Plantilla from "../components/pages/producto/plantilla/Plantilla";
-import Marca from "../components/pages/producto/marca/Marca";
 import Cart from "../components/pages/carrito/Cart";
 import Checkout from "../components/pages/checkout/Checkout";
 import Gracias from "../components/pages/gracias/Gracias";
@@ -54,18 +51,6 @@ const Router = createBrowserRouter([
       {
         path: "/tienda/plantilla/:id",
         element: <ProductV1 />
-      },
-      {
-        path: "/tienda2",
-        element: <Tienda />
-      },
-      {
-        path: "/plantilla/:nombrePlantilla",
-        element: <Plantilla />
-      },
-      {
-        path: "/marca/:id",
-        element: <Marca />
       },
       {
         path: "/carrito",
