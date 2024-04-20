@@ -36,6 +36,7 @@ export const handleOrder = async (navigateFunction, setLoading) => {
 
   // Creamos un objeto con los productos y el precio
   const products = cartItems.map((product) => ({
+    id: product.id,
     type: product.type,
     name: product.name,
     price: product.price[currencySelected],
@@ -50,9 +51,9 @@ export const handleOrder = async (navigateFunction, setLoading) => {
     total: totalAmount(currencySelected)
   }
 
-  // Enviamos la petición POST al backend para generar la orden de compra
+  // Enviamos la petición POST al backend para crear la orden de compra
   try {
-    const orderResponse = await axios.post(`${API_URL}/purchase-orders`, dataOrder, {
+    const orderResponse = await axios.post(`${API_URL}/create-order`, dataOrder, {
       headers: {
         Authorization: `Bearer ${userToken}`
       }
