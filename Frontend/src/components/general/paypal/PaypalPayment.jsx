@@ -4,7 +4,7 @@ import { PAYPAL_ID } from "../../../env/env";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-const PaypalPayment = ({ value, orderId, setLoading }) => {
+const PaypalPayment = ({ value, orderId, setLoading, currency }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const PaypalPayment = ({ value, orderId, setLoading }) => {
   }, []);
 
   return (
-    <PayPalScriptProvider options={{ clientId: PAYPAL_ID }}>
+    <PayPalScriptProvider options={{ clientId: PAYPAL_ID, currency: currency }}>
       <PayPalButtons
         createOrder={(_, actions) => {
           // Creamos una orden en PayPal con el monto total y el id de la orden

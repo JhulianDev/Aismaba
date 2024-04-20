@@ -13,7 +13,7 @@ const TarjetaCheckout = () => {
   const { orderId, orderPreferenceId } = useOrderStore();
   const { cartItems, totalAmount } = useCartStore();
   const { currencySelected } = useCurrencyStore();
-  initMercadoPago(MERCADOPAGO_KEY, { locale: "es-AR"});
+  initMercadoPago(MERCADOPAGO_KEY, { locale: "es-AR" });
 
   return (
     <CardContainer>
@@ -43,15 +43,15 @@ const TarjetaCheckout = () => {
         <Loader height="100px" />
       ) : null}
 
-      {orderId && currencySelected === "USD" && (
+      {orderId && (currencySelected === "USD" || currencySelected === "EUR") && (
         <BoxButtonPayment $marginTop="15px">
-          <PaypalPayment value={totalAmount(currencySelected)} orderId={orderId} setLoading={setLoading} />
+          <PaypalPayment value={totalAmount(currencySelected)} currency={currencySelected} orderId={orderId} setLoading={setLoading} />
         </BoxButtonPayment>
       )}
 
       {orderId && currencySelected === "ARS" && (
         <BoxButtonPayment>
-          <Wallet initialization={{preferenceId: orderPreferenceId, redirectMode: "self"}} onReady={() => { setLoading(false) }}/>
+          <Wallet initialization={{ preferenceId: orderPreferenceId, redirectMode: "self" }} onReady={() => { setLoading(false) }} />
         </BoxButtonPayment>
       )}
 
