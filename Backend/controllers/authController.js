@@ -1,9 +1,7 @@
-import { v4 as uuidv4 } from 'uuid';
 import { validateRegisterInputs, validateLoginInputs } from "../helpers/helper.js";
 import UserModel from "../models/UserModel.js";
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
-import OrderModel from "../models/OrderModel.js";
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -126,91 +124,5 @@ export const getUser = async (req, res) => {
   } catch (error) {
     console.log(`Error al intentar obtener el usuario: ${error}`)
     res.status(500).json({ message: `Error al intentar obtener el usuario` })
-  }
-}
-
-// Purchase order
-export const purchaseOrder = async (req, res) => {
-  try {
-    const { user_id, user_name, products, currency, total } = req.body;
-
-    // Verifica si el usuario y la orden está presente en la solicitud
-    if (!user_id || !user_name || !products || !currency || !total) {
-      return res.status(400).json({ error: 'La solicitud no incluye una orden válida.' });
-    }
-
-    // Generamos un ID único para la orden usando la biblioteca uuid
-    const orderId = uuidv4();
-
-    // Convertimos el objeto 'products' en una cadena JSON
-    const productsJson = JSON.stringify(products);
-
-    // Creamos la orden en la base de datos
-    const order = await OrderModel.create({
-      id: orderId,
-      user_id: user_id,
-      user_name: user_name,
-      products: productsJson,
-      currency: currency,
-      total: total,
-      completed: false
-    });
-
-    // Responde con una confirmación exitosa y la información de la orden
-    console.log("¡Orden creada exitosamente!")
-    return res.status(201).json({ message: 'Orden de compra creada', order });
-  } catch (error) {
-    // Maneja cualquier error que pueda ocurrir durante el proceso
-    console.log('Error al crear la orden de compra:', error);
-    return res.status(500).json({ message: 'Se produjo un error al procesar la orden de compra.' });
-  }
-}
-
-// Update order
-export const updateOrder = async (req, res) => {
-  try {
-    // Obtén el ID de la orden de los parámetros de la URL
-    const orderId = req.params.id;
-
-    // Actualiza la orden en la base de datos para establecer "completed" en true
-    await OrderModel.update(
-      { completed: true }, // Actualiza el campo "completed" a true
-      { where: { id: orderId }, returning: true } // Utiliza el ID de la orden para encontrar la orden a actualizar
-    );
-    // Responde con un mensaje de éxito
-    res.status(200).json({
-      message: "Orden actualizada exitosamente"
-    });
-  } catch (error) {
-    // Maneja cualquier error que pueda ocurrir durante el proceso
-    console.log('Error al actualizar la orden de compra:', error);
-    return res.status(500).json({ message: 'Se produjo un error al actualizar la orden de compra.' });
-  }
-}
-
-// getPurchases
-export const getPurchases = async (req, res) => {
-  try {
-    // Consulta las órdenes completadas del usuario
-    const purchases = await OrderModel.findAll({
-      where: {
-        user_id: req.user.id, // Filtra por el ID del usuario
-        completed: true, // Filtra las órdenes completadas
-      },
-    });
-
-    // Verifica si se existen órdenes completadas
-    if (purchases.length > 0) {
-      // Si existen responder con las órdenes encontradas
-      res.status(200).json({ message: "Ordenes completadas encontradas con éxito!", hasPurchases: true, purchases })
-    } else {
-      // Si no se encontraron órdenes completadas, responder sin resultados
-      console.log('No se encontraron órdenes completadas para este usuario.');
-      res.status(200).json({ message: "No se encontraron órdenes completadas para este usuario.", hasPurchases: false });
-    }
-  } catch (error) {
-    // Manejar cualquier error que ocurra durante la consulta
-    console.error('Error al buscar las órdenes del usuario:', error);
-    res.status(500).json({ message: 'Error al buscar las órdenes del usuario.' });
   }
 }
