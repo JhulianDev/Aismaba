@@ -1,13 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { Outlet, useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2"
-import { UserContext } from "../../../context/UserContext";
-import HamburgerButton from "../Buttons/hamburger/HamburgerButton";
+import { useEffect, useState } from "react";
+import { Outlet, useNavigate } from 'react-router-dom';
+import { coloresV2 } from "../../../assets/css/Colors";
 import { CARRITO_ICONO } from "../../../assets/img/images";
 import { BoxContainer, BoxCounter, BoxLinkMobile, CartContainer, CartIcon, HeaderBox, HeaderButton, HeaderContainer, HeaderLi, HeaderLink, HeaderLinkMobile, HeaderNav, HeaderUl, LogoContainer, LogoImage, ProductCounter, Span } from "./HeaderStyled";
-import { deleteToken } from "../../../helpers/token";
-import { CartContext } from "../../../context/CartContext";
-import { coloresV2 } from "../../../assets/css/Colors";
+import HamburgerButton from "../Buttons/hamburger/HamburgerButton";
 import ISOTIPO_GRIS from "../../../assets/img/generales/isotipo_gris.svg"
 import useUserStore from "../../../stores/useUserStore";
 import useCartStore from "../../../stores/useCartStore";
@@ -15,7 +12,6 @@ import useCartStore from "../../../stores/useCartStore";
 const Header = ({ color }) => {
   const { userData, deleteUserData, deleteUserToken } = useUserStore();
   const { totalItems } = useCartStore();
-  const { state } = useContext(CartContext)
   const [scrolling, setScrolling] = useState(false);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
