@@ -1,7 +1,7 @@
 import { validateNewsletterInputs } from "../helpers/helper.js";
 import SuscriptionModel from "../models/SuscriptionModel.js";
 
-// Register
+// Suscription to newsletter
 export const newsletter_suscription = async (req, res) => {
   try {
     const { user_name, email, country } = req.body;
