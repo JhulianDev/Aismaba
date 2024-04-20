@@ -5,6 +5,7 @@ import { coloresV2 } from '../../../assets/css/Colors';
 import FormV1 from '../../general/Sections/Forms/FormV1/FormV1';
 import SeparatorV1 from '../../general/Separators/SeparatorV1/SeparatorV1';
 import FooterV2 from '../../general/footerV2/FooterV2';
+import PLANTILLAS_GRATUITAS from '../../../assets/products/PLANTILLAS_GRATUITAS_GUIA.pdf'
 
 const PlantillasGratuitas = () => {
   const formRef = useRef(null);
@@ -35,6 +36,7 @@ const PlantillasGratuitas = () => {
       <FormV1
         data={data.form}
         formRef={formRef}
+        file={PLANTILLAS_GRATUITAS}
       />
 
       <FooterV2 />
