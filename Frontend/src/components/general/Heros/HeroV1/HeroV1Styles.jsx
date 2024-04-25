@@ -72,49 +72,6 @@ export const BoxTexts = styled.div`
   }
 `
 
-export const BoxTag = styled.div`
-  display: ${(props) => props.$mobile ? "none" : "flex"};
-  background-color: ${coloresV2.colorPrincipal};
-  width: fit-content;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: 100px;
-  padding: 5px 20px;
-  gap: 10px;
-
-  @media screen and (max-width: 768px){
-    display: ${(props) => props.$mobile ? "flex" : "none"};
-    padding: 10px 20px;
-    border: 1px solid ${coloresV2.colorTextos};
-  }
-`
-
-export const Tag = styled.h1`
-
-  color: ${coloresV2.colorTextos};
-  font-family: ${fonts.SecondaryTypography};
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: -3px;
-
-  @media screen and (max-width: 1535px){
-    font-size: .9rem;
-  }
-
-  @media screen and (max-width: 1024px){
-    font-size: .8rem;
-  }
-
-  @media screen and (max-width: 768px){
-    font-size: .9rem;
-  }
-`
-
-export const Icon = styled.img`
-  width: 10px;
-`
-
 export const Title = styled.h2`
   font-family: ${fonts.MainTypography};
   font-size: 4rem;

@@ -1,7 +1,8 @@
 import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
-import { BoxImage, BoxTag, BoxTexts, Button, ButtonLink, ContainerHero, Description, Icon, Image, Tag, Title } from "./HeroV1Styles";
+import TagV1 from "../../Tags/TagV1/TagV1";
+import { BoxImage, BoxTexts, Button, ButtonLink, ContainerHero, Description, Image, Title } from "./HeroV1Styles";
 
-const HeroV1 = ({ tag, icon, title, description, buttonType, scrollRef, callToAction, link, image, alt, bgColor, borderBottom }) => {
+const HeroV1 = ({ tag, title, description, buttonType, scrollRef, callToAction, link, image, alt, bgColor, borderBottom }) => {
 
   const handleScroll = () => {
     scrollRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -12,15 +13,17 @@ const HeroV1 = ({ tag, icon, title, description, buttonType, scrollRef, callToAc
       <MaxWidth>
         <ContainerHero>
 
-          <BoxTag $mobile>
-            <Tag>{tag}</Tag>
-          </BoxTag>
+          <TagV1
+            tag={tag}
+            border={true}
+            mobile={true}
+          />
 
           <BoxTexts>
-            <BoxTag>
-              <Icon src={icon} alt="Icon" />
-              <Tag>{tag}</Tag>
-            </BoxTag>
+            <TagV1
+              tag={tag}
+              border={true}
+            />
 
             <Title>{title}</Title>
             <Description>{description}</Description>

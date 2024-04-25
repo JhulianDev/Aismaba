@@ -1,8 +1,7 @@
 import { MaxWidth, Section } from "../../../../assets/styles/GeneralStyles";
 import { BoxButtons, BoxImage, BoxTexts, Button, ContainerHero, Description, Image, Title, Uppercase } from "./HeroV2Styles";
-import { BoxTag, Icon, Tag } from "../HeroV1/HeroV1Styles";
 import { coloresV2 } from "../../../../assets/css/Colors";
-import LIGHT_ICON from "../../../../assets/img/generales/light_icon.svg";
+import TagV1 from "../../Tags/TagV1/TagV1";
 
 const HeroV2 = ({ data, bgColor }) => {
   return (
@@ -10,16 +9,17 @@ const HeroV2 = ({ data, bgColor }) => {
       <MaxWidth>
         <ContainerHero>
 
-          <BoxTag $mobile>
-            <Icon src={LIGHT_ICON} alt="Icon" />
-            <Tag>{data.tag}</Tag>
-          </BoxTag>
+          <TagV1
+            tag={data.tag}
+            border={true}
+            mobile={true}
+          />
 
           <BoxTexts>
-            <BoxTag>
-              <Icon src={LIGHT_ICON} alt="Icon" />
-              <Tag>{data.tag}</Tag>
-            </BoxTag>
+            <TagV1
+              tag={data.tag}
+              border={true}
+            />
 
             <Title>{data.title}<br /><Uppercase>{data.uppercase}</Uppercase></Title>
             <Description>{data.description}</Description>
