@@ -10,7 +10,7 @@ import CARD_ICON from "../../../assets/img/generales/credit_card_icon.svg"
 import BASKET_ICON from "../../../assets/img/generales/basket_icon.svg"
 import { handleOrder } from "../../../helpers/handleOrder";
 import Loader from '../../general/Loader/Loader';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const CartV1 = () => {
   const [loading, setLoading] = useState();
@@ -25,6 +25,10 @@ const CartV1 = () => {
         bgColor={true}
       />
     )
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Section $align={cartItems.length > 0 ? "top" : "center"} $bgColor={coloresV2.colorSecundario}>

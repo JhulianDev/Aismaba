@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
 import { coloresV2 } from "../../../assets/css/Colors";
@@ -14,6 +14,10 @@ const Login = () => {
   const navigate = useNavigate();
   const redirectLink = "/";
   const apiUrl = (`${API_URL}/login`);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Section $bgColor={coloresV2.colorSecundario}>
