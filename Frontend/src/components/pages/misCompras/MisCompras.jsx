@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { DOWNLOAD_ICON } from "../../../assets/img/images";
+import DOWNLOAD_ICON from "../../../assets/img/generales/download-icon.webp";
 import { CardContainer, BoxItem, Subtitle, DownloadButton, DownloadIcon, Product, Title, Paragraph } from "./MisComprasStyled";
 import { API_URL } from "../../../env/env";
 import Loader from "../../general/Loader/Loader";

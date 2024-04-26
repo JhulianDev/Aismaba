@@ -2,7 +2,7 @@ import Swal from "sweetalert2"
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from 'react-router-dom';
 import { coloresV2 } from "../../../assets/css/Colors";
-import { CARRITO_ICONO } from "../../../assets/img/images";
+import CARRITO_ICONO from "../../../assets/img/generales/cart_white.webp";
 import { BoxContainer, BoxCounter, BoxLinkMobile, CartContainer, CartIcon, HeaderBox, HeaderButton, HeaderContainer, HeaderLi, HeaderLink, HeaderLinkMobile, HeaderNav, HeaderUl, LogoContainer, LogoImage, ProductCounter, Span } from "./HeaderStyled";
 import HamburgerButton from "../Buttons/hamburger/HamburgerButton";
 import ISOTIPO_GRIS from "../../../assets/img/generales/isotipo_gris.svg"
