@@ -7,7 +7,6 @@ import Servicios from "../components/pages/servicios/Servicios";
 import CreacionDeContenido from "../components/pages/contenido/CreacionDeContenido";
 import Instakit from "../components/pages/instakit/Instakit";
 import WebDesign from "../components/pages/WebDesign/WebDesign";
-import Cart from "../components/pages/carrito/Cart";
 import Checkout from "../components/pages/checkout/Checkout";
 import Gracias from "../components/pages/gracias/Gracias";
 import MisCompras from "../components/pages/misCompras/MisCompras";
@@ -55,10 +54,6 @@ const Router = createBrowserRouter([
       {
         path: "/carrito",
         element: <CartV1 />
-      },
-      {
-        path: "/carritoV1",
-        element: <Cart />
       },
       {
         path: "/checkout",
