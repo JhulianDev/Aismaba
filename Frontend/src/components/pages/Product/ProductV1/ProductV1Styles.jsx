@@ -4,11 +4,11 @@ import { coloresV2 } from "../../../../assets/css/Colors";
 
 export const Table = styled.div`
   border: 1px solid ${coloresV2.colorTextos};
-  border-radius: 0 0 7px 7px;
+  border-radius: 7px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 30px;
 
   & > *:not(:last-child) {
     border-bottom: 1px solid ${coloresV2.colorTextos};
@@ -16,7 +16,6 @@ export const Table = styled.div`
 
   @media screen and (max-width: 1535px){
     width: 90%;
-    margin-top: 30px;
   }
 
   @media screen and (max-width: 1232px){
