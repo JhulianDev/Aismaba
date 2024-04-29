@@ -71,9 +71,39 @@ export const validateLoginInputs = async (email, password, UserModel) => {
   // Si no coincide, detenemos la ejecucion del codigo y retornamos el error.
   const passwordMatch = await bcrypt.compare(password, user.password);
   if (!passwordMatch) {
-    errors.message = "Contraseña invalida" ;
+    errors.message = "Contraseña invalida";
     errors.statusCode = 401;
     return errors;
+  }
+
+  // Si no hay errores, devolver null
+  return null;
+}
+
+// Esta función valida que el nombre de usuario, correo electrónico y país proporcionados tengan el formato correcto
+// Recibe como argumentos el nombre de usuario, correo electrónico y país
+export const validateNewsletterInputs = async (user_name, email, country) => {
+
+  const error = {};// Objeto para almacenar los errores de validación
+
+  // Validar que se proporcionen todos los campos requeridos
+  if (!user_name || !email || !country) {
+    error.message = "Todos los campos son obligatorios";
+    return error;
+  }
+
+  // Validar que el nombre de usuario contenga solo letras y una longitud mínima de 3 caracteres.
+  const userNameRegex = /^[a-zA-Z]{3,}$/;
+  if (!userNameRegex.test(user_name)) {
+    error.message = "El nombre de usuario solo debe contener letras y una longitud mínima de 3 caracteres.";
+    return error;
+  }
+
+  // Validar que el pais contenga solo letras y una longitud minima de 4 caracteres.
+  const countryRegex = /^[a-zA-Z]{4,}$/;
+  if (!countryRegex.test(country)) {
+    error.message = "El país proporcionado no tiene un formato valido";
+    return error;
   }
 
   // Si no hay errores, devolver null

@@ -402,7 +402,15 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #9f7253;
+  background-color: #a78874;
+  border-top: 1px solid #303030;
+  border-bottom: 1px solid #303030;
+  border-left: 1px solid #303030;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #eae1dc;
+  border-left: 1px solid #303030;
 }
 
 /* ----------------------- SweetAlert Colors ----------------------- */

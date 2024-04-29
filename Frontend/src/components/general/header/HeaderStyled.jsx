@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
-import { colores } from '../../../assets/css/Colors';
+import { colores, coloresV2 } from '../../../assets/css/Colors';
+import { fonts } from '../../../assets/fonts/FontsHandler';
 
 const linkStyle = css`
   color: ${props => props.$colorText || 'white'};
@@ -10,14 +11,15 @@ const linkStyle = css`
   width: 100%;
   height: 100%;
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1024px){
     padding: 20px 0;
     border-bottom: ${props => (props.$border === 'none' ? 'none' : '1px solid #ffffff84')};
   }
 `
 
 export const HeaderContainer = styled.header`
-  background-color: ${props => props.$scrolling ? colores.colorPrincipal : props.$backgroundColor};
+  background-color: ${props => props.$scrolling ? "#e2d5ce" : props.$backgroundColor};
+  border-bottom: 1px solid ${coloresV2.colorTextos};
   width: 100%;
   height: 60px;
   padding: 0 60px;
@@ -29,6 +31,10 @@ export const HeaderContainer = styled.header`
   transition: background-color 0.5s ease;
 
   @media screen and (max-width: 768px){
+    padding: 0 30px;
+  }
+
+  @media screen and (max-width: 596px){
     padding: 0 20px;
   }
 `
@@ -36,16 +42,32 @@ export const HeaderContainer = styled.header`
 export const HeaderBox = styled.div`
   height: 100%;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1416px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 1535px){
+    max-width: 1112px;
+  }
+
+  @media screen and (max-width: 1232px){
+    max-width: 904px;
+  }
+
+  @media screen and (max-width: 1024px){
+    max-width: 648px;
+  }
+
+  @media screen and (max-width: 768px){
+    max-width: 536px;
+  }
 `
 
 export const LogoContainer = styled(Link)`
   display: flex;
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1024px){
     display: none;
   }
 `
@@ -71,13 +93,13 @@ export const HeaderNav = styled.nav`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @media screen and (max-width: 1110px){
+  @media screen and (max-width: 1232px){
     position: static;
     transform: none;
   }
 
-  @media screen and (max-width: 850px){
-    background-color: ${colores.colorPrincipal};
+  @media screen and (max-width: 1024px){
+    background-color: ${coloresV2.colorPrincipal};
     position: absolute;
     width: 0;
     left: 0px;
@@ -103,7 +125,7 @@ export const HeaderUl = styled.ul`
   gap: 1.875rem;
   list-style: none;
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1024px){
     flex-direction: column;
     gap: 0;
   }
@@ -111,22 +133,22 @@ export const HeaderUl = styled.ul`
 
 export const HeaderLi = styled.li`
   width: 100%;
-  font-family: Nunito;
+  font-family: ${fonts.SecondaryTypography};
   font-size: 1.1rem;
   text-align: center;
 `
 
 export const HeaderLink = styled(Link)`
-  color: ${props => props.$colorText || 'white'};
+  color: ${props => props.$colorText || coloresV2.colorTextos};
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1024px){
     padding: 20px 0;
-    border-bottom: ${props => (props.$border === 'none' ? 'none' : '1px solid #ffffff84')};
+    border-bottom: ${props => (props.$border === 'none' ? 'none' : `1px solid ${coloresV2.colorTextos}`)};
   }
 `;
 
@@ -144,7 +166,7 @@ export const HeaderLinkMobile = styled(Link)`
   background-color: ${props => props.$bgColor || 'transparent'};
   display: none;
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1024px){
     padding: 10px 0;
     border-bottom: none;
     border-radius: 20px;
@@ -154,21 +176,21 @@ export const HeaderLinkMobile = styled(Link)`
 
 const buttonTypeA = css`
   background-color: white;
-  color: ${colores.colorAcento};
+  color: ${coloresV2.colorTextos};
 
   &:hover{
-    background-color: ${colores.colorAcento};
+    background-color: ${coloresV2.colorTextos};
     color: white;
   }
 `
 
 const buttonTypeB = css`
   background-color: transparent;
-  color: white;
-  border: solid 1px white;
+  color: ${coloresV2.colorTextos};
+  border: solid 1px ${coloresV2.colorTextos};
 
   &:hover{
-    background-color: ${colores.colorAcento};
+    background-color: ${coloresV2.colorTextos};
     color: white;
     border: solid 1px transparent;
   }
@@ -180,18 +202,19 @@ export const HeaderButton = styled(Link)`
   font-size: .9rem;
   padding: 5px 15px;
   border-radius: 100px;
+  transition: all .3s ease;
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1024px){
     display: none;
   }
 `
 
 export const Span = styled.span`
-  background-color: white;
+  background-color: ${coloresV2.colorTextos};
   height: 30px;
   width: 2px;
 
-  @media screen and (max-width: 850px){
+  @media screen and (max-width: 1024px){
     display: none;
   }
 `
@@ -206,13 +229,14 @@ export const CartContainer = styled(Link)`
 
 export const CartIcon = styled.img`
   width: 30px;
+  filter: invert(80%);
 `
 
 export const BoxCounter = styled.div`
-  background-color: ${colores.colorPrincipal};
-  /* background-color: blue; */
-  width: 16px;
-  height: 16px;
+  background-color: white;
+  border: 1px solid ${coloresV2.colorTextos};
+  width: 18px;
+  height: 18px;
   border-radius: 100px;
   display: flex;
   align-items: center;
@@ -223,9 +247,8 @@ export const BoxCounter = styled.div`
 `
 
 export const ProductCounter = styled.span`
-  /* background-color: red; */
   display: flex;
-  color: white;
+  color: ${coloresV2.colorTextos};
   font-family: Nunito, sans-serif;
   font-size: .9rem;
   line-height: 12px;

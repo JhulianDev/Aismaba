@@ -1,26 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
+import { coloresV2 } from "../assets/css/Colors";
 import Header from "../components/general/header/Header";
 import Error404 from "../components/pages/Error404/Error404";
 import Home from "../components/pages/home/Home";
 import Servicios from "../components/pages/servicios/Servicios";
-import Branding from "../components/pages/branding/Branding";
-import { colores } from "../assets/css/Colors";
-import CreacionContenido from "../components/pages/contenido/CreacionContenido";
-import Contacto from "../components/pages/contacto/Contacto";
+import CreacionDeContenido from "../components/pages/contenido/CreacionDeContenido";
+import Instakit from "../components/pages/instakit/Instakit";
+import WebDesign from "../components/pages/WebDesign/WebDesign";
+import Checkout from "../components/pages/checkout/Checkout";
 import Gracias from "../components/pages/gracias/Gracias";
-import Tienda from "../components/pages/tienda/Tienda";
-import Plantilla from "../components/pages/producto/plantilla/Plantilla";
-import Marca from "../components/pages/producto/marca/Marca";
-import Cart from "../components/pages/carrito/Cart";
+import MisCompras from "../components/pages/misCompras/MisCompras";
 import Login from "../components/pages/login/Login";
 import SignUp from "../components/pages/SignUp/SignUp";
-import Checkout from "../components/pages/checkout/Checkout";
-import MisCompras from "../components/pages/misCompras/MisCompras";
+import Shop from "../components/pages/Shop/Shop";
+import ProductV1 from "../components/pages/Product/ProductV1/ProductV1";
+import CartV1 from "../components/pages/CartV1/CartV1";
+import PlantillasGratuitas from "../components/pages/PlantillasGratuitas/PlantillasGratuitas";
 
 const Router = createBrowserRouter([
   {
     path: "/",
-    element: <Header color={colores.colorPrincipal} />,
+    element: <Header color={coloresV2.colorPrincipal} />,
     errorElement: <Error404 />,
     children: [
       {
@@ -32,28 +32,36 @@ const Router = createBrowserRouter([
         element: <Servicios />
       },
       {
-        path: "/contacto",
-        element: <Contacto />
+        path: "/creacion-de-contenido",
+        element: <CreacionDeContenido />
       },
       {
-        path: "/gracias-compra",
-        element: <Gracias />
+        path: "/instakit",
+        element: <Instakit />
       },
       {
-        path: "/plantilla/:nombrePlantilla",
-        element: <Plantilla />
+        path: "/diseno-web",
+        element: <WebDesign />
       },
       {
-        path: "/marca/:id",
-        element: <Marca />
+        path: "/tienda",
+        element: <Shop />
+      },
+      {
+        path: "/tienda/plantilla/:id",
+        element: <ProductV1 />
       },
       {
         path: "/carrito",
-        element: <Cart />
+        element: <CartV1 />
       },
       {
         path: "/checkout",
         element: <Checkout />
+      },
+      {
+        path: "/compra-realizada",
+        element: <Gracias />
       },
       {
         path: "/mis-compras",
@@ -66,23 +74,10 @@ const Router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <SignUp />
-      }
-    ]
-  },
-  {
-    element: <Header color={"transparent"} />,
-    children: [
-      {
-        path: "/branding",
-        element: <Branding />
       },
       {
-        path: "/creacion-contenido",
-        element: <CreacionContenido />
-      },
-      {
-        path: "/tienda",
-        element: <Tienda />
+        path: "/plantillas-gratuitas",
+        element: <PlantillasGratuitas />
       }
     ]
   }

@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components"
 import { Link } from "react-router-dom"
-import { colores } from "../../../../assets/css/Colors"
+import { coloresV2 } from "../../../../assets/css/Colors"
 
 export const LoginForm = styled.form`
-  background-color: ${colores.colorTerciario};
+  background-color: ${coloresV2.colorPrincipal};
   max-width: 380px;
   width: 100%;
   display: flex;
@@ -11,7 +11,7 @@ export const LoginForm = styled.form`
   align-items: center;
   justify-content: center;
 
-  border: 1px solid ${colores.colorAcento};
+  border: 1px solid ${coloresV2.colorTextos};
   border-radius: 20px;
   box-shadow: 1.2px 1.3px 0.7px rgba(0, 0, 0, 0.017),
     2.5px 2.8px 1.4px rgba(0, 0, 0, 0.025),
@@ -42,9 +42,9 @@ export const LoginLogo = styled.img`
 `
 
 export const BoxInput = styled.div`
-  background-color: white;
+  background-color: ${coloresV2.colorSecundario};
   width: 100%;
-  border: 1px solid ${colores.colorAcento};
+  border: 1px solid ${coloresV2.colorTextos};
   border-radius: 30px;
   padding: 15px 22px 15px 50px;
   overflow: hidden;
@@ -57,11 +57,11 @@ export const InputIcon = styled.img`
   top: 50%;
   left: 22px;
   transform: translateY(-50%);
-  filter: invert(51%) sepia(17%) saturate(1123%) hue-rotate(341deg) brightness(88%) contrast(79%);
 `
 
 export const Input = styled.input`
-  color: ${colores.colorAcento};
+  background-color: ${coloresV2.colorSecundario};
+  color: ${coloresV2.colorTextos};
   width: 100%;
   font-family: "Nunito", sans-serif;
   font-size: 0.9rem;
@@ -72,23 +72,8 @@ export const Input = styled.input`
 
   &::placeholder{
     font-weight: 400;
-    color: #8569568b;
+    color: #30303081;
   }
-`
-
-export const Select = styled.select`
-  background-color: transparent;
-  border: none;
-  width: 100%;
-  font-weight: 400;
-  color: #8569568b;
-  color: ${colores.colorAcento};
-  margin-left: -3px;
-  outline: none;
-`
-
-export const Option = styled.option`
-  color: ${colores.colorAcento};
 `
 
 const stylesButton = css`
@@ -99,30 +84,29 @@ const stylesButton = css`
   font-weight: 600;
   text-align: center;
   border-radius: 30px;
-  border: none;
+  border: 1px solid ${coloresV2.colorTextos};
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.2s ease-out;
 `
 
 export const SubmitButton = styled.button`
   ${stylesButton};
-  background-color: ${colores.colorAcento};
+  background-color: ${coloresV2.colorTextos};
   color: white;
 
   &:hover{
-    background-color: #8a4b22;
+    background-color: white;
+    color: ${coloresV2.colorTextos};
   }
 `
 
 export const RedirectButton = styled(Link)`
   ${stylesButton};
-  background-color: white;
-  color: ${colores.colorAcento};
-  border: 1px solid ${colores.colorAcento};
+  background-color: ${coloresV2.colorPrincipal};
+  color: ${coloresV2.colorTextos};
   margin-top: -4px;
 
   &:hover{
-    background-color: #8a4b22;
-    color: white;
+    background-color: white;
   }
 `

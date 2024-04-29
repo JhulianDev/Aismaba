@@ -1,25 +1,40 @@
-import { colores } from "../../../assets/css/Colors";
-import Footer from "../../general/footer/Footer";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
+import { coloresV2 } from "../../../assets/css/Colors";
 import LoginCard from "../../general/tarjetas/login/LoginCard";
-import { Section } from "../login/LoginStyled";
+import { handleSignUp } from "../../../helpers/handleSignUp";
+import { API_URL } from "../../../env/env";
+import Loader from '../../general/Loader/Loader';
 
 const SignUp = () => {
-  return (
-    <>
-      <Section>
-        <LoginCard
-          type="SignUp"
-          submitText="Registrarse"
-          redirectText="Iniciar Sesión"
-          linkButton="/login"
-          apiUrl="/sign-up"
-          redirectLink="/login"
-        />
-      </Section>
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const redirectLink = "/login";
+  const apiUrl = (`${API_URL}/sign-up`);
 
-      <Footer color={colores.colorSecundario} />
-    </>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <Section $bgColor={coloresV2.colorSecundario}>
+      <MaxWidth $justifyContent="center">
+
+        {loading ? (
+          <Loader height={"100vh"} />
+        ) : (
+          <LoginCard
+            type="SignUp"
+            link="/login"
+            handleSubmit={(e) => handleSignUp(e, setLoading, apiUrl, navigate, redirectLink)}
+          />
+        )}
+
+      </MaxWidth>
+    </Section>
   );
 };
 
 export default SignUp;
+

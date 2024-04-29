@@ -1,17 +1,17 @@
-import { useContext, useEffect, useState } from "react";
-import { Outlet, useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2"
-import { UserContext } from "../../../context/UserContext";
-import HamburgerButton from "../Buttons/hamburger/HamburgerButton";
-import { CARRITO_ICONO, ISOTIPO_BLANCO } from "../../../assets/img/images";
+import { useEffect, useState } from "react";
+import { Outlet, useNavigate } from 'react-router-dom';
+import { coloresV2 } from "../../../assets/css/Colors";
+import CARRITO_ICONO from "../../../assets/img/generales/cart_white.webp";
 import { BoxContainer, BoxCounter, BoxLinkMobile, CartContainer, CartIcon, HeaderBox, HeaderButton, HeaderContainer, HeaderLi, HeaderLink, HeaderLinkMobile, HeaderNav, HeaderUl, LogoContainer, LogoImage, ProductCounter, Span } from "./HeaderStyled";
-import { deleteToken } from "../../../helpers/token";
-import { CartContext } from "../../../context/CartContext";
-import { colores } from "../../../assets/css/Colors";
+import HamburgerButton from "../Buttons/hamburger/HamburgerButton";
+import ISOTIPO_GRIS from "../../../assets/img/generales/isotipo_gris.svg"
+import useUserStore from "../../../stores/useUserStore";
+import useCartStore from "../../../stores/useCartStore";
 
 const Header = ({ color }) => {
-  const { userData, setUserData } = useContext(UserContext)
-  const { state } = useContext(CartContext)
+  const { userData, deleteUserData, deleteUserToken } = useUserStore();
+  const { totalItems } = useCartStore();
   const [scrolling, setScrolling] = useState(false);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -29,8 +29,8 @@ const Header = ({ color }) => {
       timer: 1600
     })
 
-    deleteToken()
-    setUserData(null)
+    deleteUserToken()
+    deleteUserData()
     setOpen(!open)
     navigate("/")
   }
@@ -56,8 +56,8 @@ const Header = ({ color }) => {
 
           <HamburgerButton open={open} handleNav={handleNav} />
 
-          <LogoContainer>
-            <LogoImage src={ISOTIPO_BLANCO} alt="Isotipo de Aismaba" />
+          <LogoContainer to="/">
+            <LogoImage src={ISOTIPO_GRIS} alt="Isotipo de Aismaba" />
           </LogoContainer>
 
           <BoxContainer>
@@ -66,18 +66,18 @@ const Header = ({ color }) => {
                 <HeaderLi><HeaderLink onClick={handleNav} to="/">Inicio</HeaderLink></HeaderLi>
                 <HeaderLi><HeaderLink onClick={handleNav} to="/servicios">Servicios</HeaderLink></HeaderLi>
                 <HeaderLi><HeaderLink onClick={handleNav} to="/Tienda">Tienda</HeaderLink></HeaderLi>
-                <HeaderLi><HeaderLink onClick={handleNav} to="/Contacto" $border="none">Contacto</HeaderLink></HeaderLi>
+                <HeaderLi><HeaderLink onClick={handleNav} to="https://wa.link/cdi3nc" target="_blank" $border="none">Contacto</HeaderLink></HeaderLi>
 
                 <BoxLinkMobile>
                   {!userData ? (
                     <>
-                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/login" $bgColor="white" $colorText={colores.colorAcento}>Iniciar Sesión</HeaderLinkMobile></HeaderLi>
-                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/sign-up" $bgColor={colores.colorAcento}>Registrarse</HeaderLinkMobile></HeaderLi>
+                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/login" $bgColor="white" $colorText={coloresV2.colorTextos}>Iniciar Sesión</HeaderLinkMobile></HeaderLi>
+                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/sign-up" $bgColor={coloresV2.colorTextos}>Registrarse</HeaderLinkMobile></HeaderLi>
                     </>
                   ) :
                     <>
-                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/mis-compras" $bgColor="white" $colorText={colores.colorAcento}>Mis compras</HeaderLinkMobile></HeaderLi>
-                      <HeaderLi><HeaderLinkMobile onClick={() => { handleSession() }} $bgColor={colores.colorAcento}>Cerrar Sesión</HeaderLinkMobile></HeaderLi>
+                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/mis-compras" $bgColor="white" $colorText={coloresV2.colorTextos}>Mis compras</HeaderLinkMobile></HeaderLi>
+                      <HeaderLi><HeaderLinkMobile onClick={() => { handleSession() }} $bgColor={coloresV2.colorTextos}>Cerrar Sesión</HeaderLinkMobile></HeaderLi>
                     </>
                   }
                 </BoxLinkMobile>
@@ -101,7 +101,7 @@ const Header = ({ color }) => {
             <CartContainer to="/carrito">
               <CartIcon src={CARRITO_ICONO} alt="Icono de carrito de compras" />
               <BoxCounter>
-                <ProductCounter>{state.cart.length}</ProductCounter>
+                <ProductCounter>{totalItems()}</ProductCounter>
               </BoxCounter>
             </CartContainer>
 
