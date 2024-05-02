@@ -16,6 +16,7 @@ import Shop from "../components/pages/Shop/Shop";
 import ProductV1 from "../components/pages/Product/ProductV1/ProductV1";
 import CartV1 from "../components/pages/CartV1/CartV1";
 import PlantillasGratuitas from "../components/pages/PlantillasGratuitas/PlantillasGratuitas";
+import Proximamente from "../components/pages/Proximamente/Proximamente";
 
 const Router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "/tienda",
-        element: <Shop />
+        element: <Proximamente />
       },
       {
         path: "/tienda/plantilla/:id",
