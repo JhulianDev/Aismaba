@@ -21,7 +21,7 @@ export const createPreference = async (req, res) => {
         },
       ],
       back_urls: {
-        success: "https://www.aismaba.com/",
+        success: "https://www.aismaba.com/compra-realizada/",
         failure: "",
         pending: ""
       },
