@@ -10,7 +10,7 @@ import useUserStore from "../../../stores/useUserStore";
 import { productsFiles } from "../../../assets/products/productsFiles";
 
 const MisCompras = () => {
-  const [purchasedProducts, setPurchasedProducts] = useState(null);
+  const [purchasedProducts, setPurchasedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { userToken } = useUserStore.getState();
 
@@ -28,10 +28,13 @@ const MisCompras = () => {
         // Si la petición es exitosa:
         // Mostramos la respuesta del backend
         console.log('Respuesta de la petición:', response);
-        // Filtramos los productos comprados por el usuario segun los productsId recibidos
-        const filteredProducts = productsFiles.filter(product => response.data.productsId.includes(product.id));
-        // Seteamos los productos 
-        setPurchasedProducts(filteredProducts);
+        // Si productsId existe en la respuesta:
+        if (response.data.productsId) {
+          // Filtramos los productos comprados por el usuario segun los productsId recibidos
+          const filteredProducts = productsFiles.filter(product => response.data.productsId.includes(product.id));
+          // Seteamos los productos 
+          setPurchasedProducts(filteredProducts);
+        }
         // Detenemos el loading
         setLoading(false);
       } catch (error) {
