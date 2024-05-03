@@ -18,17 +18,18 @@ const CartV1 = () => {
   const { currencySelected } = useCurrencyStore();
   const navigate = useNavigate();
 
-  if (loading)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  if (loading) {
     return (
       <Loader
         height={"100vh"}
         bgColor={true}
       />
-    )
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    );
+  }
 
   return (
     <Section $align={cartItems.length > 0 ? "top" : "center"} $bgColor={coloresV2.colorSecundario}>
