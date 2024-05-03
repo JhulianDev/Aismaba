@@ -11,7 +11,7 @@ import Checkout from "../components/pages/checkout/Checkout";
 import Gracias from "../components/pages/gracias/Gracias";
 import MisCompras from "../components/pages/misCompras/MisCompras";
 import Login from "../components/pages/login/Login";
-import SignUp from "../components/pages/SignUp/SignUp";
+import SignUp from "../components/pages/signUp/SignUp";
 import Shop from "../components/pages/Shop/Shop";
 import ProductV1 from "../components/pages/Product/ProductV1/ProductV1";
 import CartV1 from "../components/pages/CartV1/CartV1";

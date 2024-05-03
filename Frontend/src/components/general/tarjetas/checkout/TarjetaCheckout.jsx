@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
-import { BoxButtonPayment, BoxItem, CardContainer, Currency, Price, Product, ProductName, ProductPrice, Title } from "./TarjetaCheckOutStyled";
+import { BoxButtonPayment, BoxItem, CardContainer, Currency, Price, Product, ProductName, ProductPrice, Title } from "./TarjetaCheckoutStyled";
 import PaypalPayment from "../../paypal/PaypalPayment";
 import { MERCADOPAGO_KEY } from "../../../../env/env";
 import Loader from "../../Loader/Loader";

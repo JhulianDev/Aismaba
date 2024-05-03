@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import TarjetaCheckout from "../../general/tarjetas/checkOut/TarjetaCheckOut";
+import TarjetaCheckout from "../../general/tarjetas/checkout/TarjetaCheckout";
 import { Section } from "./CheckoutStyled";
 
 const Checkout = () => {
