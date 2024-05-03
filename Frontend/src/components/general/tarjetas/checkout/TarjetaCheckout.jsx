@@ -39,22 +39,20 @@ const TarjetaCheckout = () => {
         <Price>{totalAmount(currencySelected)} {currencySelected}</Price>
       </BoxItem>
 
-      {orderId && loading ? (
+      {orderId && loading && (
         <Loader height="100px" />
-      ) : (
-        <>
-          {orderId && (currencySelected === "USD" || currencySelected === "EUR") && (
-            <BoxButtonPayment $marginTop="15px">
-              <PaypalPayment value={totalAmount(currencySelected)} currency={currencySelected} orderId={orderId} setLoading={setLoading} />
-            </BoxButtonPayment>
-          )}
+      )}
 
-          {orderId && currencySelected === "ARS" && (
-            <BoxButtonPayment>
-              <Wallet initialization={{ preferenceId: orderPreferenceId, redirectMode: "self" }} onReady={() => { setLoading(false) }} />
-            </BoxButtonPayment>
-          )}
-        </>
+      {orderId && (currencySelected === "USD" || currencySelected === "EUR") && (
+        <BoxButtonPayment $marginTop="15px">
+          <PaypalPayment value={totalAmount(currencySelected)} currency={currencySelected} orderId={orderId} setLoading={setLoading} />
+        </BoxButtonPayment>
+      )}
+
+      {orderId && currencySelected === "ARS" && (
+        <BoxButtonPayment>
+          <Wallet initialization={{ preferenceId: orderPreferenceId, redirectMode: "self" }} onReady={() => { setLoading(false) }} />
+        </BoxButtonPayment>
       )}
 
     </CardContainer>
