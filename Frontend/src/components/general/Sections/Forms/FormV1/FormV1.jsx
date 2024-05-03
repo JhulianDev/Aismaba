@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MaxWidth, Section } from '../../../../../assets/styles/GeneralStyles';
 import { BoxImage, BoxInputs, Button, CardContainer, Description, Form, Image, Input, Title } from './FormV1Styles';
 import { coloresV2 } from '../../../../../assets/css/Colors';
@@ -8,6 +9,7 @@ import Loader from '../../../Loader/Loader';
 const FormV1 = ({ data, formRef, file }) => {
   const [formData, setFormData] = useState({ user_name: "", email: "", country: "" });
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   return (
     <Section $bgColor={coloresV2.colorSecundario} ref={formRef}>
       <MaxWidth>
@@ -16,7 +18,7 @@ const FormV1 = ({ data, formRef, file }) => {
             <Image src={data.image} alt={data.alt} />
           </BoxImage>
 
-          <Form onSubmit={(e) => handleSuscription(e, setLoading, setFormData, file)} noValidate>
+          <Form onSubmit={(e) => handleSuscription(e, setLoading, setFormData, file, navigate)} noValidate>
             {loading ? (
               <Loader
                 height={"100px"}

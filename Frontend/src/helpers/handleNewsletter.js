@@ -2,7 +2,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { API_URL } from "../env/env";
 
-export const handleSuscription = (e, setLoading, setFormData, file) => {
+export const handleSuscription = (e, setLoading, setFormData, file, navigateFunction) => {
   e.preventDefault();
   setLoading(true)
 
@@ -32,7 +32,7 @@ export const handleSuscription = (e, setLoading, setFormData, file) => {
       downloadLink.href = file;
       downloadLink.download = "Aismaba_Plantillas-gratuitas";
       downloadLink.click();
-
+      navigateFunction("/");
     })
     // Si la respuesta es negativa
     .catch(error => {
