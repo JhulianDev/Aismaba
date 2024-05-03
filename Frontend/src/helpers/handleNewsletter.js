@@ -2,15 +2,15 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { API_URL } from "../env/env";
 
-export const handleSuscription = (e, setLoading, setFormData, file) => {
+export const handleSuscription = (e, setLoading, setFormData, file, navigateFunction) => {
   e.preventDefault();
   setLoading(true)
 
   // Creamos una variable "data" con los datos obtenidos en el formulario
   let data = {
-    user_name: e.target.user_name.value,
-    email: e.target.email.value,
-    country: e.target.country.value
+    user_name: e.target.user_name.value.trim(),
+    email: e.target.email.value.trim(),
+    country: e.target.country.value.trim()
   };
 
   // Enviamos una peticion POST al backend con la data del formulario
@@ -32,7 +32,7 @@ export const handleSuscription = (e, setLoading, setFormData, file) => {
       downloadLink.href = file;
       downloadLink.download = "Aismaba_Plantillas-gratuitas";
       downloadLink.click();
-
+      navigateFunction("/");
     })
     // Si la respuesta es negativa
     .catch(error => {

@@ -9,6 +9,7 @@ const preference = new Preference(client);
 // Create Preferences Mercado Pago
 export const createPreference = async (req, res) => {
   try {
+    const idempotencyKey = req.headers['x-idempotency-key']
     const body = {
       metadata: { order_id: req.body.order_id },
       items: [
@@ -28,7 +29,7 @@ export const createPreference = async (req, res) => {
       auto_return: "approved"
     };
 
-    const preferenceResult = await preference.create({ body });
+    const preferenceResult = await preference.create({ body, idempotencyKey });
     res.json({
       preferenceId: preferenceResult.id,
       message: `La preferencia de MercadoPago fue creada exitosamente y su ID es: ${preferenceResult.id}`
@@ -36,7 +37,7 @@ export const createPreference = async (req, res) => {
 
   } catch (error) {
     console.error('Error al crear las preferencias de mercado pago:', error);
-    res.status(500).json({ message: 'Error al crear las preferencias de mercado pago' });
+    res.status(500).json({ message: 'Error al crear las preferencias de mercado pago', error: error });
   }
 }
 

@@ -7,10 +7,10 @@ export const handleSignUp = (e, setLoading, apiUrl, navigateFunction, redirectLi
 
   // Creamos una variable "data" con los datos obtenidos en el fomulario de registro
   let data = {
-    user_name: e.target.user_name.value,
-    email: e.target.email.value,
-    password: e.target.password.value,
-    country: e.target.country.value
+    user_name: e.target.user_name.value.trim(),
+    email: e.target.email.value.trim(),
+    password: e.target.password.value.trim(),
+    country: e.target.country.value.trim()
   };
 
   axios.post(apiUrl, data)

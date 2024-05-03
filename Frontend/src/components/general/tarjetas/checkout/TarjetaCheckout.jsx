@@ -39,9 +39,9 @@ const TarjetaCheckout = () => {
         <Price>{totalAmount(currencySelected)} {currencySelected}</Price>
       </BoxItem>
 
-      {orderId && loading ? (
+      {orderId && loading && (
         <Loader height="100px" />
-      ) : null}
+      )}
 
       {orderId && (currencySelected === "USD" || currencySelected === "EUR") && (
         <BoxButtonPayment $marginTop="15px">

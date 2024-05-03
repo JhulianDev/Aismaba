@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import axios from "axios"
 import Swal from "sweetalert2"
 import useUserStore from "../stores/useUserStore"
@@ -71,17 +72,19 @@ export const handleOrder = async (navigateFunction, setLoading) => {
         price: totalAmount(currencySelected),
         quantity: 1
       }
+      // Creamos la Idempotency Key para MercadoPago
+      const idempotencyKey = uuidv4();
       // Enviamos la petición POST al backend para generar preferencia de Mercado Pago
       try {
         const preferenceResponse = await axios.post(`${API_URL}/mercado_pago/create_preference`, dataPreference, {
           headers: {
-            Authorization: `Bearer ${userToken}`
+            Authorization: `Bearer ${userToken}`,
+            "X-Idempotency-Key": idempotencyKey
           }
         });
         // Si la preferencia es creada con exito:
         // Guardamos el id de la preferencia en el estado global
         setOrderPreferenceId(preferenceResponse.data.preferenceId)
-        console.log(preferenceResponse.data.message)
         // Redireccionamos al checkout
         navigateFunction("/checkout");
         // Manejo de errores:
