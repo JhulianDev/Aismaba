@@ -8,9 +8,9 @@ export const handleSuscription = (e, setLoading, setFormData, file) => {
 
   // Creamos una variable "data" con los datos obtenidos en el formulario
   let data = {
-    user_name: e.target.user_name.value,
-    email: e.target.email.value,
-    country: e.target.country.value
+    user_name: e.target.user_name.value.trim(),
+    email: e.target.email.value.trim(),
+    country: e.target.country.value.trim()
   };
 
   // Enviamos una peticion POST al backend con la data del formulario

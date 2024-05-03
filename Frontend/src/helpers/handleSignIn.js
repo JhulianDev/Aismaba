@@ -6,8 +6,8 @@ export const handleSignIn = (e, setLoading, apiUrl, setUserFunction, setTokenFun
   setLoading(true);
   // Creamos una variable "data" con los datos obtenidos en el fomulario de registro
   let data = {
-    email: e.target.email.value,
-    password: e.target.password.value
+    email: e.target.email.value.trim(),
+    password: e.target.password.value.trim()
   };
 
   axios.post(apiUrl, data)
