@@ -100,9 +100,16 @@ export const validateNewsletterInputs = async (user_name, email, country) => {
   }
 
   // Validar que el pais contenga solo letras y una longitud minima de 4 caracteres.
-  const countryRegex = /^[a-zA-Z]{4,}$/;
+  const countryRegex = /^[a-zA-ZÁÉÍÓÚáéíóúÑñ]{4,}$/;
   if (!countryRegex.test(country)) {
     error.message = "El país proporcionado no tiene un formato valido";
+    return error;
+  }
+
+  // Validar que el correo electrónico tenga el formato adecuado
+  const emailRegex = /^(([^<>()\[\]\\.,:\s@"]+(\.[^<>()\[\]\\.,:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (!emailRegex.test(email)) {
+    error.message = "El correo electrónico proporcionado no es válido.";
     return error;
   }
 
