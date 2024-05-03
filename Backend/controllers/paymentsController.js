@@ -36,7 +36,7 @@ export const createPreference = async (req, res) => {
 
   } catch (error) {
     console.error('Error al crear las preferencias de mercado pago:', error);
-    res.status(500).json({ message: 'Error al crear las preferencias de mercado pago' });
+    res.status(500).json({ message: 'Error al crear las preferencias de mercado pago', error: error });
   }
 }
 
