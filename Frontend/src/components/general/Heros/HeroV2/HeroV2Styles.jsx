@@ -26,7 +26,11 @@ export const BoxTexts = styled.div`
   flex-direction: column;
   color: ${coloresV2.colorTextos};
   font-family: ${fonts.MainTypography};
-  width: 50%;
+  width: 55%;
+
+  @media screen and (max-width: 1024px){
+    width: 50%;
+  }
 
   @media screen and (max-width: 768px){
     text-align: center;
@@ -180,7 +184,6 @@ export const Button = styled(Link)`
 `
 
 export const BoxImage = styled.div`
-  width: 50%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
