@@ -4,7 +4,7 @@ const router = express.Router();
 // Controllers
 import { register, login, getUser } from '../controllers/authController.js';
 import { createOrder, getOrdersCompleted } from '../controllers/ordersController.js';
-import { newsletter_suscription } from '../controllers/suscriptionController.js';
+import { getSuscriptions, newsletter_suscription } from '../controllers/suscriptionController.js';
 import { createPreference, processPaymentMercadoPago, processPaymentPaypal } from '../controllers/paymentsController.js';
 
 // Middlewares
@@ -39,5 +39,6 @@ router.post("/paypal/process_payment", validateAuthorization, processPaymentPayp
 
 // Newsletter Suscription
 router.post("/newsletter_suscription", newsletter_suscription)
+router.get("/get_newsletter_suscription", validateAuthorization, getSuscriptions)
 
 export default router;
