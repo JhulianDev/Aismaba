@@ -76,7 +76,7 @@ const Header = ({ color }) => {
                     </>
                   ) :
                     <>
-                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to="/mis-compras" $bgColor="white" $colorText={coloresV2.colorTextos}>Mis compras</HeaderLinkMobile></HeaderLi>
+                      <HeaderLi><HeaderLinkMobile onClick={handleNav} to={userData.is_admin ? "/admin" : "/mis-compras"} $bgColor="white" $colorText={coloresV2.colorTextos}>{userData.is_admin ? "Panel Administrador" : "Mis compras"}</HeaderLinkMobile></HeaderLi>
                       <HeaderLi><HeaderLinkMobile onClick={() => { handleSession() }} $bgColor={coloresV2.colorTextos}>Cerrar Sesión</HeaderLinkMobile></HeaderLi>
                     </>
                   }
@@ -91,7 +91,7 @@ const Header = ({ color }) => {
               </>
             ) :
               <>
-                <HeaderButton $type="A" to="/mis-compras">Mis compras</HeaderButton>
+                <HeaderButton $type="A" to={userData.is_admin ? "/admin" : "/mis-compras"}>{userData.is_admin ? "Panel Administrador" : "Mis compras"}</HeaderButton>
                 <HeaderButton $type="B" onClick={() => { handleSession() }}>Cerrar Sesión</HeaderButton>
               </>
             }
