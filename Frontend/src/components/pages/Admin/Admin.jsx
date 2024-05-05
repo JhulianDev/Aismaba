@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { coloresV2 } from "../../../assets/css/Colors";
 import { MaxWidth, Section } from "../../../assets/styles/GeneralStyles";
-import { Table, TableName, ColumnName, Item } from "./AdminStyles";
+import { Table, TableName, ColumnName, Item, Paragraph } from "./AdminStyles";
 import useUserStore from "../../../stores/useUserStore";
 import { API_URL } from "../../../env/env";
+import Loader from "../../general/Loader/Loader";
 
 const Admin = () => {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,10 @@ const Admin = () => {
       navigate("/login");
       // No se renderiza el componente
       return;
+      // Si el usuario ha iniciado session pero NO es administador
+    } else if (userData && !userData.is_admin) {
+      // Redirigimos al home
+      navigate("/");
     }
   }, []);
 
@@ -50,6 +55,8 @@ const Admin = () => {
             // Seteamos las suscriptions 
             setSuscriptionsNewsletter(response.data.suscriptions);
           }
+          // Detenemos el loading
+          setLoading(false);
         } catch (error) {
           // Si la petición da error:
           // Mostramos el error de la petición
@@ -62,10 +69,13 @@ const Admin = () => {
     }
   }, []);
 
-  // Si el usuario no es administrador, no se renderiza el componente
-  if (userData && !userData.is_admin) {
-    return null;
-  };
+  if (loading)
+    return (
+      <Loader
+        height={"100vh"}
+        bgColor={true}
+      />
+    )
 
   // Renderizado del componente solo para usuarios Administradores
   return (
@@ -75,11 +85,17 @@ const Admin = () => {
         <Table>
           <TableName>Sucripciones Newsletter</TableName>
 
-          <ColumnName>ID</ColumnName>
-          <ColumnName>Nombre</ColumnName>
-          <ColumnName>Email</ColumnName>
-          <ColumnName>País</ColumnName>
-          <ColumnName $borderNone>Fecha</ColumnName>
+          {suscriptionsNewsletter.length > 0 ? (
+            <>
+              <ColumnName>ID</ColumnName>
+              <ColumnName>Nombre</ColumnName>
+              <ColumnName>Email</ColumnName>
+              <ColumnName>País</ColumnName>
+              <ColumnName $borderNone>Fecha</ColumnName>
+            </>
+          ) : (
+            <Paragraph>No existen registros en la base de datos</Paragraph>
+          )}
 
           {suscriptionsNewsletter.length > 0 && suscriptionsNewsletter.map((subscriber) => (
             <React.Fragment key={subscriber.id}>

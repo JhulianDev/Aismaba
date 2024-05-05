@@ -60,10 +60,19 @@ export const ColumnName = styled.h2`
   font-weight: bold;
   padding: 20px 10px;
   border-right: ${(props) => props.$borderNone ? "none" : `1px solid ${coloresV2.colorTextos}`};
+  white-space: nowrap;
 `
 
 export const Item = styled.span`
   font-size: 1rem;
   padding: 20px 10px;
   border-right: ${(props) => props.$borderNone ? "none" : `1px solid ${coloresV2.colorTextos}`};
+  white-space: nowrap;
+`
+
+export const Paragraph = styled.p` 
+  grid-column: 1 / 6;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 20px 10px;
 `
