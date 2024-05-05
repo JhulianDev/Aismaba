@@ -48,3 +48,30 @@ export const newsletter_suscription = async (req, res) => {
     res.status(500).json({ message: `Error al crear la suscripción` })
   }
 }
+
+// Get Suscriptions
+export const getSuscriptions = async (req, res) => {
+  if (req.user.is_admin) {
+    try {
+      // Consulta las suscribciones en la base de datos
+      const suscriptions = await SuscriptionModel.findAll();
+
+      // Si se existen suscripciones:
+      if (suscriptions.length > 0) {
+        // Enviamos una respuesta con las suscripciones
+        res.status(200).json({ message: "Suscripciones encontradas con éxito!", suscriptions })
+      } else {
+        // Si no se encontraron suscripciones, responder sin resultados
+        console.log('No existen suscripciones en la base de datos');
+        res.status(200).json({ message: "No existen suscripciones en la base de datos." });
+      }
+    } catch (error) {
+      // Manejar cualquier error que ocurra durante la consulta
+      console.error('Error al obtener las suscripciones en la base de datos:', error);
+      res.status(500).json({ message: 'Error al obtener las suscripciones en la base de datos.' });
+    }
+  } else {
+    // Si el usuario no es administrador, devolver un código de estado 403 (Prohibido)
+    res.status(403).json({ message: '¡Acceso Denegado! Su usuario no tiene permisos para acceder a esta area.' });
+  }
+}
