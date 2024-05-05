@@ -17,6 +17,7 @@ import ProductV1 from "../components/pages/Product/ProductV1/ProductV1";
 import CartV1 from "../components/pages/CartV1/CartV1";
 import PlantillasGratuitas from "../components/pages/PlantillasGratuitas/PlantillasGratuitas";
 import Proximamente from "../components/pages/Proximamente/Proximamente";
+import Admin from "../components/pages/Admin/Admin";
 
 const Router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const Router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: "/admin",
+        element: <Admin />
       },
       {
         path: "/servicios",
