@@ -1,22 +1,6 @@
 import styled from "styled-components"
-import { colores, coloresV2 } from "../../../assets/css/Colors"
+import { coloresV2 } from "../../../assets/css/Colors"
 import { fonts } from "../../../assets/fonts/FontsHandler"
-
-export const Section = styled.section`
-  background-color: ${colores.colorFondo};
-  color: ${colores.colorAcento};
-  width: 100%;
-  min-height: 100vh;
-  padding: 120px 60px 60px;
-  display: flex;
-  align-items: top;
-  justify-content: center;
-  overflow: hidden;
-
-  @media screen and (max-width: 768px){
-    padding: 120px 20px 60px;
-  }
-`
 
 export const CardContainer = styled.div`
   background-color: ${coloresV2.colorPrincipal};

@@ -24,14 +24,15 @@ export const handleOrder = async (navigateFunction, setLoading) => {
       showConfirmButton: true
     })
     // lo redirigimos al Login
-    // Una vez inicie sesión sera redirigido al carrito
-    setRedirectToCart(true);
     navigateFunction("/login");
+    // Setamos "RedirectToCart" en "true" para que una vez inicie sesión sea redirigido al carrito
+    setRedirectToCart(true);
     return;
   }
 
-  // Si el usuario tiene la sesión iniciada:
-
+  // Una vez el usuario haya iniciado sesión:
+  // Setamos "RedirectToCart" en "false" para reestablecer su valor por defecto
+  setRedirectToCart(false);
   // Indicamos que el proceso de carga de la orden se ha iniciado:
   setLoading(true);
 
