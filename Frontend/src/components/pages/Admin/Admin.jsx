@@ -1,5 +1,9 @@
 import axios from "axios"
 import Swal from "sweetalert2"
+import dayjs from 'dayjs';
+import 'dayjs/locale/es';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { coloresV2 } from "../../../assets/css/Colors";
@@ -14,6 +18,10 @@ const Admin = () => {
   const [suscriptionsNewsletter, setSuscriptionsNewsletter] = useState([]);
   const { userData, userToken } = useUserStore.getState();
   const navigate = useNavigate();
+  dayjs.locale('es');
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  dayjs.tz.setDefault('America/Argentina/Buenos_Aires');
 
   // Si el usuario no ha iniciado session:
   useEffect(() => {
@@ -101,9 +109,9 @@ const Admin = () => {
             <React.Fragment key={subscriber.id}>
               <Item>{subscriber.id}</Item>
               <Item>{subscriber.user_name}</Item>
-              <Item>{subscriber.email}</Item>
+              <Item $email>{subscriber.email}</Item>
               <Item>{subscriber.country}</Item>
-              <Item $borderNone>{subscriber.created_at}</Item>
+              <Item $borderNone>{dayjs(subscriber.created_at).format('DD MMMM YYYY - h:mm A')}</Item>
             </React.Fragment>
           ))}
         </Table>
