@@ -68,6 +68,7 @@ export const Item = styled.span`
   padding: 20px 10px;
   border-right: ${(props) => props.$borderNone ? "none" : `1px solid ${coloresV2.colorTextos}`};
   white-space: nowrap;
+  text-transform: ${(props) => props.$email ? "lowercase" : "capitalize"};
 `
 
 export const Paragraph = styled.p` 
