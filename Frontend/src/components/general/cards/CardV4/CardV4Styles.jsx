@@ -25,10 +25,37 @@ export const BoxImage = styled.div`
   display: flex;
   width: 100%;
   border-bottom: 1px solid ${coloresV2.colorTextos};
+  position: relative;
 `
 
 export const Image = styled.img`
   width: 100%;
+`
+
+export const PreviousPrice = styled.span`
+  background-color: ${coloresV2.colorTextos};
+  color: white;
+  font-family: ${fonts.SecondaryTypography};
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 7px;
+  border-radius: 7px;
+  white-space: nowrap;
+
+  @media screen and (max-width: 1232px){
+    font-size: 1.1rem;
+  }
+
+  @media screen and (max-width: 1024px){
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 596px){
+    font-size: 1.3rem;
+  }
 `
 
 export const FooterCard = styled.div`
