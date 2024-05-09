@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Countdown from 'react-countdown';
 import { MaxWidth } from '../../../assets/styles/GeneralStyles';
 import { Section, BoxItem, ContainerCountdown, ContainerItems, NumberItem, TextItem, Title, TwoDots, Filter } from './ProximamenteStyles';
@@ -6,6 +7,10 @@ import Shop from '../Shop/Shop';
 
 const Proximamente = () => {
   const finalDate = new Date("2024-05-09T12:00:00");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Countdown date={finalDate} renderer={({ days, hours, minutes, seconds, completed }) => {
