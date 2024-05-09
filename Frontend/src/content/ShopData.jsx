@@ -47,7 +47,8 @@ export const products = {
       id: "1",
       name: "Aesthetic Brown",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (AESTHETIC_BROWN_IMAGES.coverImage),
       galleryImages: (AESTHETIC_BROWN_IMAGES.galleryImages),
       content: contentTemplates
@@ -56,7 +57,8 @@ export const products = {
       id: "2",
       name: "Neutral Minimalist",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (NEUTRAL_MINIMALIST_IMAGES.coverImage),
       galleryImages: (NEUTRAL_MINIMALIST_IMAGES.galleryImages),
       content: contentTemplates
@@ -65,7 +67,8 @@ export const products = {
       id: "3",
       name: "Black Aesthetic",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (BLACK_AESTHETIC_IMAGES.coverImage),
       galleryImages: (BLACK_AESTHETIC_IMAGES.galleryImages),
       content: contentTemplates
@@ -74,7 +77,8 @@ export const products = {
       id: "4",
       name: "Minimal Mood",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (MINIMAL_MOOD_IMAGES.coverImage),
       galleryImages: (MINIMAL_MOOD_IMAGES.galleryImages),
       content: contentTemplates
@@ -83,7 +87,8 @@ export const products = {
       id: "5",
       name: "Rose Love",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (ROSE_LOVE_IMAGES.coverImage),
       galleryImages: (ROSE_LOVE_IMAGES.galleryImages),
       content: contentTemplates
@@ -92,7 +97,8 @@ export const products = {
       id: "6",
       name: "Elegant Inspo",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (ELEGANT_INSPO_IMAGES.coverImage),
       galleryImages: (ELEGANT_INSPO_IMAGES.galleryImages),
       content: contentTemplates
@@ -101,7 +107,8 @@ export const products = {
       id: "7",
       name: "Green Experiences",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (GREEN_EXPERIENCES_IMAGES.coverImage),
       galleryImages: (GREEN_EXPERIENCES_IMAGES.galleryImages),
       content: contentTemplates
@@ -110,7 +117,8 @@ export const products = {
       id: "8",
       name: "Ocean Blue",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (OCEAN_BLUE_IMAGES.coverImage),
       galleryImages: (OCEAN_BLUE_IMAGES.galleryImages),
       content: contentTemplates
@@ -119,7 +127,8 @@ export const products = {
       id: "9",
       name: "Mix Nude",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (MIX_NUDE_IMAGES.coverImage),
       galleryImages: (MIX_NUDE_IMAGES.galleryImages),
       content: contentTemplates
@@ -128,7 +137,8 @@ export const products = {
       id: "10",
       name: "Sol Grey",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (SOL_GREY_IMAGES.coverImage),
       galleryImages: (SOL_GREY_IMAGES.galleryImages),
       content: contentTemplates
@@ -137,7 +147,8 @@ export const products = {
       id: "11",
       name: "Curve Pink",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (CURVE_PINK_IMAGES.coverImage),
       galleryImages: (CURVE_PINK_IMAGES.galleryImages),
       content: contentTemplates
@@ -146,7 +157,8 @@ export const products = {
       id: "12",
       name: "Green World",
       type: "Plantillas Instagram",
-      price: { ARS: "6000", USD: "30", EUR: "28" },
+      price: { ARS: "4800", USD: "24", EUR: "22" },
+      previousPrice: { ARS: "6000", USD: "30", EUR: "28" },
       coverImage: (GREEN_WORLD_IMAGES.coverImage),
       galleryImages: (GREEN_WORLD_IMAGES.galleryImages),
       content: contentTemplates
@@ -155,7 +167,8 @@ export const products = {
       id: "13",
       name: "Three Pack 01",
       type: "Pack Plantillas",
-      price: { ARS: "13000", USD: "65", EUR: "60" },
+      price: { ARS: "10400", USD: "52", EUR: "48" },
+      previousPrice: { ARS: "13000", USD: "65", EUR: "60" },
       coverImage: (THREE_PACK_01_IMAGES.coverImage),
       galleryImages: (THREE_PACK_01_IMAGES.galleryImages),
       content: [
@@ -168,7 +181,8 @@ export const products = {
       id: "14",
       name: "Three Pack 02",
       type: "Pack Plantillas",
-      price: { ARS: "13000", USD: "65", EUR: "60" },
+      price: { ARS: "10400", USD: "52", EUR: "48" },
+      previousPrice: { ARS: "13000", USD: "65", EUR: "60" },
       coverImage: (THREE_PACK_02_IMAGES.coverImage),
       galleryImages: (THREE_PACK_02_IMAGES.galleryImages),
       content: [
@@ -181,7 +195,8 @@ export const products = {
       id: "15",
       name: "Three Pack 03",
       type: "Pack Plantillas",
-      price: { ARS: "13000", USD: "65", EUR: "60" },
+      price: { ARS: "10400", USD: "52", EUR: "48" },
+      previousPrice: { ARS: "13000", USD: "65", EUR: "60" },
       coverImage: (THREE_PACK_03_IMAGES.coverImage),
       galleryImages: (THREE_PACK_03_IMAGES.galleryImages),
       content: [
@@ -194,7 +209,8 @@ export const products = {
       id: "16",
       name: "Three Pack 04",
       type: "Pack Plantillas",
-      price: { ARS: "13000", USD: "65", EUR: "60" },
+      price: { ARS: "10400", USD: "52", EUR: "48" },
+      previousPrice: { ARS: "13000", USD: "65", EUR: "60" },
       coverImage: (THREE_PACK_04_IMAGES.coverImage),
       galleryImages: (THREE_PACK_04_IMAGES.galleryImages),
       content: [
@@ -207,7 +223,8 @@ export const products = {
       id: "17",
       name: "Twelve Pack",
       type: "Pack Plantillas",
-      price: { ARS: "50400", USD: "170", EUR: "158" },
+      price: { ARS: "40320", USD: "136", EUR: "126" },
+      previousPrice: { ARS: "50400", USD: "170", EUR: "158" },
       coverImage: (TWELVE_PACK_IMAGES.coverImage),
       galleryImages: (TWELVE_PACK_IMAGES.galleryImages),
       content: [
