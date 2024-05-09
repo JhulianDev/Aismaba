@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { BoxImage, BoxPrice, ButtonAddToCart, ButtonViewProduct, CardContainer, CartIcon, Description, Div, FooterCard, Image, Price, Title, ToolTip } from "./CardV4Styles";
+import { BoxImage, BoxPrice, ButtonAddToCart, ButtonViewProduct, CardContainer, CartIcon, Description, Div, FooterCard, Image, PreviousPrice, Price, Title, ToolTip } from "./CardV4Styles";
 import ADD_TO_CART_ICON from "../../../../assets/img/generales/add_to_cart_icon.svg";
 import useCartStore from "../../../../stores/useCartStore";
 import useCurrencyStore from '../../../../stores/useCurrencyStore';
@@ -16,6 +16,7 @@ const CardV4 = ({ product }) => {
   return (
     <CardContainer>
       <BoxImage>
+        <PreviousPrice>$ {product.previousPrice[currencySelected]} {currencySelected}</PreviousPrice>
         <Image src={product.coverImage} alt="MockUp Product" />
       </BoxImage>
 
