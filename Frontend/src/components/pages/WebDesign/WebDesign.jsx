@@ -29,6 +29,7 @@ const WebDesign = () => {
         image={data.hero.image}
         alt={data.hero.alt}
         bgColor={coloresV2.colorSecundario}
+        borderBottom={true}
       />
 
       <BeneficiosServicios

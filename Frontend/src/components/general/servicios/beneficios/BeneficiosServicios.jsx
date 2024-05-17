@@ -4,7 +4,7 @@ import CardBeneficio from "../../cards/cardBeneficio/CardBeneficio";
 
 const BeneficiosServicios = ({ bgColor, color, benefits }) => {
   return (
-    <Section $border $height="100px" $bgColor={bgColor || coloresV2.colorPrincipal}>
+    <Section $borderBottom $height="100px" $bgColor={bgColor || coloresV2.colorPrincipal}>
       <MaxWidth>
 
         {benefits.map((benefit) => (
