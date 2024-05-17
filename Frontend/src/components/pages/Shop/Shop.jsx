@@ -5,6 +5,7 @@ import ProductsV1 from "../../general/Sections/Products/ProductsV1/ProductsV1";
 import SeparatorV1 from "../../general/Separators/SeparatorV1/SeparatorV1";
 import useShopStore from "../../../stores/useShopStore"
 import { useEffect } from "react";
+import FooterV2 from "../../general/footerV2/FooterV2";
 
 const Shop = () => {
   const { TemplatesData } = useShopStore();
@@ -27,6 +28,8 @@ const Shop = () => {
         products={TemplatesData}
         bgColor={coloresV2.colorSecundario}
       />
+
+      <FooterV2 />
     </>
   );
 };
