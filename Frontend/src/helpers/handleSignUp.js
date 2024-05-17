@@ -1,7 +1,7 @@
 import axios from "axios"
 import Swal from "sweetalert2"
 
-export const handleSignUp = (e, setLoading, apiUrl, navigateFunction, redirectLink) => {
+export const handleSignUp = (e, setLoading, setFormData, apiUrl, navigateFunction, redirectLink) => {
   e.preventDefault()
   setLoading(true);
 
@@ -25,7 +25,8 @@ export const handleSignUp = (e, setLoading, apiUrl, navigateFunction, redirectLi
         showConfirmButton: false,
         timer: 1600
       })
-
+      // Limpiamos los inputs
+      setFormData({ user_name: "", email: "", country: "", password: ""});
       // Redirigimos al usuario a la pagina indicada en el componente:
       navigateFunction(redirectLink)
     })
@@ -41,7 +42,7 @@ export const handleSignUp = (e, setLoading, apiUrl, navigateFunction, redirectLi
       })
 
       // Mostramos el error en la consola
-      console.error(`Error al iniciar sesión: ${error.response.data.message}`)
+      console.error(`Error al intentar registrarse: ${error.response.data.message}`)
     })
     .finally(() => {
       setLoading(false);

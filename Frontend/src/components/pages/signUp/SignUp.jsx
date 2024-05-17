@@ -8,6 +8,7 @@ import { API_URL } from "../../../env/env";
 import Loader from '../../general/Loader/Loader';
 
 const SignUp = () => {
+  const [formData, setFormData] = useState({ user_name: "", email: "", country: "", password: ""});
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const redirectLink = "/login";
@@ -27,7 +28,9 @@ const SignUp = () => {
           <LoginCard
             type="SignUp"
             link="/login"
-            handleSubmit={(e) => handleSignUp(e, setLoading, apiUrl, navigate, redirectLink)}
+            handleSubmit={(e) => handleSignUp(e, setLoading, setFormData, apiUrl, navigate, redirectLink)}
+            formData={formData}
+            setFormData={setFormData}
           />
         )}
 
