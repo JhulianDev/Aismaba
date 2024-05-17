@@ -5,8 +5,7 @@ import EMAIL_ICON from "../../../../assets/img/generales/email_icon.svg"
 import FLAG_ICON from "../../../../assets/img/generales/flag_icon.svg"
 import PADLOK_ICON from "../../../../assets/img/generales/padlock_icon.svg"
 
-const LoginCard = ({ type, link, handleSubmit }) => {
-
+const LoginCard = ({ type, link, handleSubmit, formData, setFormData }) => {
   return (
     <LoginForm onSubmit={handleSubmit}>
       <LoginLogo src={ISOTIPO} alt="Isotipo Aismaba" />
@@ -14,25 +13,25 @@ const LoginCard = ({ type, link, handleSubmit }) => {
       {type === "SignUp" && (
         <BoxInput>
           <InputIcon src={USER_ICON} alt="Icono de usuario" />
-          <Input type="text" name="user_name" placeholder="Nombre" />
+          <Input type="text" name="user_name" placeholder="Nombre" value={formData.user_name} onChange={(e) => setFormData({ ...formData, user_name: e.target.value })} />
         </BoxInput>
       )}
 
       <BoxInput>
         <InputIcon src={EMAIL_ICON} alt="Icono de email" />
-        <Input type="text" name="email" placeholder="Correo electrónico" />
+        <Input type="text" name="email" placeholder="Correo electrónico" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
       </BoxInput>
 
       {type === "SignUp" && (
         <BoxInput>
           <InputIcon src={FLAG_ICON} alt="Icono de bandera" />
-          <Input type="text" name="country" placeholder="País" />
+          <Input type="text" name="country" placeholder="País" value={formData.country} onChange={(e) => setFormData({ ...formData, country: e.target.value })} />
         </BoxInput>
       )}
 
       <BoxInput>
         <InputIcon src={PADLOK_ICON} alt="Icono de contraseña" />
-        <Input type="password" name="password" placeholder="Contraseña" />
+        <Input type="password" name="password" placeholder="Contraseña" value={formData.password} onChange={(e) => setFormData({ ...formData, password: e.target.value })} />
       </BoxInput>
 
       {type === "SignUp" ? (

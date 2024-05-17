@@ -1,7 +1,7 @@
 import axios from "axios"
 import Swal from "sweetalert2"
 
-export const handleSignIn = (e, setLoading, apiUrl, setUserFunction, setTokenFunction, navigateFunction, redirectToCart, redirectLink) => {
+export const handleSignIn = (e, setLoading, setFormData, apiUrl, setUserFunction, setTokenFunction, navigateFunction, redirectToCart, redirectLink) => {
   e.preventDefault()
   setLoading(true);
   // Creamos una variable "data" con los datos obtenidos en el fomulario de registro
@@ -27,6 +27,9 @@ export const handleSignIn = (e, setLoading, apiUrl, setUserFunction, setTokenFun
         showConfirmButton: false,
         timer: 1600
       })
+
+      // Limpiamos los inputs
+      setFormData({ email: "", password: ""});
 
       // Si el usuario esta iniciando sesión porque intento realizar una orden se le redirige al carrito:
       if (redirectToCart === true) {
