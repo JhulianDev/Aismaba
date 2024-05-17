@@ -51,7 +51,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "/tienda",
-        element: <Proximamente />
+        element: <Shop />
       },
       {
         path: "/tienda/plantilla/:id",
