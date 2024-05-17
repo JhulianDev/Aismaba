@@ -26,6 +26,7 @@ const Instakit = () => {
         link={data.hero.link}
         image={data.hero.image}
         alt={data.hero.alt}
+        borderBottom={true}
       />
 
       <BeneficiosServicios
