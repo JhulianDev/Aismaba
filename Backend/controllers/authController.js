@@ -74,9 +74,7 @@ export const login = async (req, res) => {
     const userDataJwt = { id: user.dataValues.id, user_name: user.dataValues.user_name, email: user.dataValues.email, is_admin: user.dataValues.is_admin };
 
     // Generamos el JWT para el usuario:
-    let token = jwt.sign({ user: userDataJwt }, process.env.JWT_SECRET, {
-      expiresIn: process.env.JWT_EXPIRATION
-    });
+    let token = jwt.sign({ user: userDataJwt }, process.env.JWT_SECRET);
 
     // Devolvemos los datos correspondientes al usuario:
     res.status(200).json({
