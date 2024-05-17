@@ -3,7 +3,7 @@ import { Box, Description, Image, MainContainer, Step, Subtitle, Title } from ".
 
 const Proceso = ({ title, steps, image, bgColor }) => {
   return (
-    <Section $height="100px" $borderBottom $bgColor={bgColor}>
+    <Section $height="100px" $bgColor={bgColor} $borderBottom>
       <MaxWidth>
         <MainContainer>
 
