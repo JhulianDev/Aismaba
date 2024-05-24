@@ -119,7 +119,7 @@ export const data = {
       </>
     ),
     subtitle: "Selecciona tu moneda local",
-    price: { ARS: "150.000", USD: "150", EUR: "140" },
+    price: { ARS: "150.000", USD: "200", EUR: "186" },
     items: [
       { id: uuidv4(), number: "· 3", description: "POST SIMPLES (DE 1 PÁG C/U)" },
       { id: uuidv4(), number: "· 1", description: "Edición de Reels (Videos de hasta 30 segundos)" },
@@ -157,7 +157,7 @@ export const data = {
       </>
     ),
     subtitle: "Selecciona tu moneda local",
-    price: { ARS: "150.000", USD: "150", EUR: "140" },
+    price: { ARS: "150.000", USD: "200", EUR: "186" },
     items: [
       { id: uuidv4(), number: "· 4", description: "Posts simples (de 1 sola página c/u)" },
       { id: uuidv4(), number: "· 4", description: "Edición de Reels (Videos de hasta 30 segundos)" },

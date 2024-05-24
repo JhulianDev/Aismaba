@@ -100,7 +100,7 @@ export const data = {
   pack: {
     title: "Adquiere tu INSTAKIT",
     subtitle: "Selecciona tu moneda local",
-    price: { ARS: "99.999", USD: "99.99", EUR: "92.99" },
+    price: { ARS: "100.000", USD: "150", EUR: "140" },
     items: [
       "6 PLANTILLAS POST SIMPLES",
       "3 PLANTILLAS PORTADAS REELS",
