@@ -32,7 +32,7 @@ router.get("/orders-completed-user", validateAuthorization, getOrdersCompleted);
 router.post("/mercado_pago/create_preference", validateAuthorization, createPreference);
 
 // Verify Payment Mercado Pago
-router.post("/mercado_pago/process_payment", validateAuthorization, processPaymentMercadoPago);
+router.post("/mercado_pago/process_payment", processPaymentMercadoPago);
 
 // Verify Payment Paypal
 router.post("/paypal/process_payment", validateAuthorization, processPaymentPaypal);
