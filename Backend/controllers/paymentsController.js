@@ -12,6 +12,7 @@ export const createPreference = async (req, res) => {
     const idempotencyKey = req.headers['x-idempotency-key']
     const body = {
       metadata: { order_id: req.body.order_id },
+      external_reference: { order_id: req.body.order_id },
       items: [
         {
           id: req.body.order_id,
@@ -26,7 +27,8 @@ export const createPreference = async (req, res) => {
         failure: "",
         pending: ""
       },
-      auto_return: "approved"
+      auto_return: "approved",
+      notification_url: "https://www.aismaba.com/api/v1/mercado_pago/process_payment?source_news=webhooks"
     };
 
     const preferenceResult = await preference.create({ body, idempotencyKey });
@@ -43,57 +45,59 @@ export const createPreference = async (req, res) => {
 
 // Verify Payment and update order created with Mercado Pago
 export const processPaymentMercadoPago = async (req, res) => {
-  try {
-    // Obtenemos el payment_id enviado desde el frontend
-    const { payment_id } = req.body;
-    console.log(req.body)
-    // Si el payment_id no esta presente se devuelve el error al front
-    if (!payment_id) {
-      console.log("No se proporciono el ID del pago");
-      return res.status(400).json({ order_status: 'denied', message: 'No se proporciono el ID del pago' });
-    }
-    // Si el payment_id esta presente realizamos una peticion a la API de pagos de MercadoPago
-    const response = await fetch(`https://api.mercadopago.com/v1/payments/${payment_id}`, {
-      method: "GET",
-      headers: {
-        "Authorization": `Bearer ${client.accessToken}`
-      }
-    })
-    // Si la peticion NO encuentra un pago asociado al ID devolvemos el error
-    if (!response.ok) {
-      console.log("El ID proporcionado no fue encontrado en la base de datos de MercadoPago.");
-      return res.status(404).json({ order_status: 'denied', message: 'El ID proporcionado no fue encontrado en la base de datos de MercadoPago.' });
-    }
-    // Si la peticion SI encuentra un pago asociado al ID:
-    // Almacenamos la informacion del pago en una constante
-    const paymentData = await response.json();
-    // Si el pago fue aprobado
-    if (paymentData.status === "approved") {
-      // Obtenemos el id de la orden desde la metadata:
-      const order_id = paymentData.metadata.order_id;
-      // Actualizamos la orden en la base de datos para establecer que fue completada
-      const [updatedOrders, rowsAffected] = await OrderModel.update(
-        { completed: true },
-        { where: { id: order_id }, returning: true }
-      );
-      // Si la actualización es exitosa devolvemos el mensaje de exito
-      if (rowsAffected > 0) {
-        console.log("Orden completada")
-        return res.status(200).json({ order_status: 'completed', message: '¡Orden completada y actualizada!' });
+  const payment_id = req.query['data.id'];
+  const notification = req.query;
+  // Si se recibio el payment_id
+  if (payment_id) {
+    // Envía la respuesta 200 OK a Mercado Pago para que no repita la notificación
+    res.sendStatus(200);
+    // Logueamos la recepción de un pago de MercadoPago y su ID
+    console.log(`¡Se recibio un pago de MercadoPago! Payment ID: ${payment_id}`)
+    try {
+      // Realizamos una peticion a la API de pagos de MercadoPago:
+      const response = await fetch(`https://api.mercadopago.com/v1/payments/${payment_id}`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${client.accessToken}`
+        }
+      })
+      // Si la peticion encuentra un pago asociado al ID:
+      if (response.ok) {
+        // Almacenamos la informacion del pago en una constante
+        const paymentData = await response.json();
+        // Si el pago fue aprobado
+        if (paymentData.status === "approved") {
+          console.log(`El pago fue aprobado. Payment ID: ${payment_id}`)
+          // Obtenemos el id de la orden desde la metadata:
+          const order_id = paymentData.metadata.order_id;
+          // Actualizamos la orden en la base de datos para establecer que fue completada
+          const [updatedOrders, rowsAffected] = await OrderModel.update(
+            { completed: true },
+            { where: { id: order_id }, returning: true }
+          );
+          // Si la actualización es exitosa devolvemos el mensaje de exito
+          if (rowsAffected > 0) {
+            console.log(`¡Orden completada y actualizada! ID: ${payment_id}`)
+          } else {
+            // Si la orden no existe en la base de datos logueamos el error
+            console.log(`No se encontro una orden con el ID proporcionado. Payment ID: ${payment_id}`);
+          }
+        } else {
+          // Si el pago no fue aprobado logueamos el estado del pago:
+          console.log(`El pago con ID ${payment_id} no fue aprobado. Estado del pago: ${paymentData.status}`);
+        }
       } else {
-        // Si la orden no existe en la base de datos devovlemos el error
-        console.error('No se encontro una orden con el ID proporcionado');
-        return res.status(500).json({ order_status: 'denied', message: 'No se encontro una orden con el ID proporcionado' });
+        // Si ocurre un error en la respuesta de la API de pagos de MercadoPago logueamos el error:
+        console.log(`No se encuentró un pago asociado al ID proporcionado. Payment ID: ${payment_id}`);
       }
-    } else {
-      // Si el pago NO fue aprobado devolvemos el mensaje
-      console.log('El pago no fue aprobado')
-      return res.status(400).json({ order_status: 'denied', message: 'El pago no fue aprobado' });
+    } catch (error) {
+      // Si ocurre un error en el bloque trycatch loguemoa el error
+      console.log('Error al verificar el pago en Mercado Pago:', error);
     }
-    // Si ocurre algun error durante ja ejecucion de verifyPayment devolvemos el error
-  } catch (error) {
-    console.log('Error al verificar el pago en Mercado Pago:', error);
-    return res.status(500).json({ order_status: 'denied', error: 'Se produjo un error al verificar el pago en Mercado Pago.' });
+  } else {
+    // Si el Payment ID no es proporcionado se muestra el contenido de la notificación
+    console.log("Se recibio una notificacion de mercado pago:");
+    console.log(notification);
   }
 }
 
@@ -106,6 +110,8 @@ export const processPaymentPaypal = async (req, res) => {
     console.log("No se proporciono el ID de la orden");
     return res.status(400).json({ order_status: 'denied', message: 'No se proporciono el ID de la orden' });
   }
+  // Logueamos la recepción de un pago de Paypal y su ID
+  console.log(`¡Se recibio un pago de Paypal! Order ID: ${order_id}`)
   // Actualizamos la orden en la base de datos para establecer que fue completada
   const [updatedOrders, rowsAffected] = await OrderModel.update(
     { completed: true },
@@ -113,11 +119,11 @@ export const processPaymentPaypal = async (req, res) => {
   );
   // Si la actualización es exitosa devolvemos el mensaje de exito
   if (rowsAffected > 0) {
-    console.log("Orden completada")
+    console.log(`¡Orden completada y actualizada! Order ID: ${order_id}`)
     return res.status(200).json({ order_status: 'completed', message: '¡Orden completada y actualizada!' });
   } else {
     // Si la orden no existe en la base de datos devovlemos el error
-    console.error('No se encontro una orden con el ID proporcionado');
+    console.log(`No se encontro una orden con el ID proporcionado Order ID: ${order_id}`);
     return res.status(500).json({ order_status: 'denied', message: 'No se encontro una orden con el ID proporcionado' });
   }
 }
