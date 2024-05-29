@@ -15,6 +15,7 @@ import THREE_PACK_2_FILE from "./14_PLANTILLAS_THREE_PACK_2.pdf";
 import THREE_PACK_3_FILE from "./15_PLANTILLAS_THREE_PACK_3.pdf";
 import THREE_PACK_4_FILE from "./16_PLANTILLAS_THREE_PACK_4.pdf";
 import TWELVE_PACK_FILE from "./17_PLANTILLAS_TWELVE_PACK.pdf";
+import TEST_IMAGE from "../img/generales/test-image.webp";
 
 export const productsFiles = [
   { id: "1",  name: "Aesthetic Brown", file: AESTHETIC_BROWN_FILE },
@@ -34,4 +35,6 @@ export const productsFiles = [
   { id: "15", name: "Three Pack 3", file: THREE_PACK_3_FILE },
   { id: "16", name: "Three Pack 4", file: THREE_PACK_4_FILE },
   { id: "17", name: "Twelve Pack", file: TWELVE_PACK_FILE },
+  { id: "18", name: "Test 1", file: TEST_IMAGE },
+  { id: "19", name: "Test 2", file: TEST_IMAGE },
 ];

@@ -1,4 +1,5 @@
-import { v4 as uuidv4 } from 'uuid';
+// Test
+import TEST_IMAGE from "../assets/img/generales/test-image.webp"
 // Hero
 import SHOP_ICON from "../assets/img/generales/shop/hero/shop_icon.svg"
 import SOCIAL_ICONS from "../assets/img/generales/shop/hero/social_icons.svg"
@@ -241,6 +242,32 @@ export const products = {
         "· Pack Sol Grey",
         "· Pack Curve Pink",
         "· Pack Green World",
+      ]
+    },
+    {
+      id: "18",
+      name: "TEST 1",
+      type: "Pack Plantillas",
+      price: { ARS: "50", USD: "136", EUR: "126" },
+      previousPrice: { ARS: "50", USD: "170", EUR: "158" },
+      coverImage: TEST_IMAGE,
+      galleryImages: [TEST_IMAGE],
+      content: [
+        "Este producto NO CONTIENE PLANTILLAS",
+        "Solo debe ser utilizado por los desarrolladores del sitio web para realizar pruebas."
+      ]
+    },
+    {
+      id: "19",
+      name: "TEST 2",
+      type: "Pack Plantillas",
+      price: { ARS: "50", USD: "136", EUR: "126" },
+      previousPrice: { ARS: "50", USD: "170", EUR: "158" },
+      coverImage: TEST_IMAGE,
+      galleryImages: [TEST_IMAGE],
+      content: [
+        "Este producto NO CONTIENE PLANTILLAS",
+        "Solo debe ser utilizado por los desarrolladores del sitio web para realizar pruebas."
       ]
     }
   ]
