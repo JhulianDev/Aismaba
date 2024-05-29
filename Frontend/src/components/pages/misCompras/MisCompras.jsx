@@ -1,4 +1,5 @@
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import DOWNLOAD_ICON from "../../../assets/img/generales/download-icon.webp";
 import { CardContainer, BoxItem, Subtitle, DownloadButton, DownloadIcon, Product, Title, Paragraph } from "./MisComprasStyled";
@@ -13,9 +14,14 @@ const MisCompras = () => {
   const [purchasedProducts, setPurchasedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const { userToken } = useUserStore.getState();
+  const navigate = useNavigate();
 
 
   useEffect(() => {
+    if (!userToken) {
+      navigate("/login");
+      return;
+    }
     // Funcion para obtener las ordenes completadas por el usuario
     const fetchData = async () => {
       try {
