@@ -244,31 +244,31 @@ export const products = {
         "· Pack Green World",
       ]
     },
-    {
-      id: "18",
-      name: "TEST 1",
-      type: "Pack Plantillas",
-      price: { ARS: "10", USD: "136", EUR: "126" },
-      previousPrice: { ARS: "50", USD: "170", EUR: "158" },
-      coverImage: TEST_IMAGE,
-      galleryImages: [TEST_IMAGE],
-      content: [
-        "Este producto NO CONTIENE PLANTILLAS",
-        "Solo debe ser utilizado por los desarrolladores del sitio web para realizar pruebas."
-      ]
-    },
-    {
-      id: "19",
-      name: "TEST 2",
-      type: "Pack Plantillas",
-      price: { ARS: "10", USD: "136", EUR: "126" },
-      previousPrice: { ARS: "50", USD: "170", EUR: "158" },
-      coverImage: TEST_IMAGE,
-      galleryImages: [TEST_IMAGE],
-      content: [
-        "Este producto NO CONTIENE PLANTILLAS",
-        "Solo debe ser utilizado por los desarrolladores del sitio web para realizar pruebas."
-      ]
-    }
+    // {
+    //   id: "18",
+    //   name: "TEST 1",
+    //   type: "Pack Plantillas",
+    //   price: { ARS: "10", USD: "136", EUR: "126" },
+    //   previousPrice: { ARS: "50", USD: "170", EUR: "158" },
+    //   coverImage: TEST_IMAGE,
+    //   galleryImages: [TEST_IMAGE],
+    //   content: [
+    //     "Este producto NO CONTIENE PLANTILLAS",
+    //     "Solo debe ser utilizado por los desarrolladores del sitio web para realizar pruebas."
+    //   ]
+    // },
+    // {
+    //   id: "19",
+    //   name: "TEST 2",
+    //   type: "Pack Plantillas",
+    //   price: { ARS: "10", USD: "136", EUR: "126" },
+    //   previousPrice: { ARS: "50", USD: "170", EUR: "158" },
+    //   coverImage: TEST_IMAGE,
+    //   galleryImages: [TEST_IMAGE],
+    //   content: [
+    //     "Este producto NO CONTIENE PLANTILLAS",
+    //     "Solo debe ser utilizado por los desarrolladores del sitio web para realizar pruebas."
+    //   ]
+    // }
   ]
 }
